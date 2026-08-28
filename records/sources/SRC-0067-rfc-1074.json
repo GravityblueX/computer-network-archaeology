@@ -1,0 +1,37 @@
+{
+  "id": "SRC-0067",
+  "source_type": "rfc",
+  "title": "The NSFNET Backbone SPF Based Interior Gateway Protocol",
+  "authors_or_bodies": ["Yakov/Jacob Rekhter", "IBM T.J. Watson Research Center"],
+  "date": {"value": "1988-10", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1074",
+  "identifiers": [{"scheme": "RFC", "value": "1074"}, {"scheme": "DOI", "value": "10.17487/RFC1074"}],
+  "publisher_or_issuer": "Network Working Group / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["NSFNET", "Nodal Switching Subsystem", "IBM RT/PC", "T1", "IS-IS", "ES-IS", "EGP", "policy routing", "4.3BSD"],
+  "artifact_ids": ["ART-0027", "ART-0071"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc1074.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc1074"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": 5, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer RFC Editor canonical text and metadata.",
+  "provenance": {"original_holder": "NSFNET/IBM/Network Working Group publication stream", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The 1988 NSFNET backbone connected thirteen continental-US sites with permanent point-to-point T1 links at 1.544 Mbit/s.", "locator": "RFC 1074 section 2, page 1", "certainty": "confirmed", "artifact_ids": ["ART-0071"], "notes": null},
+    {"claim": "T1 facilities could contain multiple logical links at sub-T1 through full-T1 rates, creating a hybrid circuit/packet-switched topology richer than the physical topology.", "locator": "RFC 1074 section 2, pages 1-2", "certainty": "confirmed", "artifact_ids": ["ART-0071"], "notes": null},
+    {"claim": "Each site had an NSS, a RISC multiprocessor system using IBM RT/PC processors and a modified 4.3BSD kernel.", "locator": "RFC 1074 section 2, page 2", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "RFC treats the NSS as one logical routing entity and does not enumerate all physical processors."},
+    {"claim": "Inter-NSS routing used an adaptation of ANSI IS-IS; attached mid-level networks used EGP with policy restrictions.", "locator": "RFC 1074 sections 2-4", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": null},
+    {"claim": "The implementation documented 10-second IS-ES Hello intervals and 40-second hold time.", "locator": "RFC 1074 section 5, page 4", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Treat as this documented implementation's parameters, not timeless NSFNET constants."}
+  ],
+  "conflicts": [],
+  "notes": "Contemporary protocol evidence for logical NSS architecture. Pair with Merit Figure 14 for physical processor-role decomposition.",
+  "last_reviewed": "2026-08-28"
+}

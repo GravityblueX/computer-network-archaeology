@@ -1,0 +1,27 @@
+{
+  "id": "ART-0151",
+  "canonical_name": "User Datagram Protocol — RFC 768 / STD 6 core",
+  "aliases": ["UDP"],
+  "kind": "protocol",
+  "parent_family": "Internet transport protocols",
+  "manufacturer_or_body": ["USC Information Sciences Institute", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "1980-08-28", "precision": "day", "certainty": "confirmed", "source_ids": ["SRC-0138"], "notes": "RFC 768 remains STD 6 / Internet Standard."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0138"], "notes": "Continuously deployed transport abstraction."}
+  },
+  "networks_or_families": ["Internet", "UDP"],
+  "roles": ["connectionless application datagram transport", "port-based demultiplexing"],
+  "protocols": ["UDP", "IPv4", "IPv6"],
+  "addressing": "Uses transport port numbers above IP-layer addressing.",
+  "routing_or_forwarding": "No routing function; carried by IP.",
+  "error_control": "Checksum mechanism; no retransmission or reliability service in UDP itself.",
+  "flow_or_congestion_control": "No built-in connection, flow-control or ordering machinery.",
+  "survival": {"status": "operational-specimen", "locations": ["global production networks"], "provenance_notes": "The old minimal transport abstraction remains in active use."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 768 → later update matrix including checksum-related revisions.", "Trace major application families that deliberately chose UDP.", "Separate UDP wire continuity from application-level reliability/congestion mechanisms built above it."],
+  "sources": [{"source_id": "SRC-0138", "supports": ["1980 standardization", "current STD 6 status", "minimal datagram transport semantics"], "locator": "RFC Editor metadata; RFC 768 Introduction and format", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0150", "relation": "carried by IPv4 among other IP versions", "notes": null}],
+  "notes": "Reference example of durability through minimal responsibility rather than feature accumulation.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "SRC-0055",
+  "source_type": "technical-report",
+  "title": "Specifications for the Interconnection of a Host and an IMP",
+  "authors_or_bodies": ["Bolt Beranek and Newman Inc. (BBN)"],
+  "date": {
+    "value": "1976-01",
+    "precision": "month",
+    "certainty": "confirmed",
+    "notes": "This record is for the January 1976 revision preserved by Bitsavers. Earlier Report 1822 revisions must receive separate records rather than being collapsed into this one."
+  },
+  "edition_or_revision": "January 1976 revision of BBN Report 1822",
+  "identifiers": [
+    {"scheme": "BBN Report", "value": "1822"},
+    {"scheme": "DTIC/NTIS", "value": "AD-A019 160 (January 1976 revision; verify catalog metadata)"}
+  ],
+  "publisher_or_issuer": "Bolt Beranek and Newman Inc.",
+  "language": ["en"],
+  "topics": ["ARPANET", "Host-IMP interface", "1822", "Local Host", "Distant Host", "Very Distant Host", "ready lines", "bit-serial interface"],
+  "artifact_ids": ["ART-0008", "ART-0006"],
+  "access": {
+    "canonical_url": null,
+    "archive_urls": ["https://www.bitsavers.org/pdf/bbn/imp/BBN1822_Jan1976.pdf"],
+    "catalog_urls": ["https://www.bitsavers.org/pdf/bbn/imp/"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open-archive-copy"
+  },
+  "fixity": {
+    "sha256": null,
+    "byte_size": null,
+    "mime_type": "application/pdf",
+    "page_count": 207,
+    "ocr_status": "scan-with-searchable-derivatives",
+    "scan_notes": "Bitsavers indexes an 8.4 MB scan. Exact scan provenance and checksum remain to be recorded."
+  },
+  "rights_status": "rights-unclear-link-only",
+  "redistribution_notes": "Index and link until redistribution status of the scanned report is established.",
+  "provenance": {
+    "original_holder": "BBN / ARPA technical-report distribution",
+    "current_holder": "Bitsavers archival mirror (access copy)",
+    "donor_or_collection": null,
+    "chain_notes": "The report existed in multiple revisions. Record each dated revision separately and retain amendment RFCs as companion sources."
+  },
+  "evidence_grade": "primary-contemporary-revision",
+  "research_state": "started",
+  "claims_extracted": [
+    {
+      "claim": "Report 1822 defines the standard Host-IMP attachment boundary for ARPANET and includes physical/electrical, readiness, and message-access behavior.",
+      "locator": "Report 1822, Host interface sections; page-level extraction pending clean scan mining",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0008"],
+      "notes": "Do not apply 1976 values automatically to the September 1969 installation."
+    }
+  ],
+  "conflicts": [
+    {
+      "subject": "revision drift",
+      "description": "Later Report 1822 revisions incorporate years of ARPANET evolution. Historical reconstruction must distinguish 1969, 1973, 1974, 1975 and 1976 behavior.",
+      "status": "open"
+    }
+  ],
+  "notes": "RFC 642, RFC 660, RFC 745 and RFC 3109 are companion evidence for implementation practice and later interpretation.",
+  "last_reviewed": "2026-08-28"
+}

@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0088",
+  "from":{"artifact_id":"ART-0129","name":"OSI IS-IS Intra-domain Routing Protocol","revision":"RFC 1142 / ISO 10589 lineage","historical_term":"OSI IS-IS"},
+  "to":{"artifact_id":"ART-0130","name":"Integrated IS-IS for IP and OSI","revision":"RFC 1195 / December 1990","historical_term":"Integrated IS-IS"},
+  "relation":"derived-from","scope":["network","routing","architecture"],
+  "property":"Integrated IS-IS directly reuses the OSI IS-IS link-state/SPF and Level 1/Level 2 routing architecture while adding IP-specific reachability/functions so one protocol can support IP, OSI, or dual environments.",
+  "date_or_range":{"value":"1990-02/1990-12","precision":"range","notes":"RFC publication representations; ISO 10589 chronology extends beyond these RFC dates."},"certainty":"confirmed","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0115","locator":"RFC 1142 / OSI IS-IS specification","supports":"parent OSI IS-IS architecture","notes":"Exact ISO edition mapping remains open."},{"source_ref":"SRC-0116","locator":"RFC 1195, Abstract and Sections 1.1-1.3","supports":"explicit statement that Integrated IS-IS is based on OSI IS-IS with IP-specific functions added","notes":null}],
+  "negative_claims":["This edge does not claim OSPF is an ancestor of Integrated IS-IS.","This edge does not imply OSI packet forwarding is encapsulated inside IP or vice versa; RFC 1195 forwards each protocol suite directly over lower-layer services.","This edge does not collapse ISO 10589 edition history into RFC 1142 metadata."],
+  "open_questions":["Recover ISO 10589 revision chronology and early vendor implementations.","Identify first production IP deployments using Integrated IS-IS."],
+  "notes":"A clear cross-standards-ecosystem derivation: an OSI link-state routing protocol is extended to become a major IP IGP lineage.","last_reviewed":"2026-08-29"
+}

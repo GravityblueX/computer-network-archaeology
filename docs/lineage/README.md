@@ -26,6 +26,10 @@ Machine-readable edges live in [`../../data/lineage-ledger.csv`](../../data/line
 - [`ethernet-shared-medium-to-switched.md`](ethernet-shared-medium-to-switched.md) — 2.94 Mb/s PARC Ethernet → DIX → IEEE 802.3 → 10BASE-T → bridge/switch → full-duplex Ethernet.
 - [`bridge-stp-switch-vlan.md`](bridge-stp-switch-vlan.md) — transparent bridges → distributed spanning tree → IEEE 802.1D → multiport switching → IEEE 802.1Q virtual bridged LANs.
 
+### Terminal and remote-access edges
+
+- [`terminal-access-tip-pad-terminal-server-portmaster.md`](terminal-access-tip-pad-terminal-server-portmaster.md) — BBN TIP, X.25 PAD, DECserver/LAT, Cisco communications servers and Livingston PortMaster as a recurring edge-access role rather than a false single product ancestry.
+
 ### Internet protocol layering
 
 - [`tcp-ip-split-and-standardization.md`](tcp-ip-split-and-standardization.md) — the integrated early Transmission Control Program splitting into IP and TCP responsibilities.
@@ -48,14 +52,6 @@ Machine-readable edges live in [`../../data/lineage-ledger.csv`](../../data/line
 An arrow must name the property that crosses the historical boundary.
 
 For example:
-
-```text
-SGMP ──survives-as──> SNMP
-```
-
-is too vague by itself.
-
-The actual claim is:
 
 ```text
 SGMP simple-agent / remote-manager architecture
@@ -90,7 +86,19 @@ MNP installed base
     └── interworked-with ──> V.42-era modem implementations
 ```
 
-This is **not** a formal `revision-of` edge. LAPM is the standardized V.42 procedure while MNP compatibility survives because deployed equipment and software already exist.
+This is **not** a formal `revision-of` edge.
+
+Terminal-access history adds another warning:
+
+```text
+TIP  ↔  PAD  ↔  terminal server
+```
+
+may describe a recurring role, but without documentary design links it must **not** be rewritten as:
+
+```text
+TIP → PAD → terminal server
+```
 
 A good lineage records both survival and death, and it records the *kind* of survival.
 
@@ -102,9 +110,10 @@ The preferred evidence ladder is:
 2. **documented design ancestry** — designers/specifications explicitly cite prior work;
 3. **documented operational transition/interworking** — deployment records show replacement or coexistence;
 4. **de-facto interface inheritance** — compatible products/software demonstrably depend on an earlier product interface;
-5. **participant testimony** — later recollection by engineers/operators;
-6. **scholarly reconstruction** — strong historical analysis connecting sources;
-7. **hypothesis** — saved lead, not yet a fact.
+5. **role genealogy** — the same infrastructure responsibility expands or migrates across product categories, with direct product ancestry explicitly excluded when unknown;
+6. **participant testimony** — later recollection by engineers/operators;
+7. **scholarly reconstruction** — strong historical analysis connecting sources;
+8. **hypothesis** — saved lead, not yet a fact.
 
 The repository deliberately keeps `possibly-influenced`, `coexisted-with`, `interworked-with`, and disputed edges rather than making a clean but false tree.
 
@@ -119,8 +128,6 @@ IBM RT Nodal Switching Subsystem
    ↓
 T3/RS-6000 backbone
 ```
-
-The backbone role persists while implementation architecture changes radically.
 
 ### Same name, mechanism disappears
 
@@ -142,8 +149,6 @@ SGMP
 SNMP
 ```
 
-but the management philosophy and manager/agent architecture are explicitly carried forward.
-
 ### One responsibility splits into layers
 
 ```text
@@ -152,8 +157,6 @@ early integrated Transmission Control Program
           IP + TCP
 ```
 
-Layering itself has a history.
-
 ### Standardization preserves compatibility rather than erasing the old protocol
 
 ```text
@@ -161,8 +164,6 @@ MNP error-control installed base
           ↕ compatibility
 V.42 LAPM-era modem ecosystem
 ```
-
-A formal standard can arrive while the previous de-facto protocol remains operationally necessary.
 
 ### A product interface becomes an ecosystem convention
 
@@ -174,8 +175,6 @@ Hayes AT command family
 Hayes-compatible modem ecosystem
 ```
 
-This is de-facto standardization, not standards-body revision.
-
 ### Logical topology separates from physical topology
 
 ```text
@@ -186,17 +185,35 @@ logical loop-free topology
 virtual bridged LAN / VLAN
 ```
 
-A modern switch inherits bridge semantics while the physical implementation changes completely.
+### Edge role survives while endpoint intelligence moves
 
-### Technology changes because the infrastructure below it changed
+```text
+dumb terminal
+   ↓ characters
+TIP / PAD / terminal server
+   ↓
+remote host service
+```
+
+becomes, in another branch:
+
+```text
+PC with IP stack
+   ↓ PPP over modem/serial
+access server
+   ↓ routed IP
+Internet
+```
+
+The **many-edge-ports-to-network** role persists, but session, protocol and authentication responsibilities move.
+
+### Technology changes because infrastructure below it changed
 
 ```text
 analogue voiceband modem assumptions
           ↓ PSTN digitization
 V.90 digital-provider / analogue-subscriber modem pair
 ```
-
-The device standard changes because the carrier network underneath it changed.
 
 ### Technical architecture follows institutional boundaries
 
@@ -210,35 +227,37 @@ IGP inside / EGP outside
 BGP interdomain policy routing
 ```
 
-An administrative abstraction becomes part of protocol architecture.
-
 ## Current structured examples
 
-The lineage system is not only prose. Representative claim-level edges now include:
+Representative claim-level edges now include:
 
 - `LIN-0034` — BGP-3 → BGP-4 formal revision intersecting CIDR;
 - `LIN-0057` — SGMP → SNMP architectural continuity despite incompatible wire syntax;
 - `LIN-0062` — Perlman distributed spanning-tree design → IEEE bridge/STP lineage;
 - `LIN-0068` — MNP installed base ↔ V.42 compatibility/interworking;
-- `LIN-0075` — Hayes AT command convention → third-party Hayes-compatible modem interfaces.
+- `LIN-0075` — Hayes AT command convention → third-party Hayes-compatible modem interfaces;
+- `LIN-0079` — terminal-server edge role → authenticated dial-IP access-server role without claiming vendor/source-code ancestry.
 
-Representative structured artifacts now include IEEE 802.1D-1990, V.42-1988, and the Hayes AT command-set family.
+Structured artifacts include IEEE 802.1D-1990, V.42-1988, and the Hayes AT command-set family. Structured sources now include the BBN TIP Hardware Manual, DEC LAT guide, Livingston PortMaster guide and Cisco's 1992 terminal-server/router convergence announcement.
 
 ## Next lineage excavations
 
 The next layer should move below the current summaries:
 
-- **bridge/STP:** DEC LANbridge 100 manuals, exact PDU/timer/state-machine differences, IEEE 802.1D edition diffs, RSTP/MSTP;
-- **switching/VLAN:** Kalpana EtherSwitch model/BOM/ASIC history, store-and-forward vs cut-through, 802.1Q tag and membership details, vendor VLAN predecessors;
-- **MNP/V.42:** original Microcom MNP specs, LAPM state machine, real negotiation traces, MNP5 vs V.42bis algorithm comparison;
-- **Hayes:** first Smartmodem manuals, early command grammar, S-register diffs, UUCP dialers, BBS modem drivers, SLIP/PPP chat scripts, formal ETSI/3GPP AT-command ancestry;
+- **TIP:** processor/terminal scanner boards, port buffers, modem lines, user command software, named deployed sites;
+- **PAD:** actual Tymnet/Telenet/Transpac/DATAPAC PAD products and user command sets;
+- **DECserver/LAT:** DECserver 100 BOM/firmware/downline loading, LAT service advertisements/session setup/load balancing;
+- **access servers:** Cisco STS/MSM/ASM/500-CS and Livingston PortMaster/ComOS hardware/software genealogy;
+- **RADIUS:** Livingston implementation → RFC standardization → ISP operational deployment;
+- **bridge/STP:** DEC LANbridge 100 PDU/timer/state machine, IEEE 802.1D diffs, RSTP/MSTP;
+- **switching/VLAN:** Kalpana EtherSwitch BOM/ASIC history, 802.1Q tag/membership details, vendor VLAN predecessors;
+- **MNP/V.42:** original Microcom specs, LAPM state machine, negotiation traces, MNP5 vs V.42bis;
+- **Hayes:** first Smartmodem manuals, S-register diffs, UUCP/BBS/SLIP/PPP modem drivers, formal ETSI/3GPP AT ancestry;
 - **Ethernet:** autonegotiation and high-speed PHY lineage;
-- **SNMP:** HMP implementation → SGMP source → first SNMP agents; SMI/MIB revision genealogy;
+- **SNMP:** HMP implementation → SGMP source → first SNMP agents; SMI/MIB genealogy;
 - **routing:** GGP source → EGP deployment → BGP-1 source; HELLO/RIP/OSPF/IS-IS as separate IGP families;
 - **applications:** NCP Telnet/FTP/mail → TCP-era application protocol revisions;
-- **DNS:** ARPANET host tables → DNS server implementations (Jeeves/BIND);
-- **remote access:** terminal concentrator → PAD → terminal server → dial access server;
-- **management/configuration:** bridge/router management → SNMP → later configuration/telemetry systems, with direct influence claims treated cautiously.
+- **DNS:** host tables → Jeeves/BIND server implementations.
 
 ## Completion criterion
 
@@ -246,7 +265,7 @@ A lineage becomes useful when it can answer:
 
 - What exact property moved?
 - What exact property did **not** move?
-- Was this a formal revision, operational replacement, influence, coexistence, compatibility layer, or only analogy?
+- Was this a formal revision, operational replacement, influence, coexistence, compatibility layer, role migration, or only analogy?
 - Which source proves the relationship?
 - At what date/revision did the change occur?
 - Which implementation first demonstrated it?

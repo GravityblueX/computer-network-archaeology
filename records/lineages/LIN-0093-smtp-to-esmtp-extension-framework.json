@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0093",
+  "from":{"artifact_id":"ART-0132","name":"Simple Mail Transfer Protocol","revision":"RFC 821 generation","historical_term":"SMTP"},
+  "to":{"artifact_id":"ART-0133","name":"SMTP Service Extensions / ESMTP","revision":"RFC 1425 generation","historical_term":"ESMTP"},
+  "relation":"successor-of","scope":["application","architecture","interface"],
+  "property":"The stable SMTP mail-transfer and relay model is retained while an explicit capability-advertisement and extension-negotiation framework is added through EHLO and registered service extensions.",
+  "date_or_range":{"value":"1982-08/1993-02","precision":"range","notes":"Classic RFC 821 SMTP to first ESMTP service-extension framework generation."},"certainty":"confirmed","directness":"formal",
+  "sources":[{"source_ref":"SRC-0119","locator":"RFC 821, Introduction and SMTP model","supports":"classic SMTP transfer/relay architecture","notes":null},{"source_ref":"SRC-0120","locator":"RFC 1425, Abstract; Introduction; EHLO framework","supports":"extension advertisement/negotiation while retaining SMTP basis","notes":null}],
+  "negative_claims":["This edge does not claim ESMTP replaces SMTP's core MAIL/RCPT/DATA transfer semantics wholesale.","It does not imply every SMTP extension existed in RFC 1425.","Individual extensions such as 8BITMIME, AUTH and STARTTLS require separate lineage records."],
+  "open_questions":["Build RFC 1425→1651→1869 extension-framework revision diff.","Recover first operational EHLO deployments and compatibility incidents."],
+  "notes":"Example of a mature protocol surviving through standardized extensibility rather than wholesale replacement.","last_reviewed":"2026-08-29"
+}

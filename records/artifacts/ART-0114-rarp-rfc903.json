@@ -1,0 +1,50 @@
+{
+  "id": "ART-0114",
+  "canonical_name": "Reverse Address Resolution Protocol (RARP)",
+  "aliases": ["RARP"],
+  "kind": "protocol",
+  "parent_family": "Internet host bootstrap/configuration lineage",
+  "manufacturer_or_body": ["Network Working Group", "Ross Finlayson", "Tim Mann", "Jeffrey Mogul", "Marvin Theimer"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": null,
+    "standardized": {"value":"1984-06","precision":"month","certainty":"confirmed","source_ids":["SRC-0097"],"notes":"RFC 903 publication date."},
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Internet", "Ethernet bootstrap", "ARP/RARP"],
+  "roles": ["discover protocol/IP address from a known hardware address during bootstrap"],
+  "stack_position": ["link", "network", "pre-layered"],
+  "protocols": ["RARP", "ARP"],
+  "addressing": "A RARP client starts from its hardware address and asks a server to return the corresponding protocol address.",
+  "routing_or_forwarding": "Designed around a broadcast medium such as Ethernet and not inherently a routed client/server configuration service.",
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": null,
+    "diagnostics": null,
+    "remote_management": null,
+    "failure_behavior": "A client requires an available RARP server with a hardware-to-protocol-address mapping database.",
+    "operator_interface": "Server mapping database is implementation-specific."
+  },
+  "economics": {"purchase_price":null,"rental_or_tariff":null,"circuit_cost":null,"payer_or_funder":null},
+  "geography": [],
+  "survival": {"status":"documented-only","locations":[],"provenance_notes":"Protocol documents and historical implementations survive; deployed-client provenance remains to be catalogued."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Recover early diskless workstation RARP clients and server source code.",
+    "Identify named Ethernet boot ROM implementations.",
+    "Trace operational coexistence with BOOTP during migration."
+  ],
+  "sources": [
+    {"source_id":"SRC-0097","supports":["RARP purpose","hardware-address starting point","server database role","broadcast-medium assumption"],"locator":"RFC 903, Introduction and Design Considerations","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [
+    {"id":"ART-0115","relation":"predecessor-of","notes":"BOOTP generalizes bootstrap configuration beyond RARP's narrow link-local reverse address lookup."}
+  ],
+  "notes": "RARP should not be described as early DHCP; it solves a much narrower address-discovery problem.",
+  "last_reviewed": "2026-08-29"
+}

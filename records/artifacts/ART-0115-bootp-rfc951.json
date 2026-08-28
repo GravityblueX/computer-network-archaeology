@@ -1,0 +1,52 @@
+{
+  "id": "ART-0115",
+  "canonical_name": "Bootstrap Protocol (BOOTP)",
+  "aliases": ["BOOTP"],
+  "kind": "protocol",
+  "parent_family": "Internet host bootstrap/configuration lineage",
+  "manufacturer_or_body": ["Internet protocol community", "W. J. Croft", "John Gilmore"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": null,
+    "standardized": {"value":"1985-09","precision":"month","certainty":"confirmed","source_ids":["SRC-0098"],"notes":"RFC 951 publication date."},
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Internet", "diskless/network bootstrap", "BOOTP/DHCP lineage"],
+  "roles": ["bootstrap IP clients", "deliver client address and boot/server information", "support bootstrap across routed networks through relay behavior"],
+  "stack_position": ["application", "management"],
+  "protocols": ["BOOTP", "UDP", "IP", "ARP"],
+  "addressing": "Client identity and assigned IP/bootstrap fields are carried in the BOOTP exchange; exact database policy is server-administered.",
+  "routing_or_forwarding": "BOOTP supports operation through gateways/relay behavior rather than being limited to a single Ethernet broadcast domain like RARP.",
+  "error_control": "Relies on underlying IP/UDP/link mechanisms and request/reply retry behavior rather than a reliable transport session.",
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": null,
+    "diagnostics": "Server databases and relay behavior are operationally significant; implementation-specific tooling requires separate records.",
+    "remote_management": null,
+    "failure_behavior": "A client that cannot reach a BOOTP server/relay cannot obtain its bootstrap configuration.",
+    "operator_interface": "Configuration database format is implementation-specific."
+  },
+  "economics": {"purchase_price":null,"rental_or_tariff":null,"circuit_cost":null,"payer_or_funder":null},
+  "geography": [],
+  "survival": {"status":"documented-only","locations":[],"provenance_notes":"Protocol texts and many implementations survive; implementation/source-code provenance should be catalogued separately."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Recover earliest BOOTP server/client source distributions and deployed systems.",
+    "Build RFC 951 to RFC 1542 relay/clarification diff.",
+    "Identify named diskless workstation boot ROMs and servers that used BOOTP.",
+    "Trace vendor option formats and their transition into DHCP options."
+  ],
+  "sources": [
+    {"source_id":"SRC-0098","supports":["BOOTP identity","September 1985 publication","RARP comparison","bootstrap fields","gateway/relay design"],"locator":"RFC 951, Overview; Comparison to RARP; Booting Through Gateways","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [
+    {"id":"ART-0114","relation":"successor-of","notes":"Generalizes the bootstrap problem beyond RARP's local hardware-address-to-IP lookup."},
+    {"id":"ART-0118","relation":"predecessor-of","notes":"DHCP explicitly states it is based on BOOTP and retains BOOTP relay/interoperation behavior."}
+  ],
+  "notes": "BOOTP should be treated as a major architectural step from link-local reverse address discovery toward routed client/server host configuration.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0085",
+  "from":{"artifact_id":"ART-0114","name":"Reverse Address Resolution Protocol (RARP)","revision":"RFC 903 / June 1984","historical_term":"RARP"},
+  "to":{"artifact_id":"ART-0115","name":"Bootstrap Protocol (BOOTP)","revision":"RFC 951 / September 1985","historical_term":"BOOTP"},
+  "relation":"successor-of","scope":["link","network","application","architecture"],
+  "property":"The bootstrap problem expands from link-local hardware-address-to-protocol-address discovery into an IP/UDP client-server bootstrap exchange capable of returning broader boot information and operating through gateways.",
+  "date_or_range":{"value":"1984-06/1985-09","precision":"range","notes":"RFC 903 and RFC 951 publication generations."},"certainty":"probable","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0097","locator":"RFC 903, Introduction and Design Considerations","supports":"RARP's narrow bootstrap address-discovery role","notes":null},{"source_ref":"SRC-0098","locator":"RFC 951, Comparison to RARP and Booting Through Gateways","supports":"BOOTP's explicit comparison with RARP and broader routed bootstrap design","notes":null}],
+  "negative_claims":["This edge does not claim RFC 951 formally obsoletes RFC 903.","This edge does not establish source-code descent from a RARP implementation into a BOOTP implementation.","RARP and BOOTP could coexist in deployed systems."],
+  "open_questions":["Recover contemporary migration documentation from diskless workstation environments.","Identify implementations that supported both RARP and BOOTP."],
+  "notes":"A role/generalization edge rather than a formal standards revision.","last_reviewed":"2026-08-29"
+}

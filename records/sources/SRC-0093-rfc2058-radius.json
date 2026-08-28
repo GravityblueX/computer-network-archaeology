@@ -1,0 +1,60 @@
+{
+  "id": "SRC-0093",
+  "source_type": "rfc",
+  "title": "Remote Authentication Dial In User Service (RADIUS)",
+  "authors_or_bodies": ["Carl Rigney", "Allan C. Rubens", "William Allen Simpson", "Steve Willens"],
+  "date": {"value": "1997-01", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2058",
+  "identifiers": [{"scheme": "RFC", "value": "2058"}, {"scheme": "DOI", "value": "10.17487/RFC2058"}],
+  "publisher_or_issuer": "IETF / RFC Editor",
+  "language": ["en"],
+  "topics": ["RADIUS", "PortMaster", "Network Access Server", "modem pools", "authentication", "authorization", "PPP", "SLIP"],
+  "artifact_ids": ["ART-0030", "ART-0113"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc2058.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc2058/"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": 64, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer RFC Editor canonical representations.",
+  "provenance": {"original_holder": "IETF RADIUS/NASREQ standards process with Livingston/Merit participants", "current_holder": "RFC Editor", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "RADIUS was originally developed by Livingston Enterprises for its PortMaster series of Network Access Servers.",
+      "locator": "Acknowledgments, RFC 2058 page 63 / lines 3457-3460 in RFC Editor HTML",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0030", "ART-0113"],
+      "notes": "Direct product-to-protocol ancestry statement from the standards document."
+    },
+    {
+      "claim": "The motivating operational problem is centralized administration, security and service configuration for dispersed serial-line/modem pools serving many users.",
+      "locator": "Section 1 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": null
+    },
+    {
+      "claim": "A Network Access Server acts as a RADIUS client, passing user information to servers and acting on returned authentication/service configuration.",
+      "locator": "Section 1, Client/Server Model",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": null
+    },
+    {
+      "claim": "RADIUS uses extensible variable-length Attribute-Length-Value information and includes framed access, IP, LAT and authentication attributes.",
+      "locator": "Section 1 Extensible Protocol and Section 5 Attributes",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": "The attribute inventory is an archaeological snapshot of a multiprotocol access-server era."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Crucial primary source because it states the protocol's Livingston/PortMaster origin explicitly rather than requiring retrospective inference.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "ART-0152",
+  "canonical_name": "Internet Control Message Protocol — RFC 792 / STD 5 core",
+  "aliases": ["ICMP", "ICMPv4"],
+  "kind": "protocol",
+  "parent_family": "IPv4 companion protocols",
+  "manufacturer_or_body": ["DARPA Internet Program", "USC Information Sciences Institute", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0139"], "notes": "RFC 792 remains STD 5 / Internet Standard with later updates."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0139"], "notes": "Core ICMPv4 message roles remain deployed."}
+  },
+  "networks_or_families": ["Internet", "IPv4", "ICMPv4"],
+  "roles": ["IP error reporting", "control messages", "diagnostic primitives"],
+  "protocols": ["ICMP", "IPv4"],
+  "addressing": "ICMP messages are carried within IPv4 and refer to IP-layer processing state rather than introducing an independent address architecture.",
+  "routing_or_forwarding": "No independent routing plane; generated/consumed by hosts and routers in connection with IP processing.",
+  "error_control": "Reports selected errors and control conditions; does not make IP reliable.",
+  "flow_or_congestion_control": "Historical control messages existed, but modern congestion control is not reducible to ICMP.",
+  "survival": {"status": "operational-specimen", "locations": ["IPv4 production networks"], "provenance_notes": "Echo and Time Exceeded semantics remain visible in current diagnostics."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build message-type afterlife/deprecation matrix.", "Trace Redirect and Source Quench operational history separately.", "Connect ICMP primitives to ping/traceroute implementation artifacts without conflating protocol and tool."],
+  "sources": [{"source_id": "SRC-0139", "supports": ["1981 standardization", "current STD 5 status", "error/control message roles"], "locator": "RFC Editor metadata; RFC 792 message definitions", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0150", "relation": "IPv4 companion control/error protocol", "notes": null}],
+  "notes": "Long-lived protocol primitive; diagnostic applications such as ping and traceroute are separate implementation artifacts built from ICMP/IP behavior.",
+  "last_reviewed": "2026-08-29"
+}

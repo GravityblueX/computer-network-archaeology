@@ -14,6 +14,23 @@ Machine-readable edges live in [`../../data/lineage-ledger.csv`](../../data/line
 
 - [`standards-genealogy.md`](standards-genealogy.md) — why networking history should be reconstructed as overlapping genealogies rather than one progress timeline.
 
+### Living standards still on the wire
+
+- [`living-standards-still-on-wire.md`](living-standards-still-on-wire.md) — distinguishes old RFCs that remain current standards, old documents whose protocol lineage survives through successors, and stable cores that accumulated extension forests.
+- [`tcp-rfc793-to-rfc9293-living-standard.md`](tcp-rfc793-to-rfc9293-living-standard.md) — RFC 793 → RFC 9293 as the reference case for an obsolete document whose protocol remains alive through a consolidated successor standard.
+- [`dns-rfc1034-1035-living-core.md`](dns-rfc1034-1035-living-core.md) — RFC 1034/1035 as a 1987 DNS core that survives through extensibility rather than version replacement.
+- [`smtp-message-format-mime-living-core.md`](smtp-message-format-mime-living-core.md) — SMTP transport, RFC 822-descended message syntax, MIME body representation, DNS MX and POP/IMAP as separate old lineages that still cooperate in modern mail.
+
+This section uses three explicit survival classes:
+
+```text
+still-current-original-standard
+obsoleted-document-living-protocol-or-format
+living-core-with-extension-forest
+```
+
+Examples already structured in `records/` include IPv4 RFC 791, UDP RFC 768, ICMP RFC 792, ARP RFC 826, TCP RFC 9293, DNS RFC 1034/1035, SMTP RFC 5321, Internet Message Format RFC 5322 and MIME RFC 2045.
+
 ### Serial interfaces and modems
 
 - [`bell-data-set-rs232-v24.md`](bell-data-set-rs232-v24.md) — Bell data sets, DTE/DCE, RS-232 and V.24/V.28 boundaries.
@@ -108,7 +125,7 @@ may describe a recurring role, but without documentary design links it must **no
 TIP → PAD → terminal server
 ```
 
-The new IGP excavation makes the same point:
+The IGP excavation makes the same point:
 
 ```text
 RIP   OSPF   IS-IS
@@ -124,6 +141,14 @@ BOOTP
 ```
 
 RFC 1531 says DHCP is based on BOOTP, preserves BOOTP relay behavior and adds reusable address allocation/configuration.
+
+Living standards add another distinction:
+
+```text
+RFC 791 IPv4  → still-current-original-standard
+RFC 793 TCP   → RFC 9293 obsoleted-document-living-protocol
+RFC 1034/1035 → living-core-with-extension-forest
+```
 
 A good lineage records both survival and death, and it records the *kind* of survival.
 
@@ -180,6 +205,26 @@ early integrated Transmission Control Program
           IP + TCP
 ```
 
+### A 1981 protocol survives through a 2022 specification
+
+```text
+RFC 793 TCP
+   ↓ decades of normative updates
+RFC 9293 TCP
+```
+
+The document changed; the protocol lineage persisted.
+
+### A 1987 core survives by allowing extensions
+
+```text
+RFC 1034/1035 DNS core
+        ├── new RR types
+        ├── security branches
+        ├── transport branches
+        └── operational branches
+```
+
 ### A narrow bootstrap role grows into configuration-state management
 
 ```text
@@ -197,7 +242,7 @@ SLIP: delimit IP packets on serial bytes
 PPP: negotiate a multi-protocol point-to-point link
 ```
 
-The archive currently records operational coexistence and role expansion, not an unsupported formal `SLIP → PPP` revision claim.
+The archive records operational coexistence and role expansion, not an unsupported formal `SLIP → PPP` revision claim.
 
 ### Parallel routing families under one IGP role
 
@@ -296,30 +341,31 @@ Representative claim-level edges now include:
 - `LIN-0086` — BOOTP → DHCP documented derivation;
 - `LIN-0087` — SLIP ↔ PPP deployed coexistence without invented direct ancestry;
 - `LIN-0088` — OSI IS-IS → Integrated IS-IS direct derivation;
-- `LIN-0089` / `LIN-0090` — negative-lineage records preventing RIP/OSPF/IS-IS from being flattened into a fake upgrade chain.
-
-Structured artifacts now also include RARP, BOOTP, DHCP/RFC2131, SLIP, PPP/RFC1661, RIP/RFC1058, OSPFv2/RFC1583, OSI IS-IS and Integrated IS-IS.
+- `LIN-0089` / `LIN-0090` — negative-lineage records preventing RIP/OSPF/IS-IS from being flattened into a fake upgrade chain;
+- `LIN-0107` — RFC 793 TCP → RFC 9293 consolidated TCP formal revision/continuity;
+- `LIN-0108` — RFC 2822 → RFC 5322 Internet Message Format revision;
+- `LIN-0109` — RFC 2821 → RFC 5321 SMTP revision;
+- `LIN-0110` — Internet Message Format → MIME carried-over extension layer;
+- `LIN-0111` — RFC 1034/1035 DNS core → modern extension ecosystem.
 
 ## Next lineage excavations
 
 The next layer should move below the current summaries:
 
+- **living IPv4:** RFC 791 field/update matrix, RFC 1122 host requirements, CIDR/NAT/fragmentation branches, packet-capture concordance;
+- **living TCP:** RFC 793→9293 normative diff, RTO/security/control-bit changes, Tahoe/Reno/NewReno/SACK/CUBIC/BBR branches kept separate from the base standard;
+- **living UDP/ICMP:** later update matrices and direct packet-capture continuity;
+- **living DNS:** RR-type genealogy, EDNS, DNSSEC, resolver/authoritative implementation branches and transport evolution;
+- **living mail:** RFC 821→2821→5321, RFC 822→2822→5322, MIME 1341→1521→2045, POP/IMAP and mail-submission branches;
 - **DHCP:** RFC 951→1542 BOOTP relay changes, RFC 1531→1541→2131 state-machine diff, options, early server/client source, lease-file formats;
 - **PPP:** RFC 1134→1171→1331→1548→1661 diff, RFC 1549→1662 framing branch, PAP/CHAP/IPCP, CSLIP, Multilink and early access-server implementations;
 - **IGPs:** RIP prehistory/RIP-2, HELLO source, OSPF RFC revision chain and first implementations, ISO 10589/IS-IS edition history and early Integrated IS-IS deployments;
 - **RADIUS:** pre-RFC Livingston implementation, ComOS client/server behavior, UDP 1645/1646→1812/1813, Accounting RFC 2059→2139→2866, then later 802.1X/EAP uses only with direct evidence;
-- **TIP:** processor/terminal scanner boards, port buffers, modem lines, user command software, named deployed sites;
-- **PAD:** actual Tymnet/Telenet/Transpac/DATAPAC PAD products and user command sets;
-- **DECserver/LAT:** DECserver 100 BOM/firmware/downline loading, LAT service advertisements/session setup/load balancing;
-- **access servers:** Cisco STS/MSM/ASM/500-CS and Livingston PortMaster/ComOS hardware/software genealogy;
-- **bridge/STP:** DEC LANbridge 100 PDU/timer/state machine, IEEE 802.1D diffs, RSTP/MSTP;
-- **switching/VLAN:** Kalpana EtherSwitch BOM/ASIC history, 802.1Q tag/membership details, vendor VLAN predecessors;
-- **MNP/V.42:** original Microcom specs, LAPM state machine, negotiation traces, MNP5 vs V.42bis;
-- **Hayes:** first Smartmodem manuals, S-register diffs, UUCP/BBS/SLIP/PPP modem drivers, formal ETSI/3GPP AT ancestry;
-- **Ethernet:** autonegotiation and high-speed PHY lineage;
+- **TIP/PAD/terminal servers:** boards, firmware, port buffers, command sets and named deployments;
+- **bridge/STP/switching:** DEC LANbridge, IEEE 802.1D diffs, RSTP/MSTP, Kalpana hardware and VLAN predecessors;
+- **MNP/V.42/Hayes:** original vendor specs, negotiation traces, command/register diffs and later standardization branches;
 - **SNMP:** HMP implementation → SGMP source → first SNMP agents; SMI/MIB genealogy;
-- **applications:** NCP Telnet/FTP/mail → TCP-era application protocol revisions;
-- **DNS:** host tables → Jeeves/BIND server implementations.
+- **DNS implementations:** host tables → Jeeves/BIND server implementations.
 
 ## Completion criterion
 

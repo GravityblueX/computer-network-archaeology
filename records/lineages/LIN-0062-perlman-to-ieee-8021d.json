@@ -1,0 +1,52 @@
+{
+  "id": "LIN-0062",
+  "from": {
+    "artifact_id": null,
+    "name": "Radia Perlman distributed spanning-tree bridge design",
+    "revision": "SIGCOMM 1985",
+    "historical_term": "distributed spanning tree"
+  },
+  "to": {
+    "artifact_id": "ART-0103",
+    "name": "IEEE 802.1D MAC Bridges spanning-tree lineage",
+    "revision": "IEEE 802.1D-1990 generation",
+    "historical_term": "Spanning Tree Protocol"
+  },
+  "relation": "influenced",
+  "scope": ["link", "architecture"],
+  "property": "Distributed root selection and computation of a loop-free spanning subset of a redundantly connected extended LAN become part of the standardized bridge loop-control lineage.",
+  "date_or_range": {
+    "value": "1985/1990",
+    "precision": "range",
+    "notes": "The 1985 paper documents the distributed spanning-tree bridge algorithm; RFC 1493 later documents the IEEE 802.1D-1990 bridge/STP operational model."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {
+      "source_ref": "SRC-0079",
+      "locator": "SIGCOMM 1985 paper, algorithm/extended-LAN design",
+      "supports": "distributed spanning-tree bridge design, root/path computation and loop-free active topology",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0080",
+      "locator": "RFC 1493, IEEE 802.1D-1990 bridge/STP objects and dot1dStpProtocolSpecification",
+      "supports": "operational existence of an IEEE 802.1D spanning-tree lineage and its distinction from DEC LANbridge 100 STP",
+      "notes": "The exact DEC/IEEE committee revision path still requires primary standards/implementation records."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that the 1985 paper is byte-for-byte identical to the IEEE 802.1D-1990 protocol specification.",
+    "This edge does not collapse DEC LANbridge 100 STP and IEEE 802.1D STP into one wire protocol.",
+    "This edge does not establish the exact date at which each algorithmic detail entered the IEEE standard."
+  ],
+  "open_questions": [
+    "Acquire DEC bridge manuals and protocol descriptions preceding IEEE 802.1D-1990.",
+    "Recover IEEE 802.1 committee history showing the transition from DEC implementation/design work to standardized STP.",
+    "Build PDU, timer and state-machine diffs between DEC LANbridge 100 STP and IEEE 802.1D editions.",
+    "Trace later RSTP and MSTP revisions as separate formal descendants."
+  ],
+  "notes": "A design-influence edge intentionally weaker than revision-of: algorithmic ancestry is documented, but exact standards wording and wire-format genealogy must be reconstructed separately.",
+  "last_reviewed": "2026-08-29"
+}

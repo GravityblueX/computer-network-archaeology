@@ -1,0 +1,59 @@
+{
+  "id": "LIN-0079",
+  "from": {
+    "artifact_id": "ART-0029",
+    "name": "serial/Ethernet terminal-server role",
+    "revision": "DECserver/LAT-era example",
+    "historical_term": "terminal server"
+  },
+  "to": {
+    "artifact_id": "ART-0030",
+    "name": "dial IP access-server role",
+    "revision": "Livingston PortMaster-era example",
+    "historical_term": "access server"
+  },
+  "relation": "role-descends-into",
+  "scope": ["interface", "network", "application", "operations"],
+  "property": "The many-serial-ports-to-network edge role expands from interactive terminal/session attachment into subscriber-link termination that negotiates SLIP/PPP, authenticates users and attaches them as routed IP endpoints.",
+  "date_or_range": {
+    "value": "1985-1995",
+    "precision": "range",
+    "notes": "DECserver 100/LAT represents a mature LAN terminal-server role; Cisco 1992 documents router/terminal-server convergence; Livingston 1995 documents PPP/SLIP dial access."
+  },
+  "certainty": "confirmed",
+  "directness": "scholarly-reconstruction",
+  "sources": [
+    {
+      "source_ref": "SRC-0090",
+      "locator": "DEC LAT Architecture Network Manager's Guide, DECserver 100 documentation/product environment",
+      "supports": "LAN terminal-server role and DECserver/LAT architecture",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0092",
+      "locator": "Cisco 1992 communications-server announcement",
+      "supports": "contemporary commercial convergence of terminal-server and remote-router roles",
+      "notes": "Important bridge evidence between category labels, not proof of DEC-to-Cisco product descent."
+    },
+    {
+      "source_ref": "SRC-0091",
+      "locator": "PortMaster configuration guide, SLIP/PPP and PAP/CHAP sections",
+      "supports": "dial access server terminating serial subscriber links, negotiating IP link protocols and authenticating users",
+      "notes": null
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim Livingston PortMaster hardware or source code derives from DECserver hardware/software.",
+    "This edge does not claim X.25 PAD, LAT terminal server and PPP access server use one continuous wire protocol.",
+    "This edge does not imply that terminal servers disappeared when dial access servers became common; roles coexisted and products often combined them."
+  ],
+  "open_questions": [
+    "Trace specific commercial product-family transitions from terminal server to communications/access server.",
+    "Recover Cisco STS/MSM/ASM/500-CS configuration manuals and hardware BOMs.",
+    "Reconstruct Livingston PortMaster model/ComOS chronology and RADIUS integration.",
+    "Identify earlier TCP/IP terminal servers supporting SLIP/PPP before PortMaster and compare roles.",
+    "Build a port/session/authentication responsibility matrix across TIP, PAD, DECserver and access servers."
+  ],
+  "notes": "Reference example of role genealogy: a recurring edge function gains new protocol and authentication responsibilities without requiring direct vendor or source-code ancestry.",
+  "last_reviewed": "2026-08-29"
+}

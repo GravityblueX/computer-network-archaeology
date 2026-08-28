@@ -1,0 +1,58 @@
+{
+  "id": "LIN-0075",
+  "from": {
+    "artifact_id": "ART-0110",
+    "name": "Hayes Standard AT Command Set",
+    "revision": "Hayes Smartmodem-era command family",
+    "historical_term": "AT command set"
+  },
+  "to": {
+    "artifact_id": null,
+    "name": "Third-party Hayes-compatible modem command sets",
+    "revision": null,
+    "historical_term": "Hayes-compatible"
+  },
+  "relation": "interface-convention-inherited-by",
+  "scope": ["interface", "application", "operations"],
+  "property": "Third-party modem vendors implement a compatible AT-prefixed command/result-code interface so existing communications software can control multiple modem brands through similar serial command strings.",
+  "date_or_range": {
+    "value": "1980s-1990s",
+    "precision": "range",
+    "notes": "Hayes compatibility becomes an ecosystem property rather than an exact single-vendor implementation."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [
+    {
+      "source_ref": "SRC-0085",
+      "locator": "Hayes Technical Reference for Modem Users, command-set terminology and command/register descriptions",
+      "supports": "source command-family semantics and Hayes Standard AT Command Set identity",
+      "notes": "Later Hayes reference; earliest Smartmodem grammar still requires first-generation manuals."
+    },
+    {
+      "source_ref": "SRC-0087",
+      "locator": "IBM PS/2 OEM hardware guide, modem product descriptions",
+      "supports": "third-party products explicitly sold/described as Hayes or Smartmodem compatible",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0086",
+      "locator": "PC-SAM sample Hayes Smartmodem 1200 driver",
+      "supports": "real software depending on AT initialization/dialing, CONNECT responses and escape/reset behavior",
+      "notes": "Shows why compatibility mattered to software portability."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that all Hayes-compatible modems implement identical commands, registers, defaults or result codes.",
+    "This edge does not claim that Hayes compatibility was initially a formal standards-body standard.",
+    "This edge does not establish direct ancestry from Hayes commands to later cellular/3GPP AT command standards; that branch still needs documentary proof."
+  ],
+  "open_questions": [
+    "Build a vendor/model compatibility matrix for Hayes, USRobotics, Telebit, Supra, MultiTech, Zoom and ZyXEL command sets.",
+    "Recover early communications-software modem-driver files and UUCP dialer definitions demonstrating compatibility assumptions.",
+    "Trace formal ETSI/3GPP AT-command specifications and determine what sources explicitly cite Hayes-style ancestry.",
+    "Separate core AT grammar inheritance from vendor-specific %, &, backslash, plus and other extension namespaces."
+  ],
+  "notes": "Canonical de-facto-standard edge: software dependency and competitive implementation turn a product interface into an ecosystem convention without requiring exact identity.",
+  "last_reviewed": "2026-08-29"
+}

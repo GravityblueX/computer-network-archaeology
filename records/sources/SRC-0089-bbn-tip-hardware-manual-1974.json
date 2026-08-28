@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0089",
+  "source_type": "manual",
+  "title": "Terminal Interface Message Processor: The BBN TIP Hardware Manual",
+  "authors_or_bodies": ["Bolt Beranek and Newman Inc."],
+  "date": {"value": "1974", "precision": "year", "certainty": "confirmed", "notes": "NTIS/NTRL catalog publication date."},
+  "edition_or_revision": "1974 TIP Hardware Manual",
+  "identifiers": [{"scheme": "NTIS", "value": "ADA002481"}],
+  "publisher_or_issuer": "BBN / U.S. government-sponsored technical-report distribution",
+  "language": ["en"],
+  "topics": ["ARPANET", "TIP", "terminal access", "RS-232C", "modem control", "serial ports", "BBN"],
+  "artifact_ids": ["ART-0013"],
+  "access": {
+    "canonical_url": "https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/ADA002481.xhtml",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": 106, "ocr_status": "not-applicable", "scan_notes": "NTRL catalog record gives authenticated report metadata; acquire/register the full report representation separately."},
+  "rights_status": "government-work-check-jurisdiction",
+  "redistribution_notes": "Government-sponsored report; confirm copyright/government-work status of BBN-authored content before mirroring.",
+  "provenance": {"original_holder": "BBN / ARPA-sponsored program", "current_holder": "National Technical Reports Library / NTIS", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "The BBN TIP provides means for connecting up to 63 terminal devices to the ARPA Network.",
+      "locator": "NTRL abstract for ADA002481",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0013"],
+      "notes": null
+    },
+    {
+      "claim": "The TIP terminal interface conforms to EIA RS-232C and permits direct connection to most data modems.",
+      "locator": "NTRL abstract for ADA002481",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0013"],
+      "notes": null
+    },
+    {
+      "claim": "Each of the TIP's 64 ports provides program-settable control lines and monitors external status lines in addition to full-duplex serial data.",
+      "locator": "NTRL abstract for ADA002481",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0013"],
+      "notes": "Full manual should be mined for exact board-level port scanner/interface implementation."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Critical primary hardware source for treating TIP as serial/modem edge equipment rather than an abstract ARPANET milestone.",
+  "last_reviewed": "2026-08-29"
+}

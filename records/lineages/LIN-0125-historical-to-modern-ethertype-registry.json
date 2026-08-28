@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0125",
+  "from": {"artifact_id":null,"name":"historical Ethernet/DIX/IEEE protocol type assignments","revision":"early Ethernet through standardized EtherType regime","historical_term":"EtherType assignments"},
+  "to": {"artifact_id":"ART-0175","name":"modern EtherType protocol-identifier namespace and registry lineage","revision":"current IEEE RA / informational IANA table","historical_term":"EtherType registry"},
+  "relation": "survives-as",
+  "scope": ["link", "framing", "institutional"],
+  "property": "Protocol identity values such as IPv4 0x0800 and ARP 0x0806 survive across Ethernet generations while registry governance/display moves into modern IEEE RA and informational IANA processes.",
+  "date_or_range": {"value":"1980s-present","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [
+    {"source_ref":"SRC-0166","locator":"IANA IEEE 802 Numbers EtherType table","supports":"continued famous protocol identifiers and historical transition notes","notes":null},
+    {"source_ref":"SRC-0172","locator":"RFC 9542 Sections 3 and 5.4-5.5","supports":"current EtherType definition and IEEE RA assignment authority","notes":null}
+  ],
+  "negative_claims": ["This edge does not claim IANA is the EtherType assignment authority; IEEE RA is.", "It does not claim every historical Ethernet protocol identifier remained valid or unchanged."],
+  "open_questions": ["Build exact DIX→IEEE EtherType assignment/revision chronology."],
+  "notes": "Machine-readable numeric identities can survive while institutional registry machinery changes.",
+  "last_reviewed": "2026-08-29"
+}

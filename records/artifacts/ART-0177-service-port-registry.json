@@ -1,0 +1,22 @@
+{
+  "id": "ART-0177",
+  "canonical_name": "Internet service-name and transport port-number registry lineage",
+  "aliases": ["TCP/UDP port registry", "Service Name and Transport Protocol Port Number Registry"],
+  "kind": "standard",
+  "parent_family": "Internet transport/application parameters",
+  "manufacturer_or_body": ["IANA", "IETF"],
+  "networks_or_families": ["TCP", "UDP", "SCTP", "DCCP", "Internet applications"],
+  "roles": ["coordinate transport rendezvous conventions", "associate service names with transport-specific port assignments", "preserve assignment/de-assignment history"],
+  "protocols": ["TCP", "UDP", "SCTP", "DCCP"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace exact earliest assignment dates for classic ports.", "Diff RFC 1340/RFC 1700 against the live registry.", "Reconstruct /etc/services genealogy and de-assigned-port cemetery."],
+  "sources": [
+    {"source_id":"SRC-0168","supports":["current port ranges and registration metadata","current BGP 179 and HTTPS 443 entries","service-name/transport tuple model"],"locator":"IANA Service Name and Port Number Registry","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0169","supports":["1992 well-known/registered port snapshot"],"locator":"RFC 1340 Well Known Port Numbers section","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0170","supports":["1994 Assigned Numbers port snapshot"],"locator":"RFC 1700 port sections","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0097","relation":"uses-rendezvous-convention","notes":"BGP uses TCP port 179 in its long-lived transport convention."},{"id":"ART-0156","relation":"uses-rendezvous-convention","notes":"SMTP service assignments belong to the same port/service registry ecosystem."}],
+  "notes": "A numeric/service namespace whose assignments propagate into RFCs, /etc/services, socket APIs, firewalls, analyzers and application defaults.",
+  "last_reviewed": "2026-08-29"
+}

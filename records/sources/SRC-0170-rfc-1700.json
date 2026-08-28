@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0170",
+  "source_type": "rfc",
+  "title": "Assigned Numbers",
+  "authors_or_bodies": ["Joyce K. Reynolds", "Jon Postel"],
+  "date": {"value":"1994-10","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 1700 / STD 2 historical snapshot",
+  "identifiers": [{"scheme":"RFC","value":"1700"}],
+  "publisher_or_issuer": "RFC Editor / IANA parameter publication lineage",
+  "language": ["en"],
+  "topics": ["Assigned Numbers", "protocol parameters", "port numbers", "Internet registries", "STD 2"],
+  "artifact_ids": ["ART-0178"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc1700/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 1700 is the October 1994 Assigned Numbers snapshot, formerly STD 2, and formally obsoletes RFC 1340 plus a long chain of earlier Assigned Numbers RFCs/IENs.","locator":"header and overview","certainty":"confirmed","artifact_ids":["ART-0178"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Last major RFC snapshot before the publication model was formally moved to online IANA registries.",
+  "last_reviewed": "2026-08-29"
+}

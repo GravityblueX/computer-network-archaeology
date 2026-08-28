@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0167",
+  "source_type": "web-page",
+  "title": "IANA Protocol Numbers Registry",
+  "authors_or_bodies": ["Internet Assigned Numbers Authority"],
+  "date": {"value":"2026-03-09","precision":"day","certainty":"confirmed","notes":"Registry last-updated value observed during the August 2026 excavation."},
+  "edition_or_revision": "live registry snapshot",
+  "identifiers": [],
+  "publisher_or_issuer": "IANA",
+  "language": ["en"],
+  "topics": ["IPv4 Protocol field", "IPv6 Next Header", "protocol numbers", "ICMP", "TCP", "UDP", "GRE", "IPsec"],
+  "artifact_ids": ["ART-0176"],
+  "access": {"canonical_url":"https://www.iana.org/assignments/protocol-numbers/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"The registry identifies values used for the IPv4 Protocol field and the IPv6 Next Header field.","locator":"registry introduction","certainty":"confirmed","artifact_ids":["ART-0176"],"notes":null},
+    {"claim":"Current assignments include 1=ICMP, 6=TCP, 17=UDP, 47=GRE, 50=ESP, 51=AH, 58=ICMPv6 and 89=OSPF, while historical protocols such as GGP, PUP and HMP remain visible in the same namespace.","locator":"Protocol Numbers table","certainty":"confirmed","artifact_ids":["ART-0176"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "A live registry combining strongly deployed protocol identities with historical/deprecated branches.",
+  "last_reviewed": "2026-08-29"
+}

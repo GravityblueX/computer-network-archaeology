@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0169",
+  "source_type": "rfc",
+  "title": "Assigned Numbers",
+  "authors_or_bodies": ["Joyce K. Reynolds", "Jon Postel"],
+  "date": {"value":"1992-07","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 1340",
+  "identifiers": [{"scheme":"RFC","value":"1340"}],
+  "publisher_or_issuer": "RFC Editor / IANA parameter publication lineage",
+  "language": ["en"],
+  "topics": ["Assigned Numbers", "protocol numbers", "well-known ports", "registered ports", "Internet parameters"],
+  "artifact_ids": ["ART-0178"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc1340/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 1340 is a period snapshot of Internet assigned protocol parameters including IP protocol numbers and well-known/registered port numbers.","locator":"Protocol Numbers and Well Known Port Numbers sections","certainty":"confirmed","artifact_ids":["ART-0178"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Frozen 1992 parameter-state artifact suitable for diffing against RFC 1700 and live IANA registries.",
+  "last_reviewed": "2026-08-29"
+}

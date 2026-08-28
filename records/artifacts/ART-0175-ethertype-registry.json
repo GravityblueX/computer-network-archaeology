@@ -1,0 +1,21 @@
+{
+  "id": "ART-0175",
+  "canonical_name": "EtherType protocol-identifier namespace and registry lineage",
+  "aliases": ["EtherType registry", "Ethernet protocol type namespace"],
+  "kind": "standard",
+  "parent_family": "Ethernet / IEEE 802",
+  "manufacturer_or_body": ["IEEE Registration Authority", "IANA informational registry"],
+  "networks_or_families": ["Ethernet", "IEEE 802"],
+  "roles": ["identify higher-layer protocol/content in Ethernet frames", "preserve protocol identifiers across link-layer generations"],
+  "protocols": ["Ethernet"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build decade-by-decade EtherType assignment diff.", "Trace DIX Type field and IEEE 802.3 length/type coexistence precisely.", "Catalog extinct EtherType protocol families and current implementation constants."],
+  "sources": [
+    {"source_id":"SRC-0166","supports":["historical/current EtherType values including IPv4, ARP and IPv6","historical transition notes"],"locator":"IANA IEEE 802 Numbers EtherType table","quotation_checked":false,"notes":"Informational table, not assignment authority."},
+    {"source_id":"SRC-0172","supports":["EtherType definition","IEEE RA assignment authority","IANA informational role"],"locator":"RFC 9542 Sections 3, 5.4-5.5","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0150","relation":"identifies-payload","notes":"IPv4 commonly uses EtherType 0x0800."},{"id":"ART-0153","relation":"identifies-payload","notes":"ARP commonly uses EtherType 0x0806."}],
+  "notes": "A 16-bit numeric namespace whose famous assignments outlived the original Ethernet hardware and software generations that first used them.",
+  "last_reviewed": "2026-08-29"
+}

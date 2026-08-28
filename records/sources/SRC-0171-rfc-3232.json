@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0171",
+  "source_type": "rfc",
+  "title": "Assigned Numbers: RFC 1700 is Replaced by an On-line Database",
+  "authors_or_bodies": ["Joyce K. Reynolds"],
+  "date": {"value":"2002-01","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 3232",
+  "identifiers": [{"scheme":"RFC","value":"3232"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["Assigned Numbers", "IANA", "online registry", "RFC 1700", "registry publication"],
+  "artifact_ids": ["ART-0178"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc3232/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 3232 formally obsoletes RFC 1700 and states that the periodic Assigned Numbers RFC series had been replaced by an online IANA database.","locator":"Abstract and Description","certainty":"confirmed","artifact_ids":["ART-0178"],"notes":null},
+    {"claim":"RFC 3232 describes RFC 1700 as an October 1994 snapshot and warns that its values are incomplete and may be wrong compared with the live database.","locator":"Description","certainty":"confirmed","artifact_ids":["ART-0178"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Primary evidence for the institutional/publication transition from periodic RFC snapshots to live registries.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ART-0178",
+  "canonical_name": "Assigned Numbers publication and registry-maintenance system",
+  "aliases": ["Assigned Numbers RFC series", "STD 2 parameter publication lineage"],
+  "kind": "document",
+  "parent_family": "Internet protocol parameter registries",
+  "manufacturer_or_body": ["IANA", "RFC Editor", "USC/ISI Internet community"],
+  "networks_or_families": ["Internet standards infrastructure"],
+  "roles": ["publish snapshots of unique Internet protocol parameter assignments", "coordinate machine-readable interoperability identifiers", "transition from periodic RFC snapshots to live online registries"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Reconstruct the full Assigned Numbers RFC/IEN publication series from 1977 to 1994.", "Diff protocol/port/Ethernet-adjacent parameter tables across snapshots.", "Document operational workflow and tooling behind the early IANA database."],
+  "sources": [
+    {"source_id":"SRC-0169","supports":["1992 Assigned Numbers snapshot"],"locator":"RFC 1340","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0170","supports":["1994 Assigned Numbers snapshot and predecessor chain"],"locator":"RFC 1700 header/overview","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0171","supports":["formal replacement of RFC 1700 snapshots by an online IANA database"],"locator":"RFC 3232 Abstract/Description","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0176","relation":"publishes-namespace","notes":"Protocol-number tables were one part of Assigned Numbers."},{"id":"ART-0177","relation":"publishes-namespace","notes":"Port/service assignments were another major part."}],
+  "notes": "A standards-infrastructure artifact: the publication medium and maintenance workflow changed while many assigned numeric identities continued unchanged.",
+  "last_reviewed": "2026-08-29"
+}

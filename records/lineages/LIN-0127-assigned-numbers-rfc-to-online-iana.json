@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0127",
+  "from": {"artifact_id":"ART-0178","name":"periodic Assigned Numbers RFC snapshots","revision":"RFC series through RFC 1700 / 1994","historical_term":"Assigned Numbers / STD 2"},
+  "to": {"artifact_id":"ART-0178","name":"online IANA protocol-parameter databases","revision":"post-1994 online database formally recognized by RFC 3232","historical_term":"IANA registries"},
+  "relation": "replaced-by",
+  "scope": ["institutional", "management", "operations"],
+  "property": "Periodic RFC snapshots of assigned Internet protocol parameters are replaced as the authoritative publication mechanism by continuously maintained online IANA databases.",
+  "date_or_range": {"value":"1994-2002","precision":"range","notes":"Online databases replaced the RFC series after 1994; RFC 3232 formally recorded/ratified this fact in 2002."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref":"SRC-0170","locator":"RFC 1700 header and overview","supports":"last major Assigned Numbers RFC snapshot / predecessor chain","notes":null},
+    {"source_ref":"SRC-0171","locator":"RFC 3232 Abstract and Description","supports":"formal obsolescence of RFC 1700 and replacement by online IANA database","notes":null}
+  ],
+  "negative_claims": ["This edge does not mean the assigned numbers themselves were renumbered when the publication medium changed.", "It does not imply RFC 1700 remains reliable for current assignments; RFC 3232 explicitly warns it is incomplete and may be wrong."],
+  "open_questions": ["Reconstruct the complete 1977-1994 Assigned Numbers publication series and database workflow."],
+  "notes": "Standards-infrastructure genealogy: publication and maintenance process changed while many numeric identities survived.",
+  "last_reviewed": "2026-08-29"
+}

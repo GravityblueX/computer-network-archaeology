@@ -1,0 +1,22 @@
+{
+  "id": "ART-0176",
+  "canonical_name": "IP Protocol / IPv6 Next Header number namespace",
+  "aliases": ["IP Protocol Numbers", "IPv6 Next Header registry"],
+  "kind": "standard",
+  "parent_family": "Internet Protocol parameters",
+  "manufacturer_or_body": ["IANA", "IETF and predecessor Internet community"],
+  "networks_or_families": ["IPv4", "IPv6"],
+  "roles": ["identify payload/next protocol in IPv4", "identify next header in IPv6", "preserve protocol identities across network-layer generations"],
+  "protocols": ["IPv4", "IPv6"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Diff RFC 1340, RFC 1700 and live registry row by row.", "Classify every number as living, niche, deprecated, experimental or historical.", "Trace BSD/Linux protocol-dispatch constants and tables."],
+  "sources": [
+    {"source_id":"SRC-0167","supports":["current protocol-number assignments","reuse of number namespace for IPv6 Next Header","living and historical protocol names"],"locator":"IANA Protocol Numbers registry","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0169","supports":["1992 protocol-number snapshot"],"locator":"RFC 1340 Protocol Numbers section","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0170","supports":["1994 Assigned Numbers snapshot"],"locator":"RFC 1700 protocol parameter sections","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0151","relation":"assigns-identity-to","notes":"UDP uses protocol number 17."},{"id":"ART-0152","relation":"assigns-identity-to","notes":"ICMP uses protocol number 1."},{"id":"ART-0154","relation":"assigns-identity-to","notes":"TCP uses protocol number 6."}],
+  "notes": "One-byte protocol identity namespace containing both modern infrastructure and names of dead Internet protocol families.",
+  "last_reviewed": "2026-08-29"
+}

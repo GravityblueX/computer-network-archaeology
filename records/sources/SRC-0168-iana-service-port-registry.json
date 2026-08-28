@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0168",
+  "source_type": "web-page",
+  "title": "IANA Service Name and Transport Protocol Port Number Registry",
+  "authors_or_bodies": ["Internet Assigned Numbers Authority"],
+  "date": {"value":"2026-08-17","precision":"day","certainty":"confirmed","notes":"Registry last-updated value observed during the August 2026 excavation."},
+  "edition_or_revision": "live registry snapshot",
+  "identifiers": [],
+  "publisher_or_issuer": "IANA",
+  "language": ["en"],
+  "topics": ["service names", "TCP ports", "UDP ports", "SCTP ports", "BGP 179", "HTTPS 443", "registration policy"],
+  "artifact_ids": ["ART-0177"],
+  "access": {"canonical_url":"https://www.iana.org/assignments/service-names-port-numbers/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"The registry divides the 16-bit port space into System Ports 0-1023, User Ports 1024-49151 and Dynamic/Private Ports 49152-65535.","locator":"registry note / RFC 6335 summary","certainty":"confirmed","artifact_ids":["ART-0177"],"notes":null},
+    {"claim":"The live registry records BGP on port 179/tcp and HTTPS-related service assignments on port 443, while also preserving modification and de-assignment metadata for other entries.","locator":"service rows and registry columns","certainty":"confirmed","artifact_ids":["ART-0177"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Port numbers must be interpreted with transport protocol, service name, date and registration state; the bare integer is not the whole artifact.",
+  "last_reviewed": "2026-08-29"
+}

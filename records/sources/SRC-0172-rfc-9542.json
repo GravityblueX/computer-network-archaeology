@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0172",
+  "source_type": "rfc",
+  "title": "IANA Considerations and IETF Protocol and Documentation Usage for IEEE 802 Parameters",
+  "authors_or_bodies": ["Donald Eastlake 3rd", "Joe Abley", "Yizhou Li"],
+  "date": {"value":"2024-04","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 9542 / BCP 141",
+  "identifiers": [{"scheme":"RFC","value":"9542"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["EtherType", "IEEE Registration Authority", "IEEE 802", "IANA OUI", "protocol identifiers"],
+  "artifact_ids": ["ART-0175"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc9542/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 9542 states that EtherTypes are 16-bit Ethernet protocol identifiers and that EtherTypes/LSAPs are assigned by the IEEE Registration Authority rather than IANA.","locator":"Section 3","certainty":"confirmed","artifact_ids":["ART-0175"],"notes":null},
+    {"claim":"RFC 9542 describes the IANA IEEE 802 Numbers group as informational material reflecting IEEE RA assignments and specifies the IETF process for requesting new EtherTypes.","locator":"Sections 5.4-5.5 and Appendix B","certainty":"confirmed","artifact_ids":["ART-0175"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Important provenance/authority record: registry presentation and assignment authority are distinct.",
+  "last_reviewed": "2026-08-29"
+}

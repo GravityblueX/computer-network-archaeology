@@ -1,0 +1,20 @@
+{
+  "id": "LIN-0128",
+  "from": {"artifact_id":null,"name":"early well-known and registered port assignments","revision":"Assigned Numbers RFC-era tables","historical_term":"well-known ports"},
+  "to": {"artifact_id":"ART-0177","name":"modern Service Name and Transport Protocol Port Number Registry","revision":"RFC 6335-era live IANA registry","historical_term":"service names / port numbers"},
+  "relation": "survives-as",
+  "scope": ["transport", "application", "institutional"],
+  "property": "Classic service rendezvous assignments persist inside a richer live registry that tracks service names, transport protocols, registration states, modifications and de-assignments.",
+  "date_or_range": {"value":"1980s-present","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [
+    {"source_ref":"SRC-0169","locator":"RFC 1340 Well Known Port Numbers section","supports":"1992 snapshot of classic port assignments","notes":null},
+    {"source_ref":"SRC-0170","locator":"RFC 1700 port tables","supports":"1994 snapshot and continuity","notes":null},
+    {"source_ref":"SRC-0168","locator":"current IANA Service Name and Port Number Registry","supports":"current registry model, ranges and surviving assignments","notes":null}
+  ],
+  "negative_claims": ["This edge does not claim a port number uniquely identifies application traffic in every deployment.", "It does not claim the same bare number has one meaning across all transport protocols."],
+  "open_questions": ["Determine exact earliest assignment dates and transitions for individual long-lived ports."],
+  "notes": "The arbitrary rendezvous number appears natural only after decades of stable shared convention.",
+  "last_reviewed": "2026-08-29"
+}

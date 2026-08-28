@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0126",
+  "from": {"artifact_id":"ART-0176","name":"IPv4 Protocol number namespace","revision":"IPv4 Protocol field lineage","historical_term":"Protocol"},
+  "to": {"artifact_id":"ART-0176","name":"IPv6 Next Header use of the protocol-number namespace","revision":"IPv6 use within same IANA registry","historical_term":"Next Header"},
+  "relation": "carried-over",
+  "scope": ["network", "architecture"],
+  "property": "The numeric namespace used to identify IPv4 payload protocols is carried into IPv6 Next Header semantics even though the IPv6 base/header architecture is not a wire-compatible revision of IPv4.",
+  "date_or_range": {"value":"1981-present","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0167","locator":"IANA Protocol Numbers registry introduction and table","supports":"same registry values used for IPv4 Protocol and IPv6 Next Header","notes":null}],
+  "negative_claims": ["This edge does not claim IPv6 inherited the IPv4 header format.", "It does not claim every Protocol value is valid or used identically in every IPv6 header chain."],
+  "open_questions": ["Trace exact transition documents and extension-header handling rules by protocol number."],
+  "notes": "A numeric interoperability namespace survives a major network-layer redesign.",
+  "last_reviewed": "2026-08-29"
+}

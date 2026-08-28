@@ -1,0 +1,59 @@
+{
+  "id": "LIN-0034",
+  "from": {
+    "artifact_id": null,
+    "name": "Border Gateway Protocol 3",
+    "revision": "RFC 1267 / October 1991",
+    "historical_term": "BGP-3"
+  },
+  "to": {
+    "artifact_id": "ART-0097",
+    "name": "Border Gateway Protocol 4",
+    "revision": "RFC 1771 / March 1995",
+    "historical_term": "BGP-4"
+  },
+  "relation": "revision-of",
+  "scope": ["routing", "network", "addressing", "architecture"],
+  "property": "The BGP protocol family is revised to support classless IP-prefix reachability and route/AS-path aggregation while retaining the inter-AS path-vector/policy role.",
+  "date_or_range": {
+    "value": "1991-10/1995-03",
+    "precision": "range",
+    "notes": "BGP-3 is documented in RFC 1267; RFC 1771 identifies itself as BGP-4 and describes the earlier versions explicitly."
+  },
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {
+      "source_ref": "RFC 1267",
+      "locator": "title page, protocol version and appendix/version history",
+      "supports": "identity of BGP-3 and its place after RFC 1163/BGP-2",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0071",
+      "locator": "RFC 1771, Section 2 and appendices describing BGP-4/version changes",
+      "supports": "BGP-4 identity, classless prefixes, route aggregation, AS-path aggregation and BGP-1/2/3/4 naming",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0072",
+      "locator": "RFC 1519, Sections 3.3 and 4.1-4.4",
+      "supports": "CIDR requirement for arbitrary network+mask routes, longest-match behavior and route aggregation",
+      "notes": "Shows that the classless transformation belongs to a broader address/routing-scaling lineage, not only to BGP's internal history."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that BGP-4 invented CIDR; CIDR requirements were developed in a related address-allocation/interdomain-routing standards lineage.",
+    "This edge does not claim that publication of RFC 1771 instantly eliminated every BGP-3 session in production.",
+    "This edge does not imply that all BGP-3 encodings or policy semantics survived unchanged."
+  ],
+  "open_questions": [
+    "Recover the first production BGP-4 deployments and their dates.",
+    "Identify exact Cisco, NSFNET/ANS, gated and other software releases implementing BGP-4.",
+    "Recover BGP-3/BGP-4 interoperability and version-negotiation incident reports.",
+    "Find early BGP-4 routing-table dumps demonstrating prefix aggregation in operational use.",
+    "Build a field-by-field UPDATE/path-attribute diff between RFC 1267 and RFC 1771."
+  ],
+  "notes": "Reference example of a protocol revision whose defining change intersects another standards genealogy (CIDR).",
+  "last_reviewed": "2026-08-28"
+}

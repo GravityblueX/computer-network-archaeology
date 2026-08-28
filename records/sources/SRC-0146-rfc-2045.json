@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0146",
+  "source_type": "rfc",
+  "title": "Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies",
+  "authors_or_bodies": ["Ned Freed", "Nathaniel Borenstein"],
+  "date": {"value": "1996-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2045",
+  "identifiers": [{"scheme": "RFC", "value": "2045"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["MIME", "email body format", "media types", "multipart", "transfer encoding"],
+  "artifact_ids": ["ART-0158"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc2045/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "IETF MIME/email community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 2045 extends the Internet message format to support non-ASCII text, non-text media, multipart message bodies and transfer encodings rather than replacing the entire mail architecture.", "locator": "RFC 2045 Abstract", "certainty": "confirmed", "artifact_ids": ["ART-0158"], "notes": null},
+    {"claim": "MIME is explicitly rooted in the RFC 822 message representation lineage.", "locator": "RFC 2045 Abstract/Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0158"], "notes": "Supports extension-layer-over-living-format classification."}
+  ],
+  "conflicts": [],
+  "notes": "Part One of the MIME standards family; companion MIME documents should be modeled separately.",
+  "last_reviewed": "2026-08-29"
+}

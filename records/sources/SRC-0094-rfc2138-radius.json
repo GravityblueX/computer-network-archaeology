@@ -1,0 +1,39 @@
+{
+  "id": "SRC-0094",
+  "source_type": "rfc",
+  "title": "Remote Authentication Dial In User Service (RADIUS)",
+  "authors_or_bodies": ["Carl Rigney", "Allan C. Rubens", "William Allen Simpson", "Steve Willens"],
+  "date": {"value": "1997-04", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2138",
+  "identifiers": [{"scheme": "RFC", "value": "2138"}, {"scheme": "DOI", "value": "10.17487/RFC2138"}],
+  "publisher_or_issuer": "IETF / RFC Editor",
+  "language": ["en"],
+  "topics": ["RADIUS", "Network Access Server", "authentication", "authorization", "PPP", "CHAP", "RFC revision"],
+  "artifact_ids": ["ART-0113"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc2138.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc2138/"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer RFC Editor canonical representations.",
+  "provenance": {"original_holder": "IETF RADIUS working group", "current_holder": "RFC Editor", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "RFC 2138 formally obsoletes RFC 2058 while retaining the RADIUS protocol title and core NAS/server architecture.",
+      "locator": "RFC header/About this RFC and Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": "Supports a formal revision edge rather than a product-influence edge."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Intermediate formal RADIUS revision between RFC 2058 and RFC 2865; detailed change diff remains to be mined.",
+  "last_reviewed": "2026-08-29"
+}

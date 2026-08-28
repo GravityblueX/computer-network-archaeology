@@ -1,0 +1,36 @@
+{
+  "id": "SRC-0058",
+  "source_type": "academic-paper",
+  "title": "The Fuzzball",
+  "authors_or_bodies": ["David L. Mills", "University of Delaware"],
+  "date": {"value": "1988-08", "precision": "month", "certainty": "confirmed", "notes": "Published at ACM SIGCOMM '88; author-hosted copy preserved by Mills' archive."},
+  "edition_or_revision": "SIGCOMM 1988 paper",
+  "identifiers": [{"scheme": "bibliographic", "value": "Proc. ACM SIGCOMM 88 Symposium, pp. 115–122"}],
+  "publisher_or_issuer": "ACM SIGCOMM / author archival copy",
+  "language": ["en"],
+  "topics": ["Fuzzball", "PDP-11", "LSI-11", "router operating system", "TCP/IP", "HELLO", "network drivers", "zero-copy forwarding", "time synchronization", "NSFNET"],
+  "artifact_ids": ["ART-0026", "ART-0069", "ART-0070", "ART-0072"],
+  "access": {
+    "canonical_url": "https://www.eecis.udel.edu/~mills/database/papers/fuzz.pdf",
+    "archive_urls": ["https://www.eecis.udel.edu/~mills/gallery/gallery10.html", "https://www.eecis.udel.edu/~mills/resource.html"],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "author-hosted-open-access-copy"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 10, "ocr_status": "searchable", "scan_notes": "Digital paper copy; archive checksum pending."},
+  "rights_status": "copyrighted-author-hosted-link-only",
+  "redistribution_notes": "Preserve metadata and author-hosted link; do not assume redistribution rights from accessibility alone.",
+  "provenance": {"original_holder": "David L. Mills / University of Delaware", "current_holder": "David L. Mills archival web collection", "donor_or_collection": null, "chain_notes": "Participant-maintained archive is especially valuable because source code and papers coexist."},
+  "evidence_grade": "primary-participant-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "Fuzzball is an operating system and applications library for PDP-11/LSI-11 systems, not merely a routing application.", "locator": "abstract and section 1", "certainty": "confirmed", "artifact_ids": ["ART-0069"], "notes": null},
+    {"claim": "The network software dedicates input/output supervisor processes to interfaces and separates Internet-common, local-network and device-specific driver layers.", "locator": "section 2.1 Network Software", "certainty": "confirmed", "artifact_ids": ["ART-0069"], "notes": null},
+    {"claim": "Packets can be forwarded from input to output using the same buffer without copying.", "locator": "section 2.1 Network Software", "certainty": "confirmed", "artifact_ids": ["ART-0069"], "notes": null},
+    {"claim": "The system contains a 1000 Hz logical clock with frequency/phase control and supports HELLO/Hellospeak and Internet time-synchronization work.", "locator": "section 2 / Network Software discussion", "certainty": "confirmed", "artifact_ids": ["ART-0072"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "The surviving source archive should receive its own source-code-corpus record with checksums and directory manifest.",
+  "last_reviewed": "2026-08-28"
+}

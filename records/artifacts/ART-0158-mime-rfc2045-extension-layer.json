@@ -1,0 +1,27 @@
+{
+  "id": "ART-0158",
+  "canonical_name": "MIME — RFC 2045 message-body extension layer",
+  "aliases": ["MIME", "Multipurpose Internet Mail Extensions"],
+  "kind": "standard",
+  "parent_family": "Internet mail message extensions",
+  "manufacturer_or_body": ["IETF MIME/email community", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "1996-11", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0146"], "notes": "RFC 2045 is part of the later consolidated MIME document set, with earlier MIME generations predating it."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0146"], "notes": "MIME content types, multipart bodies and transfer encodings remain visible in current email."}
+  },
+  "networks_or_families": ["Internet mail", "MIME"],
+  "roles": ["message body typing", "multipart representation", "non-ASCII content support", "transfer encoding", "media-type extensibility"],
+  "protocols": ["MIME"],
+  "addressing": null,
+  "routing_or_forwarding": null,
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "survival": {"status": "operational-specimen", "locations": ["current Internet mail messages and related MIME-using systems"], "provenance_notes": "MIME extends the message-format lineage rather than replacing SMTP or Internet Message Format."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 1341/1521/2045 MIME revision genealogy.", "Trace media-type registry history.", "Trace multipart/transfer-encoding parser compatibility behavior.", "Separate MIME use in email from later reuse in HTTP and other application protocols."],
+  "sources": [{"source_id": "SRC-0146", "supports": ["MIME extension of RFC 822-style message representation", "multipart/non-text/non-ASCII capability", "transfer encoding and media-type roles"], "locator": "RFC 2045 Abstract and body-format sections", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0157", "relation": "extends Internet Message Format body/content representation", "notes": null}],
+  "notes": "Reference example of extension-layer-over-living-format continuity.",
+  "last_reviewed": "2026-08-29"
+}

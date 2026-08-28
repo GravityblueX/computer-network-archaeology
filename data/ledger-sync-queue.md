@@ -64,7 +64,19 @@ Reserved intermediate IDs still to create/promote during revision-diff work:
 - `ART-0148` — Berkeley `delivermail` → `sendmail` implementation lineage
 - `ART-0149` — Berkeley Internet Name Domain (BIND) implementation lineage
 
-**Next unreserved artifact ID: `ART-0150`**, subject to merge-time verification against concurrent work.
+## Living standards still on the wire burst
+
+- `ART-0150` — IPv4 / RFC 791 / STD 5 living standard core
+- `ART-0151` — UDP / RFC 768 / STD 6 living standard core
+- `ART-0152` — ICMPv4 / RFC 792 / STD 5 living standard core
+- `ART-0153` — ARP / RFC 826 long-lived IPv4/Ethernet local-link mechanism
+- `ART-0154` — TCP / RFC 9293 consolidated living standard descended from RFC 793
+- `ART-0155` — DNS RFC 1034/1035 living core
+- `ART-0156` — SMTP RFC 5321 living mail-transport lineage
+- `ART-0157` — Internet Message Format RFC 5322 living RFC 822-descended syntax lineage
+- `ART-0158` — MIME RFC 2045 message-body extension layer
+
+**Next unreserved artifact ID: `ART-0159`**, subject to merge-time verification against concurrent work.
 
 ---
 
@@ -119,9 +131,23 @@ Reserved intermediate source IDs:
 - `SRC-0135` — Sendmail project/history paper
 - `SRC-0136` — Berkeley report UCB/CSD-84-182, *The Berkeley Internet Name Domain Server*
 
-High-value source records still to promote from existing narratives include RFC 318, RFC 764, RFC 114, RFC 354, RFC 765, RFC 883, RFC 1035, RFC 918, RFC 937, RFC 1081, RFC 1939, RFC 1064, RFC 1176, RFC 1730, RFC 3501, RFC 970, UCB/CSD-84-177, ISC BIND history, original BSD sendmail/delivermail source distributions, original traceroute source/archive message and the earliest surviving ping source.
+## Living standards source records
 
-**Next unreserved source ID: `SRC-0137`**, subject to verification.
+- `SRC-0137` — RFC 791 IPv4 / STD 5
+- `SRC-0138` — RFC 768 UDP / STD 6
+- `SRC-0139` — RFC 792 ICMP / STD 5
+- `SRC-0140` — RFC 826 ARP
+- `SRC-0141` — RFC 9293 TCP / STD 7 consolidated current specification
+- `SRC-0142` — RFC 1034 DNS concepts
+- `SRC-0143` — RFC 1035 DNS implementation/wire core
+- `SRC-0144` — RFC 5321 SMTP
+- `SRC-0145` — RFC 5322 Internet Message Format
+- `SRC-0146` — RFC 2045 MIME
+- `SRC-0147` — RFC 793 historical TCP standard, now obsolete in favor of RFC 9293
+
+High-value source records still to promote from existing narratives include RFC 318, RFC 764, RFC 114, RFC 354, RFC 765, RFC 883, RFC 918, RFC 937, RFC 1081, RFC 1939, RFC 1064, RFC 1176, RFC 1730, RFC 3501, RFC 970, UCB/CSD-84-177, ISC BIND history, original BSD sendmail/delivermail source distributions, original traceroute source/archive message, the earliest surviving ping source, RFC 821, RFC 822, RFC 2821, RFC 2822, MIME RFC 1341/1521 and modern POP/IMAP core documents.
+
+**Next unreserved source ID: `SRC-0148`**, subject to verification.
 
 ---
 
@@ -150,7 +176,15 @@ High-value source records still to promote from existing narratives include RFC 
 - `LIN-0105` — Nagle small-packet rule ↔ Jacobson/Karels congestion-control generation (different problems, coexisting mechanisms)
 - `LIN-0106` — 1986 Internet congestion-collapse experience → Jacobson/Karels implementation redesign
 
-**Next unreserved lineage ID: `LIN-0107`**, subject to verification.
+## Living standards lineage records
+
+- `LIN-0107` — RFC 793 TCP → RFC 9293 consolidated TCP formal revision/continuity
+- `LIN-0108` — RFC 2822 → RFC 5322 Internet Message Format formal revision
+- `LIN-0109` — RFC 2821 → RFC 5321 SMTP formal revision
+- `LIN-0110` — Internet Message Format lineage → MIME extension layer (`carried-over`, not replacement)
+- `LIN-0111` — RFC 1034/1035 DNS core → modern DNS extension ecosystem (`survives-as`)
+
+**Next unreserved lineage ID: `LIN-0112`**, subject to verification.
 
 ---
 
@@ -180,6 +214,13 @@ High-value source records still to promote from existing narratives include RFC 
 - `docs/operations/icmp-ping-traceroute.md`
 - `docs/software/delivermail-sendmail-routing-engine.md`
 - `docs/software/bind-dns-implementation-history.md`
+
+## Living standards still on the wire burst
+
+- `docs/lineage/living-standards-still-on-wire.md`
+- `docs/lineage/tcp-rfc793-to-rfc9293-living-standard.md`
+- `docs/lineage/dns-rfc1034-1035-living-core.md`
+- `docs/lineage/smtp-message-format-mime-living-core.md`
 
 `docs/lineage/README.md`, `docs/INDEX.md` and `catalogs/lineages.md` should be synchronized in a dedicated index pass after the pending CSV merge rather than edited piecemeal during every excavation burst.
 

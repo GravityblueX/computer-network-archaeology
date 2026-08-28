@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schema/lineage-edge.schema.json",
+  "id": "LIN-0057",
+  "from": {"artifact_id": null, "name": "Simple Gateway Monitoring Protocol (SGMP)", "revision": "RFC 1028", "historical_term": "Simple Gateway Monitoring Protocol"},
+  "to": {"artifact_id": null, "name": "Simple Network Management Protocol (SNMP)", "revision": "RFC 1067 generation", "historical_term": "SNMP"},
+  "relation": "survives-as",
+  "scope": ["application", "management", "architecture"],
+  "property": "simple-agent/remote-manager philosophy, variable-oriented management model, and overall management architecture survive despite incompatible protocol syntax",
+  "date_or_range": {"value": "1987-1988", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {"source_ref": "RFC 1067", "locator": "Introduction and architecture goals", "supports": "RFC 1067 explicitly states that SNMP is not backward compatible with SGMP but that the original philosophy, design decisions, and architecture remain intact.", "notes": null},
+    {"source_ref": "RFC 1028", "locator": "design goals and gateway monitoring model", "supports": "Documents the SGMP philosophy being carried forward.", "notes": null}
+  ],
+  "negative_claims": [
+    "This edge does not claim wire compatibility between SGMP and SNMP.",
+    "It does not claim that every SGMP variable/object name survives into SNMP.",
+    "It does not establish HMP as a direct formal predecessor of SGMP."
+  ],
+  "open_questions": [
+    "Which SGMP implementations were actually deployed on Proteon and other gateways?",
+    "Can source-code diffs between SGMP and early SNMP agents be recovered?"
+  ],
+  "notes": "Canonical example of architectural continuity despite wire incompatibility.",
+  "last_reviewed": "2026-08-28"
+}

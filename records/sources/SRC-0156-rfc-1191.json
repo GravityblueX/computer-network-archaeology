@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0156",
+  "source_type": "rfc",
+  "title": "Path MTU Discovery",
+  "authors_or_bodies": ["Jeff Mogul", "Steve Deering"],
+  "date": {"value":"1990-11","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 1191",
+  "identifiers": [{"scheme":"RFC","value":"1191"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["IPv4", "DF bit", "fragmentation", "Path MTU Discovery", "ICMP"],
+  "artifact_ids": ["ART-0167"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc1191/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 1191 defines a Path MTU Discovery technique using the IPv4 DF bit plus ICMP fragmentation-needed feedback.","locator":"protocol overview","certainty":"confirmed","artifact_ids":["ART-0167"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Strong example of a later algorithm reusing an original IPv4 header bit and ICMP error mechanism.",
+  "last_reviewed": "2026-08-29"
+}

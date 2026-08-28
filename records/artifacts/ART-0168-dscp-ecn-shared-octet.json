@@ -1,0 +1,22 @@
+{
+  "id": "ART-0168",
+  "canonical_name": "IPv4 DSCP/ECN shared-octet semantic lineage",
+  "aliases": ["DS field", "DSCP/ECN octet"],
+  "kind": "standard",
+  "parent_family": "IPv4",
+  "manufacturer_or_body": ["IETF"],
+  "networks_or_families": ["IPv4", "DiffServ", "ECN"],
+  "roles": ["per-hop behavior codepoint", "explicit congestion marking"],
+  "protocols": ["IPv4", "TCP"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace IP Precedence/TOS operational deployments before DSCP.", "Build DSCP PHB genealogy.", "Trace ECN tunnel-handling revisions and AccECN."],
+  "sources": [
+    {"source_id":"SRC-0158","supports":["ECN allocation inside the IP header field and TCP feedback update"],"locator":"RFC 3168 abstract/introduction","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0148","supports":["TOS-octet reinterpretation as Differentiated Services field"],"locator":"RFC 2474 field definition","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0137","supports":["original RFC 791 TOS-octet ancestry"],"locator":"RFC 791 header definition","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0159","relation":"earlier-semantic-layer","notes":"First root-hunting record for TOS→DS semantic replacement."}],
+  "notes": "Same basic IPv4 header octet carries successive TOS, DSCP and ECN semantic layers.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0162",
+  "source_type": "web-page",
+  "title": "IANA Simple Mail Transfer Protocol (SMTP) Service Extensions Registry",
+  "authors_or_bodies": ["Internet Assigned Numbers Authority"],
+  "date": {"value":"2025-09-19","precision":"day","certainty":"confirmed","notes":"Last-updated value shown by IANA at research time."},
+  "edition_or_revision": "live registry snapshot",
+  "identifiers": [],
+  "publisher_or_issuer": "IANA",
+  "language": ["en"],
+  "topics": ["SMTP", "EHLO", "extension keywords", "registry", "capability negotiation"],
+  "artifact_ids": ["ART-0172"],
+  "access": {"canonical_url":"https://www.iana.org/assignments/smtp/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"IANA maintains a live SMTP Service Extensions registry organized around EHLO keywords and associated parameters/verbs.","locator":"SMTP Service Extensions registry","certainty":"confirmed","artifact_ids":["ART-0172"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Official registry-level evidence that SMTP's extension mechanism remains an active growth surface.",
+  "last_reviewed": "2026-08-29"
+}

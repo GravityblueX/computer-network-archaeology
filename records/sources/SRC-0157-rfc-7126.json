@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0157",
+  "source_type": "rfc",
+  "title": "Recommendations on Filtering of IPv4 Packets Containing IPv4 Options",
+  "authors_or_bodies": ["Fernando Gont", "Richard Atkinson"],
+  "date": {"value":"2014-02","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 7126 / BCP 186",
+  "identifiers": [{"scheme":"RFC","value":"7126"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["IPv4 options", "filtering", "source routing", "timestamp", "Router Alert", "security"],
+  "artifact_ids": ["ART-0166"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc7126/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 7126 documents operational/security concerns around numerous IPv4 options and recommends restrictive handling for many option types.","locator":"Section 4 option-by-option recommendations","certainty":"confirmed","artifact_ids":["ART-0166"],"notes":null},
+    {"claim":"The Stream Identifier option is identified as an old RFC 791 option later deprecated and formally obsoleted.","locator":"Section 4.6","certainty":"confirmed","artifact_ids":["ART-0166"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Useful modern operational evidence that the IPv4 options container survives while many branches became filtered or obsolete.",
+  "last_reviewed": "2026-08-29"
+}

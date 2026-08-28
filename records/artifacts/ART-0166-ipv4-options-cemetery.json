@@ -1,0 +1,22 @@
+{
+  "id": "ART-0166",
+  "canonical_name": "IPv4 Options extension mechanism and option cemetery",
+  "aliases": ["IPv4 Options"],
+  "kind": "protocol-family",
+  "parent_family": "IPv4",
+  "manufacturer_or_body": ["DARPA Internet community", "IETF"],
+  "networks_or_families": ["IPv4"],
+  "roles": ["variable IPv4 header extension container", "transit-router special processing", "historical option namespace"],
+  "protocols": ["IPv4"],
+  "operations": {"monitoring":"Optioned packets may trigger exceptional processing or filtering depending on option type and policy.","diagnostics":"Record Route/Timestamp represent historical packet-carried observability branches.","remote_management":null,"failure_behavior":"Many option types are filtered, slow-pathed, deprecated or obsolete in modern networks.","operator_interface":"Firewall/router option policy."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build a complete assigned-option-number survivorship table.", "Recover BSD and router fast/slow-path option implementations.", "Map source-route and timestamp filtering in deployed equipment."],
+  "sources": [
+    {"source_id":"SRC-0157","supports":["modern operational/filtering status of numerous IPv4 option branches"],"locator":"RFC 7126 Section 4","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0137","supports":["original IPv4 options container and header mechanism"],"locator":"RFC 791 options/header sections","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0167","relation":"mechanism-used-by","notes":"PMTUD primarily uses the base DF bit/ICMP rather than the variable Options area, but belongs to the same fragmentation-control archaeology."}],
+  "notes": "The extension container survived while individual options followed very different operational life cycles.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0158",
+  "source_type": "rfc",
+  "title": "The Addition of Explicit Congestion Notification (ECN) to IP",
+  "authors_or_bodies": ["K. K. Ramakrishnan", "Sally Floyd", "David Black"],
+  "date": {"value":"2001-09","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 3168",
+  "identifiers": [{"scheme":"RFC","value":"3168"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["ECN", "Differentiated Services", "IPv4", "IPv6", "TCP congestion control"],
+  "artifact_ids": ["ART-0168"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc3168/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 3168 updates RFC 2474 by defining ECN in two bits of the IP header field and updates TCP with ECN signaling bits.","locator":"Abstract and introductory update list","certainty":"confirmed","artifact_ids":["ART-0168"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Cross-layer continuation of the RFC 791 TOS-octet lineage through DSCP and ECN.",
+  "last_reviewed": "2026-08-29"
+}

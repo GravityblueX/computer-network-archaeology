@@ -1,0 +1,22 @@
+{
+  "id": "ART-0174",
+  "canonical_name": "multipart/form-data Web form-upload media type (RFC 7578 generation)",
+  "aliases": ["multipart/form-data"],
+  "kind": "standard",
+  "parent_family": "Internet media types",
+  "manufacturer_or_body": ["IETF", "IANA"],
+  "networks_or_families": ["MIME", "HTTP", "HTML forms"],
+  "roles": ["encode structured Web form fields", "carry file uploads", "reuse MIME multipart framing in HTTP/Web contexts"],
+  "protocols": ["HTTP", "MIME"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace RFC 1867 and RFC 2388 predecessors.", "Recover browser multipart encoder implementation history.", "Trace filename encoding interoperability and multipart/mixed deprecation."],
+  "sources": [
+    {"source_id":"SRC-0163","supports":["direct reuse of RFC 2046 multipart MIME data-stream model","boundary and Content-Disposition form-data semantics","deprecation of Content-Transfer-Encoding for binary-capable contexts"],"locator":"RFC 7578 Sections 4-8","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0164","supports":["media-type registration escaped MIME-only scope and became protocol-independent"],"locator":"RFC 6838 Section 1.1","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0154","supports":["MIME multipart/media-type ancestor model"],"locator":"RFC 2046 multipart sections","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0164","relation":"uses-media-type-system","notes":"Uses the generalized Internet media-type abstraction descended from MIME."}],
+  "notes": "A mail-body container adapted into one of the Web's most common file-upload formats.",
+  "last_reviewed": "2026-08-29"
+}

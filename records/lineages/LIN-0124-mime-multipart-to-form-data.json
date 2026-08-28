@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0124",
+  "from": {"artifact_id":"ART-0158","name":"MIME multipart/media-type body model","revision":"RFC 2045/2046 generation","historical_term":"MIME multipart"},
+  "to": {"artifact_id":"ART-0174","name":"multipart/form-data Web form-upload media type","revision":"RFC 7578 generation","historical_term":"multipart/form-data"},
+  "relation": "derived-from",
+  "scope": ["application", "architecture"],
+  "property": "The MIME multipart boundary-delimited body model and part metadata are explicitly reused and adapted for Web form and file-upload bodies.",
+  "date_or_range": {"value":"1990s-2015","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref":"SRC-0163","locator":"RFC 7578 Section 4","supports":"explicit statement that multipart/form-data follows RFC 2046 multipart MIME model","notes":null},
+    {"source_ref":"SRC-0164","locator":"RFC 6838 Section 1.1","supports":"media-type registration generalized beyond MIME-only use","notes":null}
+  ],
+  "negative_claims": ["This edge does not claim HTTP descends from MIME.", "It does not claim all MIME per-part header semantics survive in multipart/form-data; RFC 7578 restricts and changes several details."],
+  "open_questions": ["Trace RFC 1867/RFC 2388 predecessors and browser implementations."],
+  "notes": "Cross-protocol migration of a body-container abstraction from mail into the Web.",
+  "last_reviewed": "2026-08-29"
+}

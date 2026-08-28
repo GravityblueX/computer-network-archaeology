@@ -1,0 +1,18 @@
+{
+  "id": "ART-0172",
+  "canonical_name": "DNSSEC core extension family (RFC 4033/4034/4035 generation)",
+  "aliases": ["DNS Security Extensions", "DNSSEC"],
+  "kind": "protocol-family",
+  "parent_family": "DNS",
+  "manufacturer_or_body": ["IETF"],
+  "networks_or_families": ["DNS", "DNSSEC"],
+  "roles": ["DNS data-origin authentication", "DNS data integrity", "authenticated delegation"],
+  "protocols": ["DNS", "DNSSEC"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Reconstruct RFC 2535-era predecessor wire formats and operational failures.", "Build DNSSEC algorithm/digest genealogy.", "Trace BIND implementation milestones and root-zone signing deployment."],
+  "sources": [{"source_id":"SRC-0161","supports":["DNSSEC extends the RFC 1034/1035 DNS core with new RR types and protocol modifications without obsoleting the base DNS documents"],"locator":"RFC 4033 Introduction","quotation_checked":false,"notes":null}],
+  "related_artifacts": [{"id":"ART-0155","relation":"extends","notes":"Updates and extends the living DNS core."},{"id":"ART-0162","relation":"uses-extension-container","notes":"Uses the typed DNS Resource Record framework."}],
+  "notes": "Security extension branch grafted onto the old DNS tree rather than replacing the namespace/query/RR architecture.",
+  "last_reviewed": "2026-08-29"
+}

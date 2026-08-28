@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0160",
+  "source_type": "rfc",
+  "title": "TCP Selective Acknowledgment Options",
+  "authors_or_bodies": ["Matt Mathis", "Jamshid Mahdavi", "Sally Floyd", "Allyn Romanow"],
+  "date": {"value":"1996-10","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 2018",
+  "identifiers": [{"scheme":"RFC","value":"2018"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["TCP", "SACK", "loss recovery", "TCP options"],
+  "artifact_ids": ["ART-0170"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc2018/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim":"RFC 2018 defines the SACK-permitted and SACK TCP options so receivers can report non-contiguous received blocks while cumulative ACK semantics remain part of TCP.","locator":"Abstract and option definitions","certainty":"confirmed","artifact_ids":["ART-0170"],"notes":null}
+  ],
+  "conflicts": [],
+  "notes": "Option-based extension of TCP loss-recovery feedback rather than replacement of the base ACK field.",
+  "last_reviewed": "2026-08-29"
+}

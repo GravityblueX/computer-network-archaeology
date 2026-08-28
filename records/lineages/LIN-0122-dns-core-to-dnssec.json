@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0122",
+  "from": {"artifact_id":"ART-0155","name":"DNS RFC 1034/1035 living core","revision":"1987 core","historical_term":"DNS"},
+  "to": {"artifact_id":"ART-0172","name":"DNSSEC core extension family","revision":"RFC 4033/4034/4035 generation","historical_term":"DNSSEC"},
+  "relation": "derived-from",
+  "scope": ["application", "architecture"],
+  "property": "DNSSEC adds new resource-record types and validation/protocol behavior while preserving the DNS namespace, delegation, query and typed-RR core.",
+  "date_or_range": {"value":"1987-2005","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0161","locator":"RFC 4033 Introduction","supports":"DNSSEC updates rather than obsoletes RFC 1034/1035 and adds new RR types/protocol modifications","notes":null}],
+  "negative_claims": ["This edge does not claim the RFC 4033 generation was the first DNS security design; it replaced earlier DNSSEC documents.", "It does not claim ordinary DNS data becomes confidential."],
+  "open_questions": ["Reconstruct RFC 2535 predecessor generation and root signing deployment."],
+  "notes": "Security graft onto a durable typed-record architecture.",
+  "last_reviewed": "2026-08-29"
+}

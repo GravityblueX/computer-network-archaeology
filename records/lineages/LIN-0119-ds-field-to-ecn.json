@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0119",
+  "from": {"artifact_id":"ART-0159","name":"IPv4 TOS → Differentiated Services field lineage","revision":"RFC 791 → RFC 2474","historical_term":"TOS / DS field"},
+  "to": {"artifact_id":"ART-0168","name":"IPv4 DSCP/ECN shared-octet semantics","revision":"RFC 3168 generation","historical_term":"DSCP + ECN"},
+  "relation": "carried-over",
+  "scope": ["network", "transport", "architecture"],
+  "property": "The same IPv4 header octet carries forward the DS field while its low two bits are assigned a new explicit-congestion role that also changes TCP feedback semantics.",
+  "date_or_range": {"value":"1998-2001","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0158","locator":"RFC 3168 update list and ECN field definition","supports":"ECN allocation and TCP update","notes":null}],
+  "negative_claims": ["This edge does not claim ECN is simply another DSCP codepoint; it occupies distinct low-order bits with different semantics.", "This edge does not claim the original RFC 791 TOS interpretation survived unchanged."],
+  "open_questions": ["Trace tunnel handling and AccECN descendants."],
+  "notes": "One physical header location contains multiple semantic generations.",
+  "last_reviewed": "2026-08-29"
+}

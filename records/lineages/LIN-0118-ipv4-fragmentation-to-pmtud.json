@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0118",
+  "from": {"artifact_id":"ART-0150","name":"IPv4 fragmentation-control semantics","revision":"RFC 791 / 1981","historical_term":"DF / fragmentation"},
+  "to": {"artifact_id":"ART-0167","name":"IPv4 Path MTU Discovery","revision":"RFC 1191 / 1990","historical_term":"PMTUD"},
+  "relation": "derived-from",
+  "scope": ["network", "operations", "architecture"],
+  "property": "A later path-level MTU discovery algorithm is built from the existing IPv4 DF bit plus ICMP fragmentation-needed feedback rather than by redesigning the IPv4 header.",
+  "date_or_range": {"value":"1981-1990","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0156","locator":"RFC 1191 protocol overview","supports":"DF plus ICMP feedback algorithm","notes":null}],
+  "negative_claims": ["This edge does not claim that RFC 791 originally defined Path MTU Discovery.", "This edge does not claim PMTUD is an IPv4 Option; it uses a base-header flag and ICMP error signaling."],
+  "open_questions": ["Trace implementation into BSD/Linux and later PLPMTUD."],
+  "notes": "Canonical example of new operational machinery grown from old wire primitives.",
+  "last_reviewed": "2026-08-29"
+}

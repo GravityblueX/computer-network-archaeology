@@ -1,0 +1,21 @@
+{
+  "id": "ART-0173",
+  "canonical_name": "SMTP EHLO service-extension framework",
+  "aliases": ["ESMTP capability framework", "SMTP Service Extensions"],
+  "kind": "protocol",
+  "parent_family": "SMTP",
+  "manufacturer_or_body": ["IETF", "IANA"],
+  "networks_or_families": ["SMTP", "ESMTP"],
+  "roles": ["advertise SMTP server capabilities", "negotiate optional mail-transport extensions"],
+  "protocols": ["SMTP", "ESMTP"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build chronological EHLO-keyword table.", "Trace first Sendmail/Postfix/Exim support for SIZE/8BITMIME/PIPELINING/STARTTLS/AUTH/DSN.", "Separate relay-SMTP and submission capability histories."],
+  "sources": [
+    {"source_id":"SRC-0162","supports":["current IANA registry of SMTP EHLO service-extension keywords"],"locator":"SMTP Service Extensions registry","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0144","supports":["modern SMTP extension framework and EHLO transaction model"],"locator":"RFC 5321 extension sections","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0156","relation":"extends","notes":"Capability framework grows around the living SMTP transaction core."}],
+  "notes": "A long-lived command language survives because future features can be advertised and conditionally used rather than universally assumed.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0121",
+  "from": {"artifact_id":"ART-0154","name":"TCP cumulative acknowledgment core","revision":"RFC 793/9293 lineage","historical_term":"ACK"},
+  "to": {"artifact_id":"ART-0171","name":"TCP Selective Acknowledgment option family","revision":"RFC 2018 / 1996","historical_term":"SACK"},
+  "relation": "carried-over",
+  "scope": ["transport", "architecture"],
+  "property": "Cumulative ACK semantics remain part of TCP while an option adds explicit reporting of additional non-contiguous received blocks for improved loss recovery.",
+  "date_or_range": {"value":"1981-1996","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0160","locator":"RFC 2018 abstract and option definitions","supports":"SACK supplements cumulative acknowledgment rather than replacing it","notes":null}],
+  "negative_claims": ["This edge does not claim cumulative ACK was obsolete after SACK.", "This edge does not claim SACK itself defines the complete sender congestion-control algorithm."],
+  "open_questions": ["Trace first production SACK deployments and later recovery algorithms."],
+  "notes": "Example of old feedback semantics surviving beneath a richer optional feedback layer.",
+  "last_reviewed": "2026-08-29"
+}

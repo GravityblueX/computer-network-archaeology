@@ -1,0 +1,19 @@
+{
+  "id": "ART-0170",
+  "canonical_name": "TCP Window Scale and Timestamps option family (RFC 7323 generation)",
+  "aliases": ["TCP WS/TS options"],
+  "kind": "protocol",
+  "parent_family": "TCP options",
+  "manufacturer_or_body": ["IETF"],
+  "networks_or_families": ["TCP"],
+  "roles": ["expand effective receive window", "round-trip timing", "PAWS sequence-wrap protection"],
+  "protocols": ["TCP"],
+  "flow_or_congestion_control": "Window Scale changes interpretation of the legacy receive-window field; Timestamps support RTT measurement and PAWS.",
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Diff RFC 1323 against RFC 7323.", "Trace first BSD/vendor deployments.", "Collect modern SYN option-ordering examples."],
+  "sources": [{"source_id":"SRC-0159","supports":["Window Scale option","Timestamp option","PAWS and RTTM semantics"],"locator":"RFC 7323 Sections 2-3","quotation_checked":false,"notes":null}],
+  "related_artifacts": [{"id":"ART-0154","relation":"extends","notes":"Extends the living TCP base protocol without replacing its base header."}],
+  "notes": "A modern SYN often exposes this 1990s-derived high-performance option layer beside the older TCP core.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ART-0167",
+  "canonical_name": "IPv4 Path MTU Discovery (RFC 1191 generation)",
+  "aliases": ["PMTUD", "Path MTU Discovery"],
+  "kind": "protocol",
+  "parent_family": "IPv4",
+  "manufacturer_or_body": ["Internet Engineering community"],
+  "networks_or_families": ["IPv4", "ICMP"],
+  "roles": ["discover minimum MTU along an IPv4 path", "avoid in-path fragmentation"],
+  "protocols": ["IPv4", "ICMP"],
+  "flow_or_congestion_control": null,
+  "operations": {"monitoring":"Hosts maintain/adjust a path MTU estimate based on feedback.","diagnostics":"Black-hole behavior can occur when required ICMP feedback is filtered.","remote_management":null,"failure_behavior":"Packets too large for a hop with DF set are dropped and should elicit fragmentation-needed ICMP feedback.","operator_interface":"Kernel/network stack PMTU state and packet diagnostics."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace classic PMTUD implementation into BSD and Linux.", "Connect to Packetization Layer PMTUD.", "Document real ICMP-black-hole incidents."],
+  "sources": [{"source_id":"SRC-0156","supports":["DF plus ICMP fragmentation-needed algorithm","path-level MTU estimate behavior"],"locator":"RFC 1191 protocol overview","quotation_checked":false,"notes":null}],
+  "related_artifacts": [{"id":"ART-0150","relation":"uses-field-from","notes":"Uses IPv4 DF semantics."},{"id":"ART-0152","relation":"uses-feedback-from","notes":"Relies on ICMP Destination Unreachable fragmentation-needed signaling."}],
+  "notes": "Later operational algorithm grown from original IPv4 fragmentation controls and ICMP error reporting.",
+  "last_reviewed": "2026-08-29"
+}

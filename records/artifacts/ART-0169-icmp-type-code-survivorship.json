@@ -1,0 +1,21 @@
+{
+  "id": "ART-0169",
+  "canonical_name": "ICMPv4 Type/Code survivorship map",
+  "aliases": ["ICMP message-branch genealogy"],
+  "kind": "protocol-family",
+  "parent_family": "ICMPv4",
+  "manufacturer_or_body": ["DARPA Internet community", "IETF", "IANA"],
+  "networks_or_families": ["IPv4", "ICMP"],
+  "roles": ["error reporting", "diagnostic echo", "routing/control messages", "registry-level protocol extension"],
+  "protocols": ["ICMPv4"],
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build complete Type/Code deployment-status matrix.", "Trace Source Quench removal from implementations.", "Compare Redirect acceptance policies across operating systems."],
+  "sources": [
+    {"source_id":"SRC-0165","supports":["current ICMP Type registry including living and deprecated branches"],"locator":"IANA ICMP Type Numbers registry","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0139","supports":["original RFC 792 ICMP message types"],"locator":"RFC 792 message definitions","quotation_checked":false,"notes":null}
+  ],
+  "related_artifacts": [{"id":"ART-0146","relation":"operational-tool-descends-from-message","notes":"ping uses Echo/Echo Reply."},{"id":"ART-0147","relation":"operational-tool-descends-from-message","notes":"traceroute exploits Time Exceeded/TTL behavior."}],
+  "notes": "Protocol family whose individual Type/Code branches exhibit radically different survivorship states.",
+  "last_reviewed": "2026-08-29"
+}

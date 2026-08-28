@@ -1,0 +1,19 @@
+{
+  "id": "ART-0171",
+  "canonical_name": "TCP Selective Acknowledgment (SACK) option family",
+  "aliases": ["TCP SACK"],
+  "kind": "protocol",
+  "parent_family": "TCP options",
+  "manufacturer_or_body": ["IETF"],
+  "networks_or_families": ["TCP"],
+  "roles": ["selective loss-recovery feedback"],
+  "protocols": ["TCP"],
+  "flow_or_congestion_control": "Adds received-block information to improve recovery from multiple losses while cumulative ACK semantics remain part of TCP.",
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace SACK implementation into BSD/Linux and router/firewall normalization.", "Build SACK vulnerability/mitigation history separately from core mechanism."],
+  "sources": [{"source_id":"SRC-0160","supports":["SACK-permitted and SACK option semantics"],"locator":"RFC 2018 option definitions","quotation_checked":false,"notes":null}],
+  "related_artifacts": [{"id":"ART-0154","relation":"extends","notes":"Extends TCP ACK feedback without replacing cumulative acknowledgment."}],
+  "notes": "Later TCP option branch layered onto a much older ACK/sequence-number core.",
+  "last_reviewed": "2026-08-29"
+}

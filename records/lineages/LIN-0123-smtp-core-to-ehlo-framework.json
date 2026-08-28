@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0123",
+  "from": {"artifact_id":"ART-0156","name":"SMTP transaction core","revision":"RFC 821 → RFC 5321 lineage","historical_term":"SMTP"},
+  "to": {"artifact_id":"ART-0173","name":"SMTP EHLO service-extension framework","revision":"ESMTP/current registry","historical_term":"EHLO extensions"},
+  "relation": "survives-as",
+  "scope": ["application", "architecture", "operations"],
+  "property": "The old MAIL/RCPT/DATA transaction survives while EHLO capability advertisement becomes the standard growth surface for optional features such as SIZE, 8BITMIME, PIPELINING, STARTTLS, AUTH and DSN.",
+  "date_or_range": {"value":"1982-present","precision":"range","notes":null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref":"SRC-0162","locator":"IANA SMTP Service Extensions registry","supports":"live EHLO keyword registry","notes":null},
+    {"source_ref":"SRC-0144","locator":"RFC 5321 extension framework sections","supports":"modern SMTP core plus extension negotiation","notes":null}
+  ],
+  "negative_claims": ["This edge does not claim all EHLO extensions existed in early SMTP.", "It does not claim ESMTP replaced the core MAIL/RCPT/DATA transaction grammar."],
+  "open_questions": ["Build a chronological registry and implementation-support table."],
+  "notes": "An old plaintext command language survives by negotiating later capabilities around its core verbs.",
+  "last_reviewed": "2026-08-29"
+}

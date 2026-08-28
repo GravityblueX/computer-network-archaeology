@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0120",
+  "from": {"artifact_id":"ART-0154","name":"TCP living core","revision":"RFC 793 → RFC 9293 lineage","historical_term":"TCP"},
+  "to": {"artifact_id":"ART-0170","name":"TCP Window Scale and Timestamps option family","revision":"RFC 7323 generation","historical_term":"WS/TS"},
+  "relation": "derived-from",
+  "scope": ["transport", "architecture"],
+  "property": "High-performance extensions reuse the existing TCP option mechanism and reinterpret legacy base fields/state without replacing the base TCP header.",
+  "date_or_range": {"value":"1981-2014","precision":"range","notes":"RFC 7323 consolidates and revises the RFC 1323 high-performance option lineage."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0159","locator":"RFC 7323 Sections 1-3","supports":"Window Scale/Timestamps option design and use of legacy Window/sequence semantics","notes":null}],
+  "negative_claims": ["This edge does not claim Window Scale or Timestamps existed in RFC 793 in their later form.", "It does not imply every TCP implementation negotiates these options."],
+  "open_questions": ["Recover first deployed implementation dates and option-ordering conventions."],
+  "notes": "Modern SYN packets expose multiple decades of TCP history through capability options.",
+  "last_reviewed": "2026-08-29"
+}

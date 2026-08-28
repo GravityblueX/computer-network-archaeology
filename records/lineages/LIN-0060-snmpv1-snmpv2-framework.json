@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/lineage-edge.schema.json",
+  "id": "LIN-0060",
+  "from": {"artifact_id": null, "name": "Internet-standard Network Management Framework", "revision": "SNMPv1 / RFC 1155, RFC 1212, RFC 1157 generation", "historical_term": "SNMPv1"},
+  "to": {"artifact_id": null, "name": "Internet-standard Network Management Framework", "revision": "SNMPv2 / RFC 1441 generation", "historical_term": "SNMPv2"},
+  "relation": "successor-of",
+  "scope": ["application", "management", "architecture"],
+  "property": "manager/agent management framework, structured managed information, protocol operations, instrumentation and administrative structure evolve into the explicitly componentized SNMPv2 framework",
+  "date_or_range": {"value": "1990-1993", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 1441", "locator": "Introduction and Components of the SNMPv2 Framework", "supports": "RFC 1441 explicitly says SNMPv2 is derived from the original Internet-standard Network Management Framework and enumerates the SNMPv1 components.", "notes": null}
+  ],
+  "negative_claims": [
+    "This edge does not imply a single-document replacement; SNMPv1 and SNMPv2 are multi-document frameworks.",
+    "It does not erase coexistence and compatibility mechanisms."
+  ],
+  "open_questions": ["Split the SNMPv2 framework into SMI, protocol, administration, security and coexistence sub-lineages."],
+  "notes": null,
+  "last_reviewed": "2026-08-28"
+}

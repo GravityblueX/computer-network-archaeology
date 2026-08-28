@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0107",
+  "from": {"artifact_id": null, "name": "Transmission Control Protocol", "revision": "RFC 793 / September 1981", "historical_term": "TCP"},
+  "to": {"artifact_id": "ART-0154", "name": "Transmission Control Protocol", "revision": "RFC 9293 / August 2022", "historical_term": "TCP"},
+  "relation": "revision-of",
+  "scope": ["transport", "architecture"],
+  "property": "The living TCP specification is consolidated from the RFC 793 functional specification plus decades of normative updates, corrections, security changes and errata.",
+  "date_or_range": {"value": "1981-09/2022-08", "precision": "range", "notes": "RFC 9293 formally obsoletes RFC 793 while retaining the TCP protocol identity."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "SRC-0147", "locator": "RFC 793 preface/header and RFC Editor metadata", "supports": "identity of 1981 TCP standard and later obsolescence", "notes": null},
+    {"source_ref": "SRC-0141", "locator": "RFC 9293 Abstract and Section 5", "supports": "formal obsolescence plus explicit incorporation/adaptation of RFC 793 normative material", "notes": null}
+  ],
+  "negative_claims": ["This edge does not mean every 1981 TCP implementation would interoperate correctly with every modern TCP feature.", "This edge does not imply that congestion-control algorithms familiar today were fully specified in RFC 793.", "Document obsolescence is not protocol extinction."],
+  "open_questions": ["Build requirement-by-requirement RFC 793→9293 diff.", "Map each incorporated update RFC to exact mechanism.", "Correlate implementation source history with standards revisions."],
+  "notes": "Reference example for obsoleted-document-living-protocol continuity.",
+  "last_reviewed": "2026-08-29"
+}

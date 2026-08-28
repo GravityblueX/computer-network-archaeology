@@ -1,0 +1,53 @@
+{
+  "id": "LIN-0068",
+  "from": {
+    "artifact_id": "ART-0105",
+    "name": "Microcom Networking Protocol error-control installed base",
+    "revision": "MNP Classes 2-4 interoperability era",
+    "historical_term": "MNP"
+  },
+  "to": {
+    "artifact_id": "ART-0107",
+    "name": "CCITT V.42 error-control ecosystem",
+    "revision": "November 1988 generation and deployed compatible modems",
+    "historical_term": "V.42"
+  },
+  "relation": "interworked-with",
+  "scope": ["link", "interface", "architecture"],
+  "property": "V.42-era modem implementations preserve interoperability with the installed MNP error-control base while LAPM serves as the standardized V.42 error-control procedure.",
+  "date_or_range": {
+    "value": "1988-1990s",
+    "precision": "range",
+    "notes": "The relationship is best understood as compatibility/coexistence rather than a formal MNP-to-V.42 revision chain."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [
+    {
+      "source_ref": "SRC-0082",
+      "locator": "ITU V.42 recommendation identity/development history",
+      "supports": "formal V.42 error-control standard lineage beginning in 1988",
+      "notes": "The normative 1988 text should be mined clause-by-clause for the exact alternate-procedure wording."
+    },
+    {
+      "source_ref": "SRC-0084",
+      "locator": "Telebit T3000/WorldBlazer modem manual, V.42/MNP error-control descriptions",
+      "supports": "deployed modems implementing LAPM while retaining MNP Classes 2-4 compatibility",
+      "notes": "Vendor implementation evidence demonstrates coexistence in products rather than proving how the standards committee arrived at the compatibility decision."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that MNP is a formal earlier revision of V.42.",
+    "This edge does not claim that LAPM is derived byte-for-byte from MNP.",
+    "This edge does not claim that every V.42 modem implemented every MNP class.",
+    "This edge does not equate MNP Class 5 compression with V.42bis compression."
+  ],
+  "open_questions": [
+    "Acquire original Microcom MNP specifications and licensing records.",
+    "Extract the exact alternate-procedure/compatibility language from the November 1988 V.42 text.",
+    "Recover modem negotiation traces showing LAPM success and fallback to MNP.",
+    "Map which commercial modem models supported which MNP classes alongside which V.42 revisions."
+  ],
+  "notes": "Canonical example of an installed proprietary/de-facto protocol surviving beside a newer formal standard through compatibility rather than formal revision.",
+  "last_reviewed": "2026-08-29"
+}

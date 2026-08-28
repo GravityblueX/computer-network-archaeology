@@ -1,0 +1,66 @@
+{
+  "id": "ART-0103",
+  "canonical_name": "IEEE 802.1D-1990 MAC Bridges",
+  "aliases": ["IEEE 802.1D-1990", "MAC Bridges"],
+  "kind": "standard",
+  "parent_family": "IEEE 802.1D",
+  "manufacturer_or_body": ["IEEE"],
+  "chronology": {
+    "standardized": {
+      "value": "1990",
+      "precision": "year",
+      "certainty": "confirmed",
+      "source_ids": ["SRC-0080"],
+      "notes": "RFC 1493 explicitly bases its bridge-management model on IEEE 802.1D-1990; primary IEEE publication metadata should be added separately."
+    }
+  },
+  "networks_or_families": ["IEEE 802 LAN bridging", "Ethernet bridging"],
+  "roles": [
+    "standardize MAC bridge behavior between LAN segments",
+    "standardize spanning-tree bridge topology behavior",
+    "define bridge identifiers ports forwarding and topology state used by implementations and management systems"
+  ],
+  "stack_position": ["link", "management"],
+  "protocols": ["IEEE 802.1D Spanning Tree Protocol"],
+  "addressing": "Bridge forwarding operates on LAN/MAC addresses; bridge identity incorporates a bridge priority component and MAC-address-derived identity in the IEEE model referenced by RFC 1493.",
+  "routing_or_forwarding": "Transparent link-layer learning/filtering/forwarding between LAN segments with loop-free active topology selected by spanning-tree procedures.",
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "Bridge and STP state later exposed through the Bridge MIB, including root, root cost, root port, topology-change counters, forwarding database and per-port state.",
+    "diagnostics": "Topology and forwarding state are operational diagnostics; product-specific console procedures require vendor records.",
+    "remote_management": "Mapped into SNMP Bridge MIB objects in RFC 1493.",
+    "failure_behavior": "Redundant physical topology is reduced to a loop-free active spanning topology; topology changes trigger recomputation/state changes.",
+    "operator_interface": null
+  },
+  "research_state": "started",
+  "certainty": "mixed",
+  "open_questions": [
+    "Acquire and register the exact IEEE 802.1D-1990 primary standard text and publication metadata.",
+    "Build a clause-level genealogy from DEC LANbridge 100 STP through IEEE 802.1D revisions.",
+    "Separate learning/filtering bridge behavior from spanning-tree protocol revision history.",
+    "Trace later RSTP/MSTP successors without back-projecting their states and timers into 1990 STP."
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0080",
+      "supports": ["IEEE 802.1D-1990 bridge model", "STP managed state", "DEC LANbridge 100 versus IEEE protocol distinction"],
+      "locator": "RFC 1493 overview, Bridge MIB object map, dot1dStpProtocolSpecification",
+      "quotation_checked": false,
+      "notes": "RFC 1493 is direct implementation/management evidence but not a substitute for the licensed IEEE standard text."
+    },
+    {
+      "source_id": "SRC-0079",
+      "supports": ["distributed spanning-tree design ancestry"],
+      "locator": "Perlman SIGCOMM 1985 paper",
+      "quotation_checked": false,
+      "notes": "Use for design genealogy; exact standardization steps require IEEE/DEC committee history."
+    }
+  ],
+  "related_artifacts": [
+    {"id": "ART-0022", "relation": "standardizes", "notes": "transparent bridge role/family"},
+    {"id": "ART-0104", "relation": "predecessor-of", "notes": "virtual bridged LAN architecture later extends/consolidates bridge concepts"}
+  ],
+  "notes": "Keep IEEE 802.1D STP distinct from DEC LANbridge 100 STP dialects documented by RFC 1493.",
+  "last_reviewed": "2026-08-29"
+}

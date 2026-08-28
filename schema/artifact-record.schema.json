@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tmzncty/computer-network-archaeology/schema/artifact-record.schema.json",
+  "title": "Computer Network Archaeology Artifact Record",
+  "description": "Machine-readable record for a historically identifiable network, device, interface, software system, protocol, carrier service, site, organization, event, or related artifact. A record should describe one historically coherent object or revision, not an entire family when revision-level evidence exists.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "canonical_name", "kind", "research_state", "certainty", "sources"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ART-[0-9]{4,}$"
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "network",
+        "network-service",
+        "carrier-service",
+        "computer",
+        "host",
+        "terminal",
+        "modem-data-set",
+        "acoustic-coupler",
+        "packet-switch",
+        "router",
+        "gateway",
+        "bridge",
+        "repeater",
+        "hub",
+        "switch",
+        "nic",
+        "transceiver",
+        "interface",
+        "front-end-processor",
+        "terminal-server",
+        "pad",
+        "multiplexer",
+        "csu-dsu",
+        "radio-equipment",
+        "network-medium",
+        "diagnostic-tool",
+        "software",
+        "operating-system",
+        "protocol",
+        "protocol-family",
+        "standard",
+        "document",
+        "source-code",
+        "site",
+        "organization",
+        "person",
+        "event",
+        "other"
+      ]
+    },
+    "parent_family": {
+      "type": ["string", "null"],
+      "description": "Canonical family name or artifact id when this record describes one revision/model."
+    },
+    "manufacturer_or_body": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "chronology": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "conceived": {"$ref": "#/$defs/dateClaim"},
+        "announced": {"$ref": "#/$defs/dateClaim"},
+        "first_tested": {"$ref": "#/$defs/dateClaim"},
+        "first_operational": {"$ref": "#/$defs/dateClaim"},
+        "standardized": {"$ref": "#/$defs/dateClaim"},
+        "withdrawn": {"$ref": "#/$defs/dateClaim"},
+        "last_known_use": {"$ref": "#/$defs/dateClaim"}
+      }
+    },
+    "networks_or_families": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "roles": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "stack_position": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "physical",
+          "link",
+          "network",
+          "transport",
+          "session",
+          "presentation",
+          "application",
+          "operations",
+          "management",
+          "cross-layer",
+          "pre-layered"
+        ]
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "physical": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "medium": {"type": ["string", "null"]},
+        "line_service": {"type": ["string", "null"]},
+        "nominal_bit_rate_bps": {
+          "oneOf": [
+            {"type": "integer", "minimum": 0},
+            {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 1}
+          ]
+        },
+        "clocking": {"type": ["string", "null"]},
+        "signaling": {"type": ["string", "null"]},
+        "connectors": {"type": "array", "items": {"type": "string"}, "default": []},
+        "interfaces": {"type": "array", "items": {"type": "string"}, "default": []}
+      }
+    },
+    "hardware": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "processor": {"type": ["string", "null"]},
+        "memory": {"type": ["string", "null"]},
+        "storage": {"type": ["string", "null"]},
+        "boards_or_modules": {"type": "array", "items": {"type": "string"}, "default": []},
+        "rack_or_enclosure": {"type": ["string", "null"]},
+        "power": {"type": ["string", "null"]}
+      }
+    },
+    "software": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "operating_system": {"type": ["string", "null"]},
+        "programs": {"type": "array", "items": {"type": "string"}, "default": []},
+        "languages": {"type": "array", "items": {"type": "string"}, "default": []},
+        "version_or_revision": {"type": ["string", "null"]}
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true,
+      "default": []
+    },
+    "addressing": {"type": ["string", "null"]},
+    "routing_or_forwarding": {"type": ["string", "null"]},
+    "error_control": {"type": ["string", "null"]},
+    "flow_or_congestion_control": {"type": ["string", "null"]},
+    "operations": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "monitoring": {"type": ["string", "null"]},
+        "diagnostics": {"type": ["string", "null"]},
+        "remote_management": {"type": ["string", "null"]},
+        "failure_behavior": {"type": ["string", "null"]},
+        "operator_interface": {"type": ["string", "null"]}
+      }
+    },
+    "economics": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "purchase_price": {"type": ["string", "null"]},
+        "rental_or_tariff": {"type": ["string", "null"]},
+        "circuit_cost": {"type": ["string", "null"]},
+        "payer_or_funder": {"type": ["string", "null"]}
+      }
+    },
+    "geography": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "default": []
+    },
+    "survival": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unknown", "none-known", "documented-only", "partial", "surviving-specimen", "operational-specimen", "emulated", "source-survives"]
+        },
+        "locations": {"type": "array", "items": {"type": "string"}, "default": []},
+        "provenance_notes": {"type": ["string", "null"]}
+      }
+    },
+    "research_state": {
+      "type": "string",
+      "enum": ["seed", "priority", "started", "substantial", "mature", "blocked"]
+    },
+    "certainty": {
+      "type": "string",
+      "enum": ["confirmed", "probable", "disputed", "unknown", "mixed"]
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "default": []
+    },
+    "sources": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/sourceClaim"},
+      "minItems": 1
+    },
+    "related_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "relation"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^ART-[0-9]{4,}$"},
+          "relation": {"type": "string"},
+          "notes": {"type": ["string", "null"]}
+        }
+      },
+      "default": []
+    },
+    "notes": {"type": ["string", "null"]},
+    "last_reviewed": {"type": ["string", "null"], "format": "date"}
+  },
+  "$defs": {
+    "dateClaim": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["value", "precision", "certainty"],
+      "properties": {
+        "value": {"type": "string"},
+        "precision": {"type": "string", "enum": ["day", "month", "year", "decade", "range", "circa", "unknown"]},
+        "certainty": {"type": "string", "enum": ["confirmed", "probable", "disputed", "unknown"]},
+        "source_ids": {"type": "array", "items": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"}, "default": []},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "sourceClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "supports"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
+        "supports": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "locator": {"type": ["string", "null"], "description": "Page, section, figure, line, URL fragment, archive item, or other precise locator."},
+        "quotation_checked": {"type": "boolean", "default": false},
+        "notes": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

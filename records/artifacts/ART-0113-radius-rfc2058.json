@@ -1,0 +1,74 @@
+{
+  "id": "ART-0113",
+  "canonical_name": "RADIUS (RFC 2058 generation)",
+  "aliases": ["Remote Authentication Dial In User Service", "original standardized RADIUS generation"],
+  "kind": "protocol",
+  "parent_family": "RADIUS",
+  "manufacturer_or_body": ["Livingston Enterprises", "IETF RADIUS/NASREQ community"],
+  "chronology": {
+    "first_operational": {
+      "value": "pre-1997",
+      "precision": "range",
+      "certainty": "confirmed",
+      "source_ids": ["SRC-0093"],
+      "notes": "RFC 2058 says RADIUS was originally developed by Livingston for the PortMaster series; exact pre-RFC release date remains to be recovered."
+    },
+    "standardized": {
+      "value": "1997-01",
+      "precision": "month",
+      "certainty": "confirmed",
+      "source_ids": ["SRC-0093"],
+      "notes": "RFC 2058 Proposed Standard generation."
+    }
+  },
+  "networks_or_families": ["dial-up Internet access", "Network Access Servers", "PortMaster", "RADIUS"],
+  "roles": [
+    "centralize authentication and service configuration for dispersed serial-line/modem-pool access servers",
+    "allow a Network Access Server to act as a client of shared authentication/authorization servers",
+    "return extensible service attributes controlling PPP, SLIP, Telnet, LAT, IP and other access services"
+  ],
+  "stack_position": ["application", "management", "operations"],
+  "protocols": ["RADIUS Access-Request", "Access-Accept", "Access-Reject", "Access-Challenge", "Attribute-Length-Value attributes"],
+  "addressing": "RADIUS attributes can carry framed IP address/netmask and NAS identity/port data; exact attribute set is RFC-generation dependent.",
+  "routing_or_forwarding": "RADIUS itself does not forward subscriber traffic; it returns authorization/configuration used by the NAS to establish services such as routed/framed IP access.",
+  "error_control": "Application-level request retransmission/failover over UDP rather than TCP transport reliability.",
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "NAS/server transactions and attributes provide access-control state; later accounting is a related protocol branch.",
+    "diagnostics": "Access-Reject/Challenge/response handling and server failover are operational concerns; implementation logs remain to be excavated.",
+    "remote_management": "Central server database/policy separates account/service configuration from individual NAS boxes.",
+    "failure_behavior": "NAS retries/fails over among configured RADIUS servers when requests are not answered; exact retry behavior varies by implementation/version.",
+    "operator_interface": "Server user/client/dictionary configuration files and NAS RADIUS configuration; pre-RFC Livingston formats remain to be recovered."
+  },
+  "research_state": "started",
+  "certainty": "mixed",
+  "open_questions": [
+    "Locate the pre-RFC Livingston RADIUS source tree and first shipping release.",
+    "Identify the first PortMaster/ComOS revision shipping RADIUS support.",
+    "Recover early users/clients/dictionary configuration formats and vendor-specific attributes.",
+    "Diff RFC 2058, RFC 2138 and RFC 2865 packet/security/attribute semantics.",
+    "Reconstruct UDP 1645 to 1812 service-port migration.",
+    "Trace later 802.1X/EAP, Wi-Fi, VPN and device-administration uses as separate adoption branches rather than original requirements."
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0093",
+      "supports": ["PortMaster origin", "central modem-pool administration problem", "NAS client/server model", "RADIUS packet/attribute architecture"],
+      "locator": "RFC 2058 Introduction, protocol sections, Acknowledgments",
+      "quotation_checked": false,
+      "notes": "Primary standards-era source explicitly documents Livingston/PortMaster origin."
+    },
+    {
+      "source_id": "SRC-0091",
+      "supports": ["PortMaster dial access context", "PPP/SLIP/PAP/CHAP operational environment"],
+      "locator": "1995 PortMaster Configuration Guide",
+      "quotation_checked": false,
+      "notes": "Product/manual context predating the RFC publication."
+    }
+  ],
+  "related_artifacts": [
+    {"id": "ART-0030", "relation": "derived-from", "notes": "RFC 2058 explicitly says RADIUS was originally developed for Livingston PortMaster NAS products"}
+  ],
+  "notes": "Preserve RADIUS's dial-up NAS origin separately from later enterprise/wireless uses.",
+  "last_reviewed": "2026-08-29"
+}

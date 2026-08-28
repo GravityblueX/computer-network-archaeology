@@ -1,0 +1,52 @@
+{
+  "id": "ART-0124",
+  "canonical_name": "Point-to-Point Protocol (PPP, RFC 1661 generation)",
+  "aliases": ["PPP"],
+  "kind": "protocol",
+  "parent_family": "Internet point-to-point link protocol lineage",
+  "manufacturer_or_body": ["IETF Point-to-Point Protocol Working Group", "William Simpson"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": null,
+    "standardized": {"value":"1994-07","precision":"month","certainty":"confirmed","source_ids":["SRC-0107"],"notes":"RFC 1661 / STD 51 publication generation."},
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Internet", "PPP", "dial-up and point-to-point WAN access"],
+  "roles": ["encapsulate multiple network-layer protocols over point-to-point links", "negotiate link parameters through LCP", "support network-layer configuration through NCPs", "provide hooks for authentication and extensions"],
+  "stack_position": ["link", "management", "cross-layer"],
+  "protocols": ["PPP", "LCP", "NCP family", "PPP HDLC-like framing"],
+  "addressing": "Network-layer addressing is configured by appropriate Network Control Protocols rather than being inherent in the generic PPP frame.",
+  "routing_or_forwarding": null,
+  "error_control": "PPP framing detects damaged frames according to the selected framing specification; reliable retransmission of carried network traffic is not the generic PPP core responsibility.",
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "Link-state and negotiation phases are visible through LCP/NCP exchanges and implementation logs.",
+    "diagnostics": "Negotiation failures, authentication failures, framing errors and protocol-reject/code-reject behavior are operationally important.",
+    "remote_management": null,
+    "failure_behavior": "Link establishment can fail during physical availability, LCP negotiation, authentication, or NCP configuration.",
+    "operator_interface": "Dialer scripts, access-server configuration and PPP daemon options are implementation-specific."
+  },
+  "economics": {"purchase_price":null,"rental_or_tariff":null,"circuit_cost":null,"payer_or_funder":null},
+  "geography": [],
+  "survival": {"status":"operational-specimen","locations":[],"provenance_notes":"PPP remains present in several descendant access technologies; repository records should distinguish later branches such as PPPoE."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Build RFC 1134→1171→1331→1548→1661 clause/state-machine diff.",
+    "Trace PAP/CHAP and IPCP as separate protocol genealogies.",
+    "Recover early PPP implementations in Unix, KA9Q, routers and access servers.",
+    "Map PPP framing RFC 1549→1662 separately from the PPP core revision chain."
+  ],
+  "sources": [
+    {"source_id":"SRC-0107","supports":["PPP RFC 1661 identity","multi-protocol role","LCP/NCP architecture","point-to-point link framework"],"locator":"RFC 1661, Abstract and Introduction","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0103","supports":["early PPP proposal and Working Group ancestry"],"locator":"RFC 1134, Abstract and Introduction","quotation_checked":false,"notes":"Early-generation lineage source."}
+  ],
+  "related_artifacts": [
+    {"id":"ART-0119","relation":"successor-of","notes":"PPP generalizes the serial point-to-point access role beyond SLIP's IP-only minimal framing; not a formal RFC revision of SLIP."}
+  ],
+  "notes": "PPP is a negotiated point-to-point link architecture, not merely a more featureful SLIP frame delimiter.",
+  "last_reviewed": "2026-08-29"
+}

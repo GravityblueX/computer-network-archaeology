@@ -1,0 +1,27 @@
+{
+  "id": "ART-0157",
+  "canonical_name": "Internet Message Format — RFC 5322 living message-syntax lineage",
+  "aliases": ["IMF", "RFC 5322 message format"],
+  "kind": "standard",
+  "parent_family": "Internet mail message format",
+  "manufacturer_or_body": ["IETF email community", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "2008-10", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0145"], "notes": "RFC 5322 revises RFC 2822, itself the successor of RFC 822."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0145"], "notes": "Header/body message syntax remains foundational for current Internet mail."}
+  },
+  "networks_or_families": ["Internet mail", "RFC 822 lineage"],
+  "roles": ["email message syntax", "header-field representation", "message identity/reply threading metadata"],
+  "protocols": ["Internet Message Format"],
+  "addressing": "Defines syntax for message-level address fields such as From/To/Cc; distinct from SMTP envelope routing.",
+  "routing_or_forwarding": null,
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "survival": {"status": "operational-specimen", "locations": ["stored and transmitted Internet email messages"], "provenance_notes": "Stored historical messages force modern parsers to retain knowledge of older syntax as well as current grammar."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 822 → 2822 → 5322 grammar diff.", "Trace obsolete-syntax compatibility retained for old mail.", "Collect lawful representative raw-message samples from multiple eras.", "Separate message address fields from SMTP envelope addresses."],
+  "sources": [{"source_id": "SRC-0145", "supports": ["RFC 822/2822/5322 document lineage", "header/body message structure", "obsolete syntax compatibility"], "locator": "RFC 5322 Abstract and Sections 2-4", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0156", "relation": "carried by SMTP transport", "notes": null}, {"id": "ART-0158", "relation": "extended by MIME body/content representation", "notes": null}],
+  "notes": "Reference example of obsoleted-document-living-format continuity driven partly by long-lived stored data.",
+  "last_reviewed": "2026-08-29"
+}

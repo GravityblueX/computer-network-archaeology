@@ -1,0 +1,27 @@
+{
+  "id": "ART-0154",
+  "canonical_name": "Transmission Control Protocol — RFC 9293 consolidated living standard",
+  "aliases": ["TCP", "TCP STD 7"],
+  "kind": "protocol",
+  "parent_family": "Transmission Control Protocol lineage",
+  "manufacturer_or_body": ["IETF TCPM community", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "2022-08", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0141"], "notes": "RFC 9293 consolidates the RFC 793 lineage and later normative updates."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0141"], "notes": "TCP remains a core Internet transport protocol."}
+  },
+  "networks_or_families": ["Internet", "TCP"],
+  "roles": ["reliable ordered byte-stream transport", "connection state", "port-based multiplexing", "flow control"],
+  "protocols": ["TCP", "IPv4", "IPv6"],
+  "addressing": "Transport ports combined with IP-layer addressing identify communication endpoints/flows.",
+  "routing_or_forwarding": "No routing function; carried by IP.",
+  "error_control": "Sequence numbers, acknowledgments, retransmission and checksum-based protection support reliable ordered transport.",
+  "flow_or_congestion_control": "Receiver-window flow control is part of the core lineage; congestion-control mechanisms were added and evolved in later branches and are not reducible to the 1981 RFC alone.",
+  "survival": {"status": "operational-specimen", "locations": ["global production Internet"], "provenance_notes": "Protocol identity survives while the normative standards document was consolidated from RFC 793 and decades of updates into RFC 9293."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 793 → RFC 9293 requirement diff.", "Map every RFC incorporated/obsoleted by RFC 9293 to exact TCP mechanisms.", "Separate congestion-control branches from the base protocol specification.", "Correlate BSD/Linux implementation revisions with standards revisions."],
+  "sources": [{"source_id": "SRC-0141", "supports": ["RFC 9293 current TCP standard identity", "formal obsolescence of RFC 793", "explicit decades-long evolution and incorporation of RFC 793 functional specification"], "locator": "RFC 9293 Abstract and Section 5", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0042", "relation": "member of TCP/IP protocol family", "notes": null}],
+  "notes": "Reference example of obsoleted-document-living-protocol continuity: RFC 793 is obsolete, but its protocol lineage is directly incorporated into RFC 9293.",
+  "last_reviewed": "2026-08-29"
+}

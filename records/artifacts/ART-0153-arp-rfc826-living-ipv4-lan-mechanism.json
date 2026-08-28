@@ -1,0 +1,27 @@
+{
+  "id": "ART-0153",
+  "canonical_name": "Address Resolution Protocol — RFC 826 IPv4/Ethernet mechanism",
+  "aliases": ["ARP"],
+  "kind": "protocol",
+  "parent_family": "local-link address-resolution protocols",
+  "manufacturer_or_body": ["Internet research community"],
+  "chronology": {
+    "standardized": {"value": "1982-11", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0140"], "notes": "Published as RFC 826."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0140"], "notes": "Continues as a normal IPv4/Ethernet neighbor-resolution mechanism; implementation evidence should be added separately."}
+  },
+  "networks_or_families": ["IPv4", "Ethernet", "ARP"],
+  "roles": ["protocol-address to hardware-address resolution", "local next-hop link-layer discovery"],
+  "protocols": ["ARP", "IPv4", "Ethernet"],
+  "addressing": "Maps protocol-layer addresses such as IPv4 to link-layer hardware addresses such as Ethernet MAC addresses on the local network.",
+  "routing_or_forwarding": "Supports local next-hop delivery but is not itself a routing protocol.",
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "survival": {"status": "operational-specimen", "locations": ["IPv4 Ethernet LANs"], "provenance_notes": "Long-lived within the IPv4 local-link environment; IPv6 uses Neighbor Discovery instead."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace BSD, SunOS and Linux ARP cache implementation history.", "Trace gratuitous ARP and proxy ARP operational history.", "Document which RFC 826 packet fields remain recognizable in current captures.", "Separate ARP's IPv4 longevity from IPv6 Neighbor Discovery ancestry."],
+  "sources": [{"source_id": "SRC-0140", "supports": ["1982 RFC identity", "address-resolution role", "Ethernet-oriented packet format"], "locator": "RFC 826 problem statement and packet-format description", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0150", "relation": "commonly resolves IPv4 local-neighbor link addresses", "notes": null}],
+  "notes": "Reference example of a mechanism that remained operational for decades without being inherited unchanged by the IPv6 successor architecture.",
+  "last_reviewed": "2026-08-29"
+}

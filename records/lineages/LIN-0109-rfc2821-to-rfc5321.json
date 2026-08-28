@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0109",
+  "from": {"artifact_id": null, "name": "Simple Mail Transfer Protocol", "revision": "RFC 2821 / April 2001", "historical_term": "SMTP"},
+  "to": {"artifact_id": "ART-0156", "name": "Simple Mail Transfer Protocol", "revision": "RFC 5321 / October 2008", "historical_term": "SMTP"},
+  "relation": "revision-of",
+  "scope": ["application", "transport", "architecture"],
+  "property": "The consolidated SMTP transport standard is formally revised while retaining the textual command/reply and mail-envelope transport lineage.",
+  "date_or_range": {"value": "2001-04/2008-10", "precision": "range", "notes": "RFC 5321 obsoletes RFC 2821 and consolidates earlier mail-transport material."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref": "SRC-0144", "locator": "RFC 5321 metadata, Abstract and Introduction", "supports": "formal successor relationship and continuing basic Internet mail-transport role", "notes": null}],
+  "negative_claims": ["SMTP transport is not the same artifact as RFC 5322 message format.", "This edge does not claim that every SMTP extension originated in RFC 2821."],
+  "open_questions": ["Create structured RFC 821/RFC 2821 source records.", "Build RFC 821→2821→5321 command/reply and state-machine diff.", "Map ESMTP extensions as branches rather than core-version replacements."],
+  "notes": "Transport-document revision lineage remains separate from message-format and mailbox-access lineages.",
+  "last_reviewed": "2026-08-29"
+}

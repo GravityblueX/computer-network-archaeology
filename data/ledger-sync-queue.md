@@ -6,93 +6,80 @@ A detailed snapshot of all pending records before the field-level root-hunting b
 
 - [`ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md`](ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md)
 
-The new field-level batch is described at:
+The first field-level batch is described at:
 
 - [`batches/2026-08-29-root-hunting.md`](batches/2026-08-29-root-hunting.md)
 
 ## Why this file is compact
 
-The claim-level `records/` tree can advance faster than the flat CSV ledgers. Rewriting a large CSV after every excavation burst is riskier than preserving a verified batch manifest and merging periodically.
-
-The archived queue preserves the exact pre-batch ID inventory. This live queue preserves only the current merge frontier and next safe IDs.
+The claim-level `records/` tree can advance faster than the flat CSV ledgers. Rewriting a large CSV after every excavation burst is riskier than preserving verified batch manifests and merging periodically.
 
 ## Pending flat-ledger frontier
 
 ### Artifacts
 
-Earlier pending structured records (see archive):
+Earlier pending structured records:
 
-- `ART-0114` through `ART-0158`, with the reserved intermediate gaps documented in the archived queue.
+- `ART-0114` through `ART-0165`, with reserved intermediate gaps documented in the archived queue and root-hunting batch manifest.
 
-Field-level root-hunting batch:
-
-- `ART-0159` — IPv4 TOS → DS field semantic lineage
-- `ART-0160` — IPv4 Identification field semantic lineage
-- `ART-0161` — ICMP Source Quench branch
-- `ART-0162` — DNS Resource Record typed extension framework
-- `ART-0163` — SMTP command/reply transactional core
-- `ART-0164` — Internet media-type system descended from MIME
-- `ART-0165` — DNS SVCB / HTTPS Resource Record family
+No new structured artifact IDs were assigned in the second root-hunting narrative-only burst yet.
 
 **Next unreserved artifact ID: `ART-0166`**, subject to merge-time verification.
 
 ### Sources
 
-Earlier pending structured records (see archive):
+Earlier pending structured records:
 
-- `SRC-0097` through `SRC-0147`, including reserved gaps documented in the archived queue.
+- `SRC-0097` through `SRC-0155`, including reserved gaps documented in archived/batch manifests.
 
-Field-level root-hunting batch:
+No new structured source IDs were assigned in the second root-hunting narrative-only burst yet.
 
-- `SRC-0148` — RFC 2474 DS field
-- `SRC-0149` — RFC 6864 updated IPv4 ID
-- `SRC-0150` — RFC 2782 DNS SRV
-- `SRC-0151` — RFC 3596 DNS AAAA / IPv6 support
-- `SRC-0152` — RFC 8659 DNS CAA
-- `SRC-0153` — RFC 9460 DNS SVCB / HTTPS
-- `SRC-0154` — RFC 2046 MIME media types
-- `SRC-0155` — RFC 9110 HTTP media-type reuse
-
-**Next unreserved source ID: `SRC-0156`**, subject to merge-time verification.
+**Next unreserved source ID: `SRC-0156`**, subject to verification.
 
 ### Lineages
 
-Earlier pending structured records (see archive):
+Earlier pending structured records:
 
-- `LIN-0085` through `LIN-0111`.
+- `LIN-0085` through `LIN-0117`.
 
-Field-level root-hunting batch:
+No new structured lineage IDs were assigned in the second root-hunting narrative-only burst yet.
 
-- `LIN-0112` — IPv4 TOS octet → DS field semantic replacement/continuity
-- `LIN-0113` — IPv4 Identification semantics RFC 791 → RFC 6864
-- `LIN-0114` — DNS RR framework → AAAA extension
-- `LIN-0115` — DNS RR framework → SVCB/HTTPS extension
-- `LIN-0116` — MIME media types → HTTP representation media types
-- `LIN-0117` — RFC 821 SMTP command core → modern SMTP command/reply core
+**Next unreserved lineage ID: `LIN-0118`**, subject to verification.
 
-**Next unreserved lineage ID: `LIN-0118`**, subject to merge-time verification.
+## New narrative files since the first root-hunting batch
 
-## New narrative/methodology files in this batch
+Second root-hunting expansion:
 
-- `docs/methodology/root-hunting.md`
-- `docs/lineage/ipv4-header-field-survivorship.md`
-- `docs/lineage/icmp-type-code-survivorship.md`
-- `docs/lineage/dns-rr-type-genealogy.md`
-- `docs/lineage/smtp-command-reply-survivorship.md`
-- `docs/lineage/mime-content-type-to-http-media-types.md`
+- `docs/lineage/ipv4-options-cemetery-pmtud.md`
+- `docs/lineage/dscp-ecn-shared-octet.md`
+- `docs/lineage/icmp-type-code-full-survivorship.md`
+- `docs/lineage/tcp-options-genealogy.md`
+- `docs/lineage/dns-extension-forest-dnssec-naptr-sshfp-tlsa.md`
+- `docs/lineage/smtp-ehlo-capability-genealogy.md`
+- `docs/lineage/mime-multipart-to-form-data.md`
+
+High-value structured promotions from this burst should cover:
+
+- IPv4 option families / PMTUD;
+- DSCP and ECN bit semantics;
+- ICMP message-branch survivorship;
+- TCP MSS/WS/SACK/TS option families;
+- DNSSEC/NAPTR/SSHFP/TLSA extension branches;
+- SMTP EHLO extension registry branches;
+- multipart/form-data and media-type registration lineage.
 
 ## Batch merge checklist
 
 Before changing the flat CSV ledgers:
 
 1. fetch the complete latest CSV blobs;
-2. verify the actual highest IDs and concurrent additions;
+2. verify actual highest IDs and concurrent additions;
 3. validate every queued record file against its JSON schema;
 4. preserve reserved gaps rather than silently reusing them;
 5. append/promote rows without changing existing rows;
 6. validate CSV quoting and column counts;
-7. confirm every structured `ART/SRC/LIN` ID is discoverable in the flat ledgers;
+7. confirm every structured `ART/SRC/LIN` ID is discoverable in flat ledgers;
 8. synchronize `docs/INDEX.md`, `catalogs/lineages.md`, and relevant human-readable indexes;
-9. archive the completed queue state before clearing it.
+9. archive completed queue state before clearing it.
 
 This queue is archival hygiene, not a second research database.

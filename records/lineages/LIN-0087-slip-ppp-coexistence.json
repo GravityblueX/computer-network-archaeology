@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0087",
+  "from":{"artifact_id":"ART-0119","name":"Serial Line Internet Protocol","revision":"RFC 1055 / June 1988","historical_term":"SLIP"},
+  "to":{"artifact_id":"ART-0124","name":"Point-to-Point Protocol","revision":"RFC 1661 generation","historical_term":"PPP"},
+  "relation":"coexisted-with","scope":["link","network","operations","architecture"],
+  "property":"SLIP and PPP both served serial/dial point-to-point IP access environments, while PPP expanded the role to negotiated multi-protocol links with LCP/NCP and authentication hooks.",
+  "date_or_range":{"value":"late-1980s-1990s","precision":"range","notes":"Contemporary access servers such as PortMaster supported both SLIP and PPP."},"certainty":"confirmed","directness":"documented-operational",
+  "sources":[{"source_ref":"SRC-0102","locator":"RFC 1055, title and Introduction","supports":"SLIP serial-IP framing role","notes":null},{"source_ref":"SRC-0107","locator":"RFC 1661, Abstract and Introduction","supports":"PPP multi-protocol negotiated point-to-point role","notes":null},{"source_ref":"SRC-0091","locator":"PortMaster Configuration Guide, async SLIP/PPP configuration sections","supports":"deployed coexistence in 1995 access-server practice","notes":null}],
+  "negative_claims":["This edge does not claim PPP is a formal revision of SLIP.","This edge does not claim RFC 1134 cites SLIP as a design ancestor.","Operational displacement of SLIP by PPP must be documented by deployments/product histories rather than inferred solely from feature differences."],
+  "open_questions":["Recover migration guidance from ISPs/Unix vendors moving SLIP users to PPP.","Trace CSLIP and PPP header-compression branches separately."],
+  "notes":"A deliberate example where role succession is plausible but direct causal ancestry is not yet asserted.","last_reviewed":"2026-08-29"
+}

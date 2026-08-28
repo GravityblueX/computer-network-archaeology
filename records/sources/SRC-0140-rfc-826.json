@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0140",
+  "source_type": "rfc",
+  "title": "An Ethernet Address Resolution Protocol",
+  "authors_or_bodies": ["David C. Plummer"],
+  "date": {"value": "1982-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 826",
+  "identifiers": [{"scheme": "RFC", "value": "826"}],
+  "publisher_or_issuer": "RFC archival corpus",
+  "language": ["en"],
+  "topics": ["ARP", "Ethernet", "IPv4", "address resolution", "MAC address"],
+  "artifact_ids": ["ART-0153"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc826/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "Internet research community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 826 defines dynamic translation from protocol addresses to local Ethernet hardware addresses.", "locator": "RFC 826 problem statement and packet format", "certainty": "confirmed", "artifact_ids": ["ART-0153"], "notes": null},
+    {"claim": "ARP remains a directly recognizable IPv4/Ethernet local-neighbor mechanism even though IPv6 adopted a different Neighbor Discovery architecture.", "locator": "RFC 826 mechanism; modern IPv4 deployment continuity to be supported by implementation sources", "certainty": "probable", "artifact_ids": ["ART-0153"], "notes": "Do not claim ARP is universal across all successor Internet protocols."}
+  ],
+  "conflicts": [],
+  "notes": "Important example of a mechanism that remained long-lived within IPv4 LANs without becoming the universal neighbor-discovery model for IPv6.",
+  "last_reviewed": "2026-08-29"
+}

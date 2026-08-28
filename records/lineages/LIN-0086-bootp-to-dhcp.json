@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0086",
+  "from":{"artifact_id":"ART-0115","name":"Bootstrap Protocol (BOOTP)","revision":"RFC 951 / September 1985","historical_term":"BOOTP"},
+  "to":{"artifact_id":"ART-0118","name":"Dynamic Host Configuration Protocol","revision":"RFC 2131 generation; lineage begins RFC 1531","historical_term":"DHCP"},
+  "relation":"derived-from","scope":["application","management","addressing","architecture"],
+  "property":"DHCP directly reuses the BOOTP message/relay/bootstrap architecture while adding reusable address leases and a broader host-configuration state machine/options model.",
+  "date_or_range":{"value":"1985-09/1997-03","precision":"range","notes":"BOOTP RFC 951 through DHCP RFC 1531/1541/2131 lineage."},"certainty":"confirmed","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0098","locator":"RFC 951, bootstrap and gateway/relay sections","supports":"BOOTP parent architecture","notes":null},{"source_ref":"SRC-0099","locator":"RFC 1531, Abstract; Introduction; Protocol Summary","supports":"DHCP is based on BOOTP, preserves relay/interoperation, and adds leases/configuration","notes":null},{"source_ref":"SRC-0101","locator":"RFC 2131, Introduction and protocol behavior","supports":"mature DHCP lease/configuration architecture","notes":null}],
+  "negative_claims":["This edge does not imply DHCP is byte-for-byte BOOTP with extra options.","This edge does not imply all BOOTP implementations became DHCP implementations.","RARP and other bootstrap mechanisms remained relevant in some environments."],
+  "open_questions":["Build RFC 1531→1541→2131 field/state-machine diff.","Trace the option-format and relay-agent implementation genealogy."],
+  "notes":"One of the strongest direct derivation edges in the archive because RFC 1531 explicitly states DHCP is based on BOOTP.","last_reviewed":"2026-08-29"
+}

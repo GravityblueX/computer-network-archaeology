@@ -1,0 +1,35 @@
+{
+  "id": "SRC-0068",
+  "source_type": "mailing-list-message",
+  "title": "T1 NSFNet NSS Dismantling - January 1993",
+  "authors_or_bodies": ["Bob Farzami", "NSFNET/ANS operational community"],
+  "date": {"value": "1992-12-24", "precision": "day", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "NANOG mailing-list archival message",
+  "identifiers": [],
+  "publisher_or_issuer": "NANOG mailing list archive",
+  "language": ["en"],
+  "topics": ["NSFNET", "T1 NSS", "dismantling", "IBM RT", "provenance", "equipment donation"],
+  "artifact_ids": ["ART-0027"],
+  "access": {
+    "canonical_url": "https://lists.nanog.org/archives/list/nanog@lists.nanog.org/1992/12/",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open-archive"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "mailing-list-archive-link-only",
+  "redistribution_notes": "Preserve metadata and archive link; avoid bulk mirroring personal correspondence without rights review.",
+  "provenance": {"original_holder": "NANOG/NSFNET operational mailing community", "current_holder": "lists.nanog.org archive", "donor_or_collection": null, "chain_notes": "Contemporary operational announcement retained in public mailing-list archive."},
+  "evidence_grade": "primary-contemporary-operations",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "By late December 1992, traffic had transitioned from the T1 NSFNET to T3 infrastructure and the T1 network was described as entirely dismantled.", "locator": "24 Dec 1992 message body", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": null},
+    {"claim": "Hosting regional networks were offered former NSS IBM RT workstations as donations, with approximately 4–6 RTs available at each T1 NSS site.", "locator": "24 Dec 1992 message body", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Potential starting point for serial-number/recipient provenance tracing."},
+    {"claim": "Most offered RTs lacked monitor or keyboard because of their use as routers.", "locator": "24 Dec 1992 message body", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Explains why surviving units may not look like complete workstation installations."}
+  ],
+  "conflicts": [],
+  "notes": "High-value provenance source for tracing surviving physical NSFNET hardware after decommissioning.",
+  "last_reviewed": "2026-08-28"
+}

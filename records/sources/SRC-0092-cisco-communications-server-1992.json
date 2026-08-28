@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0092",
+  "source_type": "web-page",
+  "title": "Cisco Systems Moves Aggressively Into Remote Router/Terminal Server Markets with Four-in-One Product Family",
+  "authors_or_bodies": ["Cisco Systems"],
+  "date": {"value": "1992-05", "precision": "month", "certainty": "confirmed", "notes": "Cisco newsroom archive date context."},
+  "edition_or_revision": "contemporary corporate announcement",
+  "identifiers": [],
+  "publisher_or_issuer": "Cisco Systems",
+  "language": ["en"],
+  "topics": ["terminal server", "communications server", "remote router", "Cisco 500-CS", "ASM-CS", "serial access", "Ethernet", "Token Ring"],
+  "artifact_ids": ["ART-0029", "ART-0030"],
+  "access": {
+    "canonical_url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y1992/m05/cisco-systems-moves-aggressivelyiinto-remote-router-terminal-server-markets-with-four-in-one-product-family.html",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Cite/link the Cisco archive rather than reproducing the announcement.",
+  "provenance": {"original_holder": "Cisco Systems", "current_holder": "Cisco newsroom archive", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "Cisco's 1992 communications-server family explicitly targets both remote-router and terminal-server functions in one product family.",
+      "locator": "announcement title/overview",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0029", "ART-0030"],
+      "notes": "Supports role convergence; it does not prove Cisco products descend from DEC or X.25 PAD implementations."
+    },
+    {
+      "claim": "The 500-CS provides 8 or 16 asynchronous ports, RS-232/RS-423 interfaces and hardware/software flow control, replacing Cisco's earlier STS-10x terminal-server model.",
+      "locator": "Two Hardware Platforms Maximize Flexibility section",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0029"],
+      "notes": "Create exact 500-CS/STS-10x artifact records on the product-archaeology pass."
+    },
+    {
+      "claim": "The ASM-CS supports up to 112 ports and combines serial interfaces with Ethernet or Token Ring plus Cisco communications/routing software.",
+      "locator": "hardware-platform description",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0029", "ART-0030"],
+      "notes": null
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary contemporary evidence that terminal-server and remote-router/access roles were converging within commercial product families by 1992.",
+  "last_reviewed": "2026-08-29"
+}

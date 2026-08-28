@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/lineage-edge.schema.json",
+  "id": "LIN-0058",
+  "from": {"artifact_id": null, "name": "SNMP", "revision": "RFC 1067", "historical_term": "A Simple Network Management Protocol"},
+  "to": {"artifact_id": null, "name": "SNMP", "revision": "RFC 1098", "historical_term": "A Simple Network Management Protocol"},
+  "relation": "revision-of",
+  "scope": ["application", "management", "institutional"],
+  "property": "RFC 1098 formally obsoletes RFC 1067 but identifies itself as a re-release with a changed Status of this Memo section",
+  "date_or_range": {"value": "1988-1989", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 1098", "locator": "header and Status of this Memo", "supports": "RFC 1098 says Obsoletes RFC 1067 and calls itself a re-release of RFC 1067 with a changed status section.", "notes": null}
+  ],
+  "negative_claims": [
+    "This edge should not be interpreted as a major wire-protocol redesign.",
+    "Document-status genealogy and protocol-behavior genealogy are not identical."
+  ],
+  "open_questions": ["Verify byte-level differences between RFC 1067 and RFC 1098 beyond status/editorial material."],
+  "notes": "Useful example where RFC obsolescence does not imply a large protocol change.",
+  "last_reviewed": "2026-08-28"
+}

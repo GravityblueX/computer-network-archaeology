@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0110",
+  "from": {"artifact_id": "ART-0157", "name": "Internet Message Format lineage", "revision": "RFC 822-descended message model represented by RFC 5322", "historical_term": "Internet Message Format"},
+  "to": {"artifact_id": "ART-0158", "name": "Multipurpose Internet Mail Extensions", "revision": "RFC 2045 generation", "historical_term": "MIME"},
+  "relation": "carried-over",
+  "scope": ["application", "framing", "architecture"],
+  "property": "MIME preserves the surrounding Internet message/header model while adding typed, multipart, encoded and non-ASCII-capable body/content representation.",
+  "date_or_range": {"value": "1980s-1996", "precision": "range", "notes": "MIME generations extend the RFC 822 message world; RFC 2045 is a later consolidated MIME generation."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref": "SRC-0146", "locator": "RFC 2045 Abstract and Introduction", "supports": "MIME explicitly extends the RFC 822 message representation rather than replacing the entire mail architecture", "notes": null}, {"source_ref": "SRC-0145", "locator": "RFC 5322 ancestry discussion", "supports": "continuing RFC 822-descended message-format lineage", "notes": null}],
+  "negative_claims": ["MIME is not a replacement SMTP transport protocol.", "MIME does not define DNS mail routing or mailbox-access semantics."],
+  "open_questions": ["Create structured RFC 1341/1521 records.", "Build MIME revision genealogy and media-type registry history.", "Trace reuse of MIME conventions outside email separately."],
+  "notes": "Reference example of extension-layer-over-living-format continuity.",
+  "last_reviewed": "2026-08-29"
+}

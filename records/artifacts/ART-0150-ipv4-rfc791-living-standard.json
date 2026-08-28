@@ -1,0 +1,27 @@
+{
+  "id": "ART-0150",
+  "canonical_name": "Internet Protocol Version 4 — RFC 791 / STD 5 core",
+  "aliases": ["IPv4", "Internet Protocol RFC 791"],
+  "kind": "protocol",
+  "parent_family": "Internet Protocol",
+  "manufacturer_or_body": ["DARPA Internet Program", "USC Information Sciences Institute", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0137"], "notes": "RFC 791 remains STD 5 / Internet Standard with later updates."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0137"], "notes": "Continues in production networks; current deployment details require implementation/measurement sources."}
+  },
+  "networks_or_families": ["Internet", "IPv4"],
+  "roles": ["connectionless internetwork datagram delivery", "addressing", "routing substrate", "fragmentation/reassembly model", "protocol demultiplexing"],
+  "protocols": ["IPv4", "ICMP", "TCP", "UDP"],
+  "addressing": "32-bit IPv4 source/destination addressing; historical classful assumptions later transformed by subnetting/VLSM/CIDR without replacing the IPv4 header family.",
+  "routing_or_forwarding": "Independent datagrams are forwarded toward a destination by hosts/gateways/routers; no virtual-circuit state is required by IPv4 itself.",
+  "error_control": "IPv4 provides a header checksum but not end-to-end reliability; errors may be reported through ICMP.",
+  "flow_or_congestion_control": "No end-to-end flow/retransmission mechanism in IPv4 itself.",
+  "survival": {"status": "operational-specimen", "locations": ["global production IPv4 networks"], "provenance_notes": "Protocol is continuously deployed rather than preserved only as a museum artifact."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build field-by-field RFC 791 update matrix.", "Track classful addressing assumptions → subnetting/VLSM/CIDR without conflating address architecture with packet format.", "Map fragmentation practice and router/host requirement changes.", "Preserve packet captures showing directly recognizable RFC 791 header fields."],
+  "sources": [{"source_id": "SRC-0137", "supports": ["1981 standardization", "current STD 5 status", "core datagram/addressing/fragmentation semantics"], "locator": "RFC Editor metadata; RFC 791 Sections 1-3", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0152", "relation": "ICMP companion control/error protocol", "notes": null}],
+  "notes": "Reference example for the archive category still-current-original-standard: an early Internet protocol RFC remains part of the current Internet Standards corpus while specific semantics are updated by later documents.",
+  "last_reviewed": "2026-08-29"
+}

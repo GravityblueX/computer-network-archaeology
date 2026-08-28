@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0102",
+  "from": {"artifact_id": null, "name": "IPv4 TTL expiry plus ICMP Time Exceeded behavior", "revision": "RFC 791/RFC 792 era", "historical_term": "TTL / Time Exceeded"},
+  "to": {"artifact_id": "ART-0147", "name": "4BSD traceroute routing diagnostic tool", "revision": "1988 announcement generation", "historical_term": "traceroute"},
+  "relation": "derived-from",
+  "scope": ["network", "application", "operations"],
+  "property": "The diagnostic deliberately varies IP TTL so successive forwarding hops expire probes and return ICMP Time Exceeded responses, turning ordinary forwarding/error behavior into a path-discovery tool.",
+  "date_or_range": {"value": "1981-1988", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {"source_ref": "SRC-0124", "locator": "RFC 792 Time Exceeded", "supports": "ICMP control primitive", "notes": null},
+    {"source_ref": "SRC-0134", "locator": "1988 traceroute announcement reproduction", "supports": "increasing-TTL probe tool and gateway/RTT reporting", "notes": "Original mailing-list archive remains priority."}
+  ],
+  "negative_claims": ["traceroute is not an IP or ICMP protocol revision.", "traceroute output is not guaranteed to be a literal complete physical topology map."],
+  "open_questions": ["Recover original source tarball, mailing-list archive and early kernel TTL patch."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

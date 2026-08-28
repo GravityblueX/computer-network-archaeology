@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0101",
+  "from": {"artifact_id": "ART-0137", "name": "ICMP Echo mechanism", "revision": "RFC 792 / 1981", "historical_term": "Echo / Echo Reply"},
+  "to": {"artifact_id": "ART-0146", "name": "Unix ping program", "revision": "Mike Muuss / 1983 origin", "historical_term": "ping"},
+  "relation": "derived-from",
+  "scope": ["network", "application", "operations"],
+  "property": "A user-space diagnostic tool times ICMP Echo Request/Reply exchanges to test reachability and round-trip behavior.",
+  "date_or_range": {"value": "1981-1983", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "participant-testimony",
+  "sources": [
+    {"source_ref": "SRC-0124", "locator": "RFC 792 Echo/Echo Reply definitions", "supports": "protocol primitive", "notes": null},
+    {"source_ref": "SRC-0133", "locator": "Muuss origin story", "supports": "ping authorship, mechanism and inspiration", "notes": null}
+  ],
+  "negative_claims": ["ping is not an ICMP protocol revision.", "ICMP Echo specification and the ping program are separate artifacts."],
+  "open_questions": ["Recover earliest source and exact raw-socket environment."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

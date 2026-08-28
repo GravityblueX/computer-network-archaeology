@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0104",
+  "from": {"artifact_id": null, "name": "early DNS RFC architecture", "revision": "RFC 882/883 generation", "historical_term": "Domain Name System"},
+  "to": {"artifact_id": "ART-0149", "name": "Berkeley Internet Name Domain implementation lineage", "revision": "1984 Berkeley generation", "historical_term": "BIND"},
+  "relation": "derived-from",
+  "scope": ["application", "software-api", "operations", "architecture"],
+  "property": "Berkeley implements the distributed hierarchical DNS design as Unix name-server and resolver software, making zones, replication, queries and application integration concrete operating-system artifacts.",
+  "date_or_range": {"value": "1983-1984", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref": "SRC-0136", "locator": "UCB/CSD-84-182 report abstract and design context", "supports": "BIND implementation of distributed hierarchical naming in Unix and application/mail relevance", "notes": null}],
+  "negative_claims": ["BIND is not the DNS protocol itself.", "The Berkeley implementation did not invent all DNS namespace concepts.", "Server-daemon history and resolver-library history should not be collapsed."],
+  "open_questions": ["Recover earliest BIND source and map RFC compatibility by release."],
+  "notes": "Implementation-of-architecture lineage; exact relation vocabulary may later be expanded with an explicit implements relation.",
+  "last_reviewed": "2026-08-29"
+}

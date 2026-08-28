@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0135",
+  "source_type": "academic-paper",
+  "title": "Sendmail 8.10 / Sendmail project history paper",
+  "authors_or_bodies": ["Gregory Neil Shapiro", "Eric Allman", "Sendmail project contributors"],
+  "date": {"value": "circa-2000", "precision": "circa", "certainty": "confirmed", "notes": "Later project paper recounting implementation history."},
+  "edition_or_revision": "Sendmail 8.10 history context",
+  "identifiers": [],
+  "publisher_or_issuer": "Sendmail project",
+  "language": ["en"],
+  "topics": ["sendmail", "delivermail", "4BSD", "ARPANET", "UUCP", "BerkNet", "mail routing"],
+  "artifact_ids": ["ART-0148"],
+  "access": {"canonical_url": "https://www.sendmail.org/~gshapiro/Sendmail-8.10.Paper.pdf", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "participant-secondary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The project history describes delivermail as Eric Allman's solution for routing mail among Berkeley's ARPANET, UUCP and BerkNet environments and as the precursor to sendmail.", "locator": "History / In the Beginning", "certainty": "confirmed", "artifact_ids": ["ART-0148"], "notes": "Release-date details should be checked against original BSD distributions."},
+    {"claim": "The history says delivermail's limited generality motivated the more flexible sendmail implementation family.", "locator": "History / In the Beginning", "certainty": "confirmed", "artifact_ids": ["ART-0148"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Participant/project history; exact code/release claims should be cross-checked against BSD source media.",
+  "last_reviewed": "2026-08-29"
+}

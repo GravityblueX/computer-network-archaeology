@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0136",
+  "source_type": "technical-report",
+  "title": "The Berkeley Internet Name Domain Server",
+  "authors_or_bodies": ["Douglas B. Terry", "Mark Painter", "David W. Riggle", "Songnian Zhou"],
+  "date": {"value": "1984-05", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "UCB/CSD-84-182",
+  "identifiers": [{"scheme": "UCB technical report", "value": "UCB/CSD-84-182"}],
+  "publisher_or_issuer": "UC Berkeley EECS / Computer Systems Research Group context",
+  "language": ["en"],
+  "topics": ["BIND", "DNS", "Unix", "hierarchical namespace", "distributed name service", "mail"],
+  "artifact_ids": ["ART-0149"],
+  "access": {"canonical_url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/1984/CSD-84-182.html", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The 1984 Berkeley report describes BIND as a distributed hierarchical naming service implementation for Unix environments and notes benefits for existing applications, especially mail.", "locator": "report abstract", "certainty": "confirmed", "artifact_ids": ["ART-0149"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Contemporary implementation report; pair with UCB/CSD-84-177 and ISC institutional history for implementation/custody genealogy.",
+  "last_reviewed": "2026-08-29"
+}

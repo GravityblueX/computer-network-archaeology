@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0134",
+  "source_type": "web-page",
+  "title": "4BSD routing diagnostic tool available for ftp (Van Jacobson traceroute announcement reproduction)",
+  "authors_or_bodies": ["Van Jacobson"],
+  "date": {"value": "1988-12-20", "precision": "day", "certainty": "confirmed", "notes": "Date and headers preserved in a later reproduction; original mailing-list archive should still be recovered."},
+  "edition_or_revision": "end2end-interest/IETF announcement reproduction",
+  "identifiers": [],
+  "publisher_or_issuer": "Reproduction of LBL-originated mailing-list message",
+  "language": ["en"],
+  "topics": ["traceroute", "4BSD", "TTL", "ICMP Time Exceeded", "routing diagnostics", "Van Jacobson"],
+  "artifact_ids": ["ART-0147"],
+  "access": {"canonical_url": "https://gist.github.com/thiteixeira/50cf5f9c26ca0216e4aa6d42b2440216", "archive_urls": ["https://ftp.ee.lbl.gov/"], "catalog_urls": ["https://cs.lbl.gov/about/history/"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "unknown",
+  "research_state": "skimmed",
+  "claims_extracted": [
+    {"claim": "The reproduced December 20, 1988 message announces a 4BSD routing diagnostic tool called traceroute, sending multiple probes per TTL and reporting responding gateways and round-trip times.", "locator": "message headers and body", "certainty": "confirmed", "artifact_ids": ["ART-0147"], "notes": "Primary-message content preserved in secondary hosting; original list archive should replace this as canonical evidence."},
+    {"claim": "The announcement says the then-current tool required a small 4BSD kernel change to permit user control of IP TTL on raw output.", "locator": "message body", "certainty": "confirmed", "artifact_ids": ["ART-0147"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Discovery/bridge source; do not treat the GitHub gist itself as the historical origin.",
+  "last_reviewed": "2026-08-29"
+}

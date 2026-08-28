@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0103",
+  "from": {"artifact_id": null, "name": "Berkeley ARPANET/UUCP/BerkNet mail-routing interoperability problem", "revision": "late 1970s Berkeley deployment", "historical_term": null},
+  "to": {"artifact_id": "ART-0148", "name": "delivermail/sendmail implementation lineage", "revision": "4BSD-era origin", "historical_term": "delivermail / sendmail"},
+  "relation": "derived-from",
+  "scope": ["application", "operations", "institutional", "architecture"],
+  "property": "A local need to route mail among three incompatible Berkeley network/mail environments motivates delivermail, which is later generalized into sendmail.",
+  "date_or_range": {"value": "late-1970s-early-1980s", "precision": "range", "notes": "Exact release dating requires original BSD media."},
+  "certainty": "probable",
+  "directness": "participant-testimony",
+  "sources": [{"source_ref": "SRC-0135", "locator": "Sendmail project history / In the Beginning", "supports": "Berkeley three-network problem, delivermail origin and sendmail generalization", "notes": null}],
+  "negative_claims": ["sendmail is not a formal SMTP protocol revision.", "This edge does not prove UUCP or ARPANET mail source-code ancestry inside sendmail."],
+  "open_questions": ["Verify source/release chronology from 4BSD/4.1BSD/4.2BSD distributions."],
+  "notes": "Implementation-origin lineage tied to a concrete deployment problem.",
+  "last_reviewed": "2026-08-29"
+}

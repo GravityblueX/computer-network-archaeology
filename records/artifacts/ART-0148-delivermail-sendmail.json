@@ -1,0 +1,20 @@
+{
+  "id": "ART-0148",
+  "canonical_name": "Berkeley delivermail/sendmail mail-routing implementation lineage",
+  "aliases": ["delivermail", "sendmail"],
+  "kind": "software",
+  "manufacturer_or_body": ["Eric Allman", "UC Berkeley", "BSD/Sendmail project contributors"],
+  "chronology": {"first_operational": {"value": "late-1970s-early-1980s", "precision": "range", "certainty": "probable", "source_ids": ["SRC-0135"], "notes": "Project history places delivermail in the 4BSD-era Berkeley environment; exact release dates require original BSD-media verification."}},
+  "networks_or_families": ["ARPANET mail", "UUCP", "BerkNet", "SMTP", "DNS/MX", "BSD Unix"],
+  "roles": ["route mail across heterogeneous network/mail transports", "address rewriting", "mailer selection", "queue/retry", "local/remote delivery orchestration"],
+  "stack_position": ["application", "operations", "management"],
+  "software": {"operating_system": "BSD Unix lineage", "programs": ["delivermail", "sendmail"], "languages": ["C"], "version_or_revision": "4BSD/4.1BSD delivermail → 4.2BSD-era sendmail → later branches; exact source genealogy pending"},
+  "protocols": ["ARPANET mail mechanisms", "UUCP", "SMTP", "DNS", "MX"],
+  "operations": {"monitoring": "Mail queues and logs expose delivery/routing state.", "diagnostics": "Address rewriting, resolver/MX selection, transport failure and queue state must be distinguished.", "remote_management": null, "failure_behavior": "Temporary failures queue/retry; malformed policy/routing rules can misroute or loop mail.", "operator_interface": "sendmail configuration, queue commands, logs and aliases are major historical operator artifacts."},
+  "research_state": "started",
+  "certainty": "probable",
+  "open_questions": ["Verify exact delivermail first-release date from original BSD distributions.", "Diff delivermail and earliest sendmail source.", "Recover early sendmail.cf files and map NCP/TCP/IP/DNS/MX transitions in actual revisions."],
+  "sources": [{"source_id": "SRC-0135", "supports": ["Berkeley ARPANET/UUCP/BerkNet origin problem", "delivermail precursor role", "need for more general sendmail architecture"], "locator": "Sendmail project history / In the Beginning", "quotation_checked": true, "notes": "Participant/project history; release details need source-media confirmation."}],
+  "notes": "sendmail is not SMTP itself. It is an implementation/orchestration lineage where multiple protocol and institutional histories meet.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "ART-0145",
+  "canonical_name": "Jacobson/Karels TCP congestion-control implementation generation (1988)",
+  "aliases": ["Jacobson congestion avoidance", "slow start / congestion avoidance generation"],
+  "kind": "software",
+  "manufacturer_or_body": ["Van Jacobson", "Michael J. Karels", "Lawrence Berkeley Laboratory", "UC Berkeley"],
+  "chronology": {"standardized": {"value": "1988-08", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0132"], "notes": "Contemporary SIGCOMM publication of algorithms implemented/tested in 4BSD TCP lineage; not a new TCP wire-version number."}},
+  "networks_or_families": ["TCP", "4BSD", "Internet congestion control"],
+  "roles": ["stabilize TCP under network congestion", "discover/use path capacity through ACK clocking", "improve RTT/RTO estimation", "slow-start initial transmission"],
+  "stack_position": ["transport", "operations"],
+  "software": {"operating_system": "4BSD lineage", "programs": ["TCP implementation"], "languages": ["C"], "version_or_revision": "1986-1988 congestion-control work; exact source revisions pending"},
+  "protocols": ["TCP"],
+  "flow_or_congestion_control": "Congestion window and slow-start/congestion-avoidance behavior organized around packet conservation and ACK clocking, alongside improved RTT/RTO behavior.",
+  "operations": {"monitoring": "Measured throughput, loss and RTT behavior used to validate algorithms.", "diagnostics": "Internet congestion-collapse incidents and LBL/UCB path measurements motivate implementation changes.", "remote_management": null, "failure_behavior": "Poor sender timing/window behavior can amplify congestion and retransmission collapse.", "operator_interface": null},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Map each algorithm to exact 4BSD SCCS/source revision.", "Separate Tahoe/Reno/NewReno branches.", "Recover LBL NRG mail archives and beta-test evidence."],
+  "sources": [{"source_id": "SRC-0132", "supports": ["transport-implementation cause of congestion", "packet-conservation principle", "slow start", "congestion avoidance", "RTT/RTO algorithms"], "locator": "Jacobson/Karels 1988 paper Introduction and algorithm sections", "quotation_checked": true, "notes": null}],
+  "notes": "Do not conflate this artifact with the Nagle small-packet rule, ICMP Source Quench, or all later TCP congestion-control variants.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ART-0144",
+  "canonical_name": "Nagle sender small-packet suppression rule (RFC 896)",
+  "aliases": ["Nagle algorithm"],
+  "kind": "software",
+  "manufacturer_or_body": ["John Nagle", "Ford Aerospace and Communications Corporation"],
+  "chronology": {"standardized": {"value": "1984-01-06", "precision": "day", "certainty": "confirmed", "source_ids": ["SRC-0131"], "notes": "RFC 896 is a congestion-control memo, not an Internet Standard defining a new TCP wire protocol."}},
+  "networks_or_families": ["TCP", "Internet congestion-control implementation history"],
+  "roles": ["reduce excessive small TCP segment generation", "coalesce interactive writes while prior data remains unacknowledged"],
+  "stack_position": ["transport"],
+  "software": {"operating_system": null, "programs": ["TCP sender implementation"], "languages": [], "version_or_revision": "RFC 896 design"},
+  "protocols": ["TCP"],
+  "flow_or_congestion_control": "Sender-side suppression/coalescing rule for small new writes when earlier data remains unacknowledged; not a complete network congestion-control algorithm.",
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover first source-code implementation and exact BSD/vendor release.", "Trace TCP_NODELAY and application interactions.", "Separate earlier Tymnet/NCP Telnet/X.25 PAD coalescing traditions from direct code ancestry."],
+  "sources": [{"source_id": "SRC-0131", "supports": ["small-packet problem", "sender suppression rule", "earlier packet-delay traditions", "distinction from Source Quench problem"], "locator": "RFC 896 small-packet sections", "quotation_checked": true, "notes": null}],
+  "notes": "Keep this artifact separate from Jacobson/Karels slow start and congestion avoidance; they solve different network problems.",
+  "last_reviewed": "2026-08-29"
+}

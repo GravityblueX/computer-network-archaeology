@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0105",
+  "from": {"artifact_id": "ART-0144", "name": "Nagle small-packet sender rule", "revision": "RFC 896 / 1984", "historical_term": "small-packet solution"},
+  "to": {"artifact_id": "ART-0145", "name": "Jacobson/Karels congestion-control implementation generation", "revision": "1988 SIGCOMM/4BSD work", "historical_term": "slow start / congestion avoidance"},
+  "relation": "coexisted-with",
+  "scope": ["transport", "architecture", "operations"],
+  "property": "Both become TCP sender behaviors in modern implementations but address different pathologies: excessive tiny-segment generation versus discovery/control of network congestion capacity.",
+  "date_or_range": {"value": "1984-1988", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "scholarly-reconstruction",
+  "sources": [
+    {"source_ref": "SRC-0131", "locator": "RFC 896 small-packet and Source Quench sections", "supports": "Nagle problem/solution scope", "notes": null},
+    {"source_ref": "SRC-0132", "locator": "Jacobson/Karels 1988 algorithms", "supports": "broader congestion-control scope", "notes": null}
+  ],
+  "negative_claims": ["The Nagle algorithm did not simply evolve into slow start.", "These mechanisms should not be represented as sequential versions of one congestion-control algorithm."],
+  "open_questions": ["Trace when both behaviors coexist in specific BSD/vendor TCP source releases."],
+  "notes": "Negative-lineage guard against a common oversimplification.",
+  "last_reviewed": "2026-08-29"
+}

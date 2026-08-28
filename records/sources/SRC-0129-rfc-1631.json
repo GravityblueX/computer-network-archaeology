@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0129",
+  "source_type": "rfc",
+  "title": "The IP Network Address Translator (NAT)",
+  "authors_or_bodies": ["Kjeld Egevang", "Paul Francis"],
+  "date": {"value": "1994-05", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1631",
+  "identifiers": [{"scheme": "RFC", "value": "1631"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["NAT", "IPv4 address depletion", "CIDR", "stub domains", "KA9Q", "Cray Communications", "FTP ALG"],
+  "artifact_ids": ["ART-0142"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc1631.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc1631"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 1631 proposes NAT as an address-reuse mechanism in the context of IPv4 address depletion and routing-scaling pressure.", "locator": "Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0142"], "notes": null},
+    {"claim": "RFC 1631 identifies experimental NAT implementations in KA9Q TCP/IP software and a Cray Communications IP router, the latter tested with Telnet and FTP and rewriting FTP PORT-related data.", "locator": "Current Implementations", "certainty": "confirmed", "artifact_ids": ["ART-0142"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Primary source for both NAT architecture and unusually concrete implementation leads.",
+  "last_reviewed": "2026-08-29"
+}

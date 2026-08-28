@@ -1,0 +1,20 @@
+{
+  "id": "ART-0142",
+  "canonical_name": "IP Network Address Translator (NAT), RFC 1631 generation",
+  "aliases": ["NAT", "Network Address Translator"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["IETF", "Kjeld Egevang", "Paul Francis"],
+  "chronology": {"standardized": {"value": "1994-05", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0129"], "notes": "Experimental RFC/proposal with implementation evidence."}},
+  "networks_or_families": ["IPv4", "Internet address conservation"],
+  "roles": ["translate between local/reused and globally routed IPv4 address realms", "conserve globally unique IPv4 addresses", "incremental deployment at stub-domain border"],
+  "stack_position": ["network", "cross-layer"],
+  "protocols": ["IPv4", "TCP", "UDP", "FTP interaction"],
+  "addressing": "Maintains mapping between inside/local addresses and globally meaningful outside addresses; translation can require upper-layer checksum adjustment.",
+  "operations": {"monitoring": "Translation tables become operational state.", "diagnostics": "Embedded-address applications and missing/stale mappings complicate diagnosis.", "remote_management": null, "failure_behavior": "State loss or translation mismatch can break sessions; application protocols embedding addresses may require ALG behavior.", "operator_interface": "Implementation-specific mapping/configuration commands; KA9Q and Cray prototype syntax remains to be recovered."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover KA9Q NAT prototype source.", "Identify Cray Communications router model/software and FTP rewriting implementation.", "Trace private-address standards separately from translation mechanisms."],
+  "sources": [{"source_id": "SRC-0129", "supports": ["NAT problem statement", "stub-domain translation model", "incremental-deployment motivation", "KA9Q and Cray prototype evidence"], "locator": "RFC 1631 Introduction, design sections and Current Implementations", "quotation_checked": true, "notes": null}],
+  "notes": "NAT is not synonymous with a firewall, private addressing, or NAPT. Preserve those as intersecting but distinct lineages.",
+  "last_reviewed": "2026-08-29"
+}

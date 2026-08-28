@@ -1,0 +1,21 @@
+{
+  "id": "ART-0143",
+  "canonical_name": "Traditional NAT / NAPT family, RFC 3022 generation",
+  "aliases": ["Traditional NAT", "Basic NAT", "NAPT", "Network Address Port Translation"],
+  "kind": "protocol-family",
+  "manufacturer_or_body": ["IETF", "P. Srisuresh", "K. Egevang"],
+  "chronology": {"standardized": {"value": "2001-01", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0130"], "notes": "Later descendant retained to clarify the family split."}},
+  "networks_or_families": ["IPv4", "NAT"],
+  "roles": ["Basic address translation", "address-and-port translation allowing multiple local endpoints to share global addresses"],
+  "stack_position": ["network", "transport", "cross-layer"],
+  "protocols": ["IPv4", "TCP", "UDP", "ICMP identifiers"],
+  "addressing": "Basic NAT translates addresses; NAPT additionally translates transport/identifier fields to multiplex many local endpoints through fewer global addresses.",
+  "operations": {"monitoring": "Per-mapping/per-session translation state becomes central for NAPT.", "diagnostics": "Port mapping, timeout and protocol-helper state affect observable reachability.", "remote_management": null, "failure_behavior": "Loss of translation state breaks active sessions; protocols carrying embedded addresses may require special handling.", "operator_interface": "Vendor/firewall/router implementation syntax varies and must be catalogued separately."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build Basic NAT versus NAPT implementation chronology by vendor.", "Trace Linux/BSD and consumer-router NAT implementations.", "Separate address/port translation from firewall-policy genealogy."],
+  "sources": [{"source_id": "SRC-0130", "supports": ["RFC 1631 obsolescence", "Basic NAT definition", "NAPT definition", "traditional NAT family terminology"], "locator": "RFC 3022 Abstract, Introduction and terminology", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0142", "relation": "formal descendant/specification expansion of RFC 1631 NAT", "notes": null}],
+  "notes": "Do not retroactively call every RFC 1631 implementation NAPT; the later standard explicitly distinguishes the mechanisms.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0100",
+  "from": {"artifact_id": "ART-0142", "name": "IP Network Address Translator", "revision": "RFC 1631 / 1994", "historical_term": "NAT"},
+  "to": {"artifact_id": "ART-0143", "name": "Traditional NAT / NAPT family", "revision": "RFC 3022 / 2001", "historical_term": "Traditional NAT"},
+  "relation": "revision-of",
+  "scope": ["network", "transport", "addressing", "architecture"],
+  "property": "RFC 3022 formally obsoletes RFC 1631 and expands/clarifies the family by distinguishing Basic NAT from NAPT address-plus-port multiplexing.",
+  "date_or_range": {"value": "1994-2001", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "SRC-0129", "locator": "RFC 1631", "supports": "original NAT model and implementation context", "notes": null},
+    {"source_ref": "SRC-0130", "locator": "RFC 3022 header/Abstract/terminology", "supports": "formal obsolescence and Basic NAT/NAPT distinction", "notes": null}
+  ],
+  "negative_claims": ["NAPT should not be projected backward onto every RFC 1631 NAT implementation.", "NAT is not equivalent to firewalling or private addressing."],
+  "open_questions": ["Recover vendor implementation chronology separating Basic NAT and NAPT."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

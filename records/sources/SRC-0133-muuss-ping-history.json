@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0133",
+  "source_type": "participant-history",
+  "title": "The Story of the PING Program",
+  "authors_or_bodies": ["Mike Muuss"],
+  "date": {"value": "retrospective", "precision": "unknown", "certainty": "confirmed", "notes": "Participant retrospective; exact original web-publication date should be recovered from BRL/ARL archive metadata."},
+  "edition_or_revision": null,
+  "identifiers": [],
+  "publisher_or_issuer": "Mike Muuss / BRL-ARL web archive lineage",
+  "language": ["en"],
+  "topics": ["ping", "ICMP Echo", "4.2BSD", "Fuzzball", "network diagnostics", "Mike Muuss"],
+  "artifact_ids": ["ART-0146"],
+  "access": {"canonical_url": "https://wpollock.com/Networking/ping.html", "archive_urls": ["https://ftp.arl.army.mil/~mike/"], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-retrospective",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "Mike Muuss identifies himself as the author of the Unix ping program and describes the sonar-inspired name and ICMP Echo Request/Reply timing mechanism.", "locator": "opening paragraphs", "certainty": "confirmed", "artifact_ids": ["ART-0146"], "notes": null},
+    {"claim": "Muuss says a July 1983 remark by Dave Mills about Fuzzball ICMP Echo latency measurement inspired the idea, and that he coded ping after BRL network trouble in December 1983.", "locator": "origin story paragraphs", "certainty": "confirmed", "artifact_ids": ["ART-0146"], "notes": "Participant testimony; corroborating Mills/Fuzzball source remains to be found."}
+  ],
+  "conflicts": [],
+  "notes": "Participant testimony is strong for authorship/inspiration but should not substitute for source-code provenance.",
+  "last_reviewed": "2026-08-29"
+}

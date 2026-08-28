@@ -1,0 +1,20 @@
+{
+  "id": "ART-0147",
+  "canonical_name": "4BSD traceroute routing diagnostic tool (Van Jacobson, 1988 announcement generation)",
+  "aliases": ["traceroute"],
+  "kind": "software",
+  "manufacturer_or_body": ["Van Jacobson", "Lawrence Berkeley Laboratory"],
+  "chronology": {"announced": {"value": "1988-12-20", "precision": "day", "certainty": "confirmed", "source_ids": ["SRC-0134"], "notes": "Date preserved in reproduced mailing-list headers; original archive still sought."}},
+  "networks_or_families": ["4BSD", "Internet routing diagnostics", "IP/ICMP"],
+  "roles": ["discover responding forwarding hops using increasing TTL probes", "measure hop-by-hop round-trip timing"],
+  "stack_position": ["application", "operations"],
+  "software": {"operating_system": "4BSD", "programs": ["traceroute"], "languages": ["C"], "version_or_revision": "December 1988 public-announcement generation"},
+  "protocols": ["IPv4 TTL", "ICMP Time Exceeded", "UDP/other probe variants"],
+  "operations": {"monitoring": null, "diagnostics": "Primary purpose: expose likely forwarding hops and RTTs by deliberate TTL expiry.", "remote_management": null, "failure_behavior": "Missing responses do not prove absent hops; ICMP filtering/rate limiting/asymmetric paths/load balancing can hide or distort results.", "operator_interface": "Command-line hop list with probe RTTs; exact default/probe format needs source-level preservation."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover primary 1988 mailing-list archive and original source tarball.", "Diff early traceroute releases and required 4BSD kernel TTL patch.", "Trace UDP, ICMP and TCP traceroute variants separately."],
+  "sources": [{"source_id": "SRC-0134", "supports": ["1988 announcement date", "tool purpose", "multiple probes per TTL", "gateway/RTT output", "required kernel change"], "locator": "reproduced December 20 1988 announcement", "quotation_checked": true, "notes": "Source hosting is secondary; original message archive remains priority."}],
+  "notes": "IP TTL and ICMP Time Exceeded predate traceroute; the tool composes existing mechanisms into an operational diagnostic.",
+  "last_reviewed": "2026-08-29"
+}

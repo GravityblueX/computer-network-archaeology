@@ -1,0 +1,20 @@
+{
+  "id": "ART-0149",
+  "canonical_name": "Berkeley Internet Name Domain (BIND) implementation lineage",
+  "aliases": ["BIND", "Berkeley Internet Name Domain"],
+  "kind": "software",
+  "manufacturer_or_body": ["UC Berkeley", "CSRG", "Douglas Terry", "Mark Painter", "David Riggle", "Songnian Zhou", "later DEC/ISC maintainers"],
+  "chronology": {"first_operational": {"value": "early-1980s", "precision": "range", "certainty": "confirmed", "source_ids": ["SRC-0136"], "notes": "Contemporary Berkeley reports document the implementation by 1984; exact first source release remains to be recovered."}},
+  "networks_or_families": ["DNS", "BSD Unix", "Internet naming"],
+  "roles": ["authoritative/caching DNS server implementation", "hierarchical distributed namespace database", "zone replication/refresh", "Unix resolver/application support"],
+  "stack_position": ["application", "operations", "management"],
+  "software": {"operating_system": "Berkeley Unix / BSD lineage", "programs": ["named", "resolver library and utilities"], "languages": ["C"], "version_or_revision": "initial Berkeley BIND → CSRG BIND 4.x → later DEC/ISC stewardship; detailed release graph pending"},
+  "protocols": ["DNS", "UDP", "TCP", "MX and other DNS resource records"],
+  "operations": {"monitoring": "Name-server logs/debugging/cache/zone state become critical operations artifacts.", "diagnostics": "Zone loading, delegation, transfer/refresh and resolver/cache behavior require distinct diagnosis.", "remote_management": "Zone-transfer/refresh and later control interfaces evolve across releases.", "failure_behavior": "Misconfigured/stale zones or failed delegation/refresh can break dependent applications while network transport remains healthy.", "operator_interface": "named configuration, zone files, resolver configuration and debugging utilities."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover earliest BIND source distribution/checksum.", "Map 4BSD/4.3BSD integration and BIND 4.x release genealogy.", "Preserve early named.boot, zone files and resolver-library source.", "Trace CSRG→DEC/Vixie→ISC stewardship with release-level evidence."],
+  "sources": [{"source_id": "SRC-0136", "supports": ["1984 Berkeley implementation identity", "hierarchical distributed naming model", "Unix environment", "benefits to mail applications"], "locator": "UCB/CSD-84-182 abstract/report metadata", "quotation_checked": true, "notes": null}],
+  "notes": "BIND is an implementation family, not the DNS protocol itself. Server daemon, resolver library, zone files and institutional custody should eventually be split into finer artifacts.",
+  "last_reviewed": "2026-08-29"
+}

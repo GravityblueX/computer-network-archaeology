@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0131",
+  "source_type": "rfc",
+  "title": "Congestion Control in IP/TCP Internetworks",
+  "authors_or_bodies": ["John Nagle"],
+  "date": {"value": "1984-01-06", "precision": "day", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 896",
+  "identifiers": [{"scheme": "RFC", "value": "896"}],
+  "publisher_or_issuer": "Ford Aerospace and Communications Corporation / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["TCP", "congestion collapse", "small packet problem", "Nagle algorithm", "ICMP Source Quench"],
+  "artifact_ids": ["ART-0144"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc896.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc896"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 896 distinguishes a TCP small-packet problem from broader congestion/source-quench problems and proposes inhibiting new small sends while earlier data remains unacknowledged.", "locator": "The two problems; The solution to the small-packet problem", "certainty": "confirmed", "artifact_ids": ["ART-0144"], "notes": null},
+    {"claim": "RFC 896 describes congestion collapse in which packet loss and retransmissions can drive useful throughput drastically downward and argues that merely adding gateway buffers is not a solution.", "locator": "Congestion collapse", "certainty": "confirmed", "artifact_ids": ["ART-0144"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Historical Nagle memo; later TCP congestion-control algorithms must not be back-projected into it.",
+  "last_reviewed": "2026-08-29"
+}

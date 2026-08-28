@@ -1,0 +1,20 @@
+{
+  "id": "ART-0146",
+  "canonical_name": "Unix ping program (Mike Muuss, 1983 origin)",
+  "aliases": ["ping"],
+  "kind": "software",
+  "manufacturer_or_body": ["Mike Muuss", "Ballistic Research Laboratory"],
+  "chronology": {"first_tested": {"value": "1983-12", "precision": "month", "certainty": "probable", "source_ids": ["SRC-0133"], "notes": "Participant retrospective says Muuss coded ping after BRL network trouble in December 1983."}},
+  "networks_or_families": ["Unix networking", "ICMP diagnostics", "4.2BSD-era Internet"],
+  "roles": ["measure ICMP Echo reachability and round-trip time", "interactive network diagnosis"],
+  "stack_position": ["application", "operations"],
+  "software": {"operating_system": "4.2a/4.2BSD-era Unix environment", "programs": ["ping"], "languages": ["C"], "version_or_revision": "earliest Muuss implementation; exact surviving source revision pending"},
+  "protocols": ["ICMP Echo", "IPv4"],
+  "operations": {"monitoring": "Repeated probes expose reachability, packet loss and RTT behavior.", "diagnostics": "Primary purpose.", "remote_management": null, "failure_behavior": "No reply is ambiguous: target, path, filtering, rate limiting or return path may be responsible.", "operator_interface": "Command-line probe statistics; historical syntax/defaults require source/manual reconstruction."},
+  "research_state": "started",
+  "certainty": "probable",
+  "open_questions": ["Recover/checksum earliest surviving ping source.", "Confirm exact BSD kernel/socket environment.", "Recover Dave Mills/Fuzzball ICMP latency-measurement code mentioned by Muuss."],
+  "sources": [{"source_id": "SRC-0133", "supports": ["Muuss authorship", "sonar-inspired naming", "ICMP Echo timing mechanism", "Mills/Fuzzball inspiration testimony", "December 1983 origin story"], "locator": "The Story of the PING Program", "quotation_checked": true, "notes": "Participant retrospective; code provenance still needed."}],
+  "notes": "ICMP Echo predates the ping program. Record protocol and diagnostic tool as separate artifacts.",
+  "last_reviewed": "2026-08-29"
+}

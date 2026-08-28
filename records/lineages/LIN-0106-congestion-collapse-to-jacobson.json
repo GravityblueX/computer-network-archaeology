@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0106",
+  "from": {"artifact_id": null, "name": "1986 Internet congestion-collapse experience and 4.3BSD TCP misbehavior investigation", "revision": "LBL/UCB operational episode", "historical_term": "congestion collapse"},
+  "to": {"artifact_id": "ART-0145", "name": "Jacobson/Karels TCP congestion-control implementation generation", "revision": "1988 SIGCOMM/4BSD work", "historical_term": "congestion avoidance and control"},
+  "relation": "influenced",
+  "scope": ["transport", "operations", "architecture"],
+  "property": "Severe observed Internet congestion and examination of 4.3BSD TCP behavior motivate transport implementation changes organized around packet conservation, improved timers, slow start and congestion avoidance.",
+  "date_or_range": {"value": "1986-1988", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [{"source_ref": "SRC-0132", "locator": "Jacobson/Karels paper Introduction and historical motivation", "supports": "observed severe congestion, implementation diagnosis and algorithmic response", "notes": null}],
+  "negative_claims": ["This edge does not imply one single congestion incident was the sole origin of all later TCP congestion control.", "It does not make the 1988 paper a new TCP wire-protocol version."],
+  "open_questions": ["Recover LBL NRG email/tests from 1986-1988 and exact BSD source commits implementing each algorithm."],
+  "notes": "Operational failure → implementation redesign lineage.",
+  "last_reviewed": "2026-08-29"
+}

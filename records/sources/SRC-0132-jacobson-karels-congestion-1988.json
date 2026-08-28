@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0132",
+  "source_type": "academic-paper",
+  "title": "Congestion Avoidance and Control",
+  "authors_or_bodies": ["Van Jacobson", "Michael J. Karels"],
+  "date": {"value": "1988-08", "precision": "month", "certainty": "confirmed", "notes": "SIGCOMM 1988 paper; LBL-hosted copy is a slightly revised later rendering of the 1988 work."},
+  "edition_or_revision": "SIGCOMM 1988",
+  "identifiers": [{"scheme": "DOI", "value": "10.1145/52325.52356"}],
+  "publisher_or_issuer": "ACM SIGCOMM / Lawrence Berkeley Laboratory author archive",
+  "language": ["en"],
+  "topics": ["TCP", "congestion avoidance", "slow start", "packet conservation", "RTT variance", "4BSD"],
+  "artifact_ids": ["ART-0145"],
+  "access": {"canonical_url": "https://ee.lbl.gov/www/papers/congavoid.pdf", "archive_urls": [], "catalog_urls": ["https://ee.lbl.gov/www/nrg-papers.html"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "copyrighted-link-only",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The paper attributes much observed severe Internet congestion to transport-protocol implementation behavior and organizes solutions around a packet-conservation principle.", "locator": "Introduction and packet-conservation discussion", "certainty": "confirmed", "artifact_ids": ["ART-0145"], "notes": null},
+    {"claim": "The paper describes algorithms including improved RTT/RTO estimation, exponential backoff, slow start and congestion-avoidance behavior implemented in 4BSD TCP work.", "locator": "algorithm overview and subsequent sections", "certainty": "confirmed", "artifact_ids": ["ART-0145"], "notes": "Separate exact algorithm/source-release dates in later records."}
+  ],
+  "conflicts": [],
+  "notes": "Key contemporary source for the implementation lineage that later becomes central to modern TCP congestion control.",
+  "last_reviewed": "2026-08-29"
+}

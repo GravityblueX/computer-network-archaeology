@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schema/lineage-edge.schema.json",
+  "id": "LIN-0061",
+  "from": {"artifact_id": null, "name": "SNMP management frameworks", "revision": "SNMPv1/v2 lineage", "historical_term": "SNMP"},
+  "to": {"artifact_id": null, "name": "Modular SNMP management framework", "revision": "RFC 3411 / SNMPv3 architecture", "historical_term": "SNMPv3"},
+  "relation": "successor-of",
+  "scope": ["application", "management", "architecture"],
+  "property": "manager/agent management model survives while message processing, security, access control and application roles become explicit modular subsystems",
+  "date_or_range": {"value": "1990s-2002", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 3411", "locator": "Abstract and architecture overview", "supports": "RFC 3411 describes a modular SNMP engine with message-processing, security and access-control subsystems and explicitly aims to permit continued evolution of SNMP standards.", "notes": null}
+  ],
+  "negative_claims": [
+    "This edge does not claim that all SNMPv2 variants map cleanly into one linear predecessor chain.",
+    "It does not imply that SNMPv3 replaced all earlier deployed SNMP versions immediately."
+  ],
+  "open_questions": ["Reconstruct SNMPv2u/SNMPv2* and RFC 2571 intermediate branches before declaring the v2→v3 genealogy mature."],
+  "notes": "Later endpoint is outside the core 1950s-1990s period but included to show surviving ancestry in modern management practice.",
+  "last_reviewed": "2026-08-28"
+}

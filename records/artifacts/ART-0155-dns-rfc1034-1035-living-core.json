@@ -1,0 +1,30 @@
+{
+  "id": "ART-0155",
+  "canonical_name": "Domain Name System — RFC 1034/1035 living core",
+  "aliases": ["DNS core", "RFC 1034/1035 DNS"],
+  "kind": "protocol-family",
+  "parent_family": "Domain Name System",
+  "manufacturer_or_body": ["USC Information Sciences Institute", "Internet naming community"],
+  "chronology": {
+    "standardized": {"value": "1987-11", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0142", "SRC-0143"], "notes": "RFC 1034 and RFC 1035 published as the paired DNS concepts/implementation core."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0142", "SRC-0143"], "notes": "Core namespace, delegation, server/resolver, caching and message/RR architecture remains recognizable in production DNS."}
+  },
+  "networks_or_families": ["Internet", "DNS"],
+  "roles": ["hierarchical naming", "delegated authority", "distributed database", "resource-record service", "resolver/name-server protocol", "caching"],
+  "protocols": ["DNS"],
+  "addressing": "Maps hierarchical names to typed resource data; not limited to host-address records.",
+  "routing_or_forwarding": "Delegation and iterative/recursive resolution guide queries across authoritative boundaries; DNS is not an IP routing protocol.",
+  "error_control": "Application protocol response/error codes; reliability depends on selected transport and retry behavior.",
+  "flow_or_congestion_control": "No independent end-to-end congestion-control algorithm; transport-dependent.",
+  "survival": {"status": "operational-specimen", "locations": ["global production DNS"], "provenance_notes": "Reference example of a stable core architecture supporting a large forest of later extensions."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RR-type genealogy from original types through AAAA, SRV, DNSSEC, CAA, SVCB/HTTPS and others.", "Trace RFC 882/883 → 1034/1035 revision details.", "Trace resolver and authoritative-server implementation history.", "Separate core DNS semantics from later transport/privacy branches."],
+  "sources": [
+    {"source_id": "SRC-0142", "supports": ["hierarchical namespace", "delegation", "resolver/name-server/caching architecture", "explicit extensibility model"], "locator": "RFC 1034", "quotation_checked": true, "notes": null},
+    {"source_id": "SRC-0143", "supports": ["DNS wire message structure", "resource-record representation", "query/response protocol", "explicit extensibility model"], "locator": "RFC 1035", "quotation_checked": true, "notes": null}
+  ],
+  "related_artifacts": [],
+  "notes": "Reference example for living-core-with-extension-forest survival: later DNS features typically extend rather than replace the RFC 1034/1035 architectural skeleton.",
+  "last_reviewed": "2026-08-29"
+}

@@ -43,7 +43,6 @@
   "physical": {
     "medium": "varied by installed network interface",
     "line_service": null,
-    "nominal_bit_rate_bps": [],
     "clocking": null,
     "signaling": null,
     "connectors": [],

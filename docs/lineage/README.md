@@ -26,9 +26,15 @@ Machine-readable edges live in [`../../data/lineage-ledger.csv`](../../data/line
 - [`ethernet-shared-medium-to-switched.md`](ethernet-shared-medium-to-switched.md) — 2.94 Mb/s PARC Ethernet → DIX → IEEE 802.3 → 10BASE-T → bridge/switch → full-duplex Ethernet.
 - [`bridge-stp-switch-vlan.md`](bridge-stp-switch-vlan.md) — transparent bridges → distributed spanning tree → IEEE 802.1D → multiport switching → IEEE 802.1Q virtual bridged LANs.
 
-### Terminal and remote-access edges
+### Terminal, remote-access and AAA edges
 
 - [`terminal-access-tip-pad-terminal-server-portmaster.md`](terminal-access-tip-pad-terminal-server-portmaster.md) — BBN TIP, X.25 PAD, DECserver/LAT, Cisco communications servers and Livingston PortMaster as a recurring edge-access role rather than a false single product ancestry.
+- [`portmaster-radius-aaa.md`](portmaster-radius-aaa.md) — PortMaster modem-pool/access-server administration → Livingston RADIUS → RFC 2058/2138/2865, with Accounting as a sibling branch and later AAA uses kept separate from the original dial-access problem.
+- [`slip-to-ppp-point-to-point-links.md`](slip-to-ppp-point-to-point-links.md) — minimal IP-over-serial SLIP beside a growing PPP architecture with framing, LCP, NCPs, authentication and negotiated point-to-point links; direct causal ancestry is deliberately not asserted without evidence.
+
+### Host bootstrap and configuration
+
+- [`rarp-bootp-dhcp-host-configuration.md`](rarp-bootp-dhcp-host-configuration.md) — hardware-address bootstrap with RARP → routed BOOTP client/server bootstrap → DHCP reusable address leases and host-configuration state.
 
 ### Internet protocol layering
 
@@ -37,6 +43,10 @@ Machine-readable edges live in [`../../data/lineage-ledger.csv`](../../data/line
 ### Naming
 
 - [`hosts-txt-to-dns.md`](hosts-txt-to-dns.md) — central HOSTS.TXT maintenance → hierarchical naming → delegated DNS.
+
+### Interior routing families
+
+- [`igp-families-rip-hello-ospf-isis.md`](igp-families-rip-hello-ospf-isis.md) — HELLO, RIP, OSPF and IS-IS as parallel IGP families: distance-vector, Internet-specific and link-state branches, including OSI IS-IS entering IP through RFC 1195 rather than a false `RIP → OSPF → IS-IS` ladder.
 
 ### Interdomain routing
 
@@ -79,14 +89,12 @@ CSMA/CD collision arbitration
     └── no longer normally operates on full-duplex point-to-point links
 ```
 
-And modem history needs yet another relation:
+Modem history needs another relation:
 
 ```text
 MNP installed base
     └── interworked-with ──> V.42-era modem implementations
 ```
-
-This is **not** a formal `revision-of` edge.
 
 Terminal-access history adds another warning:
 
@@ -100,6 +108,23 @@ may describe a recurring role, but without documentary design links it must **no
 TIP → PAD → terminal server
 ```
 
+The new IGP excavation makes the same point:
+
+```text
+RIP   OSPF   IS-IS
+```
+
+are protocols that can occupy the same interior-routing role, but shared role is not a revision chain.
+
+And DHCP provides the opposite case — a genuinely documented derivation:
+
+```text
+BOOTP
+  └── explicitly extended by ──> DHCP
+```
+
+RFC 1531 says DHCP is based on BOOTP, preserves BOOTP relay behavior and adds reusable address allocation/configuration.
+
 A good lineage records both survival and death, and it records the *kind* of survival.
 
 ## Relationship strengths
@@ -107,7 +132,7 @@ A good lineage records both survival and death, and it records the *kind* of sur
 The preferred evidence ladder is:
 
 1. **formal revision/supersession** — a standard or RFC explicitly replaces another;
-2. **documented design ancestry** — designers/specifications explicitly cite prior work;
+2. **documented derivation/design ancestry** — the descendant specification explicitly says it is based on or extends prior work;
 3. **documented operational transition/interworking** — deployment records show replacement or coexistence;
 4. **de-facto interface inheritance** — compatible products/software demonstrably depend on an earlier product interface;
 5. **role genealogy** — the same infrastructure responsibility expands or migrates across product categories, with direct product ancestry explicitly excluded when unknown;
@@ -139,8 +164,6 @@ hub Ethernet
 switched full-duplex Ethernet
 ```
 
-The name and frame lineage persist while collision arbitration largely disappears.
-
 ### Wire incompatibility, architecture survives
 
 ```text
@@ -155,6 +178,37 @@ SNMP
 early integrated Transmission Control Program
             ↓
           IP + TCP
+```
+
+### A narrow bootstrap role grows into configuration-state management
+
+```text
+RARP: hardware address → protocol address
+             ↓ broader bootstrap
+BOOTP: routed client/server boot configuration
+             ↓ explicit derivation + lease model
+DHCP: reusable address + complete host configuration
+```
+
+### Same remote-access environment, different protocol ambition
+
+```text
+SLIP: delimit IP packets on serial bytes
+PPP: negotiate a multi-protocol point-to-point link
+```
+
+The archive currently records operational coexistence and role expansion, not an unsupported formal `SLIP → PPP` revision claim.
+
+### Parallel routing families under one IGP role
+
+```text
+             IGP role
+        /       |        \
+      RIP     HELLO    link-state/SPF
+                        /       \
+                     OSPF     OSI IS-IS
+                                  ↓ documented derivation
+                         Integrated IS-IS for IP
 ```
 
 ### Standardization preserves compatibility rather than erasing the old protocol
@@ -188,24 +242,24 @@ virtual bridged LAN / VLAN
 ### Edge role survives while endpoint intelligence moves
 
 ```text
-dumb terminal
-   ↓ characters
-TIP / PAD / terminal server
-   ↓
-remote host service
+dumb terminal → TIP/PAD/terminal server → remote host service
 ```
 
 becomes, in another branch:
 
 ```text
-PC with IP stack
-   ↓ PPP over modem/serial
-access server
-   ↓ routed IP
-Internet
+PC with IP stack → PPP → access server → routed Internet
 ```
 
-The **many-edge-ports-to-network** role persists, but session, protocol and authentication responsibilities move.
+### A product deployment problem creates a protocol
+
+```text
+PortMaster / modem-pool administration
+          ↓ documented origin
+RADIUS centralized NAS authentication/configuration
+          ↓ formal RFC revisions
+RADIUS core + Accounting sibling branch
+```
 
 ### Technology changes because infrastructure below it changed
 
@@ -236,26 +290,34 @@ Representative claim-level edges now include:
 - `LIN-0062` — Perlman distributed spanning-tree design → IEEE bridge/STP lineage;
 - `LIN-0068` — MNP installed base ↔ V.42 compatibility/interworking;
 - `LIN-0075` — Hayes AT command convention → third-party Hayes-compatible modem interfaces;
-- `LIN-0079` — terminal-server edge role → authenticated dial-IP access-server role without claiming vendor/source-code ancestry.
+- `LIN-0079` — terminal-server edge role → authenticated dial-IP access-server role without claiming vendor/source-code ancestry;
+- `LIN-0081` — Livingston PortMaster environment → RADIUS documented product/protocol origin;
+- `LIN-0085` — RARP → BOOTP bootstrap-role generalization with formal obsolescence explicitly excluded;
+- `LIN-0086` — BOOTP → DHCP documented derivation;
+- `LIN-0087` — SLIP ↔ PPP deployed coexistence without invented direct ancestry;
+- `LIN-0088` — OSI IS-IS → Integrated IS-IS direct derivation;
+- `LIN-0089` / `LIN-0090` — negative-lineage records preventing RIP/OSPF/IS-IS from being flattened into a fake upgrade chain.
 
-Structured artifacts include IEEE 802.1D-1990, V.42-1988, and the Hayes AT command-set family. Structured sources now include the BBN TIP Hardware Manual, DEC LAT guide, Livingston PortMaster guide and Cisco's 1992 terminal-server/router convergence announcement.
+Structured artifacts now also include RARP, BOOTP, DHCP/RFC2131, SLIP, PPP/RFC1661, RIP/RFC1058, OSPFv2/RFC1583, OSI IS-IS and Integrated IS-IS.
 
 ## Next lineage excavations
 
 The next layer should move below the current summaries:
 
+- **DHCP:** RFC 951→1542 BOOTP relay changes, RFC 1531→1541→2131 state-machine diff, options, early server/client source, lease-file formats;
+- **PPP:** RFC 1134→1171→1331→1548→1661 diff, RFC 1549→1662 framing branch, PAP/CHAP/IPCP, CSLIP, Multilink and early access-server implementations;
+- **IGPs:** RIP prehistory/RIP-2, HELLO source, OSPF RFC revision chain and first implementations, ISO 10589/IS-IS edition history and early Integrated IS-IS deployments;
+- **RADIUS:** pre-RFC Livingston implementation, ComOS client/server behavior, UDP 1645/1646→1812/1813, Accounting RFC 2059→2139→2866, then later 802.1X/EAP uses only with direct evidence;
 - **TIP:** processor/terminal scanner boards, port buffers, modem lines, user command software, named deployed sites;
 - **PAD:** actual Tymnet/Telenet/Transpac/DATAPAC PAD products and user command sets;
 - **DECserver/LAT:** DECserver 100 BOM/firmware/downline loading, LAT service advertisements/session setup/load balancing;
 - **access servers:** Cisco STS/MSM/ASM/500-CS and Livingston PortMaster/ComOS hardware/software genealogy;
-- **RADIUS:** Livingston implementation → RFC standardization → ISP operational deployment;
 - **bridge/STP:** DEC LANbridge 100 PDU/timer/state machine, IEEE 802.1D diffs, RSTP/MSTP;
 - **switching/VLAN:** Kalpana EtherSwitch BOM/ASIC history, 802.1Q tag/membership details, vendor VLAN predecessors;
 - **MNP/V.42:** original Microcom specs, LAPM state machine, negotiation traces, MNP5 vs V.42bis;
 - **Hayes:** first Smartmodem manuals, S-register diffs, UUCP/BBS/SLIP/PPP modem drivers, formal ETSI/3GPP AT ancestry;
 - **Ethernet:** autonegotiation and high-speed PHY lineage;
 - **SNMP:** HMP implementation → SGMP source → first SNMP agents; SMI/MIB genealogy;
-- **routing:** GGP source → EGP deployment → BGP-1 source; HELLO/RIP/OSPF/IS-IS as separate IGP families;
 - **applications:** NCP Telnet/FTP/mail → TCP-era application protocol revisions;
 - **DNS:** host tables → Jeeves/BIND server implementations.
 
@@ -265,7 +327,7 @@ A lineage becomes useful when it can answer:
 
 - What exact property moved?
 - What exact property did **not** move?
-- Was this a formal revision, operational replacement, influence, coexistence, compatibility layer, role migration, or only analogy?
+- Was this a formal revision, documented derivation, operational replacement, influence, coexistence, compatibility layer, role migration, or only analogy?
 - Which source proves the relationship?
 - At what date/revision did the change occur?
 - Which implementation first demonstrated it?

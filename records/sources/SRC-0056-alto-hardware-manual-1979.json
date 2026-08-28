@@ -1,0 +1,36 @@
+{
+  "id": "SRC-0056",
+  "source_type": "hardware-manual",
+  "title": "ALTO: A Personal Computer System — Hardware Manual",
+  "authors_or_bodies": ["Xerox Palo Alto Research Center", "Ed McCreight", "David Boggs", "Ed Taft", "earlier contributors including Chuck Thacker, Bob Sproull and Diana Merry"],
+  "date": {"value": "1979-05", "precision": "month", "certainty": "confirmed", "notes": "Manual states it is a revision of earlier Alto hardware descriptions and covers Alto I and Alto II."},
+  "edition_or_revision": "May 1979",
+  "identifiers": [],
+  "publisher_or_issuer": "Xerox Palo Alto Research Center",
+  "language": ["en"],
+  "topics": ["Xerox Alto", "experimental Ethernet", "2.94 Mbit/s Ethernet", "Ethernet interface", "microcode", "transceiver", "CRC", "collision handling", "BBN-1822 interface"],
+  "artifact_ids": ["ART-0017", "ART-0041"],
+  "access": {
+    "canonical_url": "https://xeroxalto.computerhistory.org/_cd8_/altodocs/.altohardware.press%212.pdf",
+    "archive_urls": ["https://xeroxalto.computerhistory.org/"],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open-archival-access"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 82, "ocr_status": "searchable", "scan_notes": "Computer History Museum Xerox Alto archive copy; checksum still to be recorded."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Xerox copyright notice is present in the manual. Link to archival copy rather than redistributing by default.",
+  "provenance": {"original_holder": "Xerox PARC", "current_holder": "Computer History Museum Xerox Alto archive access site", "donor_or_collection": "Xerox Alto software/document archive", "chain_notes": "Retain document path and archival metadata because Xerox Alto filenames encode original filing context."},
+  "evidence_grade": "primary-contemporary-manual",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The Alto experimental Ethernet was a 2.94 Mbit/s broadcast multi-drop network supporting up to 256 nodes over about 1 km.", "locator": "Section 7.0, printed page 49", "certainty": "confirmed", "artifact_ids": ["ART-0017"], "notes": null},
+    {"claim": "The Alto Ethernet implementation consisted of a transceiver, station interface and microcode.", "locator": "Section 7.0, printed page 49", "certainty": "confirmed", "artifact_ids": ["ART-0017"], "notes": null},
+    {"claim": "The hardware included FIFO buffering, phase encoding, clock recovery, shift registers and CRC logic.", "locator": "Section 7.2, printed page 52", "certainty": "confirmed", "artifact_ids": ["ART-0017"], "notes": null},
+    {"claim": "The Alto manual lists optional BBN-1822, SDLC, BiSync and Async communications controllers and credits Larry Stewart with the BBN-1822 interface.", "locator": "Section 1.0–1.2, printed pages 1–2", "certainty": "confirmed", "artifact_ids": ["ART-0008"], "notes": "Create a separate Alto 1822 artifact record in a later pass."}
+  ],
+  "conflicts": [],
+  "notes": "Use this manual for the mature Alto-era implementation, not as evidence that every listed detail was present in the first 1973 prototype.",
+  "last_reviewed": "2026-08-28"
+}

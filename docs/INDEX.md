@@ -38,7 +38,13 @@ These files demonstrate the intended final granularity. A subject is **not** con
 - [`arpanet/1969-host-imp-stack.md`](arpanet/1969-host-imp-stack.md)  
   Reconstructs the early host/IMP boundary from RFC 1 and RFC 7: messages vs packets, logical links, RFNM, error checking, UCLA Sigma 7 host software organization, buffer design and unresolved hardware/carrier questions.
 
-Questions opened by this excavation include exact BBN 1822 electrical details, site-specific interface hardware, first-node bills of materials and the leased-line/modem layer behind the IMP cloud.
+- [`arpanet/ucla-1969-node-bom.md`](arpanet/ucla-1969-node-bom.md)  
+  Treats the first UCLA ARPANET node as installed infrastructure rather than a milestone slogan: Sigma 7 host, Mike Wingfield's custom Host–IMP interface, BBN IMP No. 1, modified Honeywell DDP-516, IMP software build/deployment path, 50 kbit/s carrier layer, probable Bell 303-class data sets, telco responsibilities, first-login chronology and surviving IMP provenance.
+
+- [`arpanet/bbn-1822-physical-interface.md`](arpanet/bbn-1822-physical-interface.md)  
+  Excavates 1822 as physical machinery: bit-serial asynchronous handshaking, ready lines, Local/Distant/Very Distant Host variants, liveness/watchdog behavior, leader revision drift, RFC 642 implementation cleanup, JANUS lineage and the need for revision-specific electrical/pinout records.
+
+The next ARPANET layer is no longer “what was the IMP?” It is now board-, cable- and revision-level: Wingfield interface drawings, exact 1969 Report 1822 values, Bell 303 service orders, IMP No. 1 board population, and per-site host-interface implementations.
 
 ## Bell data sets: source conflict as an artifact
 
@@ -61,12 +67,19 @@ Particularly important leads now exposed: exact Honeywell I/O configuration, the
 
 The next layer is a per-site CIGALE bill of materials plus packet-header/routing reconstruction.
 
-## ALOHAnet → experimental Ethernet
+## ALOHAnet
 
 - [`alohanet/radio-to-ethernet.md`](alohanet/radio-to-ethernet.md)  
   Starts from the actual Hawaiian radio system: UHF channel pair, Terminal Control Unit, RS-232 terminal boundary, packet/retransmission behavior, Pure/Slotted ALOHA and later microprocessor packet-control units, then follows the shared-medium idea into Xerox PARC Ethernet.
 
 It explicitly keeps **ALOHAnet**, **1973 Ethernet concept**, **2.94 Mbit/s experimental Ethernet** and **10 Mbit/s DIX/IEEE Ethernet** as distinct historical objects.
+
+## Xerox PARC experimental Ethernet + PUP
+
+- [`ethernet/xerox-alto-2-94mbps-pup-stack.md`](ethernet/xerox-alto-2-94mbps-pup-stack.md)  
+  Reconstructs the Alto-era 2.94 Mbit/s system instead of projecting 10BASE5 backward: coax Ether, transceiver, FIFO/phase-encoding/clock-recovery/CRC interface logic, Ethernet microcode, backplane-wired host address, software-visible collision/backoff state, early packet conventions, and the PUP internetwork stack carried across Ethernet, ARPANET and synchronous links.
+
+The next layer is physical and source-level: transceiver electrical characteristics, coax/tap/terminator models, interface schematics, Ethernet microcode source, 1973/1974 document genealogy, PUP gateway machines and surviving PARC hardware provenance.
 
 ## X.25 + Triple-X PAD
 
@@ -94,7 +107,10 @@ This file is also the canonical warning that contemporary **gateway** terminolog
 - [`nsfnet/fuzzball-to-t1-nss.md`](nsfnet/fuzzball-to-t1-nss.md)  
   Tracks national Internet backbone growth as hardware: 56 kbit/s PDP-11/LSI-11 Fuzzballs, HELLO routing and overload; the 1988 1.544 Mbit/s T1 backbone with multi-IBM-RT Nodal Switching Subsystems; then the T3/RS-6000 transition and 1995 retirement.
 
-The next target is a per-site router/interface/circuit inventory for each backbone generation.
+- [`nsfnet/fuzzball-node-internals.md`](nsfnet/fuzzball-node-internals.md)  
+  Opens the Fuzzball itself: PDP-11/LSI-11 operating system and RT-11 virtual-machine environment, scheduler/IPC, three-layer network drivers, paired input/output processes, zero-copy packet path, TCP/IP applications, HELLO/Hellospeak, 1000 Hz logical clock, surviving source archive and the unresolved per-site Phase-I hardware inventory.
+
+The next NSFNET layer is site-specific: exact processor, RAM, bus, disk, Ethernet adapter, serial/WAN controller, carrier termination, clock hardware, software image and circuit ID for each of the six production Fuzzball sites, followed by the same treatment for one IBM RT NSS node.
 
 ---
 
@@ -148,7 +164,7 @@ The templates intentionally ask for details that popular histories omit: connect
 
 # Recommended excavation order
 
-The project should grow both **horizontally**, **vertically**, and now **structurally**.
+The project should grow both **horizontally**, **vertically**, and **structurally**.
 
 ## Horizontal: prevent loss
 
@@ -208,20 +224,22 @@ This will eventually let the repository answer questions that prose cannot answe
 
 # Next high-value vertical digs
 
-Several previously listed targets now have first-pass deep excavations. The next layer should concentrate on **revision-level and site-level specificity**:
+Several former targets now have first-pass deep excavations. The queue should therefore move downward rather than repeat the same subjects at summary level:
 
-1. September–October 1969 UCLA ARPANET node bill of materials;
-2. BBN Report 1822 and exact Host–IMP electrical interface revisions;
-3. Bell 101A/B/C and 103A/F revision tree from Bell primary documents;
-4. NPL Mark I switch: Honeywell 516 I/O boards, packet header, link hardware and operator console;
-5. CIGALE per-site Mitra 15 configurations, packet format and routing table;
-6. 1973–1976 Xerox experimental 2.94 Mbit/s Ethernet: Alto interface, transceiver, coax and PUP stack;
-7. one real 1970s X.25 terminal → modem → PAD → public data network → host path with vendor models and tariff;
-8. one UUCP overnight feed reconstructed from modem model, call schedule, spool files, wire protocol and phone cost;
-9. one 1982 BBN Internet Gateway site with exact PDP-11, interface boards, memory map and INOC monitoring path;
-10. one 1986 NSFNET Fuzzball site and one 1988 IBM RT NSS site with complete hardware/circuit inventory;
-11. one 1994 dial-up ISP POP from analog subscriber loop through modem bank/access server to upstream BGP router;
-12. an archive/museum provenance map showing where surviving routers, IMPs, modems, terminals, NICs and manuals physically reside.
+1. **UCLA 1969 node, board level:** Mike Wingfield interface schematics/logic, connector/pinout, Sigma 7 channel mapping, IMP No. 1 serial/board inventory, exact installed core memory and present-vs-1969 provenance.
+2. **1822 revision archaeology:** earliest 1969 specification plus 1973/1974/1975/1976 diffs; Local/Distant Host signal lists, electrical values, cable limits, grounding and complete state machines; VDH kept separate.
+3. **Bell data-set genealogy:** Bell 101A/B/C, 103A/F and Bell 303-family revision tree from Bell System Practices, tariffs, announcements and surviving hardware.
+4. **NPL Mark I at board level:** Honeywell 516 I/O cards, memory/configuration, host-interface hardware, packet header, line framing, switch software and operator console.
+5. **CIGALE at site level:** Mitra 15 configurations, modem/line equipment, packet header, routing-table representation, process queues and remote reload path.
+6. **Xerox experimental Ethernet at electrical/source level:** 1973/1974 memos, transceiver schematic/specification, coax/taps/terminators, Alto interface boards, Ethernet microcode revisions, PUP gateway software and surviving hardware.
+7. **One real 1970s X.25 session:** named terminal → serial modem → named PAD → named public data network → named host, including tariff, X.3 profile and operator/user commands.
+8. **One real UUCP overnight feed:** named machines and modems, phone route, call schedule, Devices/Systems files, spool filenames, wire protocol, news software and telephone cost.
+9. **One concrete 1982 BBN gateway site:** exact PDP-11/LSI-11, memory map, interface-board population, GGP tables, MOS/source image and INOC alarm/monitoring path.
+10. **NSFNET site BOMs:** all six production Fuzzball sites, then one complete IBM RT NSS node including carrier-side T1 equipment and software build identifiers.
+11. **One 1994 dial-up ISP POP:** analog subscriber loop → modem → modem rack/digital trunk → access server → Ethernet/FDDI → upstream router/BGP, with actual vendor models and configuration artifacts.
+12. **Physical provenance map:** museum/archive/collection records for surviving IMPs, modems, PADs, packet switches, routers, terminals, Ethernet transceivers, NICs, cables, manuals and operator documents.
+13. **Source-code archaeology:** Fuzzball, PUP, early BSD TCP/IP, UUCP/News, IMP resurrection sources — manifests, checksums, build tools and code-to-spec concordances.
+14. **Operations archaeology:** network maps are not enough; preserve NOC consoles, alarms, logs, maintenance manuals, test sets, escalation procedures, circuit IDs and human operator workflows.
 
 # The completion criterion
 

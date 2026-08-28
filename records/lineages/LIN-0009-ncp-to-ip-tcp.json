@@ -1,0 +1,51 @@
+{
+  "id": "LIN-0009",
+  "from": {
+    "artifact_id": "ART-0039",
+    "name": "ARPANET NCP",
+    "revision": "operational ARPANET host environment",
+    "historical_term": "NCP"
+  },
+  "to": {
+    "artifact_id": "ART-0042",
+    "name": "ARPANET IP/TCP environment",
+    "revision": "1981-1983 transition generation",
+    "historical_term": "IP/TCP"
+  },
+  "relation": "replaced-by",
+  "scope": ["network", "transport", "application", "operations"],
+  "property": "Operational host protocol and principal-service base on the ARPANET was migrated from NCP to IP/TCP and TCP-based services through a staged transition ending with NCP removal from service.",
+  "date_or_range": {
+    "value": "1981-11/1983-01",
+    "precision": "range",
+    "notes": "RFC 801 defines a staged migration, dual-protocol period and Full Internet Service milestone in January 1983."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [
+    {
+      "source_ref": "RFC 801",
+      "locator": "General Plan; Milestones; Full Internet Service Jan 83",
+      "supports": "planned and operational removal of NCP in favor of IP/TCP environment",
+      "notes": "Canonical RFC Editor copy."
+    },
+    {
+      "source_ref": "RFC 773",
+      "locator": "NCP to TCP mail transition strategy",
+      "supports": "service-level transition planning predating final cutover",
+      "notes": "Shows that the transition was a multi-service migration rather than one atomic protocol change."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not mean every host changed protocols simultaneously on one instant.",
+    "This edge does not mean Telnet, FTP and mail disappeared; their service roles continued with changed protocol foundations.",
+    "This edge does not reduce the transition to TCP alone; IP and application protocols/services were also involved."
+  ],
+  "open_questions": [
+    "Build a host-by-host conversion timeline from NIC transition workbooks and site records.",
+    "Identify relay hosts and document actual NCP/TCP interworking traffic during 1981-1982.",
+    "Recover operator and user reports of transition failures/performance problems."
+  ],
+  "notes": "Reference example of an operational replacement lineage with a documented coexistence/migration interval.",
+  "last_reviewed": "2026-08-28"
+}

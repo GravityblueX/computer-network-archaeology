@@ -1,0 +1,46 @@
+{
+  "id": "SRC-0095",
+  "source_type": "rfc",
+  "title": "Remote Authentication Dial In User Service (RADIUS)",
+  "authors_or_bodies": ["Carl Rigney", "Steve Willens", "Allan C. Rubens", "William Allen Simpson"],
+  "date": {"value": "2000-06", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2865",
+  "identifiers": [{"scheme": "RFC", "value": "2865"}, {"scheme": "DOI", "value": "10.17487/RFC2865"}],
+  "publisher_or_issuer": "IETF / RFC Editor",
+  "language": ["en"],
+  "topics": ["RADIUS", "Network Access Server", "authentication", "authorization", "modem pools", "attributes", "RFC revision"],
+  "artifact_ids": ["ART-0113"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc2865.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc2865/"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": 76, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer RFC Editor canonical representations.",
+  "provenance": {"original_holder": "IETF RADIUS working group", "current_holder": "RFC Editor", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "RFC 2865 obsoletes RFC 2138 and preserves the RADIUS NAS/server architecture while documenting later protocol corrections/changes.",
+      "locator": "RFC header and Section 1 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": null
+    },
+    {
+      "claim": "The RFC still motivates RADIUS in terms of dispersed serial-line/modem pools requiring centralized authentication, authorization and administrative support.",
+      "locator": "Section 1 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": "Important evidence that the standardized protocol still carries its dial-access operational context."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Later core RADIUS standard retained as a descendant endpoint; protocol name continuity must not hide revision-level RFC changes.",
+  "last_reviewed": "2026-08-29"
+}

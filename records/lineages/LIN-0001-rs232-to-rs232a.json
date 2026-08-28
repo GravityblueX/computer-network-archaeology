@@ -1,0 +1,49 @@
+{
+  "id": "LIN-0001",
+  "from": {
+    "artifact_id": null,
+    "name": "EIA RS-232",
+    "revision": "May 1960",
+    "historical_term": "RS-232"
+  },
+  "to": {
+    "artifact_id": null,
+    "name": "EIA RS-232-A",
+    "revision": "October 1963",
+    "historical_term": "RS-232-A"
+  },
+  "relation": "revision-of",
+  "scope": ["interface", "electrical", "connector"],
+  "property": "Formal revision of the interface between data terminal/data processing terminal equipment and data communication equipment.",
+  "date_or_range": {
+    "value": "1960-1963",
+    "precision": "range",
+    "notes": "The NBS standards survey records RS-232 May 1960 and RS-232-A October 1963; the TIA historical listing identifies RS-232 as the preceding version."
+  },
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {
+      "source_ref": "NBS historical standards survey",
+      "locator": "RS-232 standardization-status entry",
+      "supports": "RS-232 May 1960; RS-232-A October 1963",
+      "notes": "Government standards survey; original 1960 text still needs acquisition for field-level comparison."
+    },
+    {
+      "source_ref": "TIA historical RS-232-A listing",
+      "locator": "product details and historical-version reference",
+      "supports": "RS-232-A publication date and revised relationship to May 1960 RS-232",
+      "notes": "Commercial standards-store metadata, not a substitute for the complete historical standard text."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that every signal, connector rule, voltage limit, or pin assignment commonly associated with later RS-232-C already existed unchanged in the May 1960 edition."
+  ],
+  "open_questions": [
+    "Acquire the complete May 1960 RS-232 text.",
+    "Acquire the complete October 1963 RS-232-A text.",
+    "Produce a circuit-by-circuit, electrical and connector diff."
+  ],
+  "notes": "Formal revision edge chosen as a reference example because it is stronger than a retrospective influence claim.",
+  "last_reviewed": "2026-08-28"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0108",
+  "from": {"artifact_id": null, "name": "Internet Message Format", "revision": "RFC 2822 / April 2001", "historical_term": "Internet Message Format"},
+  "to": {"artifact_id": "ART-0157", "name": "Internet Message Format", "revision": "RFC 5322 / October 2008", "historical_term": "Internet Message Format"},
+  "relation": "revision-of",
+  "scope": ["application", "framing", "architecture"],
+  "property": "The textual Internet mail message format is formally revised while retaining the RFC 822-descended header/body model and compatibility-oriented parsing of historical syntax.",
+  "date_or_range": {"value": "2001-04/2008-10", "precision": "range", "notes": "RFC 5322 explicitly says it revises RFC 2822, which itself superseded RFC 822."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref": "SRC-0145", "locator": "RFC 5322 Abstract and Introduction", "supports": "formal RFC 2822→5322 revision and RFC 822 ancestry", "notes": null}],
+  "negative_claims": ["This is message-syntax lineage, not SMTP transport lineage.", "MIME is an extension layer over message representation, not the same revision chain."],
+  "open_questions": ["Create structured RFC 822 and RFC 2822 source/artifact records.", "Build grammar-level diff across RFC 822→2822→5322."],
+  "notes": "Stored historical mail makes backward grammar knowledge operationally important long after old documents are superseded.",
+  "last_reviewed": "2026-08-29"
+}

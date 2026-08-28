@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0091",
+  "from":{"artifact_id":null,"name":"Original ARPA Network computer-mail-as-FTP-feature practice","revision":null,"historical_term":"FTP mail feature"},
+  "to":{"artifact_id":"ART-0131","name":"Mail Transfer Protocol","revision":"RFC 772 / September 1980","historical_term":"MTP"},
+  "relation":"role-descends-into","scope":["application","architecture"],
+  "property":"Mail transfer separates from an implementation tradition in which computer mail had been a feature of FTP and becomes a dedicated protocol responsibility.",
+  "date_or_range":{"value":"ARPANET era/1980-09","precision":"range","notes":"RFC 772 retrospectively documents the original ARPA Network mail/FTP relationship."},"certainty":"confirmed","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0117","locator":"RFC 772, Preface and Introduction","supports":"explicit statement that original ARPA Network computer mail was implemented as an FTP feature and explains MTP/FTP similarities","notes":null}],
+  "negative_claims":["This edge does not claim all early ARPANET email was implemented only through one FTP command sequence.","It does not establish source-code descent for every mail program.","Message-format history is separate from mail-transfer protocol history."],
+  "open_questions":["Recover exact FTP mail commands and implementations by RFC/release.","Locate NCP-era mailer source and spool formats."],
+  "notes":"A responsibility-specialization edge supported directly by RFC 772's historical explanation.","last_reviewed":"2026-08-29"
+}

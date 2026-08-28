@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0122",
+  "source_type": "rfc",
+  "title": "Using ARP to Implement Transparent Subnet Gateways",
+  "authors_or_bodies": ["Smoot Carl-Mitchell", "John S. Quarterman"],
+  "date": {"value": "1987-10", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1027",
+  "identifiers": [{"scheme": "RFC", "value": "1027"}],
+  "publisher_or_issuer": "Network Working Group / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["Proxy ARP", "subnet gateways", "ARP", "migration", "legacy hosts"],
+  "artifact_ids": ["ART-0135"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc1027.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc1027"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 1027 documents Proxy ARP as a widely used technique in which a gateway answers ARP requests on behalf of hosts on other physical networks.", "locator": "Status, Introduction, Section 2.1", "certainty": "confirmed", "artifact_ids": ["ART-0135"], "notes": "The RFC explicitly frames the technique as a migration aid when many hosts lack subnet support."}
+  ],
+  "conflicts": [],
+  "notes": "Strong primary evidence for Proxy ARP behavior and its installed-base motivation.",
+  "last_reviewed": "2026-08-29"
+}

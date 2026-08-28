@@ -1,0 +1,21 @@
+{
+  "id": "ART-0135",
+  "canonical_name": "Proxy ARP / Transparent Subnet Gateway technique (RFC 1027)",
+  "aliases": ["Proxy ARP", "ARP hack", "transparent subnet gateway"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["Network Working Group", "Texas Internet Consulting"],
+  "chronology": {"standardized": {"value": "1987-10", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0122"], "notes": "RFC documents a technique described as already widely used."}},
+  "networks_or_families": ["IPv4", "ARP", "subnetted Ethernet"],
+  "roles": ["gateway answers ARP on behalf of remote hosts", "hide subnet boundaries from hosts lacking subnet awareness"],
+  "stack_position": ["link", "network", "cross-layer"],
+  "protocols": ["ARP", "IPv4"],
+  "routing_or_forwarding": "Gateway returns its own hardware address for a target on another physical network, then forwards received IP traffic by ordinary routing mechanisms.",
+  "operations": {"monitoring": "Proxy ARP entries and gateway reachability affect host behavior.", "diagnostics": "ARP replies appear to resolve a remote target to the gateway hardware address.", "remote_management": null, "failure_behavior": "Can obscure topology and create surprising reachability/scale behavior when used broadly.", "operator_interface": "Router configuration defaults/commands vary by vendor and release and remain to be catalogued."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover University of Texas implementation described by RFC 1027.", "Find earliest router-vendor proxy-ARP configuration manuals and defaults.", "Trace operational deprecation/use cases without conflating Proxy ARP with NAT."],
+  "sources": [{"source_id": "SRC-0122", "supports": ["Proxy ARP algorithm", "migration motivation", "widely used status in 1987"], "locator": "Status, Introduction, Section 2.1", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0134", "relation": "derived from ARP behavior", "notes": "Technique uses ARP semantics rather than revising the base packet format."}],
+  "notes": "A canonical example of an installed-base compatibility mechanism: subnetting was useful before all connected hosts implemented subnet awareness.",
+  "last_reviewed": "2026-08-29"
+}

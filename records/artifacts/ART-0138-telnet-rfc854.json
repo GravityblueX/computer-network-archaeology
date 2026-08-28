@@ -1,0 +1,20 @@
+{
+  "id": "ART-0138",
+  "canonical_name": "Telnet Protocol, RFC 854 generation",
+  "aliases": ["TELNET", "Telnet"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["ISI", "Network Working Group"],
+  "chronology": {"standardized": {"value": "1983-05", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0125"], "notes": "RFC 854 obsoletes RFC 764 but earlier ad hoc/NCP-era Telnet history remains a separate genealogy."}},
+  "networks_or_families": ["ARPANET", "Internet"],
+  "roles": ["remote terminal interoperability", "Network Virtual Terminal abstraction", "option-negotiated terminal/process communication"],
+  "stack_position": ["application"],
+  "protocols": ["Telnet", "TCP"],
+  "software": {"operating_system": null, "programs": ["Telnet client", "Telnet server/daemon"], "languages": [], "version_or_revision": "RFC 854 generation"},
+  "operations": {"monitoring": null, "diagnostics": "Negotiation traces reveal option/echo/NVT interoperability problems.", "remote_management": "Historically used for remote interactive access; later security history must be tracked separately.", "failure_behavior": "Terminal option/echo/line-ending disagreements can make a connection operationally unusable despite transport success.", "operator_interface": "NVT plus Telnet option negotiation; local PTY/terminal mapping is implementation-specific."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build full RFC 139/158/318/435/.../764/854 revision graph.", "Recover NCP-era and BSD Telnet source implementations.", "Inventory Telnet option RFCs and first deployed implementations."],
+  "sources": [{"source_id": "SRC-0125", "supports": ["RFC 854 purpose", "RFC 764 obsolescence", "NVT/option-negotiation architecture"], "locator": "RFC 854 header and Introduction", "quotation_checked": true, "notes": null}],
+  "notes": "Telnet is not merely an obsolete shell command; its core artifact is a virtual-terminal interoperability architecture. SSH is not a formal Telnet revision.",
+  "last_reviewed": "2026-08-29"
+}

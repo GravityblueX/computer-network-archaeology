@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0097",
+  "from": {"artifact_id": null, "name": "File Transfer Protocol", "revision": "RFC 765 / IEN 149 / June 1980", "historical_term": "FTP"},
+  "to": {"artifact_id": "ART-0139", "name": "File Transfer Protocol", "revision": "RFC 959 / October 1985", "historical_term": "FTP"},
+  "relation": "revision-of",
+  "scope": ["application", "architecture"],
+  "property": "The mature FTP specification formally replaces the RFC 765 generation while retaining the recognizable control/data architecture and adding/revising commands.",
+  "date_or_range": {"value": "1980-06/1985-10", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 765", "locator": "header and Introduction", "supports": "1980 FTP generation", "notes": null},
+    {"source_ref": "SRC-0126", "locator": "RFC 959 header and Status", "supports": "formal obsolescence and compatibility statement", "notes": null}
+  ],
+  "negative_claims": ["This direct formal edge does not erase the much longer RFC 114-to-765 FTP genealogy.", "SFTP is not a descendant revision on this edge."],
+  "open_questions": ["Build command/type/mode diffs and promote intermediate official FTP specifications as separate lineage nodes."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0094",
+  "from": {"artifact_id": "ART-0134", "name": "Address Resolution Protocol", "revision": "RFC 826", "historical_term": "ARP"},
+  "to": {"artifact_id": "ART-0135", "name": "Proxy ARP / Transparent Subnet Gateway technique", "revision": "RFC 1027", "historical_term": "Proxy ARP"},
+  "relation": "derived-from",
+  "scope": ["link", "network", "architecture", "operations"],
+  "property": "A gateway reuses ARP request/reply semantics to answer on behalf of a host on another physical network and thereby hide subnet routing from legacy hosts.",
+  "date_or_range": {"value": "1982-1987", "precision": "range", "notes": "RFC 1027 explicitly bases the technique on ARP and documents an already deployed migration use."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {"source_ref": "SRC-0121", "locator": "RFC 826 protocol mapping behavior", "supports": "base ARP request/reply/address-resolution mechanism", "notes": null},
+    {"source_ref": "SRC-0122", "locator": "RFC 1027 Status, Introduction, Section 2.1", "supports": "gateway answering ARP on behalf of remote targets and migration motivation", "notes": null}
+  ],
+  "negative_claims": ["Proxy ARP is not a formal revision of the ARP packet format.", "This edge does not establish any direct ancestry from Proxy ARP to NAT.", "This edge does not make remote targets genuinely members of the same physical network."],
+  "open_questions": ["Recover the University of Texas implementation and router-vendor configuration genealogy."],
+  "notes": "Canonical installed-base compatibility lineage.",
+  "last_reviewed": "2026-08-29"
+}

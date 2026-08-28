@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0124",
+  "source_type": "rfc",
+  "title": "Internet Control Message Protocol",
+  "authors_or_bodies": ["Jon Postel"],
+  "date": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 792",
+  "identifiers": [{"scheme": "RFC", "value": "792"}],
+  "publisher_or_issuer": "USC/ISI / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["ICMP", "IP", "gateways", "errors", "control messages", "echo"],
+  "artifact_ids": ["ART-0137"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc792.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc792"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 792 defines ICMP as a mechanism for hosts and gateways to communicate control and error information about IP datagram processing.", "locator": "Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0137"], "notes": null},
+    {"claim": "RFC 792 explicitly prohibits sending ICMP error messages about ICMP messages, avoiding recursive error generation.", "locator": "Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0137"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Primary source for early ICMP type/code roles and the gateway terminology of the period.",
+  "last_reviewed": "2026-08-29"
+}

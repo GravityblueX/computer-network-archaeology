@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0127",
+  "source_type": "rfc",
+  "title": "Mail Routing and the Domain System",
+  "authors_or_bodies": ["Craig Partridge"],
+  "date": {"value": "1986-01", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 974",
+  "identifiers": [{"scheme": "RFC", "value": "974"}],
+  "publisher_or_issuer": "CSNET CIC / BBN Laboratories / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["DNS", "MX", "mail routing", "SMTP", "preference", "fallback"],
+  "artifact_ids": ["ART-0140"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc974.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc974"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 974 defines operational mailer behavior for DNS MX resource records, including preference ordering and fallback attempts.", "locator": "What the Domain Servers Know and General Routing Guidelines", "certainty": "confirmed", "artifact_ids": ["ART-0140"], "notes": null},
+    {"claim": "MX preference values order candidate mail exchangers with lower values preferred.", "locator": "What the Domain Servers Know", "certainty": "confirmed", "artifact_ids": ["ART-0140"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Pair with RFC 883 and RFC 1035 to reconstruct MD/MF to MX redesign.",
+  "last_reviewed": "2026-08-29"
+}

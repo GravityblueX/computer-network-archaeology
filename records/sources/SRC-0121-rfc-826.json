@@ -1,0 +1,23 @@
+{
+  "id": "SRC-0121",
+  "source_type": "rfc",
+  "title": "An Ethernet Address Resolution Protocol",
+  "authors_or_bodies": ["David C. Plummer"],
+  "date": {"value": "1982-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 826",
+  "identifiers": [{"scheme": "RFC", "value": "826"}],
+  "publisher_or_issuer": "Network Working Group / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["ARP", "Ethernet", "address resolution", "IPv4", "hardware address"],
+  "artifact_ids": ["ART-0134"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc826.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc826"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 826 defines a protocol for mapping protocol addresses to local hardware addresses for transmission on Ethernet hardware.", "locator": "title, abstract and protocol discussion", "certainty": "confirmed", "artifact_ids": ["ART-0134"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Primary source for ARP packet format and the protocol-address versus hardware-address boundary.",
+  "last_reviewed": "2026-08-29"
+}

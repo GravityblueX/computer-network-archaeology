@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0125",
+  "source_type": "rfc",
+  "title": "Telnet Protocol Specification",
+  "authors_or_bodies": ["Jon Postel", "Joyce Reynolds"],
+  "date": {"value": "1983-05", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 854",
+  "identifiers": [{"scheme": "RFC", "value": "854"}],
+  "publisher_or_issuer": "ISI / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["Telnet", "NVT", "remote terminal", "option negotiation", "TCP"],
+  "artifact_ids": ["ART-0138"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc854.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc854"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 854 defines Telnet as a bidirectional eight-bit byte-oriented communications facility whose primary goal is standard interfacing of terminal devices and terminal-oriented processes.", "locator": "Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0138"], "notes": null},
+    {"claim": "RFC 854 formally obsoletes RFC 764.", "locator": "header metadata", "certainty": "confirmed", "artifact_ids": ["ART-0138"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Use with RFC 318 and RFC 764 to reconstruct the ad hoc/NCP-era to TCP-era Telnet transition.",
+  "last_reviewed": "2026-08-29"
+}

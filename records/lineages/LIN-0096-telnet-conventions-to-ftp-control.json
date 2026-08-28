@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0096",
+  "from": {"artifact_id": "ART-0138", "name": "Telnet NVT/control conventions", "revision": "RFC 854 generation", "historical_term": "TELNET"},
+  "to": {"artifact_id": "ART-0139", "name": "FTP control connection", "revision": "RFC 959 generation", "historical_term": "FTP control connection"},
+  "relation": "carried-over",
+  "scope": ["application", "architecture"],
+  "property": "FTP control commands and replies explicitly use Telnet protocol/end-of-line conventions even though file data is transferred over a separate FTP data connection.",
+  "date_or_range": {"value": "1983-1985", "precision": "range", "notes": "The relationship is explicit in RFC 959."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {"source_ref": "SRC-0125", "locator": "RFC 854 NVT/Telnet protocol model", "supports": "source convention", "notes": null},
+    {"source_ref": "SRC-0126", "locator": "RFC 959 Relationship between FTP and Telnet; FTP command syntax", "supports": "explicit Telnet use on FTP control connection", "notes": null}
+  ],
+  "negative_claims": ["FTP is not a Telnet protocol revision.", "FTP data connections do not become Telnet sessions merely because the control channel uses Telnet conventions."],
+  "open_questions": ["Trace whether early FTP implementations reused common Telnet code modules or merely reimplemented the wire conventions."],
+  "notes": "A concrete cross-protocol convention inheritance edge.",
+  "last_reviewed": "2026-08-29"
+}

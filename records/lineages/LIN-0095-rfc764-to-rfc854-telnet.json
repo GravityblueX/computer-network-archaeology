@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0095",
+  "from": {"artifact_id": null, "name": "Telnet Protocol specification", "revision": "RFC 764 / June 1980", "historical_term": "TELNET"},
+  "to": {"artifact_id": "ART-0138", "name": "Telnet Protocol Specification", "revision": "RFC 854 / May 1983", "historical_term": "TELNET"},
+  "relation": "revision-of",
+  "scope": ["application", "architecture"],
+  "property": "The TCP-era Telnet core specification is formally revised while preserving the Network Virtual Terminal and option-negotiated terminal/process communication role.",
+  "date_or_range": {"value": "1980-06/1983-05", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 764", "locator": "header and Introduction", "supports": "1980 TCP-based Telnet specification", "notes": null},
+    {"source_ref": "SRC-0125", "locator": "RFC 854 header", "supports": "RFC 854 formally obsoletes RFC 764", "notes": null}
+  ],
+  "negative_claims": ["This edge does not collapse the earlier NCP/ad hoc Telnet RFC genealogy into one direct step.", "It does not imply every Telnet option specification is unchanged between the two generations."],
+  "open_questions": ["Build the complete RFC 318/435/intermediate-option genealogy leading to RFC 764 and RFC 854."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "LIN-0099",
+  "from": {"artifact_id": null, "name": "RFC 822 Internet text-message representation", "revision": "RFC 822 generation", "historical_term": "Internet text message"},
+  "to": {"artifact_id": "ART-0141", "name": "MIME message-body representation", "revision": "RFC 2045 generation", "historical_term": "MIME"},
+  "relation": "carried-over",
+  "scope": ["application", "architecture"],
+  "property": "The structured Internet message/header framework is retained while MIME extends body representation with media types, multipart composition, non-ASCII/non-text content and transfer encodings.",
+  "date_or_range": {"value": "1982-1996", "precision": "range", "notes": "Intermediate RFC 934/1341/1521/1522 generations remain to be promoted."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {"source_ref": "RFC 822", "locator": "message syntax and header/body model", "supports": "source message representation framework", "notes": null},
+    {"source_ref": "SRC-0128", "locator": "RFC 2045 Abstract", "supports": "explicit statement of RFC 822 body limitations and MIME extension goals", "notes": null}
+  ],
+  "negative_claims": ["MIME does not replace SMTP transport.", "Base64 is one transfer encoding, not the MIME protocol itself.", "This edge does not skip the intermediate MIME RFC genealogy even though those records are pending."],
+  "open_questions": ["Promote RFC 934, RFC 1341, RFC 1521 and RFC 1522 and identify first interoperable MIME implementations."],
+  "notes": "A representation-layer extension lineage within Internet mail, separate from SMTP transfer and POP/IMAP mailbox access.",
+  "last_reviewed": "2026-08-29"
+}

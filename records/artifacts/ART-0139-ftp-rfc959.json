@@ -1,0 +1,20 @@
+{
+  "id": "ART-0139",
+  "canonical_name": "File Transfer Protocol (FTP), RFC 959 generation",
+  "aliases": ["FTP"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["ISI", "Network Working Group"],
+  "chronology": {"standardized": {"value": "1985-10", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0126"], "notes": "RFC 959 obsoletes RFC 765/IEN 149 and preserves a much longer ARPANET FTP genealogy."}},
+  "networks_or_families": ["ARPANET", "Internet"],
+  "roles": ["remote file transfer", "remote file-system operation", "representation and transfer-mode negotiation"],
+  "stack_position": ["application"],
+  "protocols": ["FTP", "TCP", "Telnet conventions"],
+  "software": {"operating_system": null, "programs": ["FTP user protocol interpreter", "FTP server protocol interpreter", "data transfer process"], "languages": [], "version_or_revision": "RFC 959 generation"},
+  "operations": {"monitoring": "Control replies and data-connection state expose transfer progress/errors.", "diagnostics": "Active/passive data-path and later firewall/NAT interaction are major operational branches.", "remote_management": null, "failure_behavior": "Control connection may survive across individual data transfers; representation/file-system mismatches can fail independently of transport.", "operator_interface": "Command/reply control channel plus separately established data connection."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build full RFC 114→172/265→354→454→542→765→959 document graph.", "Recover early ARPANET FTP implementations and PI/DTP process structure.", "Trace active/passive and NAT/firewall adaptations as later operational branches."],
+  "sources": [{"source_id": "SRC-0126", "supports": ["control/data connection split", "PI/DTP roles", "Telnet control conventions", "RFC 765 obsolescence", "historical RFC genealogy"], "locator": "RFC 959 Sections 1-2 and FTP/Telnet relationship discussion", "quotation_checked": true, "notes": null}],
+  "notes": "SFTP and HTTP download roles must not be encoded as formal FTP revisions. FTP is especially valuable as a fossil of heterogeneous host file-system and representation assumptions.",
+  "last_reviewed": "2026-08-29"
+}

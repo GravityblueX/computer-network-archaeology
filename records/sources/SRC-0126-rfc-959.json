@@ -1,0 +1,25 @@
+{
+  "id": "SRC-0126",
+  "source_type": "rfc",
+  "title": "File Transfer Protocol",
+  "authors_or_bodies": ["Jon Postel", "Joyce Reynolds"],
+  "date": {"value": "1985-10", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 959",
+  "identifiers": [{"scheme": "RFC", "value": "959"}],
+  "publisher_or_issuer": "ISI / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["FTP", "file transfer", "control connection", "data connection", "Telnet", "RFC history"],
+  "artifact_ids": ["ART-0139"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc959.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc959"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 959 defines distinct FTP control and data connections and Protocol Interpreter/Data Transfer Process roles.", "locator": "Section 2 terminology and model", "certainty": "confirmed", "artifact_ids": ["ART-0139"], "notes": null},
+    {"claim": "RFC 959 explicitly states that FTP uses Telnet protocol conventions on the control connection.", "locator": "Relationship between FTP and Telnet; command syntax discussion", "certainty": "confirmed", "artifact_ids": ["ART-0139"], "notes": null},
+    {"claim": "RFC 959 obsoletes RFC 765/IEN 149 and preserves a historical summary reaching back to RFC 114.", "locator": "header and historical section", "certainty": "confirmed", "artifact_ids": ["ART-0139"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Central primary source for mature FTP architecture and its long RFC genealogy.",
+  "last_reviewed": "2026-08-29"
+}

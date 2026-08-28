@@ -1,0 +1,19 @@
+{
+  "id": "ART-0141",
+  "canonical_name": "MIME message-body representation, RFC 2045 generation",
+  "aliases": ["MIME", "Multipurpose Internet Mail Extensions"],
+  "kind": "protocol-family",
+  "manufacturer_or_body": ["IETF", "Ned Freed", "Nathaniel Borenstein"],
+  "chronology": {"standardized": {"value": "1996-11", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0128"], "notes": "RFC 2045 is a later MIME generation; RFC 934/1341/1521/1522 predecessors require separate records."}},
+  "networks_or_families": ["Internet mail", "RFC 822 message format"],
+  "roles": ["extend mail body representation beyond flat US-ASCII text", "media typing", "multipart composition", "content transfer encoding"],
+  "stack_position": ["application", "presentation"],
+  "protocols": ["MIME", "RFC 822 message format", "SMTP"],
+  "operations": {"monitoring": null, "diagnostics": "Malformed boundaries, incorrect media types and damaged transfer encodings are representation failures distinct from SMTP transport failures.", "remote_management": null, "failure_behavior": "Rich content can be transferred successfully by SMTP yet decoded/rendered incorrectly at the MIME layer.", "operator_interface": "Mail client headers, raw message source and MIME decoder behavior."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 822→934→1341→1521/1522→2045-2049 genealogy.", "Recover first interoperable MIME mailers/readers and sample multipart messages.", "Trace media-type registry and 8BITMIME interactions as separate branches."],
+  "sources": [{"source_id": "SRC-0128", "supports": ["RFC 822 flat-US-ASCII limitation", "MIME non-ASCII/non-text/multipart extension goals", "message-representation role"], "locator": "RFC 2045 Abstract and introduction", "quotation_checked": true, "notes": null}],
+  "notes": "MIME does not replace SMTP transport. Content-Type, multipart structure and transfer encoding belong to message representation, not mail routing or mailbox access.",
+  "last_reviewed": "2026-08-29"
+}

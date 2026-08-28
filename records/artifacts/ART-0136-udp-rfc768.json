@@ -1,0 +1,21 @@
+{
+  "id": "ART-0136",
+  "canonical_name": "User Datagram Protocol (UDP), RFC 768 generation",
+  "aliases": ["UDP"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["USC/ISI", "Jon Postel"],
+  "chronology": {"standardized": {"value": "1980-08-28", "precision": "day", "certainty": "confirmed", "source_ids": ["SRC-0123"], "notes": null}},
+  "networks_or_families": ["Internet", "TCP/IP"],
+  "roles": ["minimal application datagram transport", "port-based process multiplexing"],
+  "stack_position": ["transport"],
+  "protocols": ["UDP", "IP"],
+  "addressing": "Uses source and destination ports in the context of source/destination Internet addresses.",
+  "error_control": "16-bit one's-complement checksum over pseudo-header, UDP header and data in the RFC 768 design; later IPv4/IPv6 checksum rules require separate records.",
+  "flow_or_congestion_control": "None in UDP itself.",
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Trace UDP source/socket API implementation in BSD and other early stacks.", "Build IPv4-to-IPv6 checksum-rule genealogy.", "Trace early DNS/TFTP/boot-protocol deployments separately from later UDP applications."],
+  "sources": [{"source_id": "SRC-0123", "supports": ["minimal transport purpose", "ports", "header fields", "checksum model"], "locator": "RFC 768 Introduction, Fields, User Interface", "quotation_checked": true, "notes": null}],
+  "notes": "Do not model UDP as merely 'unreliable TCP'; absence of connection, sequencing, retransmission and flow-control machinery is an intentional architectural property.",
+  "last_reviewed": "2026-08-29"
+}

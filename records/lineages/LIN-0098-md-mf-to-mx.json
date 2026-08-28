@@ -1,0 +1,20 @@
+{
+  "id": "LIN-0098",
+  "from": {"artifact_id": null, "name": "DNS MD/MF mail binding model", "revision": "RFC 883 generation", "historical_term": "MD / MF"},
+  "to": {"artifact_id": "ART-0140", "name": "DNS MX mail-routing model", "revision": "RFC 974 / RFC 1035 generation", "historical_term": "MX"},
+  "relation": "replaced-by",
+  "scope": ["application", "management", "architecture"],
+  "property": "Two separate mail-destination/mail-forwarder RR types are replaced by one MX RR type carrying a preference value and exchanger host, simplifying complete ordered-set caching and mailer routing behavior.",
+  "date_or_range": {"value": "1983-1987", "precision": "range", "notes": "RFC 1035 marks MD and MF obsolete and explicitly explains the redesigned single-MX-type approach."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 883", "locator": "DOMAIN SUPPORT FOR MAIL and RR type definitions", "supports": "MD/MF model", "notes": null},
+    {"source_ref": "SRC-0127", "locator": "RFC 974 mail-routing rules", "supports": "MX operational semantics", "notes": null},
+    {"source_ref": "RFC 1035", "locator": "Sections 3.3.4-3.3.5 and cache-design discussion", "supports": "MD/MF obsolete; use MX; rationale for single ordered type", "notes": null}
+  ],
+  "negative_claims": ["This does not imply DNS replaced every non-DNS mail-routing mechanism immediately.", "MX is not SMTP; it provides routing/location data used by mailers."],
+  "open_questions": ["Recover the intermediate RFC 973/early MX design documents and first deployed MX-aware mailers."],
+  "notes": "A strong example of distributed-cache semantics driving a protocol data-model redesign.",
+  "last_reviewed": "2026-08-29"
+}

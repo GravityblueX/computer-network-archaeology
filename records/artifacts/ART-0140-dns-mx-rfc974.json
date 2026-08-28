@@ -1,0 +1,20 @@
+{
+  "id": "ART-0140",
+  "canonical_name": "DNS MX mail-routing model, RFC 974 generation",
+  "aliases": ["MX mail routing", "Mail Exchanger routing"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["CSNET CIC", "BBN Laboratories", "Network Working Group"],
+  "chronology": {"standardized": {"value": "1986-01", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0127"], "notes": "RFC 974 operationalizes MX behavior after early RFC 883 MD/MF mail bindings."}},
+  "networks_or_families": ["DNS", "SMTP", "Internet mail"],
+  "roles": ["map mail destination domains to ordered mail exchanger hosts", "mail relay/fallback selection", "loop-aware mail routing"],
+  "stack_position": ["application", "management"],
+  "protocols": ["DNS", "SMTP", "MX"],
+  "routing_or_forwarding": "Mailers query DNS for MX resource records, order candidate exchangers by preference, and attempt delivery with loop/fallback rules.",
+  "operations": {"monitoring": "Mailer queues/logs and DNS resolver state reveal MX selection/fallback behavior.", "diagnostics": "Stale DNS caches, missing/incorrect MX sets and unreachable exchangers affect delivery.", "remote_management": "Zone-file changes alter routing policy without changing SMTP itself.", "failure_behavior": "RFC 974 defines fallback behavior and discusses cached/incomplete DNS information.", "operator_interface": "DNS zone MX records plus mailer configuration/logs."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Recover exact MD/MF→MX transition documents around RFC 973/974.", "Find early MX-aware mailer and Sendmail implementations.", "Preserve early zone files containing MD, MF and MX records."],
+  "sources": [{"source_id": "SRC-0127", "supports": ["MX record semantics", "preference ordering", "fallback and loop-avoidance rules", "DNS/mail routing coupling"], "locator": "RFC 974 mail-routing sections", "quotation_checked": true, "notes": "RFC 883 and RFC 1035 should be promoted as additional structured sources in the next pass."}],
+  "notes": "MX answers where a mailer should try to deliver; SMTP answers how transfer occurs. Keep routing, transfer and message representation separate.",
+  "last_reviewed": "2026-08-29"
+}

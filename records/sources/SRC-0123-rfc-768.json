@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0123",
+  "source_type": "rfc",
+  "title": "User Datagram Protocol",
+  "authors_or_bodies": ["Jon Postel"],
+  "date": {"value": "1980-08-28", "precision": "day", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 768",
+  "identifiers": [{"scheme": "RFC", "value": "768"}],
+  "publisher_or_issuer": "USC/ISI / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["UDP", "datagram transport", "ports", "checksum", "IP"],
+  "artifact_ids": ["ART-0136"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc768.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc768"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 768 defines UDP to provide application-to-application datagram communication with a minimum of protocol mechanism over IP.", "locator": "Introduction and User Interface sections", "certainty": "confirmed", "artifact_ids": ["ART-0136"], "notes": null},
+    {"claim": "UDP's header contains source port, destination port, length and checksum fields, with a minimum datagram length of eight octets.", "locator": "Format/Fields section", "certainty": "confirmed", "artifact_ids": ["ART-0136"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Primary evidence for UDP's intentionally minimal transport role.",
+  "last_reviewed": "2026-08-29"
+}

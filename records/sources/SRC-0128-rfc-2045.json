@@ -1,0 +1,24 @@
+{
+  "id": "SRC-0128",
+  "source_type": "rfc",
+  "title": "Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies",
+  "authors_or_bodies": ["Ned Freed", "Nathaniel Borenstein"],
+  "date": {"value": "1996-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2045",
+  "identifiers": [{"scheme": "RFC", "value": "2045"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["MIME", "RFC 822", "Content-Type", "Content-Transfer-Encoding", "multipart", "mail representation"],
+  "artifact_ids": ["ART-0141"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/rfc/rfc2045.html", "archive_urls": [], "catalog_urls": ["https://www.rfc-editor.org/info/rfc2045"], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 2045 explicitly describes RFC 822 message bodies as flat US-ASCII text and extends the message format to support other character sets, non-text content and multipart bodies.", "locator": "Abstract", "certainty": "confirmed", "artifact_ids": ["ART-0141"], "notes": null},
+    {"claim": "MIME introduces media typing and transfer-encoding mechanisms as representation extensions rather than replacing SMTP transport.", "locator": "Abstract and introductory MIME model", "certainty": "confirmed", "artifact_ids": ["ART-0141"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Later MIME-generation source; earlier RFC 934/1341/1521/1522 genealogy remains a priority.",
+  "last_reviewed": "2026-08-29"
+}

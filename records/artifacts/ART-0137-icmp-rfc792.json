@@ -1,0 +1,20 @@
+{
+  "id": "ART-0137",
+  "canonical_name": "Internet Control Message Protocol (ICMP), RFC 792 generation",
+  "aliases": ["ICMP"],
+  "kind": "protocol",
+  "manufacturer_or_body": ["USC/ISI", "Jon Postel"],
+  "chronology": {"standardized": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0124"], "notes": null}},
+  "networks_or_families": ["Internet", "IPv4"],
+  "roles": ["report IP datagram processing errors", "communicate Internet control conditions", "diagnostic echo/control substrate"],
+  "stack_position": ["network", "cross-layer"],
+  "protocols": ["ICMP", "IP"],
+  "error_control": "ICMP reports selected error conditions but suppresses recursive ICMP error generation; individual message types have distinct semantics.",
+  "operations": {"monitoring": "Echo, unreachable, time-exceeded and other messages later become central to diagnostics/operations.", "diagnostics": "ICMP Echo underlies ping-like diagnostics; time exceeded participates in traceroute-style diagnostics in later practice.", "remote_management": null, "failure_behavior": "Generation is intentionally constrained to avoid error-message recursion and fragmented-datagram ambiguity.", "operator_interface": "Router/host generation, rate-limit and filter controls vary by implementation and era."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build message type/code genealogy and deprecation map.", "Trace Source Quench deployment and removal separately from TCP congestion-control history.", "Recover first ping/traceroute implementations as software artifacts."],
+  "sources": [{"source_id": "SRC-0124", "supports": ["ICMP role", "IP carriage", "error-generation constraints", "gateway terminology"], "locator": "RFC 792 Introduction and message formats", "quotation_checked": true, "notes": null}],
+  "notes": "Do not collapse ICMP into 'ping' or treat it as a peer application transport like TCP/UDP solely because it has an IP protocol number.",
+  "last_reviewed": "2026-08-29"
+}

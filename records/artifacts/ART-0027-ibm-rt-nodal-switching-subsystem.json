@@ -1,0 +1,100 @@
+{
+  "id": "ART-0027",
+  "canonical_name": "IBM RT Nodal Switching Subsystem",
+  "aliases": ["NSS", "NSFNET T1 NSS", "Nodal Switching System"],
+  "kind": "other",
+  "parent_family": "NSFNET T1 backbone node",
+  "manufacturer_or_body": ["IBM", "Merit Network", "MCI", "National Science Foundation"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": {"value": "1988-07", "precision": "month", "certainty": "probable", "source_ids": ["SRC-0053", "SRC-0067"], "notes": "T1 NSFNET service entered production in 1988; exact first operational date per NSS site should be recorded separately."},
+    "standardized": null,
+    "withdrawn": {"value": "1992-1993", "precision": "circa", "certainty": "confirmed", "source_ids": ["SRC-0068"], "notes": "T1 NSS equipment was dismantled after traffic migrated to the T3 backbone; site-specific removal dates vary."},
+    "last_known_use": null
+  },
+  "networks_or_families": ["NSFNET T1 backbone"],
+  "roles": ["backbone packet switching", "routing control", "regional-network attachment", "statistics collection", "network management"],
+  "stack_position": ["physical", "link", "network", "operations", "management", "cross-layer"],
+  "physical": {
+    "medium": "T1 carrier circuits on the backbone side; dual IBM Token Ring internal fabrics; Ethernet client attachment",
+    "line_service": "1.544 Mbit/s T1 with multiple logical links possible at sub-T1 through full-T1 rates",
+    "nominal_bit_rate_bps": 1544000,
+    "clocking": "Carrier/T1 and internal-interface clocking details pending hardware records",
+    "signaling": "T1 through DSU/CSU and WACS; exact framing/line coding pending site records",
+    "connectors": [],
+    "interfaces": ["T1 via DSU/CSU and Wide-Area Communications Subsystem", "two IBM Token Ring networks", "Ethernet to attached mid-level/supercomputer network"]
+  },
+  "hardware": {
+    "processor": "Nine IBM RT systems processors in the generic NSS design; exact RT model/submodel unresolved",
+    "memory": "Role- and site-specific RAM configuration unresolved",
+    "storage": "Role- and site-specific disk/boot-media configuration unresolved",
+    "boards_or_modules": [
+      "4 × IBM RT Packet Switching Processor roles shown in Merit Figure 14",
+      "1 × IBM RT Routing Control Processor",
+      "1 × IBM RT External Packet Switching Processor",
+      "3 × backup IBM RT systems omitted from Merit Figure 14",
+      "2 × IBM Token Ring internal networks",
+      "1 × IBM PS/2 Model 80 Bridge Manager",
+      "1 × IBM PS/2 Model 80 NetView PC LAN Manager",
+      "DSU/CSU units on T1 attachments",
+      "Wide-Area Communications Subsystem"
+    ],
+    "rack_or_enclosure": "Multiple racks; SESQUINET shipment recollection says three racks, but generic rack layout remains unresolved",
+    "power": null
+  },
+  "software": {
+    "operating_system": "Modified 4.3BSD / Berkeley UNIX on IBM RT processors",
+    "programs": ["packet-switching/forwarding software", "adapted ANSI IS-IS / ES-IS routing", "EGP", "policy-based routing database logic", "statistics/management software", "NetView PC LAN Manager", "Bridge Manager"],
+    "languages": [],
+    "version_or_revision": "1988 T1 NSFNET generation; release-level build identifiers pending"
+  },
+  "protocols": ["IP", "adapted ANSI IS-IS", "ES-IS", "EGP", "Ethernet", "IBM Token Ring"],
+  "addressing": "RFC 1074 documents IP information encoded into NSAP-like structures for the adapted IS-IS implementation; attached networks exchanged reachability through EGP.",
+  "routing_or_forwarding": "The NSS was treated as one routing entity. RCP/PSP architecture separated routing control from packet switching; SPF topology calculation used an adapted ANSI IS-IS design and EGP/policy controls governed attached networks.",
+  "error_control": "Link- and device-specific mechanisms existed below IP; exact T1/WACS and internal Token Ring behavior requires hardware/software recovery.",
+  "flow_or_congestion_control": "Queueing/forwarding behavior is known to have existed in the packet processors but exact queue structures, drop policy and tuning are unresolved.",
+  "operations": {
+    "monitoring": "Remote production monitoring through the Merit Network Operations Center; network status, statistics and management data were displayed/collected centrally.",
+    "diagnostics": "NOC, IBM, MCI and site personnel used documented escalation and troubleshooting procedures; exact commands/test interfaces pending Site Manual recovery.",
+    "remote_management": "Management paths linked site NSS systems to the Ann Arbor operational environment; protocol/software details remain to be reconstructed.",
+    "failure_behavior": "Redundancy was a design goal; three backup RTs were available in the generic architecture, but failover state machine and automation level are unresolved.",
+    "operator_interface": "Site consoles plus PS/2 management systems and Ann Arbor NOC displays; exact screens/commands pending preservation."
+  },
+  "economics": {
+    "purchase_price": null,
+    "rental_or_tariff": null,
+    "circuit_cost": null,
+    "payer_or_funder": "NSF-funded backbone partnership with Merit, IBM, MCI and state/academic participants"
+  },
+  "geography": ["Thirteen T1-era NSFNET backbone sites in the continental United States"],
+  "survival": {
+    "status": "partial",
+    "locations": [],
+    "provenance_notes": "A December 1992 NANOG message offered approximately 4–6 former NSS IBM RT workstations per site to hosting regional networks after dismantling. Recipient/serial-number provenance remains to be recovered."
+  },
+  "research_state": "substantial",
+  "certainty": "mixed",
+  "open_questions": [
+    "Which exact IBM RT model/submodel populated each processor role at each site?",
+    "What RAM, disk, adapter and boot configurations did PSP, RCP, external PSP and backup systems use?",
+    "Which IBM Token Ring adapters, MAUs, cabling and ring speeds formed the dual internal fabric?",
+    "What protocol moved packets and route state between PSP and RCP across the internal rings?",
+    "What exact IBM IDNX/WACS hardware and software performed logical-link/circuit allocation?",
+    "Which DSU/CSU models, T1 framing modes and line codes were installed?",
+    "What Ethernet adapter/transceiver connected each regional network?",
+    "How did backup RT failover work and how much operator intervention was required?",
+    "Why does the SESQUINET shipping anecdote mention seven RTs and three racks while the generic architecture says nine RTs?",
+    "Where are the modified 4.3BSD kernel, PSP/RCP sources and release manifests?",
+    "Can former NSS IBM RT serial numbers be traced through the 1992–93 donation process to surviving machines?"
+  ],
+  "sources": [
+    {"source_id": "SRC-0067", "supports": ["thirteen-site T1 architecture", "IBM RT multiprocessor NSS", "modified 4.3BSD", "IS-IS adaptation", "EGP/policy routing", "logical links over T1"], "locator": "RFC 1074 sections 2–5", "quotation_checked": false, "notes": "Contemporary protocol/architecture source."},
+    {"source_id": "SRC-0053", "supports": ["nine IBM RT count", "processor-role diagram", "dual Token Rings", "PS/2 managers", "WACS/DSU-CSU/Ethernet physical layout", "assembly depot", "NOC operations", "SESQUINET seven-RT shipment anecdote"], "locator": "Merit final report printed pages 22–23, Figure 14", "quotation_checked": false, "notes": "Institutional participant retrospective; seek contemporary BOMs beneath it."},
+    {"source_id": "SRC-0068", "supports": ["T1 NSS dismantling", "4–6 RTs offered per site", "lack of monitors/keyboards on many router RTs"], "locator": "24 Dec 1992 NANOG message, T1 NSFNet NSS Dismantling", "quotation_checked": false, "notes": "Contemporary operations/provenance evidence."}
+  ],
+  "related_artifacts": [],
+  "notes": "Record intentionally treats the NSS as a distributed node, not one router chassis. Child artifact records should be created for PSP/RCP/external-PSP roles, internal Token Rings, WACS and management machines.",
+  "last_reviewed": "2026-08-28"
+}

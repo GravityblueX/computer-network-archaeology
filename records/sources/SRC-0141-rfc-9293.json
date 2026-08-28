@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0141",
+  "source_type": "rfc",
+  "title": "Transmission Control Protocol (TCP)",
+  "authors_or_bodies": ["Wesley Eddy, editor", "IETF"],
+  "date": {"value": "2022-08", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 9293 / STD 7",
+  "identifiers": [{"scheme": "RFC", "value": "9293"}, {"scheme": "STD", "value": "7"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["TCP", "RFC 793", "transport", "consolidated standard", "protocol evolution"],
+  "artifact_ids": ["ART-0154"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc9293/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "IETF TCPM community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 9293 is the current STD 7 TCP specification and formally obsoletes RFC 793 plus several later TCP update RFCs.", "locator": "RFC Editor metadata and Abstract", "certainty": "confirmed", "artifact_ids": ["ART-0154"], "notes": null},
+    {"claim": "RFC 9293 explicitly describes TCP as continuously evolving over decades and states that its main body was adapted from RFC 793 Section 3 while incorporating later normative changes.", "locator": "RFC 9293 Abstract and Section 5", "certainty": "confirmed", "artifact_ids": ["ART-0154"], "notes": "Canonical example of an obsoleted document whose protocol lineage remains alive through a consolidated successor."}
+  ],
+  "conflicts": [],
+  "notes": "Use with RFC 793 to build document-level and mechanism-level lineage separately.",
+  "last_reviewed": "2026-08-29"
+}

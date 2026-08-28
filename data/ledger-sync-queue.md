@@ -2,13 +2,11 @@
 
 This is the compact live queue for flat-ledger synchronization.
 
-A detailed snapshot of all pending records before the field-level root-hunting batch is preserved at:
+Detailed older pending inventories are preserved at:
 
 - [`ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md`](ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md)
-
-The first field-level batch is described at:
-
 - [`batches/2026-08-29-root-hunting.md`](batches/2026-08-29-root-hunting.md)
+- [`batches/2026-08-29-root-hunting-2.md`](batches/2026-08-29-root-hunting-2.md)
 
 ## Why this file is compact
 
@@ -18,35 +16,47 @@ The claim-level `records/` tree can advance faster than the flat CSV ledgers. Re
 
 ### Artifacts
 
-Earlier pending structured records:
+Pending structured range now extends through:
 
-- `ART-0114` through `ART-0165`, with reserved intermediate gaps documented in the archived queue and root-hunting batch manifest.
+- `ART-0174` — multipart/form-data Web form-upload media type.
 
-No new structured artifact IDs were assigned in the second root-hunting narrative-only burst yet.
+The detailed composition of earlier ranges and reserved gaps lives in the archive/batch manifests above.
 
-**Next unreserved artifact ID: `ART-0166`**, subject to merge-time verification.
+Latest batch (`ART-0166..0174`):
+
+- IPv4 Options cemetery;
+- Path MTU Discovery;
+- DSCP/ECN semantic lineage;
+- ICMP Type/Code survivorship;
+- TCP Window Scale/Timestamps;
+- TCP SACK;
+- DNSSEC;
+- SMTP EHLO extension framework;
+- multipart/form-data.
+
+**Next unreserved artifact ID: `ART-0175`**, subject to merge-time verification.
 
 ### Sources
 
-Earlier pending structured records:
+Pending structured range now extends through:
 
-- `SRC-0097` through `SRC-0155`, including reserved gaps documented in archived/batch manifests.
+- `SRC-0165` — IANA ICMP Parameters registry.
 
-No new structured source IDs were assigned in the second root-hunting narrative-only burst yet.
+Latest batch (`SRC-0156..0165`) includes RFC 1191, RFC 7126, RFC 3168, RFC 7323, RFC 2018, RFC 4033, IANA SMTP extensions, RFC 7578, RFC 6838 and the IANA ICMP registry.
 
-**Next unreserved source ID: `SRC-0156`**, subject to verification.
+**Next unreserved source ID: `SRC-0166`**, subject to verification.
 
 ### Lineages
 
-Earlier pending structured records:
+Pending structured range now extends through:
 
-- `LIN-0085` through `LIN-0117`.
+- `LIN-0124` — MIME multipart model → multipart/form-data.
 
-No new structured lineage IDs were assigned in the second root-hunting narrative-only burst yet.
+Latest batch (`LIN-0118..0124`) covers PMTUD derivation, DS/ECN semantic carry-over, TCP option growth, DNS→DNSSEC, SMTP→EHLO capability growth, and MIME multipart→Web form upload.
 
-**Next unreserved lineage ID: `LIN-0118`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0125`**, subject to verification.
 
-## New narrative files since the first root-hunting batch
+## Current narrative frontier
 
 Second root-hunting expansion:
 
@@ -58,15 +68,16 @@ Second root-hunting expansion:
 - `docs/lineage/smtp-ehlo-capability-genealogy.md`
 - `docs/lineage/mime-multipart-to-form-data.md`
 
-High-value structured promotions from this burst should cover:
+## Next high-value structured targets
 
-- IPv4 option families / PMTUD;
-- DSCP and ECN bit semantics;
-- ICMP message-branch survivorship;
-- TCP MSS/WS/SACK/TS option families;
-- DNSSEC/NAPTR/SSHFP/TLSA extension branches;
-- SMTP EHLO extension registry branches;
-- multipart/form-data and media-type registration lineage.
+- complete IPv4 Option-number table plus Router Alert/source-route branches;
+- classic PMTUD → PLPMTUD / IPv6 Packet Too Big;
+- DiffServ PHBs and ECN/AccECN;
+- TCP option Kind registry, MSS and option-space exhaustion;
+- DNS NAPTR/SSHFP/TLSA and DNSSEC predecessor generations;
+- individual SMTP EHLO extension artifacts such as SIZE/8BITMIME/PIPELINING/STARTTLS/AUTH/DSN;
+- RFC 1867 → RFC 2388 → RFC 7578 form-upload revisions;
+- raw packet/capture records pairing present traffic with historical diagrams.
 
 ## Batch merge checklist
 

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tmzncty/computer-network-archaeology/schema/source-record.schema.json",
+  "title": "Computer Network Archaeology Source Record",
+  "description": "Metadata and research-status record for a source used in the archive. This schema records identity, provenance, access, rights, fixity and evidentiary value; it does not imply permission to redistribute the source itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "source_type", "title", "research_state", "rights_status", "access"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "rfc",
+        "ien",
+        "technical-report",
+        "manual",
+        "datasheet",
+        "catalog",
+        "advertisement",
+        "tariff",
+        "patent",
+        "source-code",
+        "software-distribution",
+        "network-map",
+        "photograph",
+        "schematic",
+        "oral-history",
+        "interview",
+        "memo",
+        "correspondence",
+        "meeting-minutes",
+        "log",
+        "operator-procedure",
+        "academic-paper",
+        "academic-book",
+        "book",
+        "institutional-history",
+        "participant-history",
+        "archive-catalog",
+        "index",
+        "web-page",
+        "museum-record",
+        "other"
+      ]
+    },
+    "title": {"type": "string", "minLength": 1},
+    "authors_or_bodies": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "default": []
+    },
+    "date": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "precision", "certainty"],
+      "properties": {
+        "value": {"type": "string"},
+        "precision": {"type": "string", "enum": ["day", "month", "year", "decade", "range", "circa", "unknown"]},
+        "certainty": {"type": "string", "enum": ["confirmed", "probable", "disputed", "unknown"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "edition_or_revision": {"type": ["string", "null"]},
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["scheme", "value"],
+        "properties": {
+          "scheme": {"type": "string"},
+          "value": {"type": "string"}
+        }
+      },
+      "default": []
+    },
+    "publisher_or_issuer": {"type": ["string", "null"]},
+    "language": {"type": "array", "items": {"type": "string"}, "default": []},
+    "topics": {"type": "array", "items": {"type": "string"}, "default": []},
+    "artifact_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^ART-[0-9]{4,}$"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "canonical_url": {"type": ["string", "null"], "format": "uri"},
+        "archive_urls": {"type": "array", "items": {"type": "string", "format": "uri"}, "default": []},
+        "catalog_urls": {"type": "array", "items": {"type": "string", "format": "uri"}, "default": []},
+        "local_mirror": {"type": ["string", "null"]},
+        "accessed_on": {"type": ["string", "null"], "format": "date"},
+        "availability": {"type": "string", "enum": ["open", "restricted", "paywalled", "onsite-only", "missing", "unknown"]}
+      }
+    },
+    "fixity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {"type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$"},
+        "byte_size": {"type": ["integer", "null"], "minimum": 0},
+        "mime_type": {"type": ["string", "null"]},
+        "page_count": {"type": ["integer", "null"], "minimum": 1},
+        "ocr_status": {"type": "string", "enum": ["not-applicable", "none", "machine", "corrected", "unknown"]},
+        "scan_notes": {"type": ["string", "null"]}
+      }
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": [
+        "public-domain",
+        "open-license",
+        "rfc-distribution-terms",
+        "copyrighted-link-only",
+        "copyrighted-permission-known",
+        "government-work-check-jurisdiction",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "redistribution_notes": {"type": ["string", "null"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "original_holder": {"type": ["string", "null"]},
+        "current_holder": {"type": ["string", "null"]},
+        "donor_or_collection": {"type": ["string", "null"]},
+        "chain_notes": {"type": ["string", "null"]}
+      }
+    },
+    "evidence_grade": {
+      "type": "string",
+      "enum": ["primary-contemporary", "primary-retrospective", "institutional-secondary", "scholarly-secondary", "participant-secondary", "tertiary-discovery", "unknown"]
+    },
+    "research_state": {
+      "type": "string",
+      "enum": ["discovered", "acquired", "skimmed", "mined", "verified", "needs-rescan", "needs-rights-check", "missing", "conflicted"]
+    },
+    "claims_extracted": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "locator", "certainty"],
+        "properties": {
+          "claim": {"type": "string"},
+          "locator": {"type": "string"},
+          "certainty": {"type": "string", "enum": ["confirmed", "probable", "disputed", "unknown"]},
+          "artifact_ids": {"type": "array", "items": {"type": "string", "pattern": "^ART-[0-9]{4,}$"}, "default": []},
+          "notes": {"type": ["string", "null"]}
+        }
+      },
+      "default": []
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "notes": {"type": ["string", "null"]},
+    "last_reviewed": {"type": ["string", "null"], "format": "date"}
+  }
+}

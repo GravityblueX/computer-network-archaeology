@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0090",
+  "from":{"artifact_id":"ART-0128","name":"OSPF Version 2","revision":"RFC 1583 generation","historical_term":"OSPF"},
+  "to":{"artifact_id":"ART-0130","name":"Integrated IS-IS for IP and OSI","revision":"RFC 1195 / December 1990","historical_term":"Integrated IS-IS"},
+  "relation":"coexisted-with","scope":["network","routing","architecture","institutional"],
+  "property":"OSPF and Integrated IS-IS are parallel link-state/SPF IGP families developed from different standards genealogies: an IETF TCP/IP-native OSPF branch and an OSI IS-IS branch extended for IP.",
+  "date_or_range":{"value":"1990s-present","precision":"range","notes":"Both became operational choices for IP interior routing."},"certainty":"confirmed","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0113","locator":"RFC 1583, Section 1 Introduction","supports":"OSPF IETF link-state/SPF design for TCP/IP","notes":null},{"source_ref":"SRC-0116","locator":"RFC 1195, Abstract and Sections 1.1-1.5","supports":"Integrated IS-IS derivation from OSI IS-IS and its IP/OSI dual role","notes":null}],
+  "negative_claims":["This edge explicitly rejects OSPF→IS-IS or IS-IS→OSPF as a formal revision chain.","Shared use of Dijkstra/SPF does not itself prove direct protocol ancestry.","Specific design cross-influences require committee notes, citations, or participant evidence before being asserted."],
+  "open_questions":["Recover contemporary OSPF-versus-IS-IS operator/vendor comparisons.","Search design-group records for documented cross-influence between the two protocol communities."],
+  "notes":"Another negative-lineage record showing parallel evolution under a shared operational role.","last_reviewed":"2026-08-29"
+}

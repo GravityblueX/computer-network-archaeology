@@ -14,7 +14,7 @@ This file exists to make that state explicit rather than allowing “ghost” re
 
 ## Pending artifact-ledger promotion
 
-Structured records created and verified in the 2026-08-29 research burst:
+Structured records created and verified in the 2026-08-29 research bursts:
 
 - `ART-0114` — RARP / RFC 903
 - `ART-0115` — BOOTP / RFC 951
@@ -28,6 +28,14 @@ Structured records created and verified in the 2026-08-29 research burst:
 - `ART-0131` — Mail Transfer Protocol / RFC 772
 - `ART-0132` — SMTP / RFC 821 generation
 - `ART-0133` — SMTP Service Extensions / ESMTP / RFC 1425 generation
+- `ART-0134` — ARP / RFC 826
+- `ART-0135` — Proxy ARP / RFC 1027
+- `ART-0136` — UDP / RFC 768
+- `ART-0137` — ICMP / RFC 792
+- `ART-0138` — Telnet / RFC 854 generation
+- `ART-0139` — FTP / RFC 959 generation
+- `ART-0140` — DNS MX mail-routing model / RFC 974 generation
+- `ART-0141` — MIME / RFC 2045 generation
 
 Reserved/identified intermediate artifact IDs that should be created or promoted during the same batch rather than silently reused:
 
@@ -39,6 +47,8 @@ Reserved/identified intermediate artifact IDs that should be created or promoted
 - `ART-0123` — PPP / RFC 1548 generation
 - `ART-0126` — OSPF / RFC 1131 generation
 - `ART-0127` — OSPFv2 / RFC 1247 generation
+
+Future structured artifacts from the current narrative batch should begin at `ART-0142` unless the flat-ledger merge discovers a concurrent assignment.
 
 ## Pending source-ledger promotion
 
@@ -59,6 +69,14 @@ Structured source records already created:
 - `SRC-0118` — RFC 788 SMTP
 - `SRC-0119` — RFC 821 SMTP
 - `SRC-0120` — RFC 1425 SMTP Service Extensions
+- `SRC-0121` — RFC 826 ARP
+- `SRC-0122` — RFC 1027 Proxy ARP
+- `SRC-0123` — RFC 768 UDP
+- `SRC-0124` — RFC 792 ICMP
+- `SRC-0125` — RFC 854 Telnet
+- `SRC-0126` — RFC 959 FTP
+- `SRC-0127` — RFC 974 DNS mail routing / MX
+- `SRC-0128` — RFC 2045 MIME
 
 Reserved source IDs to fill during batch promotion/revision-diff work:
 
@@ -71,6 +89,10 @@ Reserved source IDs to fill during batch promotion/revision-diff work:
 - `SRC-0111` — RFC 1131 OSPF
 - `SRC-0112` — RFC 1247 OSPFv2
 - `SRC-0114` — RFC 2328 OSPFv2
+
+High-value source records still to promote from the new narratives include RFC 318, RFC 764, RFC 114, RFC 354, RFC 765, RFC 883, RFC 1035, RFC 918, RFC 937, RFC 1081, RFC 1939, RFC 1064, RFC 1176, RFC 1730 and RFC 3501.
+
+Future newly assigned source IDs should begin at `SRC-0129` unless merge-time verification finds a concurrent assignment.
 
 ## Pending lineage-ledger promotion
 
@@ -85,15 +107,35 @@ Structured lineage edges already created:
 - `LIN-0091` — FTP-related ARPANET mail practice → dedicated MTP role
 - `LIN-0092` — MTP → SMTP formal replacement lineage
 - `LIN-0093` — SMTP → ESMTP extension-framework continuity
+- `LIN-0094` — ARP → Proxy ARP documented derivation/reuse
+- `LIN-0095` — RFC 764 Telnet → RFC 854 formal revision
+- `LIN-0096` — Telnet NVT/control conventions carried into FTP control connection
+- `LIN-0097` — RFC 765 FTP → RFC 959 formal revision
+- `LIN-0098` — DNS MD/MF mail-binding model → MX replacement
+- `LIN-0099` — RFC 822 message framework carried into MIME extension architecture
 
-## Narrative files created in the same burst
+Future newly assigned lineage IDs should begin at `LIN-0100` unless merge-time verification finds a concurrent assignment.
+
+## Narrative files created in the same bursts
+
+Earlier burst:
 
 - `docs/lineage/rarp-bootp-dhcp-host-configuration.md`
 - `docs/lineage/slip-to-ppp-point-to-point-links.md`
 - `docs/lineage/igp-families-rip-hello-ospf-isis.md`
 - `docs/lineage/ftp-mail-mtp-smtp-esmtp.md`
 
-`docs/lineage/README.md` already indexes the first three. The mail-transfer lineage should be added to that index during the next index/ledger synchronization pass.
+Host/application batch:
+
+- `docs/lineage/arp-address-resolution-proxy-arp.md`
+- `docs/lineage/udp-icmp-ip-companion-protocols.md`
+- `docs/lineage/telnet-nvt-option-negotiation.md`
+- `docs/lineage/ftp-control-data-evolution.md`
+- `docs/lineage/dns-mail-routing-md-mf-mx.md`
+- `docs/lineage/mail-access-mime-pop-imap.md`
+- `docs/lineage/2026-08-29-host-application-batch.md`
+
+`docs/lineage/README.md` should be updated to index the FTP-mail and host/application batch together during the next index synchronization pass.
 
 ## Batch-merge checklist
 

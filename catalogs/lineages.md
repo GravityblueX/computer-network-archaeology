@@ -48,7 +48,7 @@ CCITT V.24 / V.28 / connector standards
 
 ### Current state: **substantial**
 
-Deep excavation:
+Deep excavations:
 
 - [`../docs/lineage/bell-data-set-rs232-v24.md`](../docs/lineage/bell-data-set-rs232-v24.md)
 - [`../docs/lineage/bell-modems-to-itu-v-series.md`](../docs/lineage/bell-modems-to-itu-v-series.md)
@@ -66,17 +66,15 @@ Already documented:
 
 ### Next work
 
-- recover original RS-232/A/B/C standards and build field diffs;
+- original RS-232/A/B/C standards and field diffs;
 - EIA committee history;
-- original V.21/V.22/V.22bis edition dates and texts;
+- original V.21/V.22/V.22bis editions;
 - Bell 103 versus V.21 signal-frequency/compatibility comparison;
-- Bell 202 versus V.23 relationship;
-- V.32/V.32bis training and signal-processing diff;
-- V.34 1994 → 1996 clause-level diff;
+- Bell 202 versus V.23;
+- V.32/V.32bis training diff;
+- V.34 1994 → 1996 clause diff;
 - V.90/V.92;
-- MNP → V.42/V.42bis;
-- Hayes AT command lineage;
-- router/terminal-server console-port afterlife.
+- console-port afterlife.
 
 ---
 
@@ -116,12 +114,12 @@ Already documented:
 - ALOHA → Ethernet design influence;
 - experimental 2.94 Mb/s system as a separate artifact;
 - transceiver/coax/interface/microcode division;
-- DIX 1.0 and DIX 2.0 as separate specification generations;
-- IEEE 802.3 as related but not byte-identical to DIX framing semantics;
+- DIX 1.0 and 2.0 as separate generations;
+- IEEE 802.3 as related but not byte-identical to DIX frame semantics;
 - IEEE 802.3i-1990 10BASE-T;
 - physical star with a hub still being one shared collision domain;
 - bridge → switch role genealogy;
-- IEEE 802.3x-1997 full duplex and the disappearance of collision arbitration from normal point-to-point operation.
+- IEEE 802.3x-1997 full duplex and disappearance of collision arbitration from normal point-to-point operation.
 
 This lineage demonstrates a central archival principle: **the name Ethernet survived more continuously than the physical/access mechanism**.
 
@@ -129,13 +127,10 @@ This lineage demonstrates a central archival principle: **the name Ethernet surv
 
 - DIX 1.0 → 2.0 clause diff;
 - DIX Ethernet II ↔ IEEE 802.3/LLC frame interpretation;
-- AUI/MAU/transceiver revisions;
+- AUI/MAU revisions;
 - 10BASE5 → 10BASE2 → 10BASE-T installation economics;
-- early commercial bridges;
-- Kalpana EtherSwitch model/ASIC/forwarding history;
-- store-and-forward versus cut-through switching;
+- early commercial bridges and switches;
 - autonegotiation;
-- 802.3x implementation and driver controls;
 - Fast/Gigabit Ethernet branches;
 - surviving hardware provenance.
 
@@ -159,27 +154,11 @@ This lineage demonstrates a central archival principle: **the name Ethernet surv
 
 ### Current state: **started / substantial**
 
-Deep excavation:
+Deep excavation: [`../docs/lineage/tcp-ip-split-and-standardization.md`](../docs/lineage/tcp-ip-split-and-standardization.md)
 
-[`../docs/lineage/tcp-ip-split-and-standardization.md`](../docs/lineage/tcp-ip-split-and-standardization.md)
+Already recorded: RFC 675 integrated TCP, IP/TCP IEN replacement lists, RFC 791/793 successor relationships, responsibility split, and NCP → TCP/IP operational migration.
 
-Already recorded:
-
-- RFC 675 integrated Transmission Control Program;
-- RFC 760 IP IEN replacement list;
-- RFC 761 TCP IEN replacement list;
-- RFC 791/793 successor relationships;
-- responsibility split between best-effort IP and reliable TCP;
-- NCP → dual-protocol → TCP/IP operational migration.
-
-### Next work
-
-- acquire every cited IEN;
-- header/state-machine diffs;
-- early implementation source;
-- UDP/ICMP branching;
-- sockets/API lineage;
-- congestion-control branch without back-projecting it into early TCP.
+Next: every cited IEN, source-code implementations, UDP/ICMP, sockets/API, and later congestion-control lineage.
 
 ---
 
@@ -206,13 +185,7 @@ Deep excavations:
 - [`../docs/arpanet/bbn-1822-physical-interface.md`](../docs/arpanet/bbn-1822-physical-interface.md)
 - Bell 303 / VDH physical excavations.
 
-### Next work
-
-- Report 1822 revision diff;
-- Wingfield interface schematics;
-- SRI/UCSB/Utah host interfaces;
-- later 1822 boards;
-- identify what disappeared with ARPANET-specific hardware and what survives as generalized host/router interface practice.
+Next: Report 1822 diffs, Wingfield interface, other first-four-host interfaces, later 1822 boards, and what survived as generalized host/router interface practice.
 
 ---
 
@@ -232,13 +205,9 @@ internetwork gateway
 
 ### Current state: **started**
 
-Deep excavation:
+Deep excavation: [`../docs/internetworking/bbn-gateway-to-router.md`](../docs/internetworking/bbn-gateway-to-router.md)
 
-[`../docs/internetworking/bbn-gateway-to-router.md`](../docs/internetworking/bbn-gateway-to-router.md)
-
-Important rule: **do not make IMP → router a simple ancestry edge.**
-
-The archive distinguishes packet switching, host/network boundary, internetwork forwarding, route computation, interfaces, operations, and contemporary terminology.
+Important rule: **do not make IMP → router a simple ancestry edge.** Packet switching, internetwork forwarding, route computation, interfaces, operations, and terminology have separate genealogies.
 
 ---
 
@@ -265,29 +234,9 @@ Deep excavations:
 - [`../docs/lineage/ggp-egp-bgp-routing-domains.md`](../docs/lineage/ggp-egp-bgp-routing-domains.md)
 - [`../docs/lineage/bgp-1-to-bgp-4.md`](../docs/lineage/bgp-1-to-bgp-4.md)
 
-Already documented:
+Already documented: autonomous-system decomposition, RFC 890 deployment plan, formal EGP, EGP→BGP influence rather than revision, BGP-1/2/3/4 chain, TCP/179 continuity, CIDR intersection, and RFC 4271 replacing RFC 1771 while the family remains BGP-4.
 
-- RFC 827's explicit explanation of why one common gateway-routing regime stopped scaling;
-- autonomous systems as an administrative/technical decomposition;
-- RFC 890 deployment plan from smart/dumb gateways to AS membership and EGP;
-- RFC 904 formal EGP;
-- EGP → BGP as documented design/operational ancestry, not formal revision;
-- BGP-1/2/3/4 formal version chain;
-- BGP TCP/179 continuity;
-- CIDR ↔ BGP-4 intersection;
-- RFC 4271 replacing the BGP-4 core specification while retaining the name BGP-4.
-
-### Next work
-
-- GGP packet/source-code archaeology;
-- RFC 827 → 888 → 904 field/state-machine diff;
-- AS-number allocation history;
-- real August 1984 EGP deployment state;
-- Cisco/NSFNET BGP-1 software;
-- `gated` source lineage;
-- BGP attribute diffs;
-- route-reflector/confederation/community branches;
-- operational incident lineage.
+Next: GGP code, EGP deployment artifacts, AS-number allocation history, Cisco/NSFNET BGP-1, `gated`, attribute diffs, and later policy branches.
 
 ---
 
@@ -299,21 +248,11 @@ X.25 virtual-circuit public networks
 IP datagrams
 ```
 
-while at the architectural level:
-
-```text
-CYCLADES / IP datagram ideas  ↔  virtual-circuit architectures
-```
-
 ### Current state: **started**
 
-Deep excavation:
+Deep excavation: [`../docs/x25/pad-public-data-network-stack.md`](../docs/x25/pad-public-data-network-stack.md)
 
-[`../docs/x25/pad-public-data-network-stack.md`](../docs/x25/pad-public-data-network-stack.md)
-
-Next work: named IP-over-X.25 deployments, X.75, Frame Relay relationship, ATM relationship, carrier-service migration.
-
-Do not assume Frame Relay or ATM are simple descendants until documentary/standards relationships are established.
+Next: named IP-over-X.25 deployments, X.75, Frame Relay and ATM relationships, carrier-service migration. Do not assume simple descendants.
 
 ---
 
@@ -331,12 +270,7 @@ modern queue/retry/asynchronous-delivery patterns
 
 ### Current state: **seed / started mix**
 
-Deep excavations:
-
-- [`../docs/uucp/usenet-store-and-forward-world.md`](../docs/uucp/usenet-store-and-forward-world.md)
-- earliest Duke/UNC physical-path excavation.
-
-Direct descent into modern queue systems remains mostly unproven. Treat analogies as hypotheses until documentary links exist.
+Deep excavations include UUCP/Usenet and the earliest Duke/UNC physical-path reconstruction. Direct descent into modern queue systems remains mostly unproven.
 
 ---
 
@@ -346,7 +280,7 @@ Direct descent into modern queue systems remains mostly unproven. Treat analogie
 56 kbit/s PDP-11/LSI-11 Fuzzballs
             ↓ replaced operationally
 1.544 Mbit/s IBM RT Nodal Switching Subsystems
-            ↓ replaced operationally
+            ↓
 T3 / RS/6000-generation backbone
             ↓
 commercial backbone/NAP era
@@ -381,51 +315,183 @@ modern delegated DNS
 
 ### Current state: **started**
 
-Deep excavation:
+Deep excavation: [`../docs/lineage/hosts-txt-to-dns.md`](../docs/lineage/hosts-txt-to-dns.md)
 
-[`../docs/lineage/hosts-txt-to-dns.md`](../docs/lineage/hosts-txt-to-dns.md)
-
-Already recorded:
-
-- central table/distribution versus delegated authority;
-- RFC 819 influence on early DNS design;
-- RFC 882/883 → RFC 1034/1035 formal successor relationships;
-- local hosts-file mechanism surviving beside DNS.
-
-Next work: BIND/Jeeves source code, resolver APIs, root/TLD operations, caching evolution, DNSSEC as later branch.
+Next: Jeeves/BIND source code, resolver APIs, root/TLD operations, caching evolution, DNSSEC as a later branch.
 
 ---
 
-# 11. Future high-value lineage branches
-
-## LAN switching
+# 11. Bridge → spanning tree → switch → VLAN
 
 ```text
-repeater ≠ bridge
-bridge → transparent bridge/STP → multiport bridge/switch → VLAN/full duplex/high-speed switching
+shared LAN segments
+      ↓
+transparent bridge
+      ↓ redundant loops become a problem
+spanning-tree computation
+      ↓
+IEEE 802.1D bridge/STP lineage
+      ↓
+multiport bridge / Ethernet switch
+      ↓
+IEEE 802.1Q virtual bridged LANs
 ```
 
-## Error control / compression
+### Current state: **started / substantial**
+
+Deep excavation: [`../docs/lineage/bridge-stp-switch-vlan.md`](../docs/lineage/bridge-stp-switch-vlan.md)
+
+Structured artifacts/edges now include IEEE 802.1D-1990 (`ART-0103`) and `LIN-0062` for Perlman-design influence.
+
+Already documented:
+
+- bridge learning/filtering/flooding responsibilities;
+- the loop problem in redundant bridged LANs;
+- Perlman's 1985 distributed spanning-tree algorithm;
+- RFC 1493's explicit distinction between DEC LANbridge 100 STP and IEEE 802.1D STP;
+- bridge/STP state exposed through SNMP Bridge MIB;
+- switch role as multiport bridge descendant, while hardware/ASIC history remains separate;
+- IEEE 802.1Q-1998 as Virtual Bridged LAN architecture.
+
+### Next work
+
+- DEC LANbridge 100 manuals and exact STP dialect;
+- IEEE 802.1D editions and clause/PDU/timer diff;
+- Kalpana EPS-700/EPS-1500 chronology and forwarding hardware;
+- store-and-forward vs cut-through;
+- CAM/ASIC history;
+- 802.1Q tag/member semantics and vendor VLAN predecessors;
+- RSTP/MSTP branches.
+
+---
+
+# 12. MNP → V.42 / V.42bis modem reliability lineage
 
 ```text
-vendor MNP families ↔ V.42 / V.42bis
+vendor modem error-control protocols
+          ↓
+MNP installed base
+          ↕ compatibility/interworking
+V.42 LAPM standardized error control
+          +
+V.42bis standardized compression
 ```
+
+### Current state: **started**
+
+Deep excavation: [`../docs/lineage/mnp-v42-v42bis.md`](../docs/lineage/mnp-v42-v42bis.md)
+
+Structured artifact: `ART-0107` V.42 (11/1988). Structured compatibility edge: `LIN-0068`.
+
+Already documented:
+
+- first V.42 edition in November 1988;
+- formal V.42 revision line 1988 → 1993 → 1996 → 2002;
+- LAPM as the standardized V.42 error-control path;
+- deployed V.42 modem products retaining MNP Classes 2-4 fallback/interworking;
+- MNP5 and V.42bis as distinct compression families;
+- V.42bis approval 31 January 1990;
+- separation among modulation speed, DTE serial rate, error correction, and compressed effective throughput.
+
+### Next work
+
+- original Microcom MNP specifications/patents/licensing;
+- exact MNP class genealogy;
+- V.42 1988 normative text and LAPM state machine;
+- real LAPM/MNP negotiation captures;
+- MNP5 vs V.42bis algorithm comparison;
+- modem-buffer and RTS/CTS/XON-XOFF interaction;
+- later V.44/V.92 branch.
+
+---
+
+# 13. Hayes Smartmodem → AT command ecosystem
+
+```text
+manual/separate modem call control
+          ↓
+software-controllable Smartmodem
+          ↓
+Hayes AT command + command/data state model
+          ↓
+communications software depends on it
+          ↓
+third-party Hayes-compatible modems
+          ↓
+large vendor-specific AT supersets
+```
+
+### Current state: **started**
+
+Deep excavation: [`../docs/lineage/hayes-at-command-set.md`](../docs/lineage/hayes-at-command-set.md)
+
+Structured artifact: `ART-0110`. Structured de-facto-interface edge: `LIN-0075`.
+
+Already documented:
+
+- `AT` command/control grammar in Hayes technical references;
+- command/data mode distinction;
+- S-register configuration model;
+- machine-readable result codes;
+- `+++` online escape behavior in deployed software documentation;
+- independent software embedding Hayes command strings;
+- multiple third-party products explicitly marketed/listed as Hayes-compatible.
+
+### Next work
+
+- earliest Smartmodem manual and exact introduction chronology;
+- first command grammar versus 1200/2400 generations;
+- original guard-time semantics;
+- model-by-model S-register diff;
+- UUCP dialer source, BBS drivers, SLIP/PPP chat scripts;
+- vendor extension namespaces;
+- ETSI/3GPP AT-command branch, but only after explicit documentary ancestry is found.
+
+---
+
+# 14. Network management lineage
+
+```text
+early gateway/host monitoring
+      ↓
+HMP / INOC-era mechanisms
+      ↓
+SGMP
+      ↓ architecture survives despite wire incompatibility
+SNMP
+      ↓
+SNMPv2 / SNMPv3 frameworks
+```
+
+### Current state: **started**
+
+Deep excavation: [`../docs/lineage/hmp-sgmp-snmp-management.md`](../docs/lineage/hmp-sgmp-snmp-management.md)
+
+Next: HMP source/implementations, SGMP source, first SNMP agents, SMI/MIB object genealogy, CMIP coexistence, vendor management platforms, and configuration/telemetry descendants with cautious influence claims.
+
+---
+
+# 15. Future high-value lineage branches
 
 ## Remote access
 
 ```text
-terminal concentrator / PAD / terminal server / dial access server
+terminal concentrator ↔ PAD ↔ terminal server ↔ dial access server
 ```
 
-The relationships here are likely to be networks rather than clean trees.
+This will probably be a network of role/interworking edges rather than a clean tree.
 
 ## Routing inside an AS
 
 HELLO, RIP, OSPF, IS-IS and proprietary IGPs need separate mechanism genealogies rather than one false sequence.
 
-## Network management
+## Application protocols
 
-ARPANET/NOC measurement → vendor management → SNMP/CMIP branches should be reconstructed from operator practice and protocol documents.
+NCP-era Telnet/FTP/mail → TCP-era revisions → later standards; preserve service continuity separately from transport/protocol continuity.
+
+## Network configuration and telemetry
+
+CLI/config files, SNMP management, NETCONF/YANG, streaming telemetry and controller APIs should be connected only where design/implementation evidence proves ancestry.
 
 ---
 
@@ -450,5 +516,7 @@ negative claim: what this arrow does NOT establish
 ```
 
 A good lineage can say not only **what survived**, but also **what died while the name survived**.
+
+It can also say when an old protocol survived only as a compatibility path, when a product interface became a de-facto standard, and when two technologies merely coexisted without one descending from the other.
 
 That is the difference between technical genealogy and mythology.

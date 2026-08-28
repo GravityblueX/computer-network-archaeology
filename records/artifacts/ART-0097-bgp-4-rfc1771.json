@@ -1,0 +1,98 @@
+{
+  "id": "ART-0097",
+  "canonical_name": "Border Gateway Protocol 4 (RFC 1771 generation)",
+  "aliases": ["BGP-4", "RFC 1771 BGP-4"],
+  "kind": "protocol",
+  "parent_family": "BGP",
+  "manufacturer_or_body": ["IETF Inter-Domain Routing community"],
+  "chronology": {
+    "standardized": {
+      "value": "1995-03",
+      "precision": "month",
+      "certainty": "confirmed",
+      "source_ids": ["SRC-0071"],
+      "notes": "RFC 1771 publication generation; later core specification superseded by RFC 4271 in January 2006 while retaining the name BGP-4."
+    }
+  },
+  "networks_or_families": ["Internet", "BGP"],
+  "roles": [
+    "exchange reachability between Autonomous Systems",
+    "carry AS-path information for loop prevention and policy",
+    "support classless interdomain routing",
+    "advertise IP prefixes",
+    "support route and AS-path aggregation"
+  ],
+  "stack_position": ["network", "management", "operations"],
+  "software": {
+    "operating_system": null,
+    "programs": [],
+    "languages": [],
+    "version_or_revision": "BGP version 4 / RFC 1771"
+  },
+  "protocols": ["TCP", "BGP-4", "CIDR-related prefix routing"],
+  "addressing": "Network Layer Reachability Information is expressed using classless IP prefixes rather than BGP's older classful network concept.",
+  "routing_or_forwarding": "Path-vector inter-AS reachability exchange using AS path and path attributes. BGP conveys control-plane information; packet forwarding is performed by the router/system's forwarding mechanisms.",
+  "error_control": "BGP protocol error handling uses NOTIFICATION and session teardown/recovery mechanisms; reliable message transport is delegated to TCP.",
+  "flow_or_congestion_control": "Relies on TCP transport behavior; BGP itself controls routing-message generation/processing rather than providing a separate data-flow transport mechanism.",
+  "operations": {
+    "monitoring": "Peer state, received/advertised prefixes and path attributes are operationally important; vendor-specific interfaces require separate records.",
+    "diagnostics": null,
+    "remote_management": null,
+    "failure_behavior": "Peer/session failures withdraw or invalidate learned reachability according to protocol/session behavior; detailed convergence archaeology requires implementation and incident sources.",
+    "operator_interface": "Protocol document is implementation-independent; historical Cisco/NSFNET/gated configuration and command interfaces require separate artifact records."
+  },
+  "economics": {
+    "purchase_price": null,
+    "rental_or_tariff": null,
+    "circuit_cost": null,
+    "payer_or_funder": null
+  },
+  "geography": [],
+  "survival": {
+    "status": "documented-only",
+    "locations": [],
+    "provenance_notes": "The protocol lineage survives in modern BGP-4, but RFC 1771 itself was replaced as the core specification by RFC 4271."
+  },
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Which router software releases first deployed RFC 1771-compatible BGP-4 in production?",
+    "When did major backbone networks retire BGP-3 sessions?",
+    "Which early route dumps survive that demonstrate first production CIDR aggregation?",
+    "How did configuration syntax expose LOCAL_PREF, MULTI_EXIT_DISC and aggregation in early implementations?",
+    "What implementation changes were necessary when RFC 4271 replaced RFC 1771 while retaining the BGP-4 name?"
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0071",
+      "supports": [
+        "BGP-4 identity and publication generation",
+        "classless prefix advertisement",
+        "route aggregation",
+        "AS-path aggregation",
+        "EGP/NSFNET experience ancestry",
+        "BGP-1/2/3/4 naming"
+      ],
+      "locator": "RFC 1771, Introduction and Appendix describing version changes",
+      "quotation_checked": false,
+      "notes": "Use canonical RFC Editor HTML/text for paragraph-level extraction."
+    },
+    {
+      "source_id": "SRC-0072",
+      "supports": ["CIDR motivation and classless/aggregation requirements"],
+      "locator": "RFC 1519, Sections 3.3 and 4.1-4.4",
+      "quotation_checked": false,
+      "notes": "CIDR is a related standards lineage, not merely a BGP feature."
+    },
+    {
+      "source_id": "SRC-0073",
+      "supports": ["RFC 1771 obsolescence by RFC 4271", "continued BGP-4 core architecture"],
+      "locator": "RFC 4271 title page and abstract",
+      "quotation_checked": false,
+      "notes": "Important example where protocol marketing/version name remains BGP-4 while the core specification itself is revised."
+    }
+  ],
+  "related_artifacts": [],
+  "notes": "Do not equate 'BGP-4' with one frozen RFC. RFC 1771 is the March 1995 BGP-4 generation; RFC 4271 later replaces the core specification while keeping the BGP-4 name.",
+  "last_reviewed": "2026-08-28"
+}

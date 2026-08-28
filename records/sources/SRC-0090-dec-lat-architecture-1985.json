@@ -1,0 +1,46 @@
+{
+  "id": "SRC-0090",
+  "source_type": "manual",
+  "title": "LAT Architecture Network Manager's Guide",
+  "authors_or_bodies": ["Digital Equipment Corporation"],
+  "date": {"value": "1985-07", "precision": "month", "certainty": "confirmed", "notes": "Document title/date in archival scan."},
+  "edition_or_revision": "AA-DJ18B-TK / July 1985",
+  "identifiers": [{"scheme": "DEC document", "value": "AA-DJ18B-TK"}],
+  "publisher_or_issuer": "Digital Equipment Corporation",
+  "language": ["en"],
+  "topics": ["LAT", "DECserver 100", "Ethernet terminal server", "DECnet", "terminal access", "service naming", "network management"],
+  "artifact_ids": ["ART-0029"],
+  "access": {
+    "canonical_url": "https://www.glaver.org/DECserver/General%20Documents/LAT%20and%20MOP/AA-DJ18B-TK%20LAT%20Architecture%20Network%20Manager%27s%20Guide%20July%201985.pdf",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": null, "ocr_status": "unknown", "scan_notes": "Archival DEC manual scan; checksum/page inventory still to record."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Link to archival copy; do not mirror without rights confirmation.",
+  "provenance": {"original_holder": "Digital Equipment Corporation", "current_holder": "community DECserver documentation archive", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "DEC's 1985 LAT documentation family includes the DECserver 100 Terminal Server and distinguishes its hardware, software installation, operations and user documentation.",
+      "locator": "front matter/documentation-set listing",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0029"],
+      "notes": null
+    },
+    {
+      "claim": "The DECserver 100 is an Ethernet terminal-server product whose software is associated with DECnet load-host installation/operation procedures.",
+      "locator": "documentation-set descriptions for DECserver 100",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0029"],
+      "notes": "Exact processor/port/Ethernet hardware requires the site-preparation and hardware-installation guide."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary DEC architecture/manual source for the Ethernet/LAT terminal-server branch. Pair with DECserver 100 V1.0 user/operations guides and firmware images.",
+  "last_reviewed": "2026-08-29"
+}

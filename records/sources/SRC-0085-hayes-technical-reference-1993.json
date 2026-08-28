@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0085",
+  "source_type": "manual",
+  "title": "Technical Reference for Hayes Modem Users",
+  "authors_or_bodies": ["Hayes Microcomputer Products"],
+  "date": {"value": "1993", "precision": "year", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "44-012 technical reference",
+  "identifiers": [{"scheme": "Hayes document", "value": "44-012"}],
+  "publisher_or_issuer": "Hayes Microcomputer Products",
+  "language": ["en"],
+  "topics": ["Hayes", "AT command set", "Smartmodem", "S-registers", "result codes", "modem control"],
+  "artifact_ids": ["ART-0109", "ART-0110", "ART-0111", "ART-0112"],
+  "access": {
+    "canonical_url": "https://www.bitsavers.org/pdf/hayes/Hayes_44-012_Technical_Reference_For_Hayes_Modem_Users_1993.pdf",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": null, "ocr_status": "unknown", "scan_notes": "Bitsavers archival scan; checksum/page inventory still to record."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Link to archival scan; do not mirror until rights status is established.",
+  "provenance": {"original_holder": "Hayes Microcomputer Products", "current_holder": "Bitsavers archival collection", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "Hayes documentation identifies a Hayes Standard AT Command Set and documents a character-oriented command interface for modem control.",
+      "locator": "technical reference command-set sections",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0110"],
+      "notes": "This 1993 reference documents the mature Hayes interface family, not its first introduction date."
+    },
+    {
+      "claim": "Hayes modem configuration includes numbered S-registers whose meanings/defaults are part of the device control interface.",
+      "locator": "S-register reference sections",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0111"],
+      "notes": "Register genealogy must be reconstructed model by model."
+    },
+    {
+      "claim": "The Hayes interface distinguishes command control from online data operation and documents mechanisms for returning to command control.",
+      "locator": "command/online state and escape-control sections",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0112"],
+      "notes": "Exact first-generation +++ guard-time semantics require earlier Smartmodem manuals."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary vendor documentation for mature Hayes command semantics; pair with earlier manuals and independent software/configuration evidence for chronology and compatibility diffusion.",
+  "last_reviewed": "2026-08-29"
+}

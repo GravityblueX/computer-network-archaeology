@@ -1,0 +1,86 @@
+{
+  "id": "ART-0077",
+  "canonical_name": "Bell 303-type Wideband Data Station",
+  "aliases": ["Bell 303", "Data Set 303", "303-type wideband data station"],
+  "kind": "modem-data-set",
+  "parent_family": "Bell System 303-type wideband data stations",
+  "manufacturer_or_body": ["Bell System", "Western Electric / Bell operating-company ecosystem"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": {"value": "1960s", "precision": "circa", "certainty": "probable", "source_ids": ["SRC-0063"], "notes": "Standardized 303-type 1966 reference distinguishes earlier X303A interim/model-shop equipment from 1964/1965."},
+    "standardized": null,
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Bell System wideband data services", "ARPANET", "ARPANET Very Distant Host attachments"],
+  "roles": ["synchronous digital-data to wideband telephone-carrier boundary", "50 kbit/s group-band data transmission in 303C-class configurations", "VDH synchronous modem component"],
+  "stack_position": ["physical", "link", "pre-layered"],
+  "physical": {
+    "medium": "Bell wideband analog carrier facilities; concrete VDH example also used shielded twisted-pair cable between local 303 units",
+    "line_service": "Half-group/group/supergroup wideband facilities depending 303 variant; 303C-class 50 kbit/s uses group-band service",
+    "nominal_bit_rate_bps": [19200, 50000, 200000, 230400],
+    "clocking": "Synchronous data station with internal/recovered timing; exact clock interchange depends variant/interface option",
+    "signaling": "Wideband modem/data-station modulation and carrier conditioning; detailed per-variant analog signaling still to be extracted",
+    "connectors": ["12-pin Burndy MD 12 MXR-8T family for documented high-speed business-machine interface"],
+    "interfaces": ["standard high-speed business-machine coaxial interchange circuits", "special documented government 50-kbit/s balanced interface", "Bell wideband carrier/group facility"]
+  },
+  "hardware": {
+    "processor": null,
+    "memory": null,
+    "storage": null,
+    "boards_or_modules": ["plug-in data-set circuit boards", "voice/control auxiliary equipment", "power distribution", "facility-dependent transmission auxiliaries"],
+    "rack_or_enclosure": "Bell wideband data-station cabinet/enclosure family; exact 303C site cabinet configuration varies",
+    "power": null
+  },
+  "software": {
+    "operating_system": null,
+    "programs": [],
+    "languages": [],
+    "version_or_revision": "303B/C/D/E and numbered option variants require separate revision records"
+  },
+  "protocols": ["synchronous serial data transport", "ARPANET VDH/BSC in documented 1978 deployment context"],
+  "addressing": null,
+  "routing_or_forwarding": null,
+  "error_control": "Carrier/data-station signal conditioning and timing; ARPANET packet framing/CRC in BBN interface or VDH software should not be misattributed to the 303 itself.",
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "Data-set alarms/status and associated carrier tests; detailed indicator inventory pending Bell manuals",
+    "diagnostics": "Participant evidence describes local/remote loopback and voice-channel coordination for layered fault isolation",
+    "remote_management": "Remote loopback/control existed in deployment practice; exact signaling method pending primary operating instructions",
+    "failure_behavior": "Carrier/modem failures could be isolated separately from BBN modem-interface and IMP failures through loopback tests",
+    "operator_interface": "Data-set controls/indicators plus associated voice coordination channel; exact front-panel layout pending model-specific records"
+  },
+  "economics": {
+    "purchase_price": null,
+    "rental_or_tariff": null,
+    "circuit_cost": null,
+    "payer_or_funder": "Bell private-line/wideband service customer; ARPANET site/circuit funding responsibilities require site-specific contract records"
+  },
+  "geography": [],
+  "survival": {"status": "unknown", "locations": [], "provenance_notes": "Generic Bell 303 specimens may survive, but ARPANET-provenanced units have not yet been established in this record."},
+  "research_state": "substantial",
+  "certainty": "mixed",
+  "open_questions": [
+    "What is the full 303B/C/D/E numbered-variant coding tree?",
+    "What exact 303C suffix and interface option were installed on the September/October 1969 UCLA-SRI circuit?",
+    "Did first-generation IMP sites use the standard unbalanced business-machine interface, special balanced government option, or another BBN/Bell arrangement?",
+    "What were the exact Bell/AT&T group-carrier facility and local equalizer/modulator components behind each ARPANET 50-kbit/s link?",
+    "What were the circuit IDs, provisioning dates, tariffs and recurring costs?",
+    "What BBN synchronous modem-interface board revision connected the IMP to each 303?",
+    "What voice-coordination and remote-loopback controls existed on the ARPANET installation?",
+    "Which 303 specimens survive and can any be tied by serial number or asset history to ARPANET/VDH service?"
+  ],
+  "sources": [
+    {"source_id": "SRC-0063", "supports": ["303 product-family speeds", "303C 50-kbit/s group-band class", "high-speed Burndy interface", "special balanced government interface", "X303A predecessor distinction"], "locator": "Bell System Wideband Data Stations 303 Type, Aug 1966; relevant pages visually verified", "quotation_checked": false, "notes": "Product-family evidence, not site-installation proof."},
+    {"source_id": "SRC-0064", "supports": ["concrete Bell 303 VDH deployment", "50-kbit/s full-duplex VDH", "two 303 units", "almost 1800-ft shielded twisted-pair local path"], "locator": "NTIA Report 78-3 VDH diagram/text", "quotation_checked": false, "notes": "One concrete 1978 installation."},
+    {"source_id": "SRC-0055", "supports": ["Bell 303 as typical high-speed synchronous modem for Very Distant Host attachment"], "locator": "BBN Report 1822 VDH sections", "quotation_checked": false, "notes": "Use dated 1822 revision semantics."}
+  ],
+  "related_artifacts": [
+    {"id": "ART-0080", "relation": "interfaces-with", "notes": "Bell 303 is documented as a typical and concretely deployed physical modem for VDH attachments."},
+    {"id": "ART-0006", "relation": "interfaces-with", "notes": "First-generation ARPANET IMP lines used BBN synchronous modem interfaces associated with Bell 303-class wideband service; exact per-site variant remains to prove."}
+  ],
+  "notes": "Do not equate the Bell 303 family with ordinary voiceband dial-up modems. The 50-kbit/s 303C class consumed engineered group-band carrier capacity and sat inside a larger Bell wideband service plant.",
+  "last_reviewed": "2026-08-28"
+}

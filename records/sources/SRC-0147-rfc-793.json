@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0147",
+  "source_type": "rfc",
+  "title": "Transmission Control Protocol",
+  "authors_or_bodies": ["Jon Postel", "USC Information Sciences Institute"],
+  "date": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 793",
+  "identifiers": [{"scheme": "RFC", "value": "793"}],
+  "publisher_or_issuer": "DARPA Internet Program / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["TCP", "reliable transport", "byte stream", "sequence numbers", "flow control", "RFC 9293 ancestry"],
+  "artifact_ids": [],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc793/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "DARPA Internet Program / USC-ISI", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 793 was the 1981 DoD Standard TCP specification and itself replaced RFC 761 plus earlier IEN versions.", "locator": "RFC 793 preface/header", "certainty": "confirmed", "artifact_ids": [], "notes": null},
+    {"claim": "RFC 793 is now formally obsolete in favor of RFC 9293.", "locator": "RFC Editor metadata", "certainty": "confirmed", "artifact_ids": ["ART-0154"], "notes": "Document obsolescence does not imply protocol disappearance."}
+  ],
+  "conflicts": [],
+  "notes": "Historical endpoint for LIN-0107; preserve both document status and mechanism continuity.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0137",
+  "source_type": "rfc",
+  "title": "Internet Protocol",
+  "authors_or_bodies": ["Jon Postel", "USC Information Sciences Institute"],
+  "date": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 791 / STD 5",
+  "identifiers": [{"scheme": "RFC", "value": "791"}, {"scheme": "STD", "value": "5"}],
+  "publisher_or_issuer": "DARPA Internet Program / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["IPv4", "Internet Protocol", "datagram", "fragmentation", "TTL", "routing"],
+  "artifact_ids": ["ART-0150"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc791/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "DARPA Internet Program / USC-ISI", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 791 remains listed by the RFC Editor as STD 5 / Internet Standard.", "locator": "RFC Editor metadata", "certainty": "confirmed", "artifact_ids": ["ART-0150"], "notes": "Later RFCs update portions of the specification."},
+    {"claim": "RFC 791 defines an unreliable connectionless datagram service with addressing, routing, TTL and fragmentation/reassembly responsibilities but no end-to-end reliability or flow control.", "locator": "RFC 791 Sections 1.2-1.4", "certainty": "confirmed", "artifact_ids": ["ART-0150"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Key reference example of an early Internet protocol document that remains an Internet Standard while later documents amend specific semantics.",
+  "last_reviewed": "2026-08-29"
+}

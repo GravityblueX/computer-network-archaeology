@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0091",
+  "source_type": "manual",
+  "title": "Configuration Guide for PortMaster Products",
+  "authors_or_bodies": ["Livingston Enterprises"],
+  "date": {"value": "1995-12", "precision": "month", "certainty": "confirmed", "notes": "December 1995 edition in archival filename/document."},
+  "edition_or_revision": "950-1201B / December 1995",
+  "identifiers": [{"scheme": "Livingston document", "value": "950-1201B"}],
+  "publisher_or_issuer": "Livingston Enterprises",
+  "language": ["en"],
+  "topics": ["PortMaster", "dial access", "PPP", "SLIP", "PAP", "CHAP", "serial ports", "ComOS", "remote access"],
+  "artifact_ids": ["ART-0030"],
+  "access": {
+    "canonical_url": "https://bitsavers.computerhistory.org/pdf/livingstonEnterprises/950-1201B_Configuration_Guide_for_Portmaster_Products_Dec95.pdf",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": null, "ocr_status": "unknown", "scan_notes": "Bitsavers/CHM archival scan; checksum and edition manifest still to record."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Link to archival scan; do not mirror without rights confirmation.",
+  "provenance": {"original_holder": "Livingston Enterprises", "current_holder": "Bitsavers / Computer History Museum mirrored archive", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "PortMaster products support dial-in/dial-out IP operation using SLIP and PPP over asynchronous serial lines.",
+      "locator": "Network Dial-In Operation / SLIP and PPP sections around 3-13 to 3-15",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0030"],
+      "notes": null
+    },
+    {
+      "claim": "The documented PortMaster PPP implementation performs LCP negotiation and supports PAP and CHAP authentication behavior.",
+      "locator": "PPP and PAP/CHAP Authentication section around page 3-15",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0030"],
+      "notes": null
+    },
+    {
+      "claim": "The guide recommends hardware RTS/CTS flow control for SLIP and PPP connections and documents later ComOS support for multilink PPP.",
+      "locator": "SLIP/PPP configuration section",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0030"],
+      "notes": "ComOS release genealogy should be split into separate software records."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary deployed-access-server evidence showing the terminal-server-like multi-serial-port edge role expanding into authenticated PPP/IP attachment.",
+  "last_reviewed": "2026-08-29"
+}

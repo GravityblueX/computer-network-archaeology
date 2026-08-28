@@ -1,0 +1,30 @@
+{
+  "id": "SRC-0065",
+  "source_type": "academic-paper",
+  "title": "Ethernet: Distributed Packet Switching for Local Computer Networks",
+  "authors_or_bodies": ["Robert M. Metcalfe", "David R. Boggs", "Xerox Palo Alto Research Center"],
+  "date": {"value": "1976-07", "precision": "month", "certainty": "probable", "notes": "Published in Communications of the ACM, vol. 19 no. 7; verify exact issue/publication date in bibliographic record."},
+  "edition_or_revision": "Communications of the ACM 19(7)",
+  "identifiers": [],
+  "publisher_or_issuer": "Association for Computing Machinery",
+  "language": ["en"],
+  "topics": ["experimental Ethernet", "3 Mbit/s", "coax", "CATV taps", "transceiver", "collision detection", "phase encoding", "CRC", "distributed control"],
+  "artifact_ids": ["ART-0017", "ART-0081", "ART-0083"],
+  "access": {"canonical_url": null, "archive_urls": ["https://www.cs.cornell.edu/courses/cs414/2002sp/papers/ethernet/ethernet.htm"], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-28", "availability": "open-text-mirror"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": "Accessible text mirror used for content discovery; obtain a stable page-image copy of the published paper for final locators."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Do not mirror the copyrighted paper without permission; retain bibliographic metadata and lawful access links.",
+  "provenance": {"original_holder": "Xerox PARC / ACM publication", "current_holder": "Multiple educational/archive mirrors", "donor_or_collection": null, "chain_notes": "A primary ACM/PARC/CHM archival representation should become the preferred access reference when available."},
+  "evidence_grade": "primary-contemporary-paper",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "The operating experimental Ethernet implementation separated the passive Ether, external transceivers, station interfaces, and station controllers.", "locator": "implementation-description sections", "certainty": "confirmed", "artifact_ids": ["ART-0017", "ART-0081", "ART-0083"], "notes": null},
+    {"claim": "The experimental Ether used low-loss coax with off-the-shelf CATV taps/connectors, including smaller coax in clusters and larger lower-loss coax on longer runs.", "locator": "physical-medium implementation discussion", "certainty": "confirmed", "artifact_ids": ["ART-0083"], "notes": "Exact cable/tap vendor and part numbers remain unresolved."},
+    {"claim": "The external transceiver/interface connection used five twisted pairs carrying transmission, reception, interference/collision information and power.", "locator": "transceiver implementation discussion", "certainty": "confirmed", "artifact_ids": ["ART-0081"], "notes": "Exact pin/electrical values should come from the separate transceiver electrical-characteristics sheet."},
+    {"claim": "The transceiver compared transmitted and observed signals to detect interference/collisions and included failure-containment measures such as a transmitter watchdog.", "locator": "transceiver/failure discussion", "certainty": "confirmed", "artifact_ids": ["ART-0081"], "notes": null},
+    {"claim": "CRC generation/checking, serialization, phase encoding and buffering belonged to station interface/controller logic rather than the passive coax itself.", "locator": "station-interface description", "certainty": "confirmed", "artifact_ids": ["ART-0017"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Use only for the Xerox experimental system. DIX 10 Mb/s and IEEE 802.3 physical details need separate source records.",
+  "last_reviewed": "2026-08-28"
+}

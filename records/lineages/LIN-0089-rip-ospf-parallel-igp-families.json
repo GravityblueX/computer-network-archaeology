@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0089",
+  "from":{"artifact_id":"ART-0125","name":"Routing Information Protocol","revision":"RFC 1058 / June 1988","historical_term":"RIP"},
+  "to":{"artifact_id":"ART-0128","name":"OSPF Version 2","revision":"RFC 1583 generation","historical_term":"OSPF"},
+  "relation":"coexisted-with","scope":["network","routing","architecture"],
+  "property":"RIP and OSPF occupy the interior-routing role while using different algorithmic traditions: distance-vector/Bellman-Ford versus link-state/SPF.",
+  "date_or_range":{"value":"late-1980s-1990s","precision":"range","notes":"Both protocol families were available during the transition to larger routed IP networks."},"certainty":"confirmed","directness":"documented-design",
+  "sources":[{"source_ref":"SRC-0110","locator":"RFC 1058, routing algorithm discussion","supports":"RIP distance-vector tradition","notes":null},{"source_ref":"SRC-0113","locator":"RFC 1583, Section 1 Introduction","supports":"OSPF link-state/SPF design and explicit departure from Bellman-Ford-based traditional TCP/IP protocols","notes":null}],
+  "negative_claims":["This edge explicitly rejects a formal RIP→OSPF revision chain.","It does not claim OSPF source code or packet format descends from RIP.","Operational replacement patterns must be established per network/vendor rather than inferred from standards dates."],
+  "open_questions":["Collect contemporary migration/operator documents comparing RIP and OSPF.","Recover early dual-protocol router configurations."],
+  "notes":"Useful negative-lineage record: same role does not mean direct ancestry.","last_reviewed":"2026-08-29"
+}

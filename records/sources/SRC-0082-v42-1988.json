@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0082",
+  "source_type": "standard",
+  "title": "Error-correcting procedures for DCEs using asynchronous-to-synchronous conversion",
+  "authors_or_bodies": ["CCITT"],
+  "date": {"value": "1988-11", "precision": "month", "certainty": "confirmed", "notes": "First edition shown in the ITU recommendation development history."},
+  "edition_or_revision": "Recommendation V.42 / November 1988",
+  "identifiers": [{"scheme": "ITU-T Recommendation", "value": "V.42"}],
+  "publisher_or_issuer": "CCITT (later ITU-T)",
+  "language": ["en"],
+  "topics": ["V.42", "modem error correction", "LAPM", "DCE", "MNP compatibility", "dial-up modems"],
+  "artifact_ids": ["ART-0107", "ART-0105"],
+  "access": {
+    "canonical_url": "https://www.itu.int/rec/T-REC-V.42/en",
+    "archive_urls": [],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": "ITU recommendation history page registered; exact first-edition PDF/checksum still to acquire where lawful."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Record metadata and canonical ITU access; do not mirror the standard text without permission/licensing.",
+  "provenance": {"original_holder": "CCITT", "current_holder": "ITU-T recommendation archive", "donor_or_collection": null, "chain_notes": "ITU-T maintains the revision history for the V.42 recommendation family."},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "The first V.42 edition in the ITU development history is dated November 1988.",
+      "locator": "ITU V.42 recommendation development-history list",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0107"],
+      "notes": null
+    },
+    {
+      "claim": "The V.42 recommendation family defines modem error-correcting procedures centered on LAPM rather than a modulation-rate standard.",
+      "locator": "recommendation title/summary and revision history",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0107"],
+      "notes": "Exact state-machine and compatibility clauses require mining the normative edition text."
+    },
+    {
+      "claim": "V.42 has later formal editions dated March 1993, October 1996 and March 2002.",
+      "locator": "ITU V.42 development-history list",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0107"],
+      "notes": "Supports the formal revision edges LIN-0070 through LIN-0072."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Use this record for formal edition chronology. Commercial MNP fallback/interoperability evidence is separately preserved in SRC-0084.",
+  "last_reviewed": "2026-08-29"
+}

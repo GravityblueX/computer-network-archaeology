@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schema/lineage-edge.schema.json",
+  "id": "LIN-0059",
+  "from": {"artifact_id": null, "name": "SNMP", "revision": "RFC 1098", "historical_term": "SNMP"},
+  "to": {"artifact_id": null, "name": "SNMPv1 core protocol", "revision": "RFC 1157", "historical_term": "SNMP"},
+  "relation": "revision-of",
+  "scope": ["application", "management", "institutional"],
+  "property": "RFC 1157 formally obsoletes RFC 1098 and becomes the canonical SNMPv1 protocol specification generation",
+  "date_or_range": {"value": "1989-1990", "precision": "range", "notes": null},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [
+    {"source_ref": "RFC 1157", "locator": "header and introduction", "supports": "RFC 1157 explicitly obsoletes RFC 1098 and preserves the SNMP architecture centered on management stations, agents, managed variables and simple operations.", "notes": null}
+  ],
+  "negative_claims": ["This edge does not imply that RFC 1157 alone defines the entire SNMPv1 framework; SMI and MIB documents are separate artifacts."],
+  "open_questions": ["Build exact RFC 1098 to RFC 1157 content diff and connect related SMI/MIB revision records."],
+  "notes": null,
+  "last_reviewed": "2026-08-28"
+}

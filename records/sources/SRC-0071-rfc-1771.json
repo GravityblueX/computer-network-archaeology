@@ -1,0 +1,60 @@
+{
+  "id": "SRC-0071",
+  "source_type": "rfc",
+  "title": "A Border Gateway Protocol 4 (BGP-4)",
+  "authors_or_bodies": ["Yakov Rekhter", "Tony Li"],
+  "date": {"value": "1995-03", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1771 / BGP-4",
+  "identifiers": [{"scheme": "RFC", "value": "1771"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["BGP-4", "interdomain routing", "CIDR", "IP prefixes", "route aggregation", "AS_PATH", "policy routing"],
+  "artifact_ids": ["ART-0097"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc1771.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc1771"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "IETF Inter-Domain Routing community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "RFC 1771 defines the generation commonly called BGP-4 and identifies RFC 1105, RFC 1163 and RFC 1267 as BGP-1, BGP-2 and BGP-3 respectively.",
+      "locator": "RFC 1771, appendix/version-change discussion",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0097"],
+      "notes": null
+    },
+    {
+      "claim": "BGP-4 supports classless interdomain routing by advertising IP prefixes and eliminating the concept of network class within BGP.",
+      "locator": "RFC 1771, Section 2 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0097"],
+      "notes": null
+    },
+    {
+      "claim": "BGP-4 introduces route aggregation mechanisms including aggregation of AS paths.",
+      "locator": "RFC 1771, Section 2 and aggregation sections",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0097"],
+      "notes": null
+    },
+    {
+      "claim": "The BGP design is described as building on EGP and EGP usage experience in the NSFNET Backbone.",
+      "locator": "RFC 1771, Section 2 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0097"],
+      "notes": "Supports a documented influence/experience edge rather than an EGP revision relation."
+    }
+  ],
+  "conflicts": [],
+  "notes": "RFC 1771 was later obsoleted by RFC 4271 while the protocol family remained named BGP-4.",
+  "last_reviewed": "2026-08-28"
+}

@@ -1,0 +1,12 @@
+{
+  "id":"LIN-0092",
+  "from":{"artifact_id":"ART-0131","name":"Mail Transfer Protocol","revision":"RFC 772 / September 1980","historical_term":"MTP"},
+  "to":{"artifact_id":"ART-0132","name":"Simple Mail Transfer Protocol","revision":"RFC 788/821 lineage","historical_term":"SMTP"},
+  "relation":"replaced-by","scope":["application","architecture"],
+  "property":"The dedicated mail-transfer role is revised into SMTP's transport-independent sender/receiver and relay model; RFC 788 formally replaces RFC 772 and RFC 780.",
+  "date_or_range":{"value":"1980-09/1982-08","precision":"range","notes":"RFC 772 through RFC 788 and RFC 821 generations."},"certainty":"confirmed","directness":"formal",
+  "sources":[{"source_ref":"SRC-0117","locator":"RFC 772","supports":"MTP predecessor identity","notes":null},{"source_ref":"SRC-0118","locator":"RFC 788 header and Introduction","supports":"formal replacement of RFC 772/780 and SMTP transport/relay model","notes":null},{"source_ref":"SRC-0119","locator":"RFC 821, Introduction","supports":"classic SMTP generation and transport-independent relay architecture","notes":null}],
+  "negative_claims":["This edge does not collapse RFC 780, RFC 788 and RFC 821 into one revision event.","It does not describe message-format changes such as RFC 822.","It does not imply every deployed MTP implementation vanished on RFC publication day."],
+  "open_questions":["Recover RFC 780 and build full command/state-machine diffs.","Trace operational NCP-to-TCP mail migration."],
+  "notes":"Formal protocol-family replacement with a protocol name/architecture transition.","last_reviewed":"2026-08-29"
+}

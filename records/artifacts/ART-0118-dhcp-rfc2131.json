@@ -1,0 +1,52 @@
+{
+  "id": "ART-0118",
+  "canonical_name": "Dynamic Host Configuration Protocol (DHCP, RFC 2131 generation)",
+  "aliases": ["DHCP", "DHCPv4 core"],
+  "kind": "protocol",
+  "parent_family": "BOOTP/DHCP host configuration lineage",
+  "manufacturer_or_body": ["IETF DHC community", "Ralph Droms"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": null,
+    "standardized": {"value":"1997-03","precision":"month","certainty":"confirmed","source_ids":["SRC-0101"],"notes":"RFC 2131 publication date; earlier DHCP RFCs 1531 and 1541 remain distinct revisions."},
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Internet", "DHCPv4", "BOOTP/DHCP"],
+  "roles": ["allocate IPv4 addresses", "deliver host configuration parameters", "manage reusable address leases", "operate through relay agents"],
+  "stack_position": ["application", "management"],
+  "protocols": ["DHCP", "BOOTP compatibility/relay lineage", "UDP", "IP"],
+  "addressing": "Supports automatic, dynamic, and manual allocation. Dynamic allocation assigns an address for a finite lease and allows later reuse.",
+  "routing_or_forwarding": "Relies on BOOTP/DHCP relay behavior to bridge local client discovery with centrally located servers across routed networks.",
+  "error_control": "Application-level retransmission/state-machine behavior over UDP rather than a reliable transport session.",
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "Lease state, address pools, relay behavior, and server logs become central operational artifacts.",
+    "diagnostics": "DISCOVER/OFFER/REQUEST/ACK and renewal/rebinding state can be observed in captures/logs.",
+    "remote_management": null,
+    "failure_behavior": "Server or relay unavailability can prevent new configuration or renewal; lease timers govern continued use and expiration.",
+    "operator_interface": "Server pools, reservations, options, lease databases and relay configuration are implementation-specific."
+  },
+  "economics": {"purchase_price":null,"rental_or_tariff":null,"circuit_cost":null,"payer_or_funder":null},
+  "geography": [],
+  "survival": {"status":"operational-specimen","locations":[],"provenance_notes":"DHCP remains widely deployed; repository focus is the historical protocol/revision lineage rather than current deployment inventory."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Build RFC 1531→1541→2131 state-machine and field diff.",
+    "Recover earliest DHCP server/client source releases and lease database formats.",
+    "Trace BOOTP/DHCP relay implementations in routers and Unix systems.",
+    "Build DHCP option genealogy and vendor-option branches."
+  ],
+  "sources": [
+    {"source_id":"SRC-0101","supports":["RFC 2131 identity","client/server architecture","address allocation modes","lease lifecycle","configuration-parameter role"],"locator":"RFC 2131, Introduction; Protocol Summary; client/server behavior","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0099","supports":["DHCP is based on BOOTP","reusable-address allocation addition","BOOTP relay compatibility"],"locator":"RFC 1531, Abstract and Introduction","quotation_checked":false,"notes":"Earlier revision/source supporting lineage rather than every RFC 2131 detail."}
+  ],
+  "related_artifacts": [
+    {"id":"ART-0115","relation":"successor-of","notes":"DHCP explicitly builds on BOOTP and retains relay/interoperation lineage."}
+  ],
+  "notes": "The major historical transformation is from static/bootstrap assignment toward centrally managed reusable lease state plus general host configuration.",
+  "last_reviewed": "2026-08-29"
+}

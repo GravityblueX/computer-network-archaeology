@@ -1,0 +1,46 @@
+{
+  "id": "SRC-0079",
+  "source_type": "academic-paper",
+  "title": "An Algorithm for Distributed Computation of a Spanning Tree in an Extended LAN",
+  "authors_or_bodies": ["Radia J. Perlman"],
+  "date": {"value": "1985-09", "precision": "month", "certainty": "confirmed", "notes": "Published in SIGCOMM '85 proceedings."},
+  "edition_or_revision": "SIGCOMM 1985 paper",
+  "identifiers": [{"scheme": "DOI", "value": "10.1145/318951.319004"}],
+  "publisher_or_issuer": "ACM SIGCOMM",
+  "language": ["en"],
+  "topics": ["bridges", "spanning tree", "extended LAN", "loop avoidance", "distributed algorithm", "DEC"],
+  "artifact_ids": ["ART-0103"],
+  "access": {
+    "canonical_url": "https://people.eecs.berkeley.edu/~sylvia/papers/spanning-tree.pdf",
+    "archive_urls": [],
+    "catalog_urls": ["https://doi.org/10.1145/318951.319004"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": null, "ocr_status": "none", "scan_notes": "Author-hosted PDF; archive checksum not yet recorded."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Link to the author-hosted/DOI copies; do not mirror without rights confirmation.",
+  "provenance": {"original_holder": "ACM SIGCOMM proceedings / author", "current_holder": "author-hosted Berkeley page and ACM DOI record", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "The paper presents a distributed algorithm for bridges to compute a loop-free spanning tree over an arbitrarily connected extended LAN.",
+      "locator": "paper abstract and algorithm sections",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0103"],
+      "notes": "Supports design ancestry; it is not by itself the complete IEEE 802.1D standardization history."
+    },
+    {
+      "claim": "The design selects a root and computes paths so that only an acyclic subset of the physical topology participates in ordinary forwarding.",
+      "locator": "algorithm/topology discussion",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0103"],
+      "notes": null
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary design source for spanning-tree bridge genealogy. Exact DEC product and IEEE standards revisions must be sourced separately.",
+  "last_reviewed": "2026-08-29"
+}

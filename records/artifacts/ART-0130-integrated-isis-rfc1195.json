@@ -1,0 +1,53 @@
+{
+  "id": "ART-0130",
+  "canonical_name": "Integrated IS-IS for IP and OSI (RFC 1195)",
+  "aliases": ["Integrated IS-IS", "Dual IS-IS", "IS-IS for IP"],
+  "kind": "protocol",
+  "parent_family": "OSI IS-IS / Integrated IS-IS interior-routing lineage",
+  "manufacturer_or_body": ["IETF IS-IS Working Group", "Ross Callon", "ISO/OSI IS-IS lineage"],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": null,
+    "standardized": {"value":"1990-12","precision":"month","certainty":"confirmed","source_ids":["SRC-0116"],"notes":"RFC 1195 publication date."},
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": ["Internet", "OSI", "IS-IS", "Interior Gateway Protocols"],
+  "roles": ["provide link-state/SPF interior routing for IP", "support OSI and IP in one integrated routing protocol", "support Level 1/Level 2 hierarchical routing"],
+  "stack_position": ["network", "routing", "management"],
+  "protocols": ["IS-IS", "Integrated IS-IS", "IP", "CLNP"],
+  "addressing": "Extends the OSI IS-IS routing environment with IP-specific reachability while retaining IS-IS routing-domain/area hierarchy.",
+  "routing_or_forwarding": "Dynamic link-state routing using SPF/Dijkstra; supports pure-IP, pure-OSI and dual environments as specified in RFC 1195.",
+  "error_control": null,
+  "flow_or_congestion_control": null,
+  "operations": {
+    "monitoring": "Operational management is external to the core protocol; RFC 1195 notes management MIB work separately.",
+    "diagnostics": "Adjacency, LSP database, Level 1/Level 2 topology and IP/OSI reachability are key operational states.",
+    "remote_management": null,
+    "failure_behavior": "Link-state database changes are flooded and SPF recomputation updates routes; exact timers and implementation behavior require version-specific records.",
+    "operator_interface": "Area/domain boundaries and IP/OSI capability are administratively configured."
+  },
+  "economics": {"purchase_price":null,"rental_or_tariff":null,"circuit_cost":null,"payer_or_funder":null},
+  "geography": [],
+  "survival": {"status":"operational-specimen","locations":[],"provenance_notes":"IS-IS remains a major routing protocol; repository focus is the historical OSI→integrated-IP lineage."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": [
+    "Recover ISO 10589 edition history and compare with RFC 1142 representation.",
+    "Identify first operational IP-only or dual Integrated IS-IS deployments.",
+    "Trace early vendor implementations and configuration syntax.",
+    "Build extension genealogy for later wide metrics, multi-topology and IPv6 support."
+  ],
+  "sources": [
+    {"source_id":"SRC-0116","supports":["Integrated IS-IS identity","derivation from OSI IS-IS","IP/OSI dual-environment role","SPF routing","two-level hierarchy"],"locator":"RFC 1195, Abstract; Sections 1.1-1.5","quotation_checked":false,"notes":null},
+    {"source_id":"SRC-0115","supports":["OSI IS-IS parent protocol lineage"],"locator":"RFC 1142 / OSI IS-IS specification","quotation_checked":false,"notes":"Parent protocol source; RFC 1195 is the direct IP integration specification."}
+  ],
+  "related_artifacts": [
+    {"id":"ART-0129","relation":"successor-of","notes":"RFC 1195 explicitly bases integrated IP/OSI routing on the OSI Intra-domain IS-IS protocol with IP-specific additions."},
+    {"id":"ART-0128","relation":"coexisted-with","notes":"OSPF and Integrated IS-IS are parallel link-state IGP families, not formal revisions of one another."}
+  ],
+  "notes": "This artifact is a key example of a protocol crossing from the OSI standards ecosystem into operational IP routing rather than being replaced by an Internet-native design.",
+  "last_reviewed": "2026-08-29"
+}

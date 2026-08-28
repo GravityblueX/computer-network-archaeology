@@ -1,0 +1,53 @@
+{
+  "id": "SRC-0096",
+  "source_type": "rfc",
+  "title": "RADIUS Accounting",
+  "authors_or_bodies": ["Carl Rigney"],
+  "date": {"value": "2000-06", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 2866",
+  "identifiers": [{"scheme": "RFC", "value": "2866"}],
+  "publisher_or_issuer": "IETF / RFC Editor",
+  "language": ["en"],
+  "topics": ["RADIUS Accounting", "Network Access Server", "session records", "modem pools", "AAA", "accounting"],
+  "artifact_ids": ["ART-0113"],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc2866.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc2866/"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-29",
+    "availability": "open"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer RFC Editor canonical representations.",
+  "provenance": {"original_holder": "IETF RADIUS working group / Livingston participation", "current_holder": "RFC Editor", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "RFC 2866 defines accounting information exchange between a Network Access Server client and a shared RADIUS accounting server.",
+      "locator": "Abstract and Section 1 Introduction",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": null
+    },
+    {
+      "claim": "RADIUS Accounting records session/service events including start, stop, interim updates and session/link information.",
+      "locator": "Sections 1-5 attribute definitions",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": "Supports treating accounting as a sibling protocol branch to authentication/authorization."
+    },
+    {
+      "claim": "Early RADIUS Accounting deployment used UDP port 1646 before the officially assigned 1813 port.",
+      "locator": "Implementation Note near Section 2",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0113"],
+      "notes": "The corresponding authentication-port 1645→1812 history requires separate source extraction."
+    }
+  ],
+  "conflicts": [],
+  "notes": "Primary source for reconstructing access-server session accounting and the accounting-specification branch (2059→2139→2866).",
+  "last_reviewed": "2026-08-29"
+}

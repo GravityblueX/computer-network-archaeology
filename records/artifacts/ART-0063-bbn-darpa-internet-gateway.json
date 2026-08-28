@@ -1,0 +1,192 @@
+{
+  "id": "ART-0063",
+  "canonical_name": "BBN DARPA Internet Gateway",
+  "aliases": [
+    "DARPA Internet Gateway",
+    "BBN Internet Gateway"
+  ],
+  "kind": "gateway",
+  "parent_family": null,
+  "manufacturer_or_body": [
+    "Bolt Beranek and Newman (BBN)",
+    "DARPA Internet Program"
+  ],
+  "chronology": {
+    "conceived": null,
+    "announced": null,
+    "first_tested": null,
+    "first_operational": {
+      "value": "early 1980s",
+      "precision": "circa",
+      "certainty": "probable",
+      "source_ids": ["SRC-0048"],
+      "notes": "RFC 823 describes operational gateways in 1982 but this record does not yet establish the first deployment date."
+    },
+    "standardized": null,
+    "withdrawn": null,
+    "last_known_use": null
+  },
+  "networks_or_families": [
+    "DARPA Internet",
+    "ARPANET interconnection environment"
+  ],
+  "roles": [
+    "forward IP datagrams between heterogeneous networks",
+    "participate in gateway routing/control",
+    "provide operational monitoring and fault reporting"
+  ],
+  "stack_position": [
+    "network",
+    "operations",
+    "management"
+  ],
+  "physical": {
+    "medium": "varied by installed network interface",
+    "line_service": null,
+    "nominal_bit_rate_bps": [],
+    "clocking": null,
+    "signaling": null,
+    "connectors": [],
+    "interfaces": [
+      "1822",
+      "Proteon Ring",
+      "RSRE HDLC",
+      "Ethernet",
+      "BBN Fibernet"
+    ]
+  },
+  "hardware": {
+    "processor": "DEC PDP-11 / LSI-11 family",
+    "memory": "site/configuration dependent; exact maps pending",
+    "storage": null,
+    "boards_or_modules": [
+      "ACC LSI-11 1822 interface",
+      "DEC IMP11-A 1822 interface",
+      "ACC LHDH 1822 interface",
+      "ACC VDH interface",
+      "Proteon Ring interface",
+      "RSRE HDLC interface",
+      "Interlan Ethernet interface",
+      "BBN Fibernet interface"
+    ],
+    "rack_or_enclosure": null,
+    "power": null
+  },
+  "software": {
+    "operating_system": "MOS lineage / BBN gateway environment",
+    "programs": [
+      "IP forwarding/gateway software",
+      "network-specific interface routines",
+      "routing/control and monitoring facilities"
+    ],
+    "languages": [
+      "MACRO-11 assembly",
+      "BCPL (earlier implementation lineage)"
+    ],
+    "version_or_revision": "RFC 823-described 1982 generation"
+  },
+  "protocols": [
+    "Internet Protocol (IP)",
+    "GGP",
+    "HMP-related monitoring/control",
+    "network-specific link protocols"
+  ],
+  "addressing": "Internet destination network/host addressing interpreted by gateway software; exact forwarding-table representation pending source-code excavation.",
+  "routing_or_forwarding": "Receives an IP datagram, determines an output network/next hop, and queues it through network-specific output logic. GGP and related mechanisms participate in routing/control.",
+  "error_control": "Best-effort Internet forwarding; network-specific links may provide their own error procedures. IP forwarding itself may discard packets when resources are unavailable.",
+  "flow_or_congestion_control": "Output queue limits and packet drops are documented. Exact queue sizes and site-specific tuning require deeper extraction.",
+  "operations": {
+    "monitoring": "Gateway monitoring/status mechanisms with reporting to the Internet Network Operations Center (INOC).",
+    "diagnostics": "Network-specific status/error reporting plus gateway monitoring mechanisms; exact operator commands pending.",
+    "remote_management": null,
+    "failure_behavior": "Packets can be discarded under resource/output-queue pressure; operational traps may be generated.",
+    "operator_interface": "INOC-facing monitoring path exists; console/software UI still to be reconstructed."
+  },
+  "economics": {
+    "purchase_price": null,
+    "rental_or_tariff": null,
+    "circuit_cost": null,
+    "payer_or_funder": "DARPA-funded Internet research/operations environment; site-level ownership and circuit responsibility require separate records."
+  },
+  "geography": [],
+  "survival": {
+    "status": "unknown",
+    "locations": [],
+    "provenance_notes": "No surviving specimen claim is made until a museum/collection record can tie hardware to an actual BBN/DARPA gateway deployment."
+  },
+  "research_state": "started",
+  "certainty": "mixed",
+  "open_questions": [
+    "Which exact PDP-11 or LSI-11 model and memory configuration was installed at each gateway site?",
+    "Which interface-board models were installed together at each site?",
+    "Can the MOS/MACRO-11 gateway source tree be recovered?",
+    "What were exact packet-buffer counts, queue limits and memory maps?",
+    "What GGP routing-table structures and timers were used?",
+    "What did INOC monitoring screens, alarms and operator procedures look like?",
+    "Which gateway units or boards survive with deployment provenance?",
+    "At what date did each operator/document begin preferring the term router over gateway?"
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0048",
+      "supports": [
+        "processor family",
+        "software organization",
+        "interface inventory",
+        "routing/forwarding role",
+        "queue/drop behavior",
+        "INOC monitoring"
+      ],
+      "locator": "RFC 823; section-level locators recorded in SRC-0048 structured source record",
+      "quotation_checked": false,
+      "notes": "Promote to paragraph/section-specific locators on next mining pass."
+    },
+    {
+      "source_id": "SRC-0049",
+      "supports": [
+        "historical gateway/router terminology relationship"
+      ],
+      "locator": "RFC 1208 glossary entry for gateway/router terminology",
+      "quotation_checked": false,
+      "notes": null
+    },
+    {
+      "source_id": "SRC-0050",
+      "supports": [
+        "later Internet gateway requirements context"
+      ],
+      "locator": "RFC 1009",
+      "quotation_checked": false,
+      "notes": "Contextual successor document rather than direct evidence for every 1982 implementation detail."
+    }
+  ],
+  "related_artifacts": [
+    {
+      "id": "ART-0064",
+      "relation": "interfaces-with",
+      "notes": "ACC LSI-11 1822 interface family"
+    },
+    {
+      "id": "ART-0065",
+      "relation": "interfaces-with",
+      "notes": "Interlan Ethernet interface"
+    },
+    {
+      "id": "ART-0066",
+      "relation": "interfaces-with",
+      "notes": "Proteon Ring interface"
+    },
+    {
+      "id": "ART-0067",
+      "relation": "operated-by",
+      "notes": "Operational monitoring relationship to INOC; organizational semantics need refinement"
+    },
+    {
+      "id": "ART-0068",
+      "relation": "implements",
+      "notes": "GGP routing/control protocol"
+    }
+  ],
+  "notes": "First structured artifact example. Contemporary documents call the machine a gateway; modern readers would normally classify its core forwarding role as an IP router. The historical term is intentionally preserved.",
+  "last_reviewed": "2026-08-28"
+}

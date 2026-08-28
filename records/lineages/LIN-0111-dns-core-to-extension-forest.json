@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0111",
+  "from": {"artifact_id": "ART-0155", "name": "Domain Name System RFC 1034/1035 core", "revision": "November 1987", "historical_term": "DNS"},
+  "to": {"artifact_id": null, "name": "Modern DNS extension ecosystem", "revision": "post-1987 production DNS", "historical_term": "DNS"},
+  "relation": "survives-as",
+  "scope": ["application", "management", "architecture"],
+  "property": "The hierarchical namespace, delegation, authoritative-server/resolver model, caching and resource-record/query framework remain the core while later standards add record types, security, transport and operational behavior.",
+  "date_or_range": {"value": "1987-present", "precision": "range", "notes": "RFC 1034/1035 intentionally designed an extensible system."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref": "SRC-0142", "locator": "RFC 1034 extensibility and production-stability discussion", "supports": "intentional stable-core/extensible-edge architecture", "notes": null}, {"source_ref": "SRC-0143", "locator": "RFC 1035 message/RR model and extensibility discussion", "supports": "wire/data framework that can accept new types and behavior", "notes": null}],
+  "negative_claims": ["This edge does not claim modern DNS behavior is fully described by the 1987 RFCs alone.", "Security, privacy transports, new RR types and operational practice are separate extension branches.", "DNS transport evolution does not by itself replace the DNS data/query model."],
+  "open_questions": ["Build machine-readable RR-type and extension graph.", "Trace EDNS and DNSSEC branches.", "Trace BIND/resolver implementation history against standards revisions."],
+  "notes": "Reference example for living-core-with-extension-forest survival.",
+  "last_reviewed": "2026-08-29"
+}

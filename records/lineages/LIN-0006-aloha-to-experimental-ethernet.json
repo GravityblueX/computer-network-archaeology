@@ -1,0 +1,49 @@
+{
+  "id": "LIN-0006",
+  "from": {
+    "artifact_id": "ART-0056",
+    "name": "Pure ALOHA",
+    "revision": null,
+    "historical_term": "ALOHA"
+  },
+  "to": {
+    "artifact_id": "ART-0017",
+    "name": "Xerox PARC experimental Ethernet",
+    "revision": "2.94 Mbit/s Alto-era system",
+    "historical_term": "Ethernet"
+  },
+  "relation": "influenced",
+  "scope": ["link", "architecture"],
+  "property": "Shared-medium random access and collision/retransmission problem framing were part of the documented intellectual ancestry of Ethernet; Ethernet then added carrier sensing, collision detection and its own coaxial physical/interface engineering.",
+  "date_or_range": {
+    "value": "1970-1976",
+    "precision": "range",
+    "notes": "ALOHA work predates the PARC Ethernet design and the 1976 Metcalfe/Boggs publication documents the relationship."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {
+      "source_ref": "SRC-0065",
+      "locator": "Metcalfe & Boggs, Ethernet: Distributed Packet Switching for Local Computer Networks, historical/design discussion",
+      "supports": "documented ALOHA/shared-channel ancestry of Ethernet",
+      "notes": "Use exact page/paragraph locator when the canonical scan is registered."
+    },
+    {
+      "source_ref": "SRC-0038",
+      "locator": "Abramson retrospective engineering paper",
+      "supports": "deployed ALOHAnet shared-radio context",
+      "notes": "Contextual support for what ALOHA itself actually was."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that Ethernet copied ALOHAnet packet formats, radio hardware or retransmission procedure unchanged.",
+    "This edge does not make experimental Ethernet equivalent to later 10 Mbit/s DIX or IEEE 802.3 Ethernet."
+  ],
+  "open_questions": [
+    "Promote the 1973 and 1974 PARC memos into source records and locate the earliest explicit ALOHA citations.",
+    "Separate Pure ALOHA versus Slotted ALOHA influence claims by document."
+  ],
+  "notes": "Example of a legitimate influence edge where documentary evidence exists and the inherited property is narrowly stated.",
+  "last_reviewed": "2026-08-28"
+}

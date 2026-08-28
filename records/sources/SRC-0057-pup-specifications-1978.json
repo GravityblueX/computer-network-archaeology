@@ -1,0 +1,36 @@
+{
+  "id": "SRC-0057",
+  "source_type": "protocol-specification",
+  "title": "Pup Specifications",
+  "authors_or_bodies": ["Ed Taft", "Bob Metcalfe", "Xerox PARC/CSL"],
+  "date": {"value": "1978-06-30", "precision": "day", "certainty": "confirmed", "notes": "Memo says it updates Pup Specifications of 20 October 1975."},
+  "edition_or_revision": "30 June 1978 update",
+  "identifiers": [{"scheme": "Xerox filing path", "value": "[Maxc1]<Pup>PupSpec.press"}],
+  "publisher_or_issuer": "Xerox PARC / Computer Science Laboratory",
+  "language": ["en"],
+  "topics": ["PUP", "PARC Universal Packet", "internetworking", "gateway", "Ethernet encapsulation", "ARPANET encapsulation", "Byte Stream Protocol", "end-to-end reliability"],
+  "artifact_ids": ["ART-0041", "ART-0017"],
+  "access": {
+    "canonical_url": "https://xeroxalto.computerhistory.org/_cd8_/pup/.pupspec.press%211.pdf",
+    "archive_urls": ["https://xeroxalto.computerhistory.org/"],
+    "catalog_urls": [],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open-archival-access"
+  },
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 14, "ocr_status": "searchable", "scan_notes": "Computer History Museum Xerox Alto archive representation; checksum pending."},
+  "rights_status": "copyrighted-link-only",
+  "redistribution_notes": "Xerox copyright notice is present. Preserve metadata and stable archival link by default.",
+  "provenance": {"original_holder": "Xerox PARC/CSL", "current_holder": "Computer History Museum Xerox Alto archive access site", "donor_or_collection": "Xerox Alto archive", "chain_notes": "Original filing path is embedded in the document and should be preserved."},
+  "evidence_grade": "primary-contemporary-specification",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "PUP defines a standard internetwork packet intended to cross multiple interconnected packet-switching networks.", "locator": "page 1, introductory principles", "certainty": "confirmed", "artifact_ids": ["ART-0041"], "notes": null},
+    {"claim": "PUP packet-level communication is end-to-end and higher reliability is the responsibility of endpoint protocols.", "locator": "page 1, principles 2–3", "certainty": "confirmed", "artifact_ids": ["ART-0041"], "notes": null},
+    {"claim": "The standard PUP has a 20-byte header, network/host/socket source and destination addressing, up to 532 content bytes, and a checksum.", "locator": "Figure 1 and pages 2–4", "certainty": "confirmed", "artifact_ids": ["ART-0041"], "notes": null},
+    {"claim": "The memo specifies encapsulation over Ethernet, ARPANET and low-speed synchronous links, with gateways decapsulating, routing and re-encapsulating PUPs.", "locator": "Pup Encapsulation section, pages 4–6", "certainty": "confirmed", "artifact_ids": ["ART-0041", "ART-0017"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Earlier 1975 PUP specifications require a separate source record to reconstruct protocol changes. Do not back-project the 1978 document onto 1973 Ethernet experiments without corroboration.",
+  "last_reviewed": "2026-08-28"
+}

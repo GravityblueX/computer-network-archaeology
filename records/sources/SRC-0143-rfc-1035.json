@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0143",
+  "source_type": "rfc",
+  "title": "Domain Names - Implementation and Specification",
+  "authors_or_bodies": ["Paul Mockapetris"],
+  "date": {"value": "1987-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1035",
+  "identifiers": [{"scheme": "RFC", "value": "1035"}],
+  "publisher_or_issuer": "RFC archival corpus",
+  "language": ["en"],
+  "topics": ["DNS", "wire format", "resource records", "queries", "responses", "zone transfer"],
+  "artifact_ids": ["ART-0155"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc1035/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "USC-ISI / Internet naming community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 1035 specifies DNS message sections, header fields, resource-record representation and core query/response behavior.", "locator": "RFC 1035 Sections 3-4", "certainty": "confirmed", "artifact_ids": ["ART-0155"], "notes": null},
+    {"claim": "RFC 1035 explicitly treats the domain system as extensible, allowing new data types and behavior beyond the official core protocol.", "locator": "RFC 1035 Status/Introduction", "certainty": "confirmed", "artifact_ids": ["ART-0155"], "notes": null}
+  ],
+  "conflicts": [],
+  "notes": "Wire/data half of the enduring RFC 1034/1035 DNS core.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0142",
+  "source_type": "rfc",
+  "title": "Domain Names - Concepts and Facilities",
+  "authors_or_bodies": ["Paul Mockapetris"],
+  "date": {"value": "1987-11", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 1034",
+  "identifiers": [{"scheme": "RFC", "value": "1034"}],
+  "publisher_or_issuer": "RFC archival corpus",
+  "language": ["en"],
+  "topics": ["DNS", "hierarchical naming", "delegation", "caching", "name servers", "resolvers"],
+  "artifact_ids": ["ART-0155"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc1034/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "USC-ISI / Internet naming community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 1034 defines the conceptual architecture of the Domain Name System including distributed maintenance, hierarchical namespace, name servers, resolvers and caching.", "locator": "RFC 1034 Introduction and architecture sections", "certainty": "confirmed", "artifact_ids": ["ART-0155"], "notes": null},
+    {"claim": "RFC 1034 explicitly describes DNS as intentionally extensible while expecting the official core protocol components to remain stable in production.", "locator": "RFC 1034 status/introduction discussion", "certainty": "confirmed", "artifact_ids": ["ART-0155"], "notes": "Important evidence for living-core-with-extension-forest classification."}
+  ],
+  "conflicts": [],
+  "notes": "Conceptual half of the enduring RFC 1034/1035 DNS core.",
+  "last_reviewed": "2026-08-29"
+}

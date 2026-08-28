@@ -1,0 +1,102 @@
+{
+  "id": "SRC-0048",
+  "source_type": "rfc",
+  "title": "The DARPA Internet Gateway",
+  "authors_or_bodies": [
+    "Robert Hinden",
+    "Alan Sheltzer"
+  ],
+  "date": {
+    "value": "1982-09",
+    "precision": "month",
+    "certainty": "confirmed",
+    "notes": null
+  },
+  "edition_or_revision": "RFC 823",
+  "identifiers": [
+    {
+      "scheme": "RFC",
+      "value": "823"
+    }
+  ],
+  "publisher_or_issuer": "Network Working Group / RFC Editor archival corpus",
+  "language": ["en"],
+  "topics": [
+    "DARPA Internet Gateway",
+    "IP routing",
+    "PDP-11",
+    "LSI-11",
+    "1822",
+    "Ethernet",
+    "Proteon Ring",
+    "GGP",
+    "INOC"
+  ],
+  "artifact_ids": [
+    "ART-0063",
+    "ART-0064",
+    "ART-0065",
+    "ART-0066",
+    "ART-0067",
+    "ART-0068"
+  ],
+  "access": {
+    "canonical_url": "https://www.rfc-editor.org/rfc/rfc823.html",
+    "archive_urls": [],
+    "catalog_urls": ["https://www.rfc-editor.org/info/rfc823"],
+    "local_mirror": null,
+    "accessed_on": "2026-08-28",
+    "availability": "open"
+  },
+  "fixity": {
+    "sha256": null,
+    "byte_size": null,
+    "mime_type": "text/html",
+    "page_count": null,
+    "ocr_status": "not-applicable",
+    "scan_notes": null
+  },
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer the RFC Editor canonical copy and metadata unless repository mirroring is independently useful.",
+  "provenance": {
+    "original_holder": "DARPA Internet Program / Network Working Group publication stream",
+    "current_holder": "RFC Editor archival corpus",
+    "donor_or_collection": null,
+    "chain_notes": "RFC Editor provides the canonical modern access point."
+  },
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {
+      "claim": "The BBN gateway implementation described in RFC 823 runs on DEC PDP-11 and LSI-11 16-bit processors.",
+      "locator": "RFC 823, Hardware/implementation discussion",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0063"],
+      "notes": "Future pass should replace this section-level locator with exact paragraph/section numbering from the canonical text representation."
+    },
+    {
+      "claim": "The described implementation separates device drivers, network-specific software, and shared gateway software.",
+      "locator": "RFC 823, software organization discussion",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0063"],
+      "notes": null
+    },
+    {
+      "claim": "The interface inventory includes 1822 hardware, Proteon Ring, RSRE HDLC, Interlan Ethernet and BBN Fibernet attachments, with additional interfaces planned.",
+      "locator": "RFC 823, supported network interface list",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0064", "ART-0065", "ART-0066"],
+      "notes": "Individual interface boards require separate vendor-manual confirmation."
+    },
+    {
+      "claim": "Operational traps and monitoring were sent to an Internet Network Operations Center (INOC).",
+      "locator": "RFC 823, monitoring/error handling discussion",
+      "certainty": "confirmed",
+      "artifact_ids": ["ART-0067"],
+      "notes": "The RFC establishes existence/function; console appearance and staffing need additional operational sources."
+    }
+  ],
+  "conflicts": [],
+  "notes": "This is the first schema-oriented source record and intentionally demonstrates claim-level extraction rather than exhaustive mining.",
+  "last_reviewed": "2026-08-28"
+}

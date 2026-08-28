@@ -1,0 +1,54 @@
+{
+  "id": "LIN-0081",
+  "from": {
+    "artifact_id": "ART-0030",
+    "name": "Livingston PortMaster Network Access Server ecosystem",
+    "revision": "pre-RFC RADIUS development era",
+    "historical_term": "PortMaster"
+  },
+  "to": {
+    "artifact_id": "ART-0113",
+    "name": "RADIUS",
+    "revision": "RFC 2058 generation",
+    "historical_term": "Remote Authentication Dial In User Service"
+  },
+  "relation": "derived-from",
+  "scope": ["application", "management", "operations", "architecture"],
+  "property": "A centralized NAS authentication/service-configuration protocol is developed by Livingston to solve the account/policy administration problem of its PortMaster network access server family, then enters the IETF standards process.",
+  "date_or_range": {
+    "value": "pre-1997/1997",
+    "precision": "range",
+    "notes": "RFC 2058 documents the original Livingston/PortMaster development but does not by itself give the first internal release date."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {
+      "source_ref": "SRC-0093",
+      "locator": "RFC 2058 Acknowledgments: RADIUS originally developed by Livingston Enterprises for PortMaster series; Introduction for modem-pool/NAS problem",
+      "supports": "direct product-to-protocol origin and operational motivation",
+      "notes": null
+    },
+    {
+      "source_ref": "SRC-0091",
+      "locator": "PortMaster Configuration Guide, PPP/SLIP/PAP/CHAP access operation",
+      "supports": "contemporary PortMaster NAS environment that requires centralized subscriber authentication/service policy",
+      "notes": "Product manual supplies deployment context; RFC 2058 supplies the explicit ancestry statement."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not claim that all later RADIUS use cases were requirements of the original PortMaster design.",
+    "This edge does not claim that 802.1X, Wi-Fi, VPN, broadband or network-device administration were original RADIUS target environments.",
+    "This edge does not claim that every later AAA protocol derives from RADIUS.",
+    "This edge does not yet establish the date or source revision of the first pre-RFC Livingston RADIUS implementation."
+  ],
+  "open_questions": [
+    "Locate the earliest Livingston RADIUS daemon/client source release and establish its date/provenance.",
+    "Identify the first PortMaster/ComOS release with RADIUS client support.",
+    "Recover early RADIUS users/clients/dictionary formats and vendor-specific attributes.",
+    "Trace RADIUS adoption beyond dial-up NAS only with explicit deployment/standards evidence.",
+    "Build separate lineages for RADIUS Accounting, 802.1X/EAP use, Diameter, and RadSec."
+  ],
+  "notes": "High-confidence product-to-protocol genealogy because the RFC itself names Livingston and PortMaster as the original development context.",
+  "last_reviewed": "2026-08-29"
+}

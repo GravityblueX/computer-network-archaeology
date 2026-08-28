@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0144",
+  "source_type": "rfc",
+  "title": "Simple Mail Transfer Protocol",
+  "authors_or_bodies": ["John Klensin"],
+  "date": {"value": "2008-10", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 5321",
+  "identifiers": [{"scheme": "RFC", "value": "5321"}],
+  "publisher_or_issuer": "IETF / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["SMTP", "email transport", "mail relay", "ESMTP", "mail envelope"],
+  "artifact_ids": ["ART-0156"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc5321/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "IETF email community", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 5321 specifies the basic protocol for Internet electronic-mail transport and consolidates/updates earlier SMTP documents.", "locator": "RFC 5321 Abstract", "certainty": "confirmed", "artifact_ids": ["ART-0156"], "notes": null},
+    {"claim": "SMTP transport remains distinct from message-format and mailbox-access standards.", "locator": "RFC 5321 scope; companion mail standards", "certainty": "confirmed", "artifact_ids": ["ART-0156"], "notes": "Preserve separate artifact lineages for RFC 5322 and POP/IMAP."}
+  ],
+  "conflicts": [],
+  "notes": "Current consolidated descendant of the RFC 821/ESMTP mail-transport lineage.",
+  "last_reviewed": "2026-08-29"
+}

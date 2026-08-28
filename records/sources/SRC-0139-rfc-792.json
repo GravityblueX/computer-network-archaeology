@@ -1,0 +1,27 @@
+{
+  "id": "SRC-0139",
+  "source_type": "rfc",
+  "title": "Internet Control Message Protocol",
+  "authors_or_bodies": ["Jon Postel", "USC Information Sciences Institute"],
+  "date": {"value": "1981-09", "precision": "month", "certainty": "confirmed", "notes": null},
+  "edition_or_revision": "RFC 792 / STD 5",
+  "identifiers": [{"scheme": "RFC", "value": "792"}, {"scheme": "STD", "value": "5"}],
+  "publisher_or_issuer": "DARPA Internet Program / RFC archival corpus",
+  "language": ["en"],
+  "topics": ["ICMP", "IPv4", "error reporting", "Echo", "Time Exceeded", "control messages"],
+  "artifact_ids": ["ART-0152"],
+  "access": {"canonical_url": "https://www.rfc-editor.org/info/rfc792/", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-29", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "text/html", "page_count": null, "ocr_status": "not-applicable", "scan_notes": null},
+  "rights_status": "rfc-distribution-terms",
+  "redistribution_notes": "Prefer canonical RFC Editor copies.",
+  "provenance": {"original_holder": "DARPA Internet Program / USC-ISI", "current_holder": "RFC Editor archival corpus", "donor_or_collection": null, "chain_notes": null},
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [
+    {"claim": "RFC 792 remains listed as STD 5 / Internet Standard and has later updates.", "locator": "RFC Editor metadata", "certainty": "confirmed", "artifact_ids": ["ART-0152"], "notes": null},
+    {"claim": "ICMP provides error-reporting and control messages associated with IP datagram processing, including mechanisms later used by ping/traceroute tools.", "locator": "RFC 792 Introduction and message definitions", "certainty": "confirmed", "artifact_ids": ["ART-0152"], "notes": "The user tools are separate implementation artifacts."}
+  ],
+  "conflicts": [],
+  "notes": "Preserve distinction between ICMP protocol primitives and later diagnostic applications built from them.",
+  "last_reviewed": "2026-08-29"
+}

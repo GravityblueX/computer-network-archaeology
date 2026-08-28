@@ -1,0 +1,27 @@
+{
+  "id": "ART-0156",
+  "canonical_name": "Simple Mail Transfer Protocol — RFC 5321 living transport lineage",
+  "aliases": ["SMTP", "ESMTP-era SMTP"],
+  "kind": "protocol",
+  "parent_family": "Internet mail transport",
+  "manufacturer_or_body": ["IETF email community", "Internet standards community"],
+  "chronology": {
+    "standardized": {"value": "2008-10", "precision": "month", "certainty": "confirmed", "source_ids": ["SRC-0144"], "notes": "RFC 5321 consolidates/updates earlier SMTP standards."},
+    "last_known_use": {"value": "present", "precision": "unknown", "certainty": "confirmed", "source_ids": ["SRC-0144"], "notes": "SMTP remains the basic Internet mail-transfer protocol family."}
+  },
+  "networks_or_families": ["Internet mail", "SMTP"],
+  "roles": ["mail submission/relay transport", "mail envelope processing", "server-to-server transfer"],
+  "protocols": ["SMTP"],
+  "addressing": "Uses mail envelope sender/recipient addresses and DNS-assisted routing rather than defining the message-format address grammar alone.",
+  "routing_or_forwarding": "Mail relay and routing behavior cooperates with DNS MX and local MTA policy.",
+  "error_control": "Command/reply transaction semantics; delivery/retry/queue behavior is partly implementation/operational policy.",
+  "flow_or_congestion_control": "Relies on underlying transport and application-level transaction/queue behavior rather than an SMTP-specific congestion-control algorithm.",
+  "survival": {"status": "operational-specimen", "locations": ["global Internet mail infrastructure"], "provenance_notes": "Protocol lineage descends from RFC 821 and ESMTP extension work while retaining recognizable textual command/reply behavior."},
+  "research_state": "started",
+  "certainty": "confirmed",
+  "open_questions": ["Build RFC 821 → 2821 → 5321 command/reply diff.", "Trace ESMTP extension framework and important extensions.", "Map sendmail/Postfix/Exim/qmail implementation behavior to standards revisions.", "Separate mail transport from submission, message format and mailbox access."],
+  "sources": [{"source_id": "SRC-0144", "supports": ["current consolidated SMTP specification", "basic Internet mail-transport role", "continuity with earlier SMTP documents"], "locator": "RFC 5321 Abstract and protocol sections", "quotation_checked": true, "notes": null}],
+  "related_artifacts": [{"id": "ART-0157", "relation": "transports messages represented by Internet Message Format", "notes": null}, {"id": "ART-0155", "relation": "uses DNS mail-routing data such as MX in deployment", "notes": null}],
+  "notes": "SMTP is transport, not the complete email format/access system.",
+  "last_reviewed": "2026-08-29"
+}

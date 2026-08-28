@@ -1,0 +1,43 @@
+{
+  "id": "LIN-0004",
+  "from": {
+    "artifact_id": null,
+    "name": "EIA RS-232-A",
+    "revision": "October 1963",
+    "historical_term": "RS-232-A"
+  },
+  "to": {
+    "artifact_id": null,
+    "name": "Bell Data Sets 202C/202D",
+    "revision": "May 1964 interface documentation",
+    "historical_term": "Data Sets 202C and 202D"
+  },
+  "relation": "interface-convention-inherited-by",
+  "scope": ["interface", "electrical"],
+  "property": "Bipolar data/control interchange signals between the business machine and Bell data set are explicitly documented as conforming to EIA RS-232-A.",
+  "date_or_range": {
+    "value": "1964-05",
+    "precision": "month",
+    "notes": "Bell interface specification is dated May 1964 and cites the October 1963 RS-232-A revision."
+  },
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [
+    {
+      "source_ref": "Bell System 202C/202D Interface Specification, May 1964",
+      "locator": "interface description",
+      "supports": "explicit conformance to Electronic Industries Association Standard RS-232-A of October 1963",
+      "notes": "Archived at Bitsavers."
+    }
+  ],
+  "negative_claims": [
+    "This edge does not imply that Bell originated RS-232-A or that all Bell data-set families used identical interface implementations.",
+    "This edge does not generalize automatically from 202C/202D to 101/103-family interfaces."
+  ],
+  "open_questions": [
+    "Catalog other Bell data-set manuals that explicitly cite RS-232 or V-series interface standards.",
+    "Identify exact connectors, cable assemblies and option sets used in 202C/202D installations."
+  ],
+  "notes": "A strong standard-to-deployed-product lineage example.",
+  "last_reviewed": "2026-08-28"
+}

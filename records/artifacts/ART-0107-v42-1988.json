@@ -1,0 +1,67 @@
+{
+  "id": "ART-0107",
+  "canonical_name": "CCITT V.42 (11/1988)",
+  "aliases": ["V.42 1988", "V.42 error correction"],
+  "kind": "standard",
+  "parent_family": "CCITT/ITU-T V.42",
+  "manufacturer_or_body": ["CCITT"],
+  "chronology": {
+    "standardized": {
+      "value": "1988-11",
+      "precision": "month",
+      "certainty": "confirmed",
+      "source_ids": ["SRC-0082"],
+      "notes": "ITU development history identifies the first V.42 edition as November 1988."
+    }
+  },
+  "networks_or_families": ["dial-up modems", "CCITT/ITU-T V-series"],
+  "roles": [
+    "provide standardized error-correcting procedures for duplex modems",
+    "convert asynchronous DTE data into an error-controlled synchronous modem link",
+    "support LAPM as the principal standardized link procedure while interoperating with installed compatibility procedures"
+  ],
+  "stack_position": ["link", "interface"],
+  "protocols": ["LAPM", "V.42 negotiation/error-control procedures"],
+  "addressing": null,
+  "routing_or_forwarding": null,
+  "error_control": "HDLC-derived Link Access Procedure for Modems (LAPM) provides framing, sequence/error handling and retransmission behavior; deployed V.42 products also preserved alternate MNP compatibility.",
+  "flow_or_congestion_control": "Modem buffering and link procedures interact with DTE flow control; exact V.42 parameter/state details require clause-level extraction from the 1988 text.",
+  "operations": {
+    "monitoring": "Product implementations expose negotiated error-control mode and diagnostics through vendor command interfaces.",
+    "diagnostics": "Negotiation/fallback and retransmission behavior require implementation traces and modem manuals.",
+    "remote_management": null,
+    "failure_behavior": "Damaged/error frames are handled by link error-control procedures instead of being blindly exposed as a raw character stream.",
+    "operator_interface": "Usually surfaced through vendor modem result codes/AT commands rather than V.42 itself."
+  },
+  "research_state": "started",
+  "certainty": "mixed",
+  "open_questions": [
+    "Acquire the original November 1988 text and record exact Annex/alternate MNP wording.",
+    "Build the LAPM state machine and frame-format record.",
+    "Diff the 1988, 1993, 1996 and 2002 V.42 editions.",
+    "Recover original Microcom records that explain how MNP compatibility entered the standardized ecosystem.",
+    "Capture real negotiation traces demonstrating LAPM versus MNP fallback."
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0082",
+      "supports": ["first edition date", "formal revision history", "LAPM role"],
+      "locator": "ITU V.42 recommendation database and development history",
+      "quotation_checked": false,
+      "notes": null
+    },
+    {
+      "source_id": "SRC-0084",
+      "supports": ["deployed LAPM plus MNP compatibility", "commercial implementation behavior"],
+      "locator": "Telebit modem manual introduction/error-control section",
+      "quotation_checked": false,
+      "notes": "Vendor manual is implementation evidence rather than the normative source."
+    }
+  ],
+  "related_artifacts": [
+    {"id": "ART-0105", "relation": "interworked-with", "notes": "MNP error-control installed base/compatibility"},
+    {"id": "ART-0108", "relation": "coexisted-with", "notes": "V.42bis compression layered with error-controlled links"}
+  ],
+  "notes": "V.42 is an error-control standard, not a modulation-speed standard. Keep it separate from V.32/V.34/V.90 physical modulation genealogy.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "ART-0110",
+  "canonical_name": "Hayes Standard AT Command Set",
+  "aliases": ["Hayes AT command set", "Hayes-compatible modem command set"],
+  "kind": "interface",
+  "parent_family": "Hayes Smartmodem control interface",
+  "manufacturer_or_body": ["Hayes Microcomputer Products"],
+  "chronology": {
+    "first_operational": {
+      "value": "1980s",
+      "precision": "decade",
+      "certainty": "probable",
+      "source_ids": ["SRC-0085", "SRC-0086"],
+      "notes": "The exact first-generation command grammar/introduction date is still being recovered from early Smartmodem manuals."
+    }
+  },
+  "networks_or_families": ["Hayes Smartmodem", "Hayes-compatible modems", "dial-up personal computing"],
+  "roles": [
+    "provide software-visible modem call/control commands over the ordinary serial DTE interface",
+    "separate local command interpretation from online data transfer through modem state",
+    "expose persistent/runtime modem configuration through S-registers",
+    "return machine-readable result/call-progress codes to communications software"
+  ],
+  "stack_position": ["application", "management", "interface"],
+  "physical": {
+    "medium": "serial DTE-DCE interface to modem",
+    "line_service": null,
+    "clocking": null,
+    "signaling": "character-oriented command language carried over the host/modem serial interface",
+    "connectors": [],
+    "interfaces": ["RS-232-compatible modem interface family"]
+  },
+  "software": {
+    "operating_system": null,
+    "programs": ["terminal programs", "modem drivers", "dialers", "BBS/remote-access software"],
+    "languages": [],
+    "version_or_revision": "model-dependent Hayes command-set generation"
+  },
+  "protocols": ["AT command grammar", "result codes", "S-register access", "online escape mechanism"],
+  "addressing": null,
+  "routing_or_forwarding": null,
+  "error_control": null,
+  "flow_or_congestion_control": "Later command sets configure modem/DTE flow control, but those features are product/revision-specific and should not be projected into the earliest Smartmodem grammar.",
+  "operations": {
+    "monitoring": "Result codes and status responses expose call/modem state to software.",
+    "diagnostics": "Human-readable command mode makes direct terminal testing possible; extended diagnostics are model-specific.",
+    "remote_management": null,
+    "failure_behavior": "Software interprets responses such as busy/no-carrier/no-dialtone/connect and decides retry/failure behavior.",
+    "operator_interface": "Textual command mode beginning with AT plus model-specific commands/registers."
+  },
+  "research_state": "started",
+  "certainty": "mixed",
+  "open_questions": [
+    "Locate and register the earliest Smartmodem owner/manual revision and exact command grammar.",
+    "Reconstruct the original escape-sequence guard-time state machine.",
+    "Build a model-by-model S-register and command compatibility matrix.",
+    "Trace Hayes-compatible UUCP dialers and later SLIP/PPP chat scripts from source/config files.",
+    "Document the formal standards ancestry, if any, linking Hayes-style AT control to later ETSI/3GPP AT command specifications."
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-0085",
+      "supports": ["Hayes Standard AT Command Set terminology", "command/register architecture"],
+      "locator": "Hayes Technical Reference for Modem Users (1993)",
+      "quotation_checked": false,
+      "notes": "Later Hayes reference; not proof of first introduction date."
+    },
+    {
+      "source_id": "SRC-0086",
+      "supports": ["deployed AT modem-driver strings", "CONNECT parsing", "auto-answer", "+++ escape", "reset/hangup"],
+      "locator": "PC-SAM sample Hayes Smartmodem 1200 driver",
+      "quotation_checked": false,
+      "notes": "Independent deployed-software evidence of the command interface."
+    },
+    {
+      "source_id": "SRC-0087",
+      "supports": ["third-party Hayes-compatible modem ecosystem"],
+      "locator": "IBM PS/2 OEM modem product listings",
+      "quotation_checked": false,
+      "notes": null
+    }
+  ],
+  "related_artifacts": [
+    {"id": "ART-0109", "relation": "implemented-by", "notes": "Hayes Smartmodem product family"},
+    {"id": "ART-0111", "relation": "includes", "notes": "S-register configuration model"},
+    {"id": "ART-0112", "relation": "includes", "notes": "command/data-mode escape mechanism"}
+  ],
+  "notes": "Treat Hayes-compatible as an ecosystem compatibility claim, not exact protocol identity across vendors.",
+  "last_reviewed": "2026-08-29"
+}

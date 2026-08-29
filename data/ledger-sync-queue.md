@@ -2,11 +2,7 @@
 
 This is the compact live queue for flat-ledger synchronization.
 
-Detailed older pending inventories are preserved at:
-
-- `ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md`
-- `batches/2026-08-29-root-hunting.md`
-- `batches/2026-08-29-root-hunting-2.md`
+Detailed older pending inventories are preserved in the archived queue and batch manifests under `data/batches/`.
 
 ## Pending flat-ledger frontier
 
@@ -14,71 +10,78 @@ Structured records currently run ahead of the flat CSV ledgers.
 
 ### Artifacts
 
-Latest structured frontier after the number-space/identity batch:
+Current structured frontier includes:
 
-- `ART-0175..0178` — EtherType, IP Protocol Number, Service/Port and Assigned Numbers publication/registry systems;
-- `ART-0179` — Autonomous System Number namespace and special-use subspaces;
-- `ART-0180` — four-octet ASN transition;
-- `ART-0181` — IEEE EUI-48 / MA-L / MA-M / MA-S assignment system;
-- `ART-0182` — IPv4 Special-Purpose Address registry framework;
-- `ART-0183` — RFC 1918 private IPv4 space;
-- `ART-0184` — TEST-NET documentation address family;
-- `ART-0185` — 100.64.0.0/10 Shared Address Space.
+- `ART-0175..0178` — EtherType, IP Protocol Number, Service/Port and Assigned Numbers registry/publication systems;
+- `ART-0179..0185` — ASN namespace/four-octet transition, IEEE MAC address blocks, and IPv4 special-purpose/private/documentation/shared spaces;
+- `ART-0186` — Unix `/etc/services` database;
+- `ART-0187` — Unix `/etc/protocols` database;
+- `ART-0188` — BSD netdb service/protocol lookup API family;
+- `ART-0189` — inetd service activation model;
+- `ART-0190` — Linux `ETH_P_*` UAPI constants;
+- `ART-0191` — Linux `IPPROTO_*` UAPI constants;
+- `ART-0192` — BSD Packet Filter packet-capture architecture;
+- `ART-0193` — libpcap portable packet-capture interface;
+- `ART-0194` — tcpdump analyzer/dissector lineage.
 
-**Next unreserved artifact ID: `ART-0186`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0195`**, subject to merge-time verification.
 
 ### Sources
 
-Latest structured frontier:
+Current structured frontier includes:
 
-- `SRC-0166..0172` — IEEE/IANA number registries and Assigned Numbers publication lineage;
-- `SRC-0173` — RFC 1930;
-- `SRC-0174` — RFC 6793;
-- `SRC-0175` — RFC 6996;
-- `SRC-0176` — RFC 5398;
-- `SRC-0177` — RFC 5396;
-- `SRC-0178` — IEEE Registration Authority FAQ;
-- `SRC-0179` — IEEE Registration Authority registry page;
-- `SRC-0180` — RFC 1918;
-- `SRC-0181` — RFC 5737;
-- `SRC-0182` — RFC 6598;
-- `SRC-0183` — IANA IPv4 Special-Purpose Address Space registry;
-- `SRC-0184` — IANA Autonomous System Numbers registry.
+- `SRC-0166..0184` — number registries, Assigned Numbers, ASN, IEEE RA and IPv4 special-purpose sources;
+- `SRC-0185` — BSD `services(5)`;
+- `SRC-0186` — BSD `protocols(5)`;
+- `SRC-0187` — 4.2BSD `tftpd.c`;
+- `SRC-0188` — 4.4BSD IPC/netdb documentation;
+- `SRC-0189` — FreeBSD inetd documentation;
+- `SRC-0190` — Linux UAPI `if_ether.h`;
+- `SRC-0191` — Linux UAPI `in.h`;
+- `SRC-0192` — 1993 BSD Packet Filter paper;
+- `SRC-0193` — libpcap source/README;
+- `SRC-0194` — tcpdump source repository.
 
-**Next unreserved source ID: `SRC-0185`**, subject to verification.
+**Next unreserved source ID: `SRC-0195`**, subject to verification.
 
 ### Lineages
 
-Latest structured frontier:
+Current structured frontier includes:
 
-- `LIN-0125..0128` — EtherType/protocol/port/Assigned-Numbers registry lineages;
-- `LIN-0129` — two-octet ASN regime → four-octet ASN transition;
-- `LIN-0130` — original private ASN reservation → expanded private-use ranges;
-- `LIN-0131` — OUI-era allocation → MA-L/MA-M/MA-S family;
-- `LIN-0132` — RFC1918 private space ↔ RFC6598 Shared Address Space as distinct coexisting scopes;
-- `LIN-0133` — TEST-NET-1 → three-prefix documentation family.
+- `LIN-0125..0133` — Internet number-registry, ASN/MAC/special-address lineages;
+- `LIN-0134` — Assigned Numbers → Unix local service/protocol databases;
+- `LIN-0135` — `/etc/services` → netdb service API;
+- `LIN-0136` — `/etc/protocols` → netdb protocol API;
+- `LIN-0137` — service database → inetd runtime activation;
+- `LIN-0138` — registry identities → Linux compile-time/UAPI constants;
+- `LIN-0139` — BPF → libpcap capture/filter abstraction;
+- `LIN-0140` — libpcap → tcpdump analyzer/dissector interface.
 
-**Next unreserved lineage ID: `LIN-0134`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0141`**, subject to verification.
 
-## Current narrative frontier
+## Recent batch manifests
 
-Recent root-hunting narratives include:
+- `data/batches/2026-08-29-root-hunting.md`
+- `data/batches/2026-08-29-root-hunting-2.md`
+- `data/batches/2026-08-29-unix-implementation-layer.md`
 
-- `docs/lineage/ethertype-registry-genealogy.md`
-- `docs/lineage/ip-protocol-number-registry-genealogy.md`
-- `docs/lineage/port-number-service-registry-genealogy.md`
-- `docs/lineage/as-number-genealogy-16-to-32-bit.md`
-- `docs/lineage/oui-eui48-mac-address-block-genealogy.md`
-- `docs/lineage/ipv4-special-purpose-address-space-genealogy.md`
+## Current implementation-layer narratives
 
-## Next implementation-layer targets
+- `docs/software/bsd-services-protocols-databases.md`
+- `docs/software/inetd-service-name-to-socket.md`
+- `docs/software/kernel-protocol-constants.md`
+- `docs/operations/tcpdump-bpf-libpcap-observability.md`
 
-- `/etc/services` and `/etc/protocols` from 4.2BSD onward;
-- `getservbyname`, `getservbyport`, `getprotobyname`, `getprotobynumber` libc interfaces;
-- `/etc/inetd.conf` service/protocol resolution and process launch;
-- BSD/Linux `ETHERTYPE_*`, `ETH_P_*`, `IPPROTO_*` constants;
-- tcpdump/BPF/libpcap dissector genealogy;
-- `/etc/networks`, `/etc/ethers`, protocol/service databases through NIS/NSS and modern resolver stacks.
+## Next root-hunting targets
+
+- exact 4.2BSD `/etc/services` and `/etc/protocols` snapshots and Assigned Numbers diffs;
+- `/etc/networks`, `/etc/ethers`, `/etc/rpc` genealogy;
+- NIS/NSS backend evolution and compiled service databases;
+- earliest inetd source/manual and configuration grammar;
+- BSD/Linux historical `ETHERTYPE_*`, `ETH_P_*`, `IPPROTO_*` diffs;
+- oldest tcpdump/libpcap distributions and pre-BPF packet capture;
+- BPF filter compiler path from service/protocol names to packet offsets/constants;
+- packet captures pairing historical RFC diagrams, contemporary implementation output and modern dissectors.
 
 ## Batch merge checklist
 

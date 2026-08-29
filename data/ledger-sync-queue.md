@@ -14,56 +14,75 @@ Current structured frontier includes:
 
 - `ART-0175..0178` — EtherType, IP Protocol Number, Service/Port and Assigned Numbers registry/publication systems;
 - `ART-0179..0185` — ASN namespace/four-octet transition, IEEE MAC address blocks, and IPv4 special-purpose/private/documentation/shared spaces;
-- `ART-0186` — Unix `/etc/services` database;
-- `ART-0187` — Unix `/etc/protocols` database;
-- `ART-0188` — BSD netdb service/protocol lookup API family;
-- `ART-0189` — inetd service activation model;
-- `ART-0190` — Linux `ETH_P_*` UAPI constants;
-- `ART-0191` — Linux `IPPROTO_*` UAPI constants;
-- `ART-0192` — BSD Packet Filter packet-capture architecture;
-- `ART-0193` — libpcap portable packet-capture interface;
-- `ART-0194` — tcpdump analyzer/dissector lineage.
+- `ART-0186..0194` — Unix services/protocol databases, netdb API, inetd, Linux UAPI constants, BPF/libpcap/tcpdump;
+- `ART-0195` — Unix `/etc/networks`;
+- `ART-0196` — Unix `/etc/ethers`;
+- `ART-0197` — Unix `/etc/rpc`;
+- `ART-0198` — NSS/nsdispatch backend-selection architecture;
+- `ART-0199` — Unix `/etc/hosts`;
+- `ART-0200` — BSD resolver / `resolv.conf` lineage;
+- `ART-0201` — `getaddrinfo()` / `getnameinfo()`;
+- `ART-0202` — BSD `route(8)` manual route administration;
+- `ART-0203` — BSD `routed`;
+- `ART-0204` — BSD PF_ROUTE routing socket;
+- `ART-0205` — Linux rtnetlink / NETLINK_ROUTE;
+- `ART-0206` — iproute2 `ip route`;
+- `ART-0207` — GateD multiprotocol routing daemon lineage.
 
-**Next unreserved artifact ID: `ART-0195`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0208`**, subject to merge-time verification.
 
 ### Sources
 
 Current structured frontier includes:
 
-- `SRC-0166..0184` — number registries, Assigned Numbers, ASN, IEEE RA and IPv4 special-purpose sources;
-- `SRC-0185` — BSD `services(5)`;
-- `SRC-0186` — BSD `protocols(5)`;
-- `SRC-0187` — 4.2BSD `tftpd.c`;
-- `SRC-0188` — 4.4BSD IPC/netdb documentation;
-- `SRC-0189` — FreeBSD inetd documentation;
-- `SRC-0190` — Linux UAPI `if_ether.h`;
-- `SRC-0191` — Linux UAPI `in.h`;
-- `SRC-0192` — 1993 BSD Packet Filter paper;
-- `SRC-0193` — libpcap source/README;
-- `SRC-0194` — tcpdump source repository.
+- `SRC-0166..0194` — number registries, Unix service/protocol databases, kernel constants and packet-observability sources;
+- `SRC-0195` — BSD `networks(5)`;
+- `SRC-0196` — BSD `ethers(5)` / SunOS lineage;
+- `SRC-0197` — BSD `rpc(5)` / Sun RPC program numbers;
+- `SRC-0198` — NetBSD 1.4 `nsswitch.conf`;
+- `SRC-0199` — FreeBSD NSS import/provenance;
+- `SRC-0200` — BSD `hosts(5)`;
+- `SRC-0201` — BSD `resolver(3)`;
+- `SRC-0202` — BSD `resolv.conf(5)`;
+- `SRC-0203` — RFC 2553 `getaddrinfo()` design/provenance;
+- `SRC-0204` — RFC 3493 socket API generation;
+- `SRC-0205` — BSD `route(4)` / PF_ROUTE;
+- `SRC-0206` — 4.3BSD NET/2 `routed(8)`;
+- `SRC-0207` — Linux `rtnetlink(7)`;
+- `SRC-0208` — iproute2 source;
+- `SRC-0209` — RFC 1118 GateD description;
+- `SRC-0210` — RFC 1387 GateD RIP-2 implementation;
+- `SRC-0211` — Merit GateD institutional history;
+- `SRC-0212` — BSD `route(8)` 4.2BSD history anchor.
 
-**Next unreserved source ID: `SRC-0195`**, subject to verification.
+**Next unreserved source ID: `SRC-0213`**, subject to verification.
 
 ### Lineages
 
 Current structured frontier includes:
 
-- `LIN-0125..0133` — Internet number-registry, ASN/MAC/special-address lineages;
-- `LIN-0134` — Assigned Numbers → Unix local service/protocol databases;
-- `LIN-0135` — `/etc/services` → netdb service API;
-- `LIN-0136` — `/etc/protocols` → netdb protocol API;
-- `LIN-0137` — service database → inetd runtime activation;
-- `LIN-0138` — registry identities → Linux compile-time/UAPI constants;
-- `LIN-0139` — BPF → libpcap capture/filter abstraction;
-- `LIN-0140` — libpcap → tcpdump analyzer/dissector interface.
+- `LIN-0125..0140` — Internet-number registries, Unix local databases, UAPI constants and packet-observability lineages;
+- `LIN-0141` — official/NIC network database practice → `/etc/networks`;
+- `LIN-0142` — SunOS ethers convention → BSD `/etc/ethers`;
+- `LIN-0143` — Sun RPC program-number namespace → `/etc/rpc`;
+- `LIN-0144` — ULTRIX/Solaris dispatch ideas → NetBSD NSS;
+- `LIN-0145` — NetBSD NSS → FreeBSD NSS;
+- `LIN-0146` — BSD/POSIX lookup tradition → `getaddrinfo()`/`getnameinfo()`;
+- `LIN-0147` — 4.3BSD `routed` → RFC 1058 RIP influence/standardization context;
+- `LIN-0148` — classic `route(8)` operator role → Linux `ip route` role;
+- `LIN-0149` — PF_ROUTE ↔ rtnetlink as parallel kernel/user control families;
+- `LIN-0150` — rtnetlink → iproute2 operator interface;
+- `LIN-0151` — `routed` role → GateD multiprotocol successor/expansion;
+- `LIN-0152` — Cornell GateD stewardship → Merit GateD stewardship.
 
-**Next unreserved lineage ID: `LIN-0141`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0153`**, subject to verification.
 
 ## Recent batch manifests
 
 - `data/batches/2026-08-29-root-hunting.md`
 - `data/batches/2026-08-29-root-hunting-2.md`
 - `data/batches/2026-08-29-unix-implementation-layer.md`
+- `data/batches/2026-08-29-unix-resolver-routing-gated.md`
 
 ## Current implementation-layer narratives
 
@@ -71,17 +90,25 @@ Current structured frontier includes:
 - `docs/software/inetd-service-name-to-socket.md`
 - `docs/software/kernel-protocol-constants.md`
 - `docs/operations/tcpdump-bpf-libpcap-observability.md`
+- `docs/software/unix-network-databases-beyond-services.md`
+- `docs/software/nis-nss-name-service-switch.md`
+- `docs/software/hosts-resolver-getaddrinfo.md`
+- `docs/software/resolver-getaddrinfo-modern-unix.md`
+- `docs/software/route-routed-rip-pfroute.md`
+- `docs/routing/route-routed-pfroute-netlink-iproute2.md`
+- `docs/routing/routed-to-gated-multiprotocol-daemon.md`
 
 ## Next root-hunting targets
 
-- exact 4.2BSD `/etc/services` and `/etc/protocols` snapshots and Assigned Numbers diffs;
-- `/etc/networks`, `/etc/ethers`, `/etc/rpc` genealogy;
-- NIS/NSS backend evolution and compiled service databases;
-- earliest inetd source/manual and configuration grammar;
-- BSD/Linux historical `ETHERTYPE_*`, `ETH_P_*`, `IPPROTO_*` diffs;
-- oldest tcpdump/libpcap distributions and pre-BPF packet capture;
-- BPF filter compiler path from service/protocol names to packet offsets/constants;
-- packet captures pairing historical RFC diagrams, contemporary implementation output and modern dissectors.
+- glibc NSS/resolver genealogy versus BSD nsdispatch; do not assume source ancestry;
+- first `getaddrinfo` prototype and earliest OS deployments;
+- exact 4.2BSD `/etc/networks`, `/etc/services`, `/etc/protocols` snapshots and NIC/Assigned-Numbers diffs;
+- original SunOS `/etc/ethers` and Sun RPC `/etc/rpc` source distributions;
+- early Linux netlink/rtnetlink design discussions and first iproute releases;
+- net-tools `route`/`ifconfig` → iproute2 migration;
+- kernel FIB/rules/multipath evolution;
+- earliest GateD source tarballs, config grammar, RIP/EGP/HELLO/OSPF/BGP modules and Merit-era release history;
+- direct packet/control traces pairing historical APIs with modern systems.
 
 ## Batch merge checklist
 

@@ -5,17 +5,17 @@ This file is the persistent execution list for the repository's **寻根活动 /
 Status vocabulary:
 
 - `[x]` completed to narrative + evidence-bearing structured-record level;
-- `[~]` started but still missing an important primary-source, implementation, packet-capture or provenance layer;
+- `[~]` started/substantial, but an explicitly named primary-source/provenance gap remains;
 - `[ ]` queued.
 
-## 2026-08-29 Linux operations pass — completed in this batch
+## 2026-08-29 Linux operations pass — completed
 
 - [x] `ifconfig` / network-device ioctls → rtnetlink → `ip addr` / `ip link`.
 - [x] `/proc/net/tcp` and `/proc/net/tcp6` → `tcp_diag` / `inet_diag` / `sock_diag`.
 - [x] `ss -ti` as an operational window into RTO, RTT, MSS, cwnd, ssthresh, PMTU and congestion-control state.
 - [x] ARP + IPv6 Neighbor Discovery/NUD → Linux neighbour object → `ip neigh`, with explicit negative lineage: ND is not “ARPv6”.
 - [x] classic destination-only routing → Linux RPDB / multiple FIB tables → `ip rule`.
-- [x] GNU Zebra/Quagga/FRR ZAPI versions 0–6, field-by-field revision matrix.
+- [x] GNU Zebra/Quagga/FRR ZAPI versions 0–6, field-level revision matrix.
 
 ## Kernel/user-space interface archaeology
 
@@ -24,11 +24,16 @@ Status vocabulary:
 - [x] BPF → libpcap → tcpdump.
 - [x] `/etc/services`, `/etc/protocols`, netdb, inetd.
 - [x] `/etc/hosts`, resolver, NSS, `getaddrinfo`.
-- [ ] exact Linux ioctl families used by historical `ifconfig` releases and first rtnetlink replacement points.
-- [ ] earliest Linux netlink/rtnetlink design mail/patch provenance.
-- [ ] first iproute/iproute2 releases and command-syntax diffs.
-- [ ] `ip monitor` / asynchronous rtnetlink notification lineage.
-- [ ] network namespaces and VRF: namespaces, l3mdev, multiple table/rule interactions.
+- [x] exact major Linux network-device ioctl families used by historical `ifconfig`-style administration, plus the 2.1.68 compatibility bridge translating legacy route ioctls into rtnetlink/FIB operations.
+- [x] earliest currently recovered Linux Netlink/rtnetlink design provenance: 2.1.15 character-device + `nlmsghdr` transitional source, 2.1.68 socket/object-model patch, and participant retrospective in RFC 3549.
+- [~] first iproute/iproute2 releases and command-syntax diffs. **Confirmed:** Kuznetsov authorship/development lower bound in the 1996 era, Linux 2.2 stable-generation association, object grammar, and surviving INR mirror snapshots from 1999 onward. **Still missing:** proof of the exact first public tarball and exact project-name transition to `iproute2`.
+- [x] `ip monitor` / `rtmon` / asynchronous rtnetlink notification lineage, including early `RTMGRP_*` multicast groups and binary event-log replay.
+- [x] network namespaces and VRF: CLONE_NEWNET broad stack isolation versus VRF/l3mdev L3 domains; pre-4.8 per-VRF iif/oif rules → Linux 4.8 generic l3mdev FIB rule; explicit composition with RPDB/multiple tables.
+- [ ] recover pre-2.1.15 SKIPLINK/Netlink source and exact first AF_NETLINK socket-family merge commit.
+- [ ] recover the exact first public iproute/iproute2 source distribution and earliest command-reference document.
+- [ ] `ip monitor` event-loss/resync semantics and routing-daemon snapshot+watch patterns from primary implementation sources.
+- [ ] network namespace merge series, veth merge provenance, and `ip netns` first-release archaeology.
+- [ ] VRF device initial merge commit, netdev discussion, l3mdev rule commit and first real deployments.
 
 ## TCP implementation/observability archaeology
 

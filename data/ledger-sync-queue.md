@@ -9,47 +9,51 @@ This compact live queue tracks the structured-record frontier. Older inventories
 Recent ranges include:
 
 - `ART-0175..0213` — registries, Unix/Linux implementation layers, resolver/routing suites, NSS/net-tools and GNU Zebra→Quagga→FRRouting;
-- `ART-0214` — ifconfig / ioctl control model;
-- `ART-0215` — rtnetlink link/address control model;
-- `ART-0216` — `ip addr` / `ip link`;
-- `ART-0217` — `/proc/net/tcp{,6}` tables;
-- `ART-0218` — tcp/inet/sock diag family;
-- `ART-0219` — `ss` / TCP_INFO observability;
-- `ART-0220` — Linux generic neighbour subsystem;
-- `ART-0221` — `ip neigh`;
-- `ART-0222` — IPv6 ND/NUD;
-- `ART-0223` — Linux RPDB;
-- `ART-0224` — `ip rule` / multiple-FIB administration.
+- `ART-0214..0224` — ifconfig/rtnetlink, proc/socket diagnostics, ss/TCP observability, Linux neighbour/ND and RPDB/ip rule;
+- `ART-0225` — legacy Linux network-device ioctl control family;
+- `ART-0226` — Linux 2.1.15 Netlink character-device/message hybrid;
+- `ART-0227` — Linux 2.1.68 rtnetlink object model;
+- `ART-0228` — early ip/iproute/iproute2 userspace suite;
+- `ART-0229` — rtmon;
+- `ART-0230` — ip monitor;
+- `ART-0231` — Linux network namespace;
+- `ART-0232` — Linux VRF/l3mdev routing-domain model;
+- `ART-0233` — generic l3mdev FIB rule.
 
-**Next unreserved artifact ID: `ART-0225`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0234`**, subject to merge-time verification.
 
 ### Sources
 
-- `SRC-0166..0221` — prior registry/Unix/Linux/routing-suite evidence;
-- `SRC-0222..0235` — ifconfig/iproute2/rtnetlink, proc socket tables, ss/TCP_INFO, RFC 5681/6298/4861, neighbour and RPDB documentation, and FRR ZAPI version history.
+- `SRC-0166..0235` — prior registry/Unix/Linux/routing/operations evidence;
+- `SRC-0236..0247` — network-device ioctl ABI, Linux 2.1.15/2.1.68 Netlink/rtnetlink source, FIB compatibility conversion, RFC 3549, ip/iproute archive/history, rtmon/ip monitor, network namespaces and VRF/l3mdev.
 
-**Next unreserved source ID: `SRC-0236`**, subject to verification.
+**Next unreserved source ID: `SRC-0248`**, subject to verification.
 
 ### Lineages
 
-- `LIN-0125..0160` — prior registry, Unix/Linux implementation, resolver/routing-suite and real-fork lineages;
-- `LIN-0161..0162` — ioctl/ifconfig role → rtnetlink → ip addr/link;
-- `LIN-0163..0166` — proc socket tables → sock_diag → ss and TCP timing/congestion-state observability;
-- `LIN-0167..0170` — ARP + IPv6 ND/NUD → Linux neighbour object → ip neigh, with ARP-vs-ND negative-lineage guard;
-- `LIN-0171..0172` — classic destination routing → RPDB → ip rule/multiple FIB tables;
-- `LIN-0173..0175` — ZAPI v0→v1→v2→v3;
-- `LIN-0160` — existing Quagga v3 → FRR v4 fork/revision boundary;
-- `LIN-0176..0177` — ZAPI v4→v5→v6.
+- `LIN-0125..0177` — prior registry, Unix/Linux implementation, routing-suite, operations, neighbour/RPDB and ZAPI lineages;
+- `LIN-0178..0187` — ioctl→rtnetlink migration, Netlink transport/message/object transition, rtnetlink→iproute, event-monitoring, RPDB→VRF integration, l3mdev transition and netns/VRF negative lineage.
 
-**Next unreserved lineage ID: `LIN-0178`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0188`**, subject to verification.
 
 ## Persistent task authority
 
-Use `docs/methodology/root-hunting-master-worklist.md` as the human-readable execution list. New work must be added there when discovered; chat reminders are not the task database.
+Use `docs/methodology/root-hunting-master-worklist.md`. New work must be added there when discovered; chat reminders are not the task database.
 
-## Latest batch
+## Latest batch manifests
 
 - `data/batches/2026-08-29-linux-operations-roots.md`
+- `data/batches/2026-08-29-netlink-iproute-netns-vrf.md`
+
+## Current narrative frontier
+
+Latest additions:
+
+- `docs/software/linux-ifconfig-ioctl-rtnetlink-transition.md`
+- `docs/software/netlink-rtnetlink-origins.md`
+- `docs/software/iproute2-early-release-command-evolution.md`
+- `docs/operations/rtmon-ip-monitor-rtnetlink-events.md`
+- `docs/routing/network-namespaces-vrf-l3mdev-rpdb.md`
 
 ## Flat-ledger merge checklist
 

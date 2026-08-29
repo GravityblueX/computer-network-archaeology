@@ -1,81 +1,60 @@
 # Ledger synchronization queue
 
-This is the compact live queue for flat-ledger synchronization.
+This is the compact live queue for flat-ledger synchronization. Detailed older pending inventories are preserved under `data/batches/` and the archived queue.
 
-Detailed older pending inventories are preserved in the archived queue and batch manifests under `data/batches/`.
+## Current structured frontier
 
-## Pending flat-ledger frontier
-
-Structured records currently run ahead of the flat CSV ledgers.
+The `records/` tree is intentionally ahead of the flat CSV ledgers.
 
 ### Artifacts
 
-Current structured frontier includes:
+Recent structured ranges now include:
 
-- `ART-0175..0178` — EtherType, IP Protocol Number, Service/Port and Assigned Numbers registry/publication systems;
-- `ART-0179..0185` — ASN namespace/four-octet transition, IEEE MAC address blocks, and IPv4 special-purpose/private/documentation/shared spaces;
-- `ART-0186..0194` — Unix services/protocol databases, netdb API, inetd, Linux UAPI constants, BPF/libpcap/tcpdump;
-- `ART-0195` — Unix `/etc/networks`;
-- `ART-0196` — Unix `/etc/ethers`;
-- `ART-0197` — Unix `/etc/rpc`;
-- `ART-0198` — NSS/nsdispatch backend-selection architecture;
-- `ART-0199` — Unix `/etc/hosts`;
-- `ART-0200` — BSD resolver / `resolv.conf` lineage;
-- `ART-0201` — `getaddrinfo()` / `getnameinfo()`;
-- `ART-0202` — BSD `route(8)` manual route administration;
-- `ART-0203` — BSD `routed`;
-- `ART-0204` — BSD PF_ROUTE routing socket;
-- `ART-0205` — Linux rtnetlink / NETLINK_ROUTE;
-- `ART-0206` — iproute2 `ip route`;
-- `ART-0207` — GateD multiprotocol routing daemon lineage.
+- `ART-0175..0194` — number registries, Unix service/protocol databases, kernel constants, BPF/libpcap/tcpdump;
+- `ART-0195..0207` — `/etc/networks`, `/etc/ethers`, `/etc/rpc`, NSS, `/etc/hosts`, resolver/getaddrinfo, route/routed/PF_ROUTE/rtnetlink/iproute2/GateD;
+- `ART-0208` — glibc NSS;
+- `ART-0209` — Linux net-tools;
+- `ART-0210` — GNU Zebra;
+- `ART-0211` — Quagga;
+- `ART-0212` — FRRouting;
+- `ART-0213` — Zebra/Quagga/FRR internal Zebra protocol lineage.
 
-**Next unreserved artifact ID: `ART-0208`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0214`**, subject to merge-time verification.
 
 ### Sources
 
-Current structured frontier includes:
+Recent structured ranges now include:
 
-- `SRC-0166..0194` — number registries, Unix service/protocol databases, kernel constants and packet-observability sources;
-- `SRC-0195` — BSD `networks(5)`;
-- `SRC-0196` — BSD `ethers(5)` / SunOS lineage;
-- `SRC-0197` — BSD `rpc(5)` / Sun RPC program numbers;
-- `SRC-0198` — NetBSD 1.4 `nsswitch.conf`;
-- `SRC-0199` — FreeBSD NSS import/provenance;
-- `SRC-0200` — BSD `hosts(5)`;
-- `SRC-0201` — BSD `resolver(3)`;
-- `SRC-0202` — BSD `resolv.conf(5)`;
-- `SRC-0203` — RFC 2553 `getaddrinfo()` design/provenance;
-- `SRC-0204` — RFC 3493 socket API generation;
-- `SRC-0205` — BSD `route(4)` / PF_ROUTE;
-- `SRC-0206` — 4.3BSD NET/2 `routed(8)`;
-- `SRC-0207` — Linux `rtnetlink(7)`;
-- `SRC-0208` — iproute2 source;
-- `SRC-0209` — RFC 1118 GateD description;
-- `SRC-0210` — RFC 1387 GateD RIP-2 implementation;
-- `SRC-0211` — Merit GateD institutional history;
-- `SRC-0212` — BSD `route(8)` 4.2BSD history anchor.
+- `SRC-0166..0194` — registries, Unix database/implementation and packet-observability sources;
+- `SRC-0195..0212` — Unix local databases, NSS, resolver, route/routed, PF_ROUTE/rtnetlink/iproute2 and GateD sources;
+- `SRC-0213` — glibc NSS manual;
+- `SRC-0214` — Linux Foundation net-tools;
+- `SRC-0215` — Linux Foundation iproute2;
+- `SRC-0216` — Linux kernel IP-aliasing compatibility documentation;
+- `SRC-0217` — GNU Zebra historical page;
+- `SRC-0218` — Quagga manual;
+- `SRC-0219` — Quagga governance/fork documentation;
+- `SRC-0220` — FRRouting documentation;
+- `SRC-0221` — FRRouting Zebra protocol version history.
 
-**Next unreserved source ID: `SRC-0213`**, subject to verification.
+**Next unreserved source ID: `SRC-0222`**, subject to merge-time verification.
 
 ### Lineages
 
-Current structured frontier includes:
+Recent structured ranges now include:
 
-- `LIN-0125..0140` — Internet-number registries, Unix local databases, UAPI constants and packet-observability lineages;
-- `LIN-0141` — official/NIC network database practice → `/etc/networks`;
-- `LIN-0142` — SunOS ethers convention → BSD `/etc/ethers`;
-- `LIN-0143` — Sun RPC program-number namespace → `/etc/rpc`;
-- `LIN-0144` — ULTRIX/Solaris dispatch ideas → NetBSD NSS;
-- `LIN-0145` — NetBSD NSS → FreeBSD NSS;
-- `LIN-0146` — BSD/POSIX lookup tradition → `getaddrinfo()`/`getnameinfo()`;
-- `LIN-0147` — 4.3BSD `routed` → RFC 1058 RIP influence/standardization context;
-- `LIN-0148` — classic `route(8)` operator role → Linux `ip route` role;
-- `LIN-0149` — PF_ROUTE ↔ rtnetlink as parallel kernel/user control families;
-- `LIN-0150` — rtnetlink → iproute2 operator interface;
-- `LIN-0151` — `routed` role → GateD multiprotocol successor/expansion;
-- `LIN-0152` — Cornell GateD stewardship → Merit GateD stewardship.
+- `LIN-0125..0140` — registries, Unix local database/UAPI/capture lineages;
+- `LIN-0141..0152` — Unix network databases, NSS, resolver, route/routed/PF_ROUTE/rtnetlink/iproute2/GateD;
+- `LIN-0153` — Solaris NSS method → glibc NSS influence, explicitly no shared code;
+- `LIN-0154` — BSD nsdispatch ↔ glibc NSS parallel families;
+- `LIN-0155` — net-tools role migration → iproute2;
+- `LIN-0156` — GNU Zebra → Quagga fork;
+- `LIN-0157` — Quagga → FRRouting fork;
+- `LIN-0158` — GateD → GNU Zebra role genealogy without code-ancestry claim;
+- `LIN-0159` — GNU Zebra internal protocol → Quagga carry-over;
+- `LIN-0160` — Quagga Zebra protocol v3 → FRR v4 revision boundary.
 
-**Next unreserved lineage ID: `LIN-0153`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0161`**, subject to merge-time verification.
 
 ## Recent batch manifests
 
@@ -83,32 +62,28 @@ Current structured frontier includes:
 - `data/batches/2026-08-29-root-hunting-2.md`
 - `data/batches/2026-08-29-unix-implementation-layer.md`
 - `data/batches/2026-08-29-unix-resolver-routing-gated.md`
+- `data/batches/2026-08-29-nss-routing-forks.md`
 
-## Current implementation-layer narratives
+## Current narrative frontier
 
-- `docs/software/bsd-services-protocols-databases.md`
-- `docs/software/inetd-service-name-to-socket.md`
-- `docs/software/kernel-protocol-constants.md`
-- `docs/operations/tcpdump-bpf-libpcap-observability.md`
-- `docs/software/unix-network-databases-beyond-services.md`
-- `docs/software/nis-nss-name-service-switch.md`
-- `docs/software/hosts-resolver-getaddrinfo.md`
 - `docs/software/resolver-getaddrinfo-modern-unix.md`
-- `docs/software/route-routed-rip-pfroute.md`
 - `docs/routing/route-routed-pfroute-netlink-iproute2.md`
 - `docs/routing/routed-to-gated-multiprotocol-daemon.md`
+- `docs/software/glibc-nss-vs-bsd-nsdispatch.md`
+- `docs/software/net-tools-to-iproute2.md`
+- `docs/routing/gated-zebra-quagga-frr.md`
 
 ## Next root-hunting targets
 
-- glibc NSS/resolver genealogy versus BSD nsdispatch; do not assume source ancestry;
-- first `getaddrinfo` prototype and earliest OS deployments;
-- exact 4.2BSD `/etc/networks`, `/etc/services`, `/etc/protocols` snapshots and NIC/Assigned-Numbers diffs;
-- original SunOS `/etc/ethers` and Sun RPC `/etc/rpc` source distributions;
-- early Linux netlink/rtnetlink design discussions and first iproute releases;
-- net-tools `route`/`ifconfig` → iproute2 migration;
-- kernel FIB/rules/multipath evolution;
-- earliest GateD source tarballs, config grammar, RIP/EGP/HELLO/OSPF/BGP modules and Merit-era release history;
-- direct packet/control traces pairing historical APIs with modern systems.
+- first glibc NSS release/commit and exact Solaris comparison;
+- glibc `getaddrinfo`/NSS module call graph and DNS/files/NIS behavior by release;
+- earliest Linux rtnetlink/netlink design sources and first iproute releases;
+- distro migration from net-tools to iproute2;
+- GNU Zebra first release/CVS snapshot and Zserv v0 format;
+- exact Quagga and FRR fork points;
+- Zebra protocol source diffs across v0-v6+;
+- GateD vs Zebra RIB/policy/kernel-interface architecture from primary source;
+- modern packet/control traces pairing historical command/API language with current systems.
 
 ## Batch merge checklist
 

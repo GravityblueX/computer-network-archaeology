@@ -42,13 +42,19 @@ Status vocabulary:
 - [x] Window Scale/Timestamps and SACK option branches.
 - [x] `/proc/net/tcp` → diag interfaces → `ss`.
 - [x] `ss -i/-t -i` observable metrics map.
-- [ ] Tahoe / Reno / NewReno / SACK recovery version-by-version.
-- [ ] BIC → CUBIC Linux implementation genealogy.
-- [ ] CUBIC RFC standardization versus Linux code history.
-- [ ] BBR generations and pacing observability.
-- [ ] `tcp_info` struct field/version genealogy by Linux release.
-- [ ] TCP metrics cache and `ip tcp_metrics` history.
+- [~] Tahoe / Reno / NewReno / SACK recovery version-by-version. **Completed:** RFC-level recovery genealogy and explicit NewReno-vs-SACK parallel-branch model. **Still missing:** period 4.3BSD Tahoe/Reno source distributions and function-level source diff.
+- [x] BIC → CUBIC Linux implementation genealogy, including Linux v2.6.13 BIC source, the CUBIC 2.0 replacement/rework commit, the 2006 default switch, and later CUBIC 2.3/HyStart evolution.
+- [x] CUBIC RFC standardization versus Linux code history: implementation/deployment clock is explicitly separated from RFC 8312 Experimental and RFC 9438 Standards Track document history.
+- [~] BBR generations and pacing observability. **Completed:** 2016 mainline BBR merge/model, current mainline source, Google BBRv3 branch identity, pacing/delivery-rate observability linkage and explicit negative claim that current mainline is not simply “BBRv3”. **Still missing:** exact BBRv2→v3 branch/commit chronology and deployment timeline.
+- [~] `tcp_info` struct field/version genealogy by Linux release. **Completed:** Linux 2.4-era provenance bound, v2.6.12 early struct snapshot, 2014 pacing fields, 2016 delivery-rate/app-limited fields. **Still missing:** exact pre-git introduction patch and exhaustive every-field release matrix.
+- [~] TCP metrics cache and `ip tcp_metrics` history. **Completed:** pre-2012 route-metrics role → 2012 dedicated cache, timestamp migration, Generic Netlink exposure, userspace administration semantics and 2019 ssthresh-cache policy change. **Still missing:** earliest route-cache implementation ancestry and exact first iproute2 release carrying `tcp_metrics`.
 - [ ] packet captures paired with `ss -ti` output and RFC-variable concordance.
+- [ ] recover Tahoe and Reno BSD source snapshots and build a loss-recovery code diff.
+- [ ] trace NewReno implementation adoption in BSD/Linux before and after the RFC lineage.
+- [ ] map Linux SACK scoreboard/recovery generations through RFC 3517, RFC 6675, PRR and RACK.
+- [ ] reconstruct BBRv1→v2→v3 branch history from commit/patch-series evidence and preserve mainline-versus-Google-branch state per date.
+- [ ] machine-generate a complete `struct tcp_info` field-addition table from kernel history, including field, units, commit, release and `ss` rendering.
+- [ ] trace TCP destination metrics before the 2012 dedicated cache split and recover the first `ip tcp_metrics` userspace release.
 
 ## Neighbour/address-resolution archaeology
 

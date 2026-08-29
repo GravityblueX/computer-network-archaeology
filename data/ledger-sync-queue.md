@@ -10,31 +10,36 @@ Recent ranges include:
 
 - `ART-0175..0213` — registries, Unix/Linux implementation layers, resolver/routing suites, NSS/net-tools and GNU Zebra→Quagga→FRRouting;
 - `ART-0214..0224` — ifconfig/rtnetlink, proc/socket diagnostics, ss/TCP observability, Linux neighbour/ND and RPDB/ip rule;
-- `ART-0225` — legacy Linux network-device ioctl control family;
-- `ART-0226` — Linux 2.1.15 Netlink character-device/message hybrid;
-- `ART-0227` — Linux 2.1.68 rtnetlink object model;
-- `ART-0228` — early ip/iproute/iproute2 userspace suite;
-- `ART-0229` — rtmon;
-- `ART-0230` — ip monitor;
-- `ART-0231` — Linux network namespace;
-- `ART-0232` — Linux VRF/l3mdev routing-domain model;
-- `ART-0233` — generic l3mdev FIB rule.
+- `ART-0225..0233` — legacy ioctl control, transitional Netlink/rtnetlink, iproute/rtmon/ip monitor, network namespaces and VRF/l3mdev;
+- `ART-0234..0238` — Tahoe/Reno/NewReno/SACK and RFC 6675 loss-recovery branches;
+- `ART-0239..0241` — Linux BIC→CUBIC implementation and CUBIC RFC standardization lineage;
+- `ART-0242..0243` — mainline BBR and Google BBRv3 development branch;
+- `ART-0244..0246` — TCP_INFO base observability plus pacing- and delivery-rate extensions;
+- `ART-0247..0248` — dedicated Linux TCP metrics cache and `ip tcp_metrics` administration.
 
-**Next unreserved artifact ID: `ART-0234`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0249`**, subject to merge-time verification.
 
 ### Sources
 
-- `SRC-0166..0235` — prior registry/Unix/Linux/routing/operations evidence;
-- `SRC-0236..0247` — network-device ioctl ABI, Linux 2.1.15/2.1.68 Netlink/rtnetlink source, FIB compatibility conversion, RFC 3549, ip/iproute archive/history, rtmon/ip monitor, network namespaces and VRF/l3mdev.
+- `SRC-0166..0247` — prior registry/Unix/Linux/routing/operations/Netlink/iproute/netns/VRF evidence;
+- `SRC-0248..0251` — Tahoe/Reno/NewReno/SACK recovery RFC evidence;
+- `SRC-0252..0257` — Linux BIC/CUBIC source and commits plus RFC 8312/9438;
+- `SRC-0258..0260` — mainline BBR merge/current source and Google BBRv3 branch source;
+- `SRC-0261..0263` — early TCP_INFO snapshot and pacing/delivery-rate field additions;
+- `SRC-0264..0268` — dedicated tcp_metrics cache, timestamp consolidation, Generic Netlink/userspace administration and ssthresh-cache policy.
 
-**Next unreserved source ID: `SRC-0248`**, subject to verification.
+**Next unreserved source ID: `SRC-0269`**, subject to verification.
 
 ### Lineages
 
-- `LIN-0125..0177` — prior registry, Unix/Linux implementation, routing-suite, operations, neighbour/RPDB and ZAPI lineages;
-- `LIN-0178..0187` — ioctl→rtnetlink migration, Netlink transport/message/object transition, rtnetlink→iproute, event-monitoring, RPDB→VRF integration, l3mdev transition and netns/VRF negative lineage.
+- `LIN-0125..0187` — prior registry, Unix/Linux implementation, routing-suite, operations, neighbour/RPDB/ZAPI and Netlink/iproute/netns/VRF lineages;
+- `LIN-0188..0191` — Tahoe→Reno→NewReno plus SACK-based recovery and explicit NewReno/SACK coexistence;
+- `LIN-0192..0194` — BIC→CUBIC implementation succession and CUBIC implementation-vs-RFC standards clock;
+- `LIN-0195` — mainline BBR → Google BBRv3 development-branch relationship with explicit mainline negative claim;
+- `LIN-0196..0197` — TCP_INFO append-style pacing and delivery-rate observability evolution;
+- `LIN-0198..0200` — route-metrics→dedicated tcp_metrics split, `ip tcp_metrics` operational exposure, and TCP_INFO/tcp_metrics state-plane distinction.
 
-**Next unreserved lineage ID: `LIN-0188`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0201`**, subject to verification.
 
 ## Persistent task authority
 
@@ -44,16 +49,18 @@ Use `docs/methodology/root-hunting-master-worklist.md`. New work must be added t
 
 - `data/batches/2026-08-29-linux-operations-roots.md`
 - `data/batches/2026-08-29-netlink-iproute-netns-vrf.md`
+- `data/batches/2026-08-29-tcp-recovery-congestion-observability.md`
 
 ## Current narrative frontier
 
 Latest additions:
 
-- `docs/software/linux-ifconfig-ioctl-rtnetlink-transition.md`
-- `docs/software/netlink-rtnetlink-origins.md`
-- `docs/software/iproute2-early-release-command-evolution.md`
-- `docs/operations/rtmon-ip-monitor-rtnetlink-events.md`
-- `docs/routing/network-namespaces-vrf-l3mdev-rpdb.md`
+- `docs/tcp/tcp-tahoe-reno-newreno-sack-recovery.md`
+- `docs/tcp/linux-bic-cubic-implementation-genealogy.md`
+- `docs/tcp/cubic-paper-linux-rfc-standardization.md`
+- `docs/tcp/bbr-generations-pacing-observability.md`
+- `docs/tcp/linux-tcp-info-field-genealogy.md`
+- `docs/tcp/tcp-metrics-cache-ip-tcp-metrics.md`
 
 ## Flat-ledger merge checklist
 

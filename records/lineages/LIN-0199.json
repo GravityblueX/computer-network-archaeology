@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0199",
+  "from": {"artifact_id":"ART-0247","name":"Linux TCP destination metrics cache","revision":"dedicated tcp_metrics cache","historical_term":"tcp_metrics"},
+  "to": {"artifact_id":"ART-0248","name":"ip tcp_metrics administration interface","revision":"Generic Netlink + iproute2 interface","historical_term":"ip tcp_metrics"},
+  "relation": "operational-practice-inherited-by",
+  "scope": ["transport","management","operations","software-api"],
+  "property": "Kernel-resident destination-keyed TCP memory becomes operator-visible and administrable through a Generic Netlink family and the iproute2 `ip tcp_metrics` show/delete/flush interface.",
+  "date_or_range": {"value":"2012","precision":"year","notes":"Kernel Generic Netlink support and userspace administration belong to the same operational generation."},
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [{"source_ref":"SRC-0266","locator":"d23ff701 Generic Netlink tcp_metrics commit","supports":"kernel get/delete/dump/flush interface","notes":null},{"source_ref":"SRC-0267","locator":"ip-tcp_metrics(8)","supports":"userspace show/delete/flush semantics","notes":null}],
+  "negative_claims": ["`ip tcp_metrics` does not show live socket state in the same sense as `ss -ti`/TCP_INFO.","Deleting a metrics entry does not delete a route or terminate a TCP connection."],
+  "open_questions": ["Recover the exact first iproute2 release containing the tcp_metrics command."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0196",
+  "from": {"artifact_id":"ART-0244","name":"Linux TCP_INFO / struct tcp_info observability ABI","revision":"Linux 2.4-era base / v2.6.12 snapshot","historical_term":"TCP_INFO"},
+  "to": {"artifact_id":"ART-0245","name":"TCP_INFO pacing-rate extension","revision":"2014 pacing fields","historical_term":"tcpi_pacing_rate"},
+  "relation": "carried-over",
+  "scope": ["transport","software-api","operations"],
+  "property": "The stable TCP_INFO socket-option ABI is extended append-style with pacing-rate fields so monitoring applications such as ss can expose a newer control variable without replacing the older per-connection metrics structure.",
+  "date_or_range": {"value":"Linux 2.4 era/2014-02-14","precision":"range","notes":"Exact original TCP_INFO introduction patch is pre-git and remains open."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0261","locator":"Linux v2.6.12 struct tcp_info","supports":"early TCP_INFO field set","notes":null},{"source_ref":"SRC-0262","locator":"977cb0ec pacing-rate commit","supports":"pacing fields appended for monitoring/ss","notes":null}],
+  "negative_claims": ["Pacing rate is not a TCP wire-header field.","Adding new fields did not create a new TCP protocol version."],
+  "open_questions": ["Recover exact pre-git TCP_INFO introduction and all intervening field-add commits."],
+  "notes": "Append-only observability evolution.",
+  "last_reviewed": "2026-08-29"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0193",
+  "from": {"artifact_id":"ART-0240","name":"Linux CUBIC congestion-control implementation lineage","revision":"deployed implementation lineage","historical_term":"Linux CUBIC"},
+  "to": {"artifact_id":"ART-0241","name":"IETF CUBIC specification lineage RFC 8312 → RFC 9438","revision":"RFC 8312 Experimental specification","historical_term":"CUBIC RFC lineage"},
+  "relation": "standardizes",
+  "scope": ["transport","institutional","architecture"],
+  "property": "IETF documentation standardizes an already implemented and broadly deployed CUBIC lineage rather than serving as the source from which the original Linux implementation was written.",
+  "date_or_range": {"value":"2006/2018","precision":"range","notes":"Linux deployment substantially predates RFC 8312."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0253","locator":"Linux CUBIC 2.0 commit","supports":"implementation predates RFC standardization","notes":null},{"source_ref":"SRC-0256","locator":"RFC 8312","supports":"Experimental CUBIC specification","notes":null}],
+  "negative_claims": ["Linux did not originally implement CUBIC from RFC 8312 or RFC 9438.","Internal Linux CUBIC version numbers do not map one-to-one to RFC document revisions."],
+  "open_questions": ["Map RFC text changes to corresponding implementation commits across Linux, Windows and Apple stacks."],
+  "notes": "Separates implementation clock from standards clock.",
+  "last_reviewed": "2026-08-29"
+}

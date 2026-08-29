@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0200",
+  "from": {"artifact_id":"ART-0244","name":"Linux TCP_INFO / struct tcp_info observability ABI","revision":"live per-socket telemetry","historical_term":"TCP_INFO"},
+  "to": {"artifact_id":"ART-0248","name":"ip tcp_metrics administration interface","revision":"cross-connection destination cache administration","historical_term":"ip tcp_metrics"},
+  "relation": "coexisted-with",
+  "scope": ["transport","operations","management","software-api"],
+  "property": "Linux exposes two different operational state planes: TCP_INFO/ss for live per-socket transport state, and tcp_metrics/ip tcp_metrics for destination-keyed learned state remembered across connections.",
+  "date_or_range": {"value":"2012-present","precision":"range","notes":"The interfaces coexist because they answer different operational questions."},
+  "certainty": "confirmed",
+  "directness": "documented-operational",
+  "sources": [{"source_ref":"SRC-0261","locator":"struct tcp_info","supports":"live per-socket telemetry interface","notes":null},{"source_ref":"SRC-0266","locator":"tcp_metrics Generic Netlink commit","supports":"destination-cache administration plane","notes":null},{"source_ref":"SRC-0267","locator":"ip-tcp_metrics(8)","supports":"operator-facing remembered-metrics interface","notes":null}],
+  "negative_claims": ["`ss -ti` and `ip tcp_metrics` are not two front ends for the same state object.","Cached RTT/cwnd-related destination memory must not be mistaken for the instantaneous state of any one socket."],
+  "open_questions": ["Create a reproducible lab showing one live TCP_INFO sample beside persistent tcp_metrics state before and after connection close."],
+  "notes": "Explicit operational negative-lineage guard.",
+  "last_reviewed": "2026-08-29"
+}

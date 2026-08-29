@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0197",
+  "from": {"artifact_id":"ART-0244","name":"Linux TCP_INFO / struct tcp_info observability ABI","revision":"Linux 2.4-era base / growing ABI","historical_term":"TCP_INFO"},
+  "to": {"artifact_id":"ART-0246","name":"TCP_INFO delivery-rate/app-limited extension","revision":"2016 delivery-rate fields","historical_term":"tcpi_delivery_rate"},
+  "relation": "carried-over",
+  "scope": ["transport","software-api","operations"],
+  "property": "The TCP_INFO observability ABI gains delivery-rate and application-limited indicators derived from newer ACK/rate-sampling machinery while retaining older RTT, cwnd, retransmission and path fields.",
+  "date_or_range": {"value":"Linux 2.4 era/2016-09-21","precision":"range","notes":"Delivery-rate export arrives alongside the BBR-era rate-sampling work."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0261","locator":"Linux v2.6.12 struct tcp_info","supports":"early generic field set","notes":null},{"source_ref":"SRC-0263","locator":"eb8329e delivery-rate commit","supports":"delivery-rate and app-limited field addition","notes":null}],
+  "negative_claims": ["The exported delivery-rate field is generic TCP telemetry and is not synonymous with BBR.","This interface extension does not imply older fields were deprecated."],
+  "open_questions": ["Build a release-indexed complete struct tcp_info field genealogy."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

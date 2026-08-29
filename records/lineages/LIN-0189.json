@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0189",
+  "from": {"artifact_id":"ART-0235","name":"4.3BSD Reno fast-recovery TCP generation","revision":"1990 BSD Reno","historical_term":"Reno"},
+  "to": {"artifact_id":"ART-0236","name":"TCP NewReno fast-recovery modification","revision":"RFC 6582 current specification","historical_term":"NewReno"},
+  "relation": "derived-from",
+  "scope": ["transport"],
+  "property": "NewReno modifies Reno fast recovery so partial ACKs during recovery trigger retransmission of the next presumed missing segment without exiting recovery.",
+  "date_or_range": {"value":"1990/2012","precision":"range","notes":"The mechanism predates RFC 6582; the RFC records the mature specification."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0249","locator":"RFC 6582 Sections 1–3","supports":"Reno ancestry and NewReno partial-ACK behavior","notes":null}],
+  "negative_claims": ["This edge does not make NewReno a new TCP wire version.","The RFC publication date is not the mechanism's first implementation date."],
+  "open_questions": ["Recover early NewReno implementation and deployment chronology."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

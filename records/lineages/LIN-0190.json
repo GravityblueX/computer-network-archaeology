@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0190",
+  "from": {"artifact_id":"ART-0237","name":"TCP Selective Acknowledgment option family","revision":"RFC 2018","historical_term":"SACK"},
+  "to": {"artifact_id":"ART-0238","name":"RFC 6675 conservative SACK-based TCP loss recovery","revision":"RFC 6675","historical_term":"SACK-based recovery"},
+  "relation": "derived-from",
+  "scope": ["transport"],
+  "property": "RFC 6675 consumes SACK block feedback to maintain a loss scoreboard, estimate data in flight, and select retransmissions during multiple-loss recovery.",
+  "date_or_range": {"value":"1996-10/2012-08","precision":"range","notes":"RFC 6675 obsoletes RFC 3517 while relying on RFC 2018 SACK semantics."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0250","locator":"RFC 2018 option semantics","supports":"SACK feedback representation","notes":null},{"source_ref":"SRC-0251","locator":"RFC 6675 algorithm","supports":"SACK-based conservative loss recovery","notes":null}],
+  "negative_claims": ["SACK feedback is not itself a congestion-window growth algorithm.","This edge does not imply that SACK replaced NewReno everywhere."],
+  "open_questions": ["Map Linux SACK scoreboard generations to RFC 3517, RFC 6675, and later RACK recovery."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

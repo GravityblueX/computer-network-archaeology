@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0192",
+  "from": {"artifact_id":"ART-0239","name":"Linux BIC-TCP congestion-control implementation","revision":"BIC 1.x / Linux v2.6.13 generation","historical_term":"BIC"},
+  "to": {"artifact_id":"ART-0240","name":"Linux CUBIC congestion-control implementation lineage","revision":"CUBIC 2.0 onward","historical_term":"CUBIC"},
+  "relation": "successor-of",
+  "scope": ["transport","architecture"],
+  "property": "Linux replaces/reworks BIC 1.1 window growth with a cubic function and later changes the default congestion-control selection from BIC to CUBIC.",
+  "date_or_range": {"value":"2005-12/2006-09","precision":"range","notes":"CUBIC code introduction/rework followed by default-selection transition."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0252","locator":"Linux v2.6.13 tcp_bic.c","supports":"predecessor BIC implementation","notes":null},{"source_ref":"SRC-0253","locator":"df3271f commit message/diff","supports":"BIC 1.1 replaced by CUBIC 2.0 window growth","notes":null},{"source_ref":"SRC-0254","locator":"597811ec Kconfig diff","supports":"default switched BIC→CUBIC","notes":null}],
+  "negative_claims": ["This code genealogy does not mean CUBIC is merely a renamed BIC implementation.","The Linux default change does not imply every Linux deployment immediately used CUBIC."],
+  "open_questions": ["Recover exact first BIC merge and build a field/function diff from BIC 1.1 to CUBIC 2.0."],
+  "notes": "Direct implementation genealogy with unusually strong commit evidence.",
+  "last_reviewed": "2026-08-29"
+}

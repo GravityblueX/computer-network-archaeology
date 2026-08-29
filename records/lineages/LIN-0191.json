@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0191",
+  "from": {"artifact_id":"ART-0236","name":"TCP NewReno fast-recovery modification","revision":"RFC 6582","historical_term":"NewReno"},
+  "to": {"artifact_id":"ART-0237","name":"TCP Selective Acknowledgment option family","revision":"RFC 2018","historical_term":"SACK"},
+  "relation": "coexisted-with",
+  "scope": ["transport","architecture"],
+  "property": "NewReno improves sender recovery using cumulative/partial ACK interpretation, while SACK adds explicit non-contiguous receive-block feedback; stacks may support both mechanisms rather than treating them as sequential TCP versions.",
+  "date_or_range": {"value":"1990s-present","precision":"range","notes":"Different recovery/feedback branches coexist in implementations and standards."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0249","locator":"RFC 6582 introduction","supports":"NewReno operates as a modification to Reno recovery","notes":null},{"source_ref":"SRC-0250","locator":"RFC 2018","supports":"SACK adds explicit selective acknowledgement feedback","notes":null}],
+  "negative_claims": ["Do not draw Tahoe→Reno→NewReno→SACK as a release-version chain.","SACK does not mean 'the version after NewReno'."],
+  "open_questions": ["Document historical Linux fallback behavior when SACK is not negotiated."],
+  "notes": "Explicit anti-teleology edge.",
+  "last_reviewed": "2026-08-29"
+}

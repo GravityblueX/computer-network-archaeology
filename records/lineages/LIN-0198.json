@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0198",
+  "from": {"artifact_id":null,"name":"TCP learned metrics stored in route/destination metrics","revision":"pre-2012 Linux route-metrics architecture","historical_term":"route metrics"},
+  "to": {"artifact_id":"ART-0247","name":"Linux TCP destination metrics cache","revision":"dedicated local cache from 2012","historical_term":"tcp_metrics"},
+  "relation": "replaced-by",
+  "scope": ["transport","routing","architecture","operations"],
+  "property": "Linux moves computed dynamic TCP metrics out of route metrics into a dedicated destination-keyed local TCP metrics hash/cache, later consolidating timestamp memory there as well.",
+  "date_or_range": {"value":"pre-2012/2012-07","precision":"range","notes":"Architecture split documented by the dedicated tcp_metrics cache commits."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0264","locator":"51c5d0c4 commit message","supports":"computed TCP metrics no longer maintained in route metrics; dedicated local cache introduced","notes":null},{"source_ref":"SRC-0265","locator":"81166dd6 commit message","supports":"timestamps moved from inetpeer into metrics cache","notes":null}],
+  "negative_claims": ["This does not mean routing metrics as a general concept disappeared.","The dedicated TCP metrics cache is cross-connection path memory, not live per-socket TCP_INFO state."],
+  "open_questions": ["Trace the older route-cache/route-metrics TCP memory implementation to its first introduction."],
+  "notes": "Architecture split between routing state and learned TCP path memory.",
+  "last_reviewed": "2026-08-29"
+}

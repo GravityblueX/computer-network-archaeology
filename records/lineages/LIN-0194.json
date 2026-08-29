@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0194",
+  "from": {"artifact_id":"ART-0241","name":"IETF CUBIC specification lineage RFC 8312 → RFC 9438","revision":"RFC 8312 / Experimental","historical_term":"RFC 8312 CUBIC"},
+  "to": {"artifact_id":"ART-0241","name":"IETF CUBIC specification lineage RFC 8312 → RFC 9438","revision":"RFC 9438 / Standards Track","historical_term":"RFC 9438 CUBIC"},
+  "relation": "revision-of",
+  "scope": ["transport","institutional","architecture"],
+  "property": "RFC 9438 obsoletes and revises RFC 8312, incorporating years of implementation, deployment and research experience into the Standards Track CUBIC specification.",
+  "date_or_range": {"value":"2018-02/2023-08","precision":"range","notes":"RFC 8312 Experimental → RFC 9438 Standards Track."},
+  "certainty": "confirmed",
+  "directness": "formal",
+  "sources": [{"source_ref":"SRC-0256","locator":"RFC 8312 title/status","supports":"Experimental predecessor","notes":null},{"source_ref":"SRC-0257","locator":"RFC 9438 abstract/introduction/status","supports":"obsoletes RFC 8312 and advances CUBIC to Standards Track","notes":null}],
+  "negative_claims": ["This document revision is not the same thing as a Linux implementation version upgrade.","RFC 9438 does not imply that earlier production CUBIC implementations were absent before 2023."],
+  "open_questions": ["Build an RFC 8312→9438 normative-text and parameter diff."],
+  "notes": null,
+  "last_reviewed": "2026-08-29"
+}

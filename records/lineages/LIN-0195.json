@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0195",
+  "from": {"artifact_id":"ART-0242","name":"Mainline Linux BBR congestion-control lineage","revision":"mainline lineage from 2016","historical_term":"BBR"},
+  "to": {"artifact_id":"ART-0243","name":"Google BBRv3 development branch","revision":"BBR_VERSION 3","historical_term":"BBRv3"},
+  "relation": "derived-from",
+  "scope": ["transport","architecture"],
+  "property": "Google's BBRv3 branch continues the BBR model-based congestion-control lineage with substantial control/model changes while remaining a distinct development branch from current torvalds/linux mainline BBR.",
+  "date_or_range": {"value":"2016/2020s","precision":"range","notes":"Exact v2→v3 branch chronology remains to be reconstructed."},
+  "certainty": "confirmed",
+  "directness": "documented-design",
+  "sources": [{"source_ref":"SRC-0258","locator":"mainline BBR merge commit/tcp_bbr.c","supports":"mainline BBR origin and model","notes":null},{"source_ref":"SRC-0260","locator":"google/bbr v3 tcp_bbr.c, BBR_VERSION 3","supports":"v3 branch identity","notes":null},{"source_ref":"SRC-0259","locator":"current torvalds/linux tcp_bbr.c","supports":"mainline remains a distinct classic BBR lineage as reviewed","notes":null}],
+  "negative_claims": ["This edge does not claim that BBRv3 has been merged into current mainline Linux.","A Google development branch is not automatically equivalent to distribution defaults or general deployment."],
+  "open_questions": ["Recover exact BBRv2→v3 fork and patch chronology.","Track future mainline adoption of v2/v3 concepts."],
+  "notes": "Time-sensitive branch/mainline distinction reviewed 2026-08-29.",
+  "last_reviewed": "2026-08-29"
+}

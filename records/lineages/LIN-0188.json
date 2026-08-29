@@ -1,0 +1,16 @@
+{
+  "id": "LIN-0188",
+  "from": {"artifact_id":"ART-0234","name":"4.3BSD Tahoe fast-retransmit TCP generation","revision":"4.3BSD Tahoe era","historical_term":"Tahoe"},
+  "to": {"artifact_id":"ART-0235","name":"4.3BSD Reno fast-recovery TCP generation","revision":"1990 BSD Reno","historical_term":"Reno"},
+  "relation": "successor-of",
+  "scope": ["transport","architecture"],
+  "property": "Reno retains Tahoe-era fast retransmit and adds fast recovery so duplicate-ACK loss detection does not immediately collapse the sender back to slow start.",
+  "date_or_range": {"value":"1988/1990","precision":"range","notes":"Implementation generations, not TCP wire-version numbers."},
+  "certainty": "confirmed",
+  "directness": "scholarly-reconstruction",
+  "sources": [{"source_ref":"SRC-0248","locator":"RFC 2001 fast retransmit/fast recovery discussion","supports":"Tahoe first fast retransmit; Reno first fast recovery","notes":null}],
+  "negative_claims": ["This edge does not claim that Tahoe and Reno are formal TCP protocol versions.","This edge does not claim that every later TCP stack exactly reproduced BSD Reno behavior."],
+  "open_questions": ["Acquire and diff period Tahoe and Reno BSD tcp_input/tcp_output sources."],
+  "notes": "Implementation-generation lineage.",
+  "last_reviewed": "2026-08-29"
+}

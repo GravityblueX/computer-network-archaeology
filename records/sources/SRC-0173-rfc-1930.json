@@ -1,0 +1,21 @@
+{
+  "id": "SRC-0173",
+  "source_type": "rfc",
+  "title": "Guidelines for creation, selection, and registration of an Autonomous System (AS)",
+  "authors_or_bodies": ["John Hawkinson", "Tony Bates"],
+  "date": {"value":"1996-03","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 1930 / BCP 6",
+  "identifiers": [{"scheme":"RFC","value":"1930"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["Autonomous Systems", "routing policy", "ASN registration"],
+  "artifact_ids": ["ART-0179"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc1930/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [{"claim":"Autonomous Systems are units of routing policy and require registered AS numbers under defined conditions.","locator":"Abstract and core guidance","certainty":"confirmed","artifact_ids":["ART-0179"],"notes":null}],
+  "conflicts": [],
+  "notes": "Baseline AS-policy identity source before four-octet expansion.",
+  "last_reviewed": "2026-08-29"
+}

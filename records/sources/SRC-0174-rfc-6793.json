@@ -1,0 +1,21 @@
+{
+  "id": "SRC-0174",
+  "source_type": "rfc",
+  "title": "BGP Support for Four-Octet Autonomous System (AS) Number Space",
+  "authors_or_bodies": ["Q. Vohra", "E. Chen"],
+  "date": {"value":"2012-12","precision":"month","certainty":"confirmed","notes":null},
+  "edition_or_revision": "RFC 6793",
+  "identifiers": [{"scheme":"RFC","value":"6793"}],
+  "publisher_or_issuer": "RFC Editor",
+  "language": ["en"],
+  "topics": ["BGP", "four-octet ASN", "AS4_PATH", "AS4_AGGREGATOR", "AS_TRANS"],
+  "artifact_ids": ["ART-0180"],
+  "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc6793/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
+  "rights_status": "rfc-distribution-terms",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "mined",
+  "claims_extracted": [{"claim":"BGP is extended to support a four-octet AS number space while providing transition mechanisms for interaction with old speakers.","locator":"Abstract and Sections 2-4","certainty":"confirmed","artifact_ids":["ART-0180"],"notes":"Preserve AS4_PATH, AS4_AGGREGATOR and AS_TRANS as separate transition mechanisms."}],
+  "conflicts": [],
+  "notes": "Formal compatibility-oriented namespace expansion rather than a new BGP protocol generation.",
+  "last_reviewed": "2026-08-29"
+}

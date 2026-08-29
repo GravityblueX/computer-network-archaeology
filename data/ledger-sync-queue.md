@@ -4,93 +4,94 @@ This is the compact live queue for flat-ledger synchronization.
 
 Detailed older pending inventories are preserved at:
 
-- [`ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md`](ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md)
-- [`batches/2026-08-29-root-hunting.md`](batches/2026-08-29-root-hunting.md)
-- [`batches/2026-08-29-root-hunting-2.md`](batches/2026-08-29-root-hunting-2.md)
-
-## Why this file is compact
-
-The claim-level `records/` tree can advance faster than the flat CSV ledgers. Rewriting a large CSV after every excavation burst is riskier than preserving verified batch manifests and merging periodically.
+- `ledger-sync-queue-archive-2026-08-29-pre-root-hunting.md`
+- `batches/2026-08-29-root-hunting.md`
+- `batches/2026-08-29-root-hunting-2.md`
 
 ## Pending flat-ledger frontier
 
+Structured records currently run ahead of the flat CSV ledgers.
+
 ### Artifacts
 
-Pending structured range now extends through:
+Latest structured frontier after the number-space/identity batch:
 
-- `ART-0174` — multipart/form-data Web form-upload media type.
+- `ART-0175..0178` — EtherType, IP Protocol Number, Service/Port and Assigned Numbers publication/registry systems;
+- `ART-0179` — Autonomous System Number namespace and special-use subspaces;
+- `ART-0180` — four-octet ASN transition;
+- `ART-0181` — IEEE EUI-48 / MA-L / MA-M / MA-S assignment system;
+- `ART-0182` — IPv4 Special-Purpose Address registry framework;
+- `ART-0183` — RFC 1918 private IPv4 space;
+- `ART-0184` — TEST-NET documentation address family;
+- `ART-0185` — 100.64.0.0/10 Shared Address Space.
 
-The detailed composition of earlier ranges and reserved gaps lives in the archive/batch manifests above.
-
-Latest batch (`ART-0166..0174`):
-
-- IPv4 Options cemetery;
-- Path MTU Discovery;
-- DSCP/ECN semantic lineage;
-- ICMP Type/Code survivorship;
-- TCP Window Scale/Timestamps;
-- TCP SACK;
-- DNSSEC;
-- SMTP EHLO extension framework;
-- multipart/form-data.
-
-**Next unreserved artifact ID: `ART-0175`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0186`**, subject to merge-time verification.
 
 ### Sources
 
-Pending structured range now extends through:
+Latest structured frontier:
 
-- `SRC-0165` — IANA ICMP Parameters registry.
+- `SRC-0166..0172` — IEEE/IANA number registries and Assigned Numbers publication lineage;
+- `SRC-0173` — RFC 1930;
+- `SRC-0174` — RFC 6793;
+- `SRC-0175` — RFC 6996;
+- `SRC-0176` — RFC 5398;
+- `SRC-0177` — RFC 5396;
+- `SRC-0178` — IEEE Registration Authority FAQ;
+- `SRC-0179` — IEEE Registration Authority registry page;
+- `SRC-0180` — RFC 1918;
+- `SRC-0181` — RFC 5737;
+- `SRC-0182` — RFC 6598;
+- `SRC-0183` — IANA IPv4 Special-Purpose Address Space registry;
+- `SRC-0184` — IANA Autonomous System Numbers registry.
 
-Latest batch (`SRC-0156..0165`) includes RFC 1191, RFC 7126, RFC 3168, RFC 7323, RFC 2018, RFC 4033, IANA SMTP extensions, RFC 7578, RFC 6838 and the IANA ICMP registry.
-
-**Next unreserved source ID: `SRC-0166`**, subject to verification.
+**Next unreserved source ID: `SRC-0185`**, subject to verification.
 
 ### Lineages
 
-Pending structured range now extends through:
+Latest structured frontier:
 
-- `LIN-0124` — MIME multipart model → multipart/form-data.
+- `LIN-0125..0128` — EtherType/protocol/port/Assigned-Numbers registry lineages;
+- `LIN-0129` — two-octet ASN regime → four-octet ASN transition;
+- `LIN-0130` — original private ASN reservation → expanded private-use ranges;
+- `LIN-0131` — OUI-era allocation → MA-L/MA-M/MA-S family;
+- `LIN-0132` — RFC1918 private space ↔ RFC6598 Shared Address Space as distinct coexisting scopes;
+- `LIN-0133` — TEST-NET-1 → three-prefix documentation family.
 
-Latest batch (`LIN-0118..0124`) covers PMTUD derivation, DS/ECN semantic carry-over, TCP option growth, DNS→DNSSEC, SMTP→EHLO capability growth, and MIME multipart→Web form upload.
-
-**Next unreserved lineage ID: `LIN-0125`**, subject to verification.
+**Next unreserved lineage ID: `LIN-0134`**, subject to verification.
 
 ## Current narrative frontier
 
-Second root-hunting expansion:
+Recent root-hunting narratives include:
 
-- `docs/lineage/ipv4-options-cemetery-pmtud.md`
-- `docs/lineage/dscp-ecn-shared-octet.md`
-- `docs/lineage/icmp-type-code-full-survivorship.md`
-- `docs/lineage/tcp-options-genealogy.md`
-- `docs/lineage/dns-extension-forest-dnssec-naptr-sshfp-tlsa.md`
-- `docs/lineage/smtp-ehlo-capability-genealogy.md`
-- `docs/lineage/mime-multipart-to-form-data.md`
+- `docs/lineage/ethertype-registry-genealogy.md`
+- `docs/lineage/ip-protocol-number-registry-genealogy.md`
+- `docs/lineage/port-number-service-registry-genealogy.md`
+- `docs/lineage/as-number-genealogy-16-to-32-bit.md`
+- `docs/lineage/oui-eui48-mac-address-block-genealogy.md`
+- `docs/lineage/ipv4-special-purpose-address-space-genealogy.md`
 
-## Next high-value structured targets
+## Next implementation-layer targets
 
-- complete IPv4 Option-number table plus Router Alert/source-route branches;
-- classic PMTUD → PLPMTUD / IPv6 Packet Too Big;
-- DiffServ PHBs and ECN/AccECN;
-- TCP option Kind registry, MSS and option-space exhaustion;
-- DNS NAPTR/SSHFP/TLSA and DNSSEC predecessor generations;
-- individual SMTP EHLO extension artifacts such as SIZE/8BITMIME/PIPELINING/STARTTLS/AUTH/DSN;
-- RFC 1867 → RFC 2388 → RFC 7578 form-upload revisions;
-- raw packet/capture records pairing present traffic with historical diagrams.
+- `/etc/services` and `/etc/protocols` from 4.2BSD onward;
+- `getservbyname`, `getservbyport`, `getprotobyname`, `getprotobynumber` libc interfaces;
+- `/etc/inetd.conf` service/protocol resolution and process launch;
+- BSD/Linux `ETHERTYPE_*`, `ETH_P_*`, `IPPROTO_*` constants;
+- tcpdump/BPF/libpcap dissector genealogy;
+- `/etc/networks`, `/etc/ethers`, protocol/service databases through NIS/NSS and modern resolver stacks.
 
 ## Batch merge checklist
 
-Before changing the flat CSV ledgers:
+Before changing flat CSV ledgers:
 
-1. fetch the complete latest CSV blobs;
+1. fetch complete latest CSV blobs;
 2. verify actual highest IDs and concurrent additions;
-3. validate every queued record file against its JSON schema;
-4. preserve reserved gaps rather than silently reusing them;
-5. append/promote rows without changing existing rows;
-6. validate CSV quoting and column counts;
-7. confirm every structured `ART/SRC/LIN` ID is discoverable in flat ledgers;
-8. synchronize `docs/INDEX.md`, `catalogs/lineages.md`, and relevant human-readable indexes;
+3. validate all queued JSON records against schemas;
+4. preserve reserved gaps;
+5. append/promote without altering existing rows;
+6. validate CSV quoting/column counts;
+7. verify every structured ID is discoverable from flat ledgers;
+8. synchronize human-readable indexes;
 9. archive completed queue state before clearing it.
 
 This queue is archival hygiene, not a second research database.

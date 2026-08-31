@@ -91,11 +91,64 @@ class ValidationReport:
         return sum(self.record_counts.values())
 
 
+class StrictJSONError(ValueError):
+    """Raised when Python's permissive JSON decoder accepts invalid JSON."""
+
+
 def display_path(path: Path, root: Path) -> str:
     try:
         return path.relative_to(root).as_posix()
     except ValueError:
         return path.as_posix()
+
+
+def reject_duplicate_keys(
+    pairs: list[tuple[str, object]],
+) -> dict[str, object]:
+    document: dict[str, object] = {}
+    for key, value in pairs:
+        if key in document:
+            raise StrictJSONError(f"duplicate object key {key!r}")
+        document[key] = value
+    return document
+
+
+def reject_non_finite_number(value: str) -> object:
+    raise StrictJSONError(f"non-finite number {value!r}")
+
+
+def resolve_repository_path(
+    path: Path,
+    root: Path,
+    errors: list[str],
+    *,
+    expected: str,
+) -> Path | None:
+    """Resolve a repository input without allowing it to escape ``root``."""
+
+    label = display_path(path, root)
+    try:
+        resolved = path.resolve(strict=True)
+    except (OSError, RuntimeError) as error:
+        errors.append(f"{label}: cannot resolve path: {error}")
+        return None
+
+    try:
+        resolved.relative_to(root)
+    except ValueError:
+        errors.append(f"{label}: resolves outside repository root")
+        return None
+
+    if expected == "file" and not resolved.is_file():
+        errors.append(f"{label}: expected a regular file")
+        return None
+    if expected == "directory" and not resolved.is_dir():
+        errors.append(f"{label}: expected a directory")
+        return None
+    if expected == "entry" and not (resolved.is_file() or resolved.is_dir()):
+        errors.append(f"{label}: expected a regular file or directory")
+        return None
+    return resolved
 
 
 def json_path(parts: Sequence[object]) -> str:
@@ -120,10 +173,20 @@ def schema_error_sort_key(error: object) -> tuple[tuple[tuple[int, object], ...]
     return path_key, message
 
 
-def load_json_object(path: Path, root: Path, errors: list[str]) -> dict[str, object] | None:
-    label = display_path(path, root)
+def load_json_object(
+    path: Path,
+    root: Path,
+    errors: list[str],
+    *,
+    label_path: Path | None = None,
+) -> dict[str, object] | None:
+    label = display_path(label_path or path, root)
     try:
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(
+            path.read_text(encoding="utf-8"),
+            object_pairs_hook=reject_duplicate_keys,
+            parse_constant=reject_non_finite_number,
+        )
     except (OSError, UnicodeError) as error:
         errors.append(f"{label}: cannot read UTF-8 JSON: {error}")
         return None
@@ -131,6 +194,9 @@ def load_json_object(path: Path, root: Path, errors: list[str]) -> dict[str, obj
         errors.append(
             f"{label}:{error.lineno}:{error.colno}: invalid JSON: {error.msg}"
         )
+        return None
+    except StrictJSONError as error:
+        errors.append(f"{label}: invalid JSON: {error}")
         return None
 
     if not isinstance(value, dict):
@@ -140,28 +206,123 @@ def load_json_object(path: Path, root: Path, errors: list[str]) -> dict[str, obj
 
 
 def load_schema(
-    path: Path, root: Path, errors: list[str]
+    path: Path,
+    root: Path,
+    errors: list[str],
+    *,
+    label_path: Path | None = None,
 ) -> dict[str, object] | None:
-    schema = load_json_object(path, root, errors)
+    display = label_path or path
+    schema = load_json_object(path, root, errors, label_path=display)
     if schema is None:
         return None
     try:
         Draft202012Validator.check_schema(schema)
     except SchemaError as error:
         errors.append(
-            f"{display_path(path, root)}:{json_path(list(error.absolute_path))}: "
+            f"{display_path(display, root)}:{json_path(list(error.absolute_path))}: "
             f"invalid JSON Schema: {error.message}"
         )
         return None
     return schema
 
 
+def discover_record_paths(
+    root: Path, errors: list[str]
+) -> dict[str, list[tuple[Path, Path]]]:
+    """Find the complete, canonical set of structured record files.
+
+    JSON-shaped files are only valid directly inside one of the registered
+    group directories.  Walking explicitly also makes hidden nested records,
+    unknown categories, and case-variant extensions fail closed.
+    """
+
+    discovered: dict[str, list[tuple[Path, Path]]] = {
+        group.name: [] for group in GROUPS
+    }
+    records_path = root / "records"
+    resolved_records = resolve_repository_path(
+        records_path, root, errors, expected="directory"
+    )
+    if resolved_records is None:
+        return discovered
+
+    categories = {
+        Path(group.directory).relative_to("records").as_posix(): group.name
+        for group in GROUPS
+    }
+    pending = [(records_path, resolved_records)]
+    visited_directories = {resolved_records}
+
+    while pending:
+        lexical_directory, _ = pending.pop()
+        try:
+            entries = sorted(lexical_directory.iterdir(), key=lambda path: path.name)
+        except OSError as error:
+            errors.append(
+                f"{display_path(lexical_directory, root)}: "
+                f"cannot read record directory: {error}"
+            )
+            continue
+
+        for path in entries:
+            resolved = resolve_repository_path(
+                path, root, errors, expected="entry"
+            )
+            if resolved is None:
+                continue
+            if resolved.is_dir():
+                if resolved in visited_directories:
+                    errors.append(
+                        f"{display_path(path, root)}: record directory resolves "
+                        "to an already visited directory"
+                    )
+                    continue
+                visited_directories.add(resolved)
+                pending.append((path, resolved))
+                continue
+
+            if path.suffix.casefold() != ".json":
+                continue
+
+            relative = path.relative_to(records_path)
+            if path.suffix != ".json":
+                errors.append(
+                    f"{display_path(path, root)}: JSON record extension must be .json"
+                )
+            if len(relative.parts) != 2:
+                errors.append(
+                    f"{display_path(path, root)}: JSON records must be directly "
+                    "inside a registered record directory"
+                )
+                continue
+
+            group_name = categories.get(relative.parts[0])
+            if group_name is None:
+                errors.append(
+                    f"{display_path(path, root)}: unregistered record directory "
+                    f"{relative.parts[0]!r}"
+                )
+                continue
+            if path.suffix == ".json":
+                discovered[group_name].append((path, resolved))
+
+    for paths in discovered.values():
+        paths.sort(key=lambda pair: pair[0].as_posix())
+    return discovered
+
+
 def load_ledger_ids(
     root: Path, group: RecordGroup, errors: list[str]
 ) -> set[str]:
-    path = root / group.ledger
-    label = display_path(path, root)
+    label_path = root / group.ledger
+    label = display_path(label_path, root)
     ids: set[str] = set()
+    path = resolve_repository_path(
+        label_path, root, errors, expected="file"
+    )
+    if path is None:
+        return ids
     try:
         handle = path.open(encoding="utf-8-sig", newline="")
     except OSError as error:
@@ -288,18 +449,39 @@ def validate_references(
 
 
 def validate_repository(root: Path) -> ValidationReport:
-    root = root.resolve()
     errors: list[str] = []
     record_counts = {group.name: 0 for group in GROUPS}
     ledger_counts = {group.name: 0 for group in GROUPS}
+    try:
+        root = root.resolve(strict=True)
+    except (OSError, RuntimeError) as error:
+        errors.append(f"repository root: cannot resolve path: {error}")
+        return ValidationReport(errors, record_counts, ledger_counts)
+    if not root.is_dir():
+        errors.append("repository root: expected a directory")
+        return ValidationReport(errors, record_counts, ledger_counts)
+
     records: list[LoadedRecord] = []
     structured_ids: dict[str, set[str]] = {group.name: set() for group in GROUPS}
     ledger_ids: dict[str, set[str]] = {group.name: set() for group in GROUPS}
     seen_structured_ids: dict[str, Path] = {}
+    discovered_paths = discover_record_paths(root, errors)
 
     for group in GROUPS:
-        schema_path = root / group.schema
-        schema = load_schema(schema_path, root, errors)
+        schema_label_path = root / group.schema
+        schema_path = resolve_repository_path(
+            schema_label_path, root, errors, expected="file"
+        )
+        schema = (
+            load_schema(
+                schema_path,
+                root,
+                errors,
+                label_path=schema_label_path,
+            )
+            if schema_path is not None
+            else None
+        )
         validator = (
             Draft202012Validator(schema, format_checker=FormatChecker())
             if schema is not None
@@ -307,16 +489,15 @@ def validate_repository(root: Path) -> ValidationReport:
         )
 
         record_directory = root / group.directory
-        if not record_directory.is_dir():
-            errors.append(
-                f"{display_path(record_directory, root)}: record directory does not exist"
-            )
-            paths: list[Path] = []
-        else:
-            paths = sorted(record_directory.glob("*.json"))
+        resolved_directory = resolve_repository_path(
+            record_directory, root, errors, expected="directory"
+        )
+        paths = discovered_paths[group.name] if resolved_directory is not None else []
 
-        for path in paths:
-            document = load_json_object(path, root, errors)
+        for path, resolved_path in paths:
+            document = load_json_object(
+                resolved_path, root, errors, label_path=path
+            )
             if document is None:
                 continue
             record_counts[group.name] += 1
@@ -360,7 +541,9 @@ def validate_repository(root: Path) -> ValidationReport:
         for group in GROUPS
     }
     errors.extend(validate_references(records, known_ids, root))
-    errors.sort()
+    # A registered directory is also visited by the closure scan.  Collapse an
+    # identical path failure from those two independent checks into one report.
+    errors = sorted(set(errors))
     return ValidationReport(errors, record_counts, ledger_counts)
 
 

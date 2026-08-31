@@ -1,6 +1,6 @@
 {
   "id": "SRC-0064",
-  "source_type": "government-report",
+  "source_type": "technical-report",
   "title": "ARPANET Host to Host Access and Disengagement Measurements",
   "authors_or_bodies": ["Judd A. Payne", "National Telecommunications and Information Administration / Institute for Telecommunication Sciences"],
   "date": {"value": "1978-05", "precision": "month", "certainty": "confirmed", "notes": null},
@@ -10,12 +10,12 @@
   "language": ["en"],
   "topics": ["ARPANET", "Very Distant Host", "Bell 303", "PDP-11", "TIP", "BSC", "50 kbit/s", "measurement"],
   "artifact_ids": ["ART-0077", "ART-0080"],
-  "access": {"canonical_url": "https://its.ntia.gov/publications/download/78-3.pdf", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-28", "availability": "open-government-access"},
-  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 64, "ocr_status": "searchable", "scan_notes": "Relevant VDH diagram/page visually inspected during research."},
+  "access": {"canonical_url": "https://its.ntia.gov/publications/download/78-3.pdf", "archive_urls": [], "catalog_urls": [], "local_mirror": null, "accessed_on": "2026-08-28", "availability": "open"},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 64, "ocr_status": "machine", "scan_notes": "Relevant VDH diagram/page visually inspected during research."},
   "rights_status": "government-work-check-jurisdiction",
   "redistribution_notes": "Government-report status should be confirmed for any local mirror; canonical NTIA access is preferred.",
   "provenance": {"original_holder": "U.S. Department of Commerce / NTIA/ITS", "current_holder": "NTIA/ITS publication server", "donor_or_collection": null, "chain_notes": null},
-  "evidence_grade": "primary-contemporary-government",
+  "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
     {"claim": "The documented DOCB TIP to PDP-11 Very Distant Host path used special interfaces and VDH software at both machines with BSC-style synchronization/control.", "locator": "VDH hardware/path discussion and diagram, report page around the VDH section; visually verified", "certainty": "confirmed", "artifact_ids": ["ART-0080"], "notes": null},

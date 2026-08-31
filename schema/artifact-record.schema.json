@@ -7,6 +7,10 @@
   "additionalProperties": false,
   "required": ["id", "canonical_name", "kind", "research_state", "certainty", "sources"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional relative or absolute schema locator for editor integration."
+    },
     "id": {
       "type": "string",
       "pattern": "^ART-[0-9]{4,}$"
@@ -105,14 +109,17 @@
         "type": "string",
         "enum": [
           "physical",
+          "interface",
           "link",
           "network",
+          "routing",
           "transport",
           "session",
           "presentation",
           "application",
           "operations",
           "management",
+          "software-api",
           "cross-layer",
           "pre-layered"
         ]

@@ -16,13 +16,13 @@
     "catalog_urls": [],
     "local_mirror": null,
     "accessed_on": "2026-08-28",
-    "availability": "author-hosted-open-access-copy"
+    "availability": "open"
   },
-  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 10, "ocr_status": "searchable", "scan_notes": "Digital paper copy; archive checksum pending."},
-  "rights_status": "copyrighted-author-hosted-link-only",
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 10, "ocr_status": "not-applicable", "scan_notes": "Digital paper copy; archive checksum pending."},
+  "rights_status": "copyrighted-link-only",
   "redistribution_notes": "Preserve metadata and author-hosted link; do not assume redistribution rights from accessibility alone.",
   "provenance": {"original_holder": "David L. Mills / University of Delaware", "current_holder": "David L. Mills archival web collection", "donor_or_collection": null, "chain_notes": "Participant-maintained archive is especially valuable because source code and papers coexist."},
-  "evidence_grade": "primary-participant-contemporary",
+  "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
     {"claim": "Fuzzball is an operating system and applications library for PDP-11/LSI-11 systems, not merely a routing application.", "locator": "abstract and section 1", "certainty": "confirmed", "artifact_ids": ["ART-0069"], "notes": null},

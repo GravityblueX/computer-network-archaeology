@@ -219,6 +219,10 @@ python scripts/validate_records.py
 python -m unittest discover -s tests -v
 ```
 
+The `Validate evidence graph` GitHub Actions workflow runs the same validator
+and tests on pull requests and on pushes to `main`, against Python 3.11 and
+3.13.
+
 The validator checks every structured artifact, source and lineage record against
 its Draft 2020-12 JSON Schema. It also enforces repository-wide invariants that a
 schema cannot express:
@@ -236,11 +240,10 @@ that the target has already been fully excavated.
 
 Future repository tooling should add:
 
-1. enforcement of `scripts/validate_records.py` in CI;
-2. URL/dead-link checks with archival fallbacks;
-3. chronology checks for impossible ordering;
-4. SHA-256 calculation for lawful local source copies;
-5. a generator that exports JSON records into browsable tables/graphs;
-6. a citation coverage report showing claims without precise locators.
+1. URL/dead-link checks with archival fallbacks;
+2. chronology checks for impossible ordering;
+3. SHA-256 calculation for lawful local source copies;
+4. a generator that exports JSON records into browsable tables/graphs;
+5. a citation coverage report showing claims without precise locators.
 
 The long-term objective is a corpus that can be read as history **and** interrogated as an evidence graph.

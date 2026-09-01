@@ -5,7 +5,7 @@
   "description": "Evidence-bearing relationship between two historical networking artifacts, standards, concepts, roles, or practices. Lineage must not be inferred from similarity alone.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "from", "to", "relation", "certainty", "sources"],
+  "required": ["id", "from", "to", "relation", "scope", "property", "certainty", "directness", "sources"],
   "properties": {
     "$schema": {
       "type": "string",
@@ -39,6 +39,7 @@
     },
     "scope": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "string",
         "enum": [
@@ -63,11 +64,12 @@
           "other"
         ]
       },
-      "uniqueItems": true,
-      "default": []
+      "uniqueItems": true
     },
     "property": {
-      "type": ["string", "null"],
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
       "description": "Specific mechanism, convention, role, or property inherited/revised/rejected. Avoid vague values such as 'networking ideas'."
     },
     "date_or_range": {
@@ -91,11 +93,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["source_ref", "locator"],
+        "required": ["source_ref", "locator", "supports"],
         "properties": {
           "source_ref": {"type": "string", "minLength": 1},
           "locator": {"type": "string", "minLength": 1},
-          "supports": {"type": ["string", "null"]},
+          "supports": {"type": "string", "minLength": 1, "pattern": "\\S"},
           "notes": {"type": ["string", "null"]}
         }
       }

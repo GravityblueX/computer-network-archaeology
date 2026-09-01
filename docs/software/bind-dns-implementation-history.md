@@ -110,8 +110,8 @@ The Berkeley BIND report explicitly notes that existing Unix applications, parti
 
 This should be connected to:
 
-- [`hosts-txt-to-dns.md`](hosts-txt-to-dns.md)
-- [`dns-mail-routing-md-mf-mx.md`](dns-mail-routing-md-mf-mx.md)
+- [`hosts-txt-to-dns.md`](../lineage/hosts-txt-to-dns.md)
+- [`dns-mail-routing-md-mf-mx.md`](../lineage/dns-mail-routing-md-mf-mx.md)
 - [`delivermail-sendmail-routing-engine.md`](delivermail-sendmail-routing-engine.md)
 
 A mailer that once depended on flat host tables can move toward:

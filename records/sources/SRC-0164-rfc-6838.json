@@ -9,13 +9,13 @@
   "publisher_or_issuer": "RFC Editor",
   "language": ["en"],
   "topics": ["media types", "MIME", "HTTP", "IANA registry", "content types"],
-  "artifact_ids": ["ART-0173"],
+  "artifact_ids": ["ART-0174"],
   "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc6838/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "rfc-distribution-terms",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"RFC 6838 records that media-type registration began in the Internet mail environment and was later generalized into a protocol-independent registration framework for HTTP, MIME and other Internet protocols.","locator":"Section 1.1 Historical Note and abstract","certainty":"confirmed","artifact_ids":["ART-0173"],"notes":null}
+    {"claim":"RFC 6838 records that media-type registration began in the Internet mail environment and was later generalized into a protocol-independent registration framework for HTTP, MIME and other Internet protocols.","locator":"Section 1.1 Historical Note and abstract","certainty":"confirmed","artifact_ids":["ART-0174"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Institutional/standards genealogy for the media-type abstraction after it escaped the MIME-only document family.",

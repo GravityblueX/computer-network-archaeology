@@ -9,13 +9,13 @@
   "publisher_or_issuer": "RFC Editor",
   "language": ["en"],
   "topics": ["DNS", "DNSSEC", "DNSKEY", "RRSIG", "DS", "resolver validation"],
-  "artifact_ids": ["ART-0171"],
+  "artifact_ids": ["ART-0172"],
   "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc4033/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "rfc-distribution-terms",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"RFC 4033 states that DNSSEC adds new resource-record types and protocol modifications while updating rather than obsoleting the RFC 1034/1035 DNS core.","locator":"Introduction","certainty":"confirmed","artifact_ids":["ART-0171"],"notes":null}
+    {"claim":"RFC 4033 states that DNSSEC adds new resource-record types and protocol modifications while updating rather than obsoleting the RFC 1034/1035 DNS core.","locator":"Introduction","certainty":"confirmed","artifact_ids":["ART-0172"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Core DNS survives while a security extension family is grafted onto it.",

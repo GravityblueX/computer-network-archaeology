@@ -1,6 +1,7 @@
-from pathlib import Path
+import json
 import tempfile
 import unittest
+from pathlib import Path
 
 from scripts.validate_records import (
     LoadedRecord,
@@ -179,6 +180,44 @@ class ReferenceExtractionTests(unittest.TestCase):
             ],
             errors,
         )
+
+
+class SourceArtifactSemanticRegressionTests(unittest.TestCase):
+    EXPECTED_SOURCE_ARTIFACTS = {
+        "SRC-0159": "ART-0170",
+        "SRC-0160": "ART-0171",
+        "SRC-0161": "ART-0172",
+        "SRC-0162": "ART-0173",
+        "SRC-0163": "ART-0174",
+        "SRC-0164": "ART-0174",
+        "SRC-0165": "ART-0169",
+    }
+
+    def test_root_hunting_sources_match_their_semantic_artifacts(self) -> None:
+        artifacts: dict[str, dict[str, object]] = {}
+        for path in (REPOSITORY_ROOT / "records/artifacts").glob("*.json"):
+            artifact = json.loads(path.read_text(encoding="utf-8"))
+            artifacts[artifact["id"]] = artifact
+
+        for source_id, artifact_id in self.EXPECTED_SOURCE_ARTIFACTS.items():
+            with self.subTest(source_id=source_id, artifact_id=artifact_id):
+                source_paths = list(
+                    (REPOSITORY_ROOT / "records/sources").glob(f"{source_id}-*.json")
+                )
+                self.assertEqual(1, len(source_paths))
+                source = json.loads(source_paths[0].read_text(encoding="utf-8"))
+
+                self.assertEqual([artifact_id], source["artifact_ids"])
+                claims = source["claims_extracted"]
+                self.assertGreater(len(claims), 0)
+                for claim in claims:
+                    self.assertEqual([artifact_id], claim["artifact_ids"])
+
+                artifact_source_ids = {
+                    citation["source_id"]
+                    for citation in artifacts[artifact_id]["sources"]
+                }
+                self.assertIn(source_id, artifact_source_ids)
 
 
 class RepositoryValidationTests(unittest.TestCase):

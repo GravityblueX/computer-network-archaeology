@@ -9,14 +9,14 @@
   "publisher_or_issuer": "RFC Editor",
   "language": ["en"],
   "topics": ["multipart/form-data", "MIME", "HTTP", "HTML forms", "file upload"],
-  "artifact_ids": ["ART-0173"],
+  "artifact_ids": ["ART-0174"],
   "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc7578/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "rfc-distribution-terms",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"RFC 7578 states that multipart/form-data follows the multipart MIME data-stream model of RFC 2046 with specified changes.","locator":"Section 4","certainty":"confirmed","artifact_ids":["ART-0173"],"notes":null},
-    {"claim":"RFC 7578 deprecates Content-Transfer-Encoding for environments such as HTTP that support binary data.","locator":"Section 4.7","certainty":"confirmed","artifact_ids":["ART-0173"],"notes":null}
+    {"claim":"RFC 7578 states that multipart/form-data follows the multipart MIME data-stream model of RFC 2046 with specified changes.","locator":"Section 4","certainty":"confirmed","artifact_ids":["ART-0174"],"notes":null},
+    {"claim":"RFC 7578 deprecates Content-Transfer-Encoding for environments such as HTTP that support binary data.","locator":"Section 4.7","certainty":"confirmed","artifact_ids":["ART-0174"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Direct cross-protocol reuse of MIME multipart structure in Web form submission.",

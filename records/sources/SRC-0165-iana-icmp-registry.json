@@ -9,13 +9,13 @@
   "publisher_or_issuer": "IANA",
   "language": ["en"],
   "topics": ["ICMP", "Type numbers", "Code fields", "deprecated messages", "registry"],
-  "artifact_ids": ["ART-0166"],
+  "artifact_ids": ["ART-0169"],
   "access": {"canonical_url":"https://www.iana.org/assignments/icmp-parameters/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "copyrighted-link-only",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"The live IANA ICMP registry preserves living, unassigned and deprecated Type-number branches including Echo, Destination Unreachable, Source Quench, Redirect and Time Exceeded.","locator":"ICMP Type Numbers registry","certainty":"confirmed","artifact_ids":["ART-0166"],"notes":null}
+    {"claim":"The live IANA ICMP registry preserves living, unassigned and deprecated Type-number branches including Echo, Destination Unreachable, Source Quench, Redirect and Time Exceeded.","locator":"ICMP Type Numbers registry","certainty":"confirmed","artifact_ids":["ART-0169"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Registry as an operational and archaeological map of ICMP branch survivorship.",

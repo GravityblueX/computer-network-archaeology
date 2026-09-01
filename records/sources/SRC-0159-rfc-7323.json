@@ -9,14 +9,14 @@
   "publisher_or_issuer": "RFC Editor",
   "language": ["en"],
   "topics": ["TCP", "Window Scale", "Timestamps", "PAWS", "RTTM", "TCP options"],
-  "artifact_ids": ["ART-0169"],
+  "artifact_ids": ["ART-0170"],
   "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc7323/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "rfc-distribution-terms",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"RFC 7323 defines TCP Window Scale and Timestamp options and their modern semantics.","locator":"Abstract and Sections 2-3","certainty":"confirmed","artifact_ids":["ART-0169"],"notes":null},
-    {"claim":"Window Scale changes interpretation of the legacy 16-bit TCP Window field after negotiation rather than replacing that base field.","locator":"Section 2","certainty":"confirmed","artifact_ids":["ART-0169"],"notes":null}
+    {"claim":"RFC 7323 defines TCP Window Scale and Timestamp options and their modern semantics.","locator":"Abstract and Sections 2-3","certainty":"confirmed","artifact_ids":["ART-0170"],"notes":null},
+    {"claim":"Window Scale changes interpretation of the legacy 16-bit TCP Window field after negotiation rather than replacing that base field.","locator":"Section 2","certainty":"confirmed","artifact_ids":["ART-0170"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Obsoletes RFC 1323; useful for tracing option-based extension of an old TCP base header.",

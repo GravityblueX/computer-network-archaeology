@@ -16,23 +16,23 @@
     "catalog_urls": [],
     "local_mirror": null,
     "accessed_on": "2026-08-28",
-    "availability": "open-web-access"
+    "availability": "open"
   },
-  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 44, "ocr_status": "searchable", "scan_notes": "Born-digital-looking PDF currently hosted by Merit; checksum pending."},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 44, "ocr_status": "not-applicable", "scan_notes": "Born-digital-looking PDF currently hosted by Merit; checksum pending."},
   "rights_status": "copyrighted-link-only",
   "redistribution_notes": "Link and cite rather than mirror until rights are established.",
   "provenance": {"original_holder": "Merit Network / NSFNET project", "current_holder": "Merit Network", "donor_or_collection": null, "chain_notes": "Participant/institutional retrospective based on project records and recollections."},
-  "evidence_grade": "institutional-participant-retrospective",
+  "evidence_grade": "institutional-secondary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim": "Each of the thirteen T1-era NSSs was described as nine IBM RT systems processors running Berkeley UNIX, linked by two Token Rings and connected via Ethernet to attached networks.", "locator": "printed page 22, Figure 14 discussion", "certainty": "confirmed-as-report-claim", "artifact_ids": ["ART-0027"], "notes": "Seek contemporary BOMs beneath the retrospective report."},
-    {"claim": "Figure 14 depicts four IBM RT Packet Switching Processors, an IBM RT Routing Control Processor, an IBM RT External Packet Switching Processor, two IBM PS/2 Model 80 management systems, dual Token Rings, WACS/DSU-CSU on the T1 side, and Ethernet on the client side; three backup IBM RTs are omitted from the drawing.", "locator": "printed page 22, Figure 14", "certainty": "confirmed-as-report-claim", "artifact_ids": ["ART-0027"], "notes": null},
-    {"claim": "NSS hardware/software was assembled and configured at an Ann Arbor depot before site installation, with regional personnel participating.", "locator": "printed page 22", "certainty": "confirmed-as-report-claim", "artifact_ids": ["ART-0027"], "notes": null},
-    {"claim": "A SESQUINET shipment anecdote describes seven RTs and three racks, creating an unresolved scoped discrepancy with the generic nine-RT NSS description.", "locator": "printed page 23", "certainty": "confirmed-as-report-claim", "artifact_ids": ["ART-0027"], "notes": "Preserve both claims; resolve with shipment/site inventory records."},
-    {"claim": "The Ann Arbor NOC operated around the clock, grew from four to eighteen staff, displayed NSS/link status, and used two IBM 4831 systems for network-management/statistics/information functions.", "locator": "printed page 23", "certainty": "confirmed-as-report-claim", "artifact_ids": ["ART-0027"], "notes": "Recover contemporary NOC hardware/software inventory and Site Manual."}
+    {"claim": "Each of the thirteen T1-era NSSs was described as nine IBM RT systems processors running Berkeley UNIX, linked by two Token Rings and connected via Ethernet to attached networks.", "locator": "printed page 22, Figure 14 discussion", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Confirmed as a claim made by this retrospective report; seek contemporary BOMs beneath it."},
+    {"claim": "Figure 14 depicts four IBM RT Packet Switching Processors, an IBM RT Routing Control Processor, an IBM RT External Packet Switching Processor, two IBM PS/2 Model 80 management systems, dual Token Rings, WACS/DSU-CSU on the T1 side, and Ethernet on the client side; three backup IBM RTs are omitted from the drawing.", "locator": "printed page 22, Figure 14", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Confirmed as a claim made by this retrospective report."},
+    {"claim": "NSS hardware/software was assembled and configured at an Ann Arbor depot before site installation, with regional personnel participating.", "locator": "printed page 22", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Confirmed as a claim made by this retrospective report."},
+    {"claim": "A SESQUINET shipment anecdote describes seven RTs and three racks, creating an unresolved scoped discrepancy with the generic nine-RT NSS description.", "locator": "printed page 23", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Confirmed as a claim made by this retrospective report; preserve both claims and resolve with shipment/site inventory records."},
+    {"claim": "The Ann Arbor NOC operated around the clock, grew from four to eighteen staff, displayed NSS/link status, and used two IBM 4831 systems for network-management/statistics/information functions.", "locator": "printed page 23", "certainty": "confirmed", "artifact_ids": ["ART-0027"], "notes": "Confirmed as a claim made by this retrospective report; recover contemporary NOC hardware/software inventory and Site Manual."}
   ],
   "conflicts": [
-    {"subject": "NSS processor count", "description": "Generic architecture states nine IBM RTs; SESQUINET shipping recollection states seven RTs and three racks for that delivery.", "status": "open"}
+    "NSS processor count (open): generic architecture states nine IBM RTs; SESQUINET shipping recollection states seven RTs and three racks for that delivery."
   ],
   "notes": "Strong physical/operations map, but contemporary IBM/Merit design records should supersede it for precise model and revision claims.",
   "last_reviewed": "2026-08-28"

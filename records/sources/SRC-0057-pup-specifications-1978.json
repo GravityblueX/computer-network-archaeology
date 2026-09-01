@@ -1,6 +1,6 @@
 {
   "id": "SRC-0057",
-  "source_type": "protocol-specification",
+  "source_type": "technical-report",
   "title": "Pup Specifications",
   "authors_or_bodies": ["Ed Taft", "Bob Metcalfe", "Xerox PARC/CSL"],
   "date": {"value": "1978-06-30", "precision": "day", "certainty": "confirmed", "notes": "Memo says it updates Pup Specifications of 20 October 1975."},
@@ -16,13 +16,13 @@
     "catalog_urls": [],
     "local_mirror": null,
     "accessed_on": "2026-08-28",
-    "availability": "open-archival-access"
+    "availability": "open"
   },
-  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 14, "ocr_status": "searchable", "scan_notes": "Computer History Museum Xerox Alto archive representation; checksum pending."},
+  "fixity": {"sha256": null, "byte_size": null, "mime_type": "application/pdf", "page_count": 14, "ocr_status": "machine", "scan_notes": "Computer History Museum Xerox Alto archive representation; checksum pending."},
   "rights_status": "copyrighted-link-only",
   "redistribution_notes": "Xerox copyright notice is present. Preserve metadata and stable archival link by default.",
   "provenance": {"original_holder": "Xerox PARC/CSL", "current_holder": "Computer History Museum Xerox Alto archive access site", "donor_or_collection": "Xerox Alto archive", "chain_notes": "Original filing path is embedded in the document and should be preserved."},
-  "evidence_grade": "primary-contemporary-specification",
+  "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
     {"claim": "PUP defines a standard internetwork packet intended to cross multiple interconnected packet-switching networks.", "locator": "page 1, introductory principles", "certainty": "confirmed", "artifact_ids": ["ART-0041"], "notes": null},

@@ -24,17 +24,17 @@
     "catalog_urls": ["https://www.bitsavers.org/pdf/bbn/imp/"],
     "local_mirror": null,
     "accessed_on": "2026-08-28",
-    "availability": "open-archive-copy"
+    "availability": "open"
   },
   "fixity": {
     "sha256": null,
     "byte_size": null,
     "mime_type": "application/pdf",
     "page_count": 207,
-    "ocr_status": "scan-with-searchable-derivatives",
+    "ocr_status": "machine",
     "scan_notes": "Bitsavers indexes an 8.4 MB scan. Exact scan provenance and checksum remain to be recorded."
   },
-  "rights_status": "rights-unclear-link-only",
+  "rights_status": "unknown",
   "redistribution_notes": "Index and link until redistribution status of the scanned report is established.",
   "provenance": {
     "original_holder": "BBN / ARPA technical-report distribution",
@@ -42,8 +42,8 @@
     "donor_or_collection": null,
     "chain_notes": "The report existed in multiple revisions. Record each dated revision separately and retain amendment RFCs as companion sources."
   },
-  "evidence_grade": "primary-contemporary-revision",
-  "research_state": "started",
+  "evidence_grade": "primary-contemporary",
+  "research_state": "skimmed",
   "claims_extracted": [
     {
       "claim": "Report 1822 defines the standard Host-IMP attachment boundary for ARPANET and includes physical/electrical, readiness, and message-access behavior.",
@@ -54,11 +54,7 @@
     }
   ],
   "conflicts": [
-    {
-      "subject": "revision drift",
-      "description": "Later Report 1822 revisions incorporate years of ARPANET evolution. Historical reconstruction must distinguish 1969, 1973, 1974, 1975 and 1976 behavior.",
-      "status": "open"
-    }
+    "Revision drift (open): later Report 1822 revisions incorporate years of ARPANET evolution. Historical reconstruction must distinguish 1969, 1973, 1974, 1975 and 1976 behavior."
   ],
   "notes": "RFC 642, RFC 660, RFC 745 and RFC 3109 are companion evidence for implementation practice and later interpretation.",
   "last_reviewed": "2026-08-28"

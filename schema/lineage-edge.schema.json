@@ -7,6 +7,10 @@
   "additionalProperties": false,
   "required": ["id", "from", "to", "relation", "certainty", "sources"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional relative or absolute schema locator for editor integration."
+    },
     "id": {"type": "string", "pattern": "^LIN-[0-9]{4,}$"},
     "from": {"$ref": "#/$defs/endpoint"},
     "to": {"$ref": "#/$defs/endpoint"},

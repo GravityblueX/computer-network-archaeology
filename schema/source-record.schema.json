@@ -7,6 +7,10 @@
   "additionalProperties": false,
   "required": ["id", "source_type", "title", "research_state", "rights_status", "access"],
   "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional relative or absolute schema locator for editor integration."
+    },
     "id": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"},
     "source_type": {
       "type": "string",

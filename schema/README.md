@@ -209,17 +209,41 @@ A copyrighted manual can have an excellent source record without being committed
 
 If rights are unknown, default to metadata + stable link/archive locator rather than mirroring the file.
 
-## Validation roadmap
+## Validation
+
+The evidence graph can be checked locally with one deterministic command set:
+
+```sh
+python -m pip install -r requirements-dev.txt
+python scripts/validate_records.py
+python -m unittest discover -s tests -v
+```
+
+The `Validate evidence graph` GitHub Actions workflow runs the same validator
+and tests on pull requests and on pushes to `main`, against Python 3.11 and
+3.13.
+
+The validator checks every structured artifact, source and lineage record against
+its Draft 2020-12 JSON Schema. It also enforces repository-wide invariants that a
+schema cannot express:
+
+- structured IDs are unique and agree with their filenames;
+- IDs in each discovery ledger are well formed and unique;
+- artifact/source references resolve to either a structured record or a
+  discovery-ledger identity;
+- `source_ref` values in lineage records are checked whenever they contain
+  explicit `SRC-*` IDs.
+
+A ledger identity is allowed as a reference target because discovery normally
+precedes promotion to a claim-level JSON record. It is not treated as evidence
+that the target has already been fully excavated.
 
 Future repository tooling should add:
 
-1. JSON Schema validation in CI;
-2. uniqueness checks for `ART-*` and `SRC-*` IDs;
-3. verification that every referenced source/artifact ID exists;
-4. URL/dead-link checks with archival fallbacks;
-5. chronology checks for impossible ordering;
-6. SHA-256 calculation for lawful local source copies;
-7. a generator that exports JSON records into browsable tables/graphs;
-8. a citation coverage report showing claims without precise locators.
+1. URL/dead-link checks with archival fallbacks;
+2. chronology checks for impossible ordering;
+3. SHA-256 calculation for lawful local source copies;
+4. a generator that exports JSON records into browsable tables/graphs;
+5. a citation coverage report showing claims without precise locators.
 
 The long-term objective is a corpus that can be read as history **and** interrogated as an evidence graph.

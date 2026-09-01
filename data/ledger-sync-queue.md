@@ -15,9 +15,10 @@ Recent ranges include:
 - `ART-0239..0241` — Linux BIC→CUBIC implementation and CUBIC RFC standardization lineage;
 - `ART-0242..0243` — mainline BBR and Google BBRv3 development branch;
 - `ART-0244..0246` — TCP_INFO base observability plus pacing- and delivery-rate extensions;
-- `ART-0247..0248` — dedicated Linux TCP metrics cache and `ip tcp_metrics` administration.
+- `ART-0247..0248` — dedicated Linux TCP metrics cache and `ip tcp_metrics` administration;
+- `ART-0249` — initial Linux veth pair driver mainline implementation and stable-release boundary.
 
-**Next unreserved artifact ID: `ART-0249`**, subject to merge-time verification.
+**Next unreserved artifact ID: `ART-0250`**, subject to merge-time verification.
 
 ### Sources
 
@@ -26,9 +27,10 @@ Recent ranges include:
 - `SRC-0252..0257` — Linux BIC/CUBIC source and commits plus RFC 8312/9438;
 - `SRC-0258..0260` — mainline BBR merge/current source and Google BBRv3 branch source;
 - `SRC-0261..0263` — early TCP_INFO snapshot and pacing/delivery-rate field additions;
-- `SRC-0264..0268` — dedicated tcp_metrics cache, timestamp consolidation, Generic Netlink/userspace administration and ssthresh-cache policy.
+- `SRC-0264..0268` — dedicated tcp_metrics cache, timestamp consolidation, Generic Netlink/userspace administration and ssthresh-cache policy;
+- `SRC-0269..0270` — initial veth mainline commit and Linux v2.6.24 released source snapshot.
 
-**Next unreserved source ID: `SRC-0269`**, subject to verification.
+**Next unreserved source ID: `SRC-0271`**, subject to verification.
 
 ### Lineages
 
@@ -50,6 +52,7 @@ Use `docs/methodology/root-hunting-master-worklist.md`. New work must be added t
 - `data/batches/2026-08-29-linux-operations-roots.md`
 - `data/batches/2026-08-29-netlink-iproute-netns-vrf.md`
 - `data/batches/2026-08-29-tcp-recovery-congestion-observability.md`
+- `data/batches/2026-09-01-veth-upstream-provenance.md`
 
 ## Current narrative frontier
 
@@ -61,6 +64,7 @@ Latest additions:
 - `docs/tcp/bbr-generations-pacing-observability.md`
 - `docs/tcp/linux-tcp-info-field-genealogy.md`
 - `docs/tcp/tcp-metrics-cache-ip-tcp-metrics.md`
+- `docs/routing/linux-veth-upstream-provenance.md`
 
 ## Flat-ledger merge checklist
 

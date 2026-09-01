@@ -32,7 +32,7 @@ Status vocabulary:
 - [ ] recover pre-2.1.15 SKIPLINK/Netlink source and exact first AF_NETLINK socket-family merge commit.
 - [ ] recover the exact first public iproute/iproute2 source distribution and earliest command-reference document.
 - [ ] `ip monitor` event-loss/resync semantics and routing-daemon snapshot+watch patterns from primary implementation sources.
-- [ ] network namespace merge series, veth merge provenance, and `ip netns` first-release archaeology.
+- [~] network namespace merge series, veth merge provenance, and `ip netns` first-release archaeology. **Completed:** exact initial veth mainline commit `e314dbdc1c0dc6a548ecf0afce28ecfd538ff568`, initial pair/namespace intent, and first stable mainline presence in Linux 2.6.24. **Still missing:** exact network-namespace subsystem merge series, first iproute2 release containing `ip netns`, and optional pre-mainline veth patch-series provenance.
 - [ ] VRF device initial merge commit, netdev discussion, l3mdev rule commit and first real deployments.
 
 ## TCP implementation/observability archaeology

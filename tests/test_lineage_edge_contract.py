@@ -96,6 +96,11 @@ class LineageEdgeContractTests(unittest.TestCase):
     def test_complete_lineage_edge_validates(self) -> None:
         self.assert_valid(self.complete_record())
 
+    def test_nonempty_scope_does_not_advertise_an_empty_default(self) -> None:
+        scope_schema = self.schema["properties"]["scope"]
+
+        self.assertNotIn("default", scope_schema)
+
     def test_every_relation_requires_shared_claim_fields(self) -> None:
         for relation in self.relations:
             for field in ("scope", "property", "directness"):
@@ -105,58 +110,67 @@ class LineageEdgeContractTests(unittest.TestCase):
                 with self.subTest(relation=relation, field=field):
                     self.assert_required(document, field)
 
-    def test_scope_must_not_be_empty(self) -> None:
-        document = self.complete_record()
-        document["scope"] = []
+    def test_every_relation_requires_nonempty_scope(self) -> None:
+        for relation in self.relations:
+            document = self.complete_record(relation)
+            document["scope"] = []
 
-        self.assert_field_error(document, ["scope"], "minItems")
+            with self.subTest(relation=relation):
+                self.assert_field_error(document, ["scope"], "minItems")
 
-    def test_property_must_be_a_nonblank_string(self) -> None:
+    def test_every_relation_requires_a_nonblank_property(self) -> None:
         cases = (
             (None, "type"),
             ("", "minLength"),
             (" \t ", "pattern"),
+            ("\N{NO-BREAK SPACE}", "pattern"),
         )
-        for value, validator in cases:
-            document = self.complete_record()
-            document["property"] = value
+        for relation in self.relations:
+            for value, validator in cases:
+                document = self.complete_record(relation)
+                document["property"] = value
 
-            with self.subTest(value=value):
-                self.assert_field_error(document, ["property"], validator)
+                with self.subTest(relation=relation, value=value):
+                    self.assert_field_error(document, ["property"], validator)
 
-    def test_source_requires_supports(self) -> None:
-        document = self.complete_record()
-        del document["sources"][0]["supports"]
-        errors = list(self.validator.iter_errors(document))
-        matching_errors = [
-            error
-            for error in errors
-            if error.validator == "required"
-            and list(error.absolute_path) == ["sources", 0]
-            and "supports" in error.validator_value
-            and "supports" in error.message
-        ]
-        self.assertTrue(
-            matching_errors,
-            f"expected each source to require 'supports'; got {errors!r}",
-        )
+    def test_every_relation_source_requires_supports(self) -> None:
+        for relation in self.relations:
+            document = self.complete_record(relation)
+            del document["sources"][0]["supports"]
+            errors = list(self.validator.iter_errors(document))
+            matching_errors = [
+                error
+                for error in errors
+                if error.validator == "required"
+                and list(error.absolute_path) == ["sources", 0]
+                and "supports" in error.validator_value
+                and "supports" in error.message
+            ]
 
-    def test_source_supports_must_be_a_nonblank_string(self) -> None:
-        cases = (
-            (None, "type"),
-            ("", "minLength"),
-            (" \t ", "pattern"),
-        )
-        for value, validator in cases:
-            document = self.complete_record()
-            document["sources"][0]["supports"] = value
-
-            with self.subTest(value=value):
-                self.assert_field_error(
-                    document,
-                    ["sources", 0, "supports"],
-                    validator,
+            with self.subTest(relation=relation):
+                self.assertTrue(
+                    matching_errors,
+                    f"expected each source to require 'supports'; got {errors!r}",
                 )
+
+    def test_every_relation_requires_nonblank_source_supports(self) -> None:
+        cases = (
+            (None, "type"),
+            ("", "minLength"),
+            (" \t ", "pattern"),
+            ("\N{NO-BREAK SPACE}", "pattern"),
+        )
+        for relation in self.relations:
+            for value, validator in cases:
+                document = self.complete_record(relation)
+                document["sources"][0]["supports"] = value
+
+                with self.subTest(relation=relation, value=value):
+                    self.assert_field_error(
+                        document,
+                        ["sources", 0, "supports"],
+                        validator,
+                    )
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ filename/ID agreement, ledger identities, and references between records.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import csv
 import json
 import re
@@ -330,24 +331,67 @@ def load_ledger_ids(
         return ids
 
     with handle:
-        reader = csv.DictReader(handle)
-        if reader.fieldnames is None or group.ledger_id_column not in reader.fieldnames:
-            errors.append(
-                f"{label}: missing required column {group.ledger_id_column!r}"
-            )
-            return ids
-        for line_number, row in enumerate(reader, start=2):
-            record_id = (row.get(group.ledger_id_column) or "").strip()
-            if not group.id_pattern.fullmatch(record_id):
+        reader = csv.reader(handle, strict=True)
+        try:
+            fieldnames = next(reader, None)
+            if fieldnames is None:
                 errors.append(
-                    f"{label}:{line_number}: invalid {group.ledger_id_column} "
-                    f"{record_id!r}; expected {group.id_prefix}- followed by at least four digits"
+                    f"{label}: missing required column {group.ledger_id_column!r}"
                 )
-                continue
-            if record_id in ids:
-                errors.append(f"{label}:{line_number}: duplicate ledger ID {record_id}")
-                continue
-            ids.add(record_id)
+                return ids
+            blank_column_positions = [
+                position
+                for position, column in enumerate(fieldnames, start=1)
+                if column is None or not column.strip()
+            ]
+            if blank_column_positions:
+                rendered = ", ".join(map(str, blank_column_positions))
+                errors.append(
+                    f"{label}: blank ledger column name(s) at position(s): {rendered}"
+                )
+                return ids
+            duplicate_columns = sorted(
+                (
+                    column
+                    for column, count in Counter(fieldnames).items()
+                    if count > 1
+                ),
+                key=repr,
+            )
+            if duplicate_columns:
+                rendered = ", ".join(repr(column) for column in duplicate_columns)
+                errors.append(f"{label}: duplicate ledger column(s): {rendered}")
+                return ids
+            if group.ledger_id_column not in fieldnames:
+                errors.append(
+                    f"{label}: missing required column {group.ledger_id_column!r}"
+                )
+                return ids
+            expected_field_count = len(fieldnames)
+            id_column_index = fieldnames.index(group.ledger_id_column)
+            for row in reader:
+                line_number = reader.line_num
+                if not row:
+                    continue
+                if len(row) != expected_field_count:
+                    errors.append(
+                        f"{label}:{line_number}: malformed CSV row has "
+                        f"{len(row)} fields; expected {expected_field_count}"
+                    )
+                    continue
+                record_id = row[id_column_index].strip()
+                if not group.id_pattern.fullmatch(record_id):
+                    errors.append(
+                        f"{label}:{line_number}: invalid {group.ledger_id_column} "
+                        f"{record_id!r}; expected {group.id_prefix}- followed by at least four digits"
+                    )
+                    continue
+                if record_id in ids:
+                    errors.append(f"{label}:{line_number}: duplicate ledger ID {record_id}")
+                    continue
+                ids.add(record_id)
+        except csv.Error as error:
+            errors.append(f"{label}:{reader.line_num}: invalid CSV: {error}")
     return ids
 
 

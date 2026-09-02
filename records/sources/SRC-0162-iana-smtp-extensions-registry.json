@@ -9,13 +9,13 @@
   "publisher_or_issuer": "IANA",
   "language": ["en"],
   "topics": ["SMTP", "EHLO", "extension keywords", "registry", "capability negotiation"],
-  "artifact_ids": ["ART-0172"],
+  "artifact_ids": ["ART-0173"],
   "access": {"canonical_url":"https://www.iana.org/assignments/smtp/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "copyrighted-link-only",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"IANA maintains a live SMTP Service Extensions registry organized around EHLO keywords and associated parameters/verbs.","locator":"SMTP Service Extensions registry","certainty":"confirmed","artifact_ids":["ART-0172"],"notes":null}
+    {"claim":"IANA maintains a live SMTP Service Extensions registry organized around EHLO keywords and associated parameters/verbs.","locator":"SMTP Service Extensions registry","certainty":"confirmed","artifact_ids":["ART-0173"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Official registry-level evidence that SMTP's extension mechanism remains an active growth surface.",

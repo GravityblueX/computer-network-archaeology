@@ -9,13 +9,13 @@
   "publisher_or_issuer": "RFC Editor",
   "language": ["en"],
   "topics": ["TCP", "SACK", "loss recovery", "TCP options"],
-  "artifact_ids": ["ART-0170"],
+  "artifact_ids": ["ART-0171"],
   "access": {"canonical_url":"https://www.rfc-editor.org/info/rfc2018/","archive_urls":[],"catalog_urls":[],"local_mirror":null,"accessed_on":"2026-08-29","availability":"open"},
   "rights_status": "rfc-distribution-terms",
   "evidence_grade": "primary-contemporary",
   "research_state": "mined",
   "claims_extracted": [
-    {"claim":"RFC 2018 defines the SACK-permitted and SACK TCP options so receivers can report non-contiguous received blocks while cumulative ACK semantics remain part of TCP.","locator":"Abstract and option definitions","certainty":"confirmed","artifact_ids":["ART-0170"],"notes":null}
+    {"claim":"RFC 2018 defines the SACK-permitted and SACK TCP options so receivers can report non-contiguous received blocks while cumulative ACK semantics remain part of TCP.","locator":"Abstract and option definitions","certainty":"confirmed","artifact_ids":["ART-0171"],"notes":null}
   ],
   "conflicts": [],
   "notes": "Option-based extension of TCP loss-recovery feedback rather than replacement of the base ACK field.",

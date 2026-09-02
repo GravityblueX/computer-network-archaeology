@@ -155,7 +155,7 @@
           "claim": {"type": "string"},
           "locator": {"type": "string"},
           "certainty": {"type": "string", "enum": ["confirmed", "probable", "disputed", "unknown"]},
-          "artifact_ids": {"type": "array", "items": {"type": "string", "pattern": "^ART-[0-9]{4,}$"}, "default": []},
+          "artifact_ids": {"type": "array", "items": {"type": "string", "pattern": "^ART-[0-9]{4,}$"}, "uniqueItems": true, "default": []},
           "notes": {"type": ["string", "null"]}
         }
       },

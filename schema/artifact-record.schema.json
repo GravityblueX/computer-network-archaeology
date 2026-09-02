@@ -259,7 +259,7 @@
         "value": {"type": "string"},
         "precision": {"type": "string", "enum": ["day", "month", "year", "decade", "range", "circa", "unknown"]},
         "certainty": {"type": "string", "enum": ["confirmed", "probable", "disputed", "unknown"]},
-        "source_ids": {"type": "array", "items": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"}, "default": []},
+        "source_ids": {"type": "array", "items": {"type": "string", "pattern": "^SRC-[0-9]{4,}$"}, "uniqueItems": true, "default": []},
         "notes": {"type": ["string", "null"]}
       }
     },

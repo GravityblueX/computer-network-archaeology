@@ -229,8 +229,10 @@ schema cannot express:
 
 - structured IDs are unique and agree with their filenames;
 - IDs in each discovery ledger are well formed and unique;
-- artifact/source references resolve to either a structured record or a
-  discovery-ledger identity;
+- artifact/source references in structured records resolve to either a
+  structured record or a discovery-ledger identity;
+- non-empty `from_artifact_id` and `to_artifact_id` values in the lineage
+  discovery ledger obey the same resolution policy;
 - `source_ref` values in lineage records are checked whenever they contain
   explicit `SRC-*` IDs.
 

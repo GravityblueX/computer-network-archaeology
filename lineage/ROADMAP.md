@@ -17,7 +17,8 @@ The unit of completion is an evidence-bearing edge, not a historical slogan.
 - [ ] visualization that distinguishes confirmed/probable/disputed edges
 - [ ] query layer by scope/property/date
 - [ ] edge-level citation/locator linter
-- [ ] automatic detection of artifact IDs missing from artifact ledger
+- [x] automatic detection of lineage-ledger artifact IDs missing from both
+  structured records and artifact ledger
 
 ## Serial/data-set/interface genealogy
 

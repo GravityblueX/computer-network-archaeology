@@ -9,6 +9,7 @@ filename/ID agreement, ledger identities, and references between records.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import csv
 import json
 import re
@@ -64,6 +65,12 @@ GROUPS: tuple[RecordGroup, ...] = (
 
 GROUP_BY_NAME = {group.name: group for group in GROUPS}
 SOURCE_ID_TOKEN = re.compile(r"\bSRC-[0-9]{4,}\b")
+LEDGER_REFERENCE_COLUMNS: Mapping[str, Mapping[str, str]] = {
+    "lineage": {
+        "from_artifact_id": "artifact",
+        "to_artifact_id": "artifact",
+    },
+}
 
 
 @dataclass(frozen=True)
@@ -78,6 +85,15 @@ class Reference:
     target_group: str
     target_id: str
     json_path: str
+
+
+@dataclass(frozen=True)
+class LedgerReference:
+    target_group: str
+    target_id: str
+    path: Path
+    line_number: int
+    column: str
 
 
 @dataclass
@@ -313,7 +329,11 @@ def discover_record_paths(
 
 
 def load_ledger_ids(
-    root: Path, group: RecordGroup, errors: list[str]
+    root: Path,
+    group: RecordGroup,
+    errors: list[str],
+    *,
+    references: list[LedgerReference] | None = None,
 ) -> set[str]:
     label_path = root / group.ledger
     label = display_path(label_path, root)
@@ -330,24 +350,87 @@ def load_ledger_ids(
         return ids
 
     with handle:
-        reader = csv.DictReader(handle)
-        if reader.fieldnames is None or group.ledger_id_column not in reader.fieldnames:
-            errors.append(
-                f"{label}: missing required column {group.ledger_id_column!r}"
-            )
-            return ids
-        for line_number, row in enumerate(reader, start=2):
-            record_id = (row.get(group.ledger_id_column) or "").strip()
-            if not group.id_pattern.fullmatch(record_id):
+        reader = csv.reader(handle, strict=True)
+        try:
+            fieldnames = next(reader, None)
+            if fieldnames is None:
                 errors.append(
-                    f"{label}:{line_number}: invalid {group.ledger_id_column} "
-                    f"{record_id!r}; expected {group.id_prefix}- followed by at least four digits"
+                    f"{label}: missing required column {group.ledger_id_column!r}"
                 )
-                continue
-            if record_id in ids:
-                errors.append(f"{label}:{line_number}: duplicate ledger ID {record_id}")
-                continue
-            ids.add(record_id)
+                return ids
+            blank_column_positions = [
+                position
+                for position, column in enumerate(fieldnames, start=1)
+                if column is None or not column.strip()
+            ]
+            if blank_column_positions:
+                rendered = ", ".join(map(str, blank_column_positions))
+                errors.append(
+                    f"{label}: blank ledger column name(s) at position(s): {rendered}"
+                )
+                return ids
+            duplicate_columns = sorted(
+                (
+                    column
+                    for column, count in Counter(fieldnames).items()
+                    if count > 1
+                ),
+                key=repr,
+            )
+            if duplicate_columns:
+                rendered = ", ".join(repr(column) for column in duplicate_columns)
+                errors.append(f"{label}: duplicate ledger column(s): {rendered}")
+                return ids
+            if group.ledger_id_column not in fieldnames:
+                errors.append(
+                    f"{label}: missing required column {group.ledger_id_column!r}"
+                )
+                return ids
+            expected_field_count = len(fieldnames)
+            id_column_index = fieldnames.index(group.ledger_id_column)
+            reference_columns = [
+                (fieldnames.index(column), column, target_group)
+                for column, target_group in LEDGER_REFERENCE_COLUMNS.get(
+                    group.name, {}
+                ).items()
+                if column in fieldnames
+            ]
+            for row in reader:
+                line_number = reader.line_num
+                if not row:
+                    continue
+                if len(row) != expected_field_count:
+                    errors.append(
+                        f"{label}:{line_number}: malformed CSV row has "
+                        f"{len(row)} fields; expected {expected_field_count}"
+                    )
+                    continue
+                record_id = row[id_column_index].strip()
+                if not group.id_pattern.fullmatch(record_id):
+                    errors.append(
+                        f"{label}:{line_number}: invalid {group.ledger_id_column} "
+                        f"{record_id!r}; expected {group.id_prefix}- followed by at least four digits"
+                    )
+                    continue
+                if record_id in ids:
+                    errors.append(f"{label}:{line_number}: duplicate ledger ID {record_id}")
+                    continue
+                ids.add(record_id)
+                if references is not None:
+                    for index, column, target_group in reference_columns:
+                        target_id = row[index].strip()
+                        if target_id:
+                            references.append(
+                                LedgerReference(
+                                    target_group,
+                                    target_id,
+                                    label_path,
+                                    line_number,
+                                    column,
+                                )
+                            )
+        except csv.Error as error:
+            errors.append(f"{label}:{reader.line_num}: invalid CSV: {error}")
     return ids
 
 
@@ -448,6 +531,31 @@ def validate_references(
     return errors
 
 
+def validate_ledger_references(
+    references: Sequence[LedgerReference],
+    known_ids: Mapping[str, set[str]],
+    root: Path,
+) -> list[str]:
+    errors: list[str] = []
+    for reference in references:
+        label = (
+            f"{display_path(reference.path, root)}:{reference.line_number}:"
+            f"{reference.column}"
+        )
+        target_group = GROUP_BY_NAME[reference.target_group]
+        if not target_group.id_pattern.fullmatch(reference.target_id):
+            errors.append(
+                f"{label}: invalid {target_group.name} ID {reference.target_id!r}; "
+                f"expected {target_group.id_prefix}- followed by at least four digits"
+            )
+            continue
+        if reference.target_id not in known_ids[reference.target_group]:
+            errors.append(
+                f"{label}: unknown {target_group.name} ID {reference.target_id}"
+            )
+    return errors
+
+
 def validate_repository(root: Path) -> ValidationReport:
     errors: list[str] = []
     record_counts = {group.name: 0 for group in GROUPS}
@@ -464,6 +572,7 @@ def validate_repository(root: Path) -> ValidationReport:
     records: list[LoadedRecord] = []
     structured_ids: dict[str, set[str]] = {group.name: set() for group in GROUPS}
     ledger_ids: dict[str, set[str]] = {group.name: set() for group in GROUPS}
+    ledger_references: list[LedgerReference] = []
     seen_structured_ids: dict[str, Path] = {}
     discovered_paths = discover_record_paths(root, errors)
 
@@ -533,7 +642,12 @@ def validate_repository(root: Path) -> ValidationReport:
                     f"or start with {record_id}-"
                 )
 
-        ledger_ids[group.name] = load_ledger_ids(root, group, errors)
+        ledger_ids[group.name] = load_ledger_ids(
+            root,
+            group,
+            errors,
+            references=ledger_references,
+        )
         ledger_counts[group.name] = len(ledger_ids[group.name])
 
     known_ids = {
@@ -541,6 +655,7 @@ def validate_repository(root: Path) -> ValidationReport:
         for group in GROUPS
     }
     errors.extend(validate_references(records, known_ids, root))
+    errors.extend(validate_ledger_references(ledger_references, known_ids, root))
     # A registered directory is also visited by the closure scan.  Collapse an
     # identical path failure from those two independent checks into one report.
     errors = sorted(set(errors))

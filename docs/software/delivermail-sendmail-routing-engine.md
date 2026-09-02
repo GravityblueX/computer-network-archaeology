@@ -169,8 +169,8 @@ The transition from flat host tables to DNS and MX records changes the data sour
 
 Connect this excavation to:
 
-- [`hosts-txt-to-dns.md`](hosts-txt-to-dns.md)
-- [`dns-mail-routing-md-mf-mx.md`](dns-mail-routing-md-mf-mx.md)
+- [`hosts-txt-to-dns.md`](../lineage/hosts-txt-to-dns.md)
+- [`dns-mail-routing-md-mf-mx.md`](../lineage/dns-mail-routing-md-mf-mx.md)
 
 The MTA now combines:
 

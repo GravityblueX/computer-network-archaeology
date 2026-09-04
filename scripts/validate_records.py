@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import csv
+from decimal import Decimal, InvalidOperation
 import json
 import re
 import sys
@@ -111,6 +112,33 @@ class StrictJSONError(ValueError):
     """Raised when Python's permissive JSON decoder accepts invalid JSON."""
 
 
+# Match CPython's default integer-string safety ceiling, but enforce it before
+# materializing an exponent-expanded integer so process-wide settings cannot
+# turn a small JSON token such as ``1e100000000`` into a giant allocation.
+_MAX_JSON_INTEGER_DIGITS = 4300
+
+
+def parse_json_number(value: str) -> int | Decimal:
+    """Decode a JSON number exactly while bounding integer materialization."""
+
+    try:
+        exact = Decimal(value)
+    except InvalidOperation as error:
+        raise StrictJSONError("unrepresentable decimal exponent") from error
+
+    if not exact.is_finite():
+        raise StrictJSONError("non-finite number")
+    if exact != exact.to_integral_value():
+        return exact
+
+    integer_digits = 1 if exact.is_zero() else exact.adjusted() + 1
+    if integer_digits > _MAX_JSON_INTEGER_DIGITS:
+        raise StrictJSONError(
+            f"integer exceeds {_MAX_JSON_INTEGER_DIGITS} decimal digits"
+        )
+    return int(exact)
+
+
 def display_path(path: Path, root: Path) -> str:
     try:
         return path.relative_to(root).as_posix()
@@ -202,6 +230,8 @@ def load_json_object(
             path.read_text(encoding="utf-8"),
             object_pairs_hook=reject_duplicate_keys,
             parse_constant=reject_non_finite_number,
+            parse_float=parse_json_number,
+            parse_int=parse_json_number,
         )
     except (OSError, UnicodeError) as error:
         errors.append(f"{label}: cannot read UTF-8 JSON: {error}")
